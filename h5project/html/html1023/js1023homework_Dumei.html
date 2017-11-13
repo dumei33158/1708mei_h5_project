@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1023homework_Dumei.html</title>
+
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.23作业&nbsp;_Dumei</h1>
+    <p>1.用面向对象的思维编辑实现全选和反选（选做题）</p>
+    <p>2.JS动态生成表格头部</p>
+</div>
+</body>
+</html>
+<script>
+    //1.用面向对象的思维编辑实现全选和反选
+var choose=function(){
+
+}
+</script>
+<script>
+    //2.JS动态生成表格头部
+
+var table=document.createElement("table");
+    table.style="border:10px solid blue";
+    var thead=document.createElement("thead");
+    var trh=document.createElement("tr");
+
+    trh.style.textAlign="center";
+    var arr=["序号","姓名","性别","年龄","出生日期","联系电话","QQorWechat","爱好","备注"];
+    for(var m=0;m<arr.length;m++){
+        var th=document.createElement("th");
+        th.style.border="1px solid red";
+        var thText=document.createTextNode(arr[m]);
+        th.appendChild(thText);
+        trh.appendChild(th);
+    }
+    thead.appendChild(trh);
+    table.appendChild(thead);
+    var tbody=document.createElement("tbody");
+    table.appendChild(tbody);
+    var tfoot=document.createElement("tfoot");
+    table.appendChild(tfoot);
+    for(var i=0;i<8;i++) {
+        var tr = document.createElement("tr");
+        tr.style.textAlign="center";
+        for (var j = 0; j <= 8; j++) {
+            var td = document.createElement("td");
+            td.innerText=j;
+            tr.appendChild(td);
+            td.style="borderCollapse:collapse;width:80px;height:50px;";
+            td.style.borderLeft="1px solid #f0f";
+            td.style.borderTop="1px solid #f0f";
+        }
+        table.appendChild(tr);
+    }
+    document.getElementsByClassName("homework")[0].appendChild(table);
+
+
+
+
+
+
+
+</script>
+

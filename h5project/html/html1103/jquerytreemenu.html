@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquerytreemenu</title>
+        <style>
+            *{margin:0; padding:0;}
+            li{
+                list-style: none;
+            }
+            ul>li>ul{display:none}
+            .bg>ul{
+                width: 200px;
+                background:#3b9bef;
+                height: 400px;
+                margin: 20px;
+                margin-left: 14px;
+            }
+            .bg>ul>li{
+                background:#2b98da;
+                margin-bottom:10px;
+                box-shadow:1px 1px 3px  rgba(255,255,255,.3) inset;
+                line-height:30px;
+                color:#fff;
+            }
+            .bg>ul>li>img{
+                margin: 0 10px 0 10px;
+            }
+            .bg>ul>li ul{
+                background-color: #3b9bef;
+                padding-left: 20px;
+            }
+        </style>
+    </head>
+<body>
+<div class='bg'>
+    <ul>
+        <li><img src='1.gif'/>事件
+            <ul style="display: block;">
+                <li>最近</li>
+                <li>上周</li>
+                <li>上月</li>
+            </ul>
+        </li>
+        <li><img src='2.gif'/>娱乐
+            <ul>
+                <li>最近</li>
+                <li>上周</li>
+                <li>上月</li>
+            </ul>
+        </li>
+        <li><img src='2.gif'/>人物
+            <ul>
+                <li>最近</li>
+                <li>上周</li>
+                <li>上月</li>
+            </ul>
+        </li>
+        <li><img src='2.gif'/>生活
+            <ul>
+                <li>最近</li>
+                <li>上周</li>
+                <li>上月</li>
+            </ul>
+        </li>
+        <li><img src='2.gif'/>房地产</li>
+        <li><img src='2.gif'/>奇异视频</li>
+    </ul>
+</div>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    $(".bg>ul>li>img").click(function(){
+        if( $(this).attr("src")=="2.gif"){
+            $(this).attr("src","1.gif");
+            $(this).parent().find("ul").show("slow");
+        }else{
+            $(this).attr("src","2.gif");
+            $(this).parent().find("ul").hide("slow");
+        }
+    })
+</script>

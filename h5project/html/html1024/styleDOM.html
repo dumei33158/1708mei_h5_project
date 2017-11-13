@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div2{
+            height:30px;
+            width:100%;
+            background:red;
+            filter:alpha(opacity:0);
+            position:absolute;
+            top:210px;
+        }
+        .y{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<div id="div2" class="y" index="0">sfdfdsfsfsdfsdf</div>
+<div  index="1">sfdflorem354656sfsdfsdf</div>
+</body>
+</html>
+<script>
+    function $(id){
+        return document.getElementById(id)
+    }
+    console.log($("div2").getAttribute("index"));//获取自身没有后期设置的属性index
+    console.log($("div2").attributes[2]);//获取自身没有后期设置的属性index
+    console.log($("div2").attributes["index"]);//获取自身没有后期设置的属性index，注意括号[]
+
+
+    console.log($("div2").attributes["id"]);//获取自身已有的属性id
+    console.log($("div2").attributes[1]);//获取自身没有后期设置的属性
+    console.log($("div2").attributes[0]);//获取自身没有后期设置的属性
+    console.log($("div2").style.top);
+    console.log($("div2").style);
+    console.log($("div2").style.color);
+    console.log($("div2").textContent);//获取DOM元素的文本
+    console.log(document.getElementsByClassName("y")[0].style.color);
+    console.log(document.getElementsByClassName("y")[0].color);
+    console.log(document.getElementsByClassName("y")[0].className.y);//用什么属性取相应的属性值
+</script>

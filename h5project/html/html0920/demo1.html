@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <style>
+        .nav{
+            margin: 200px auto;
+            width:1500px;
+        }
+        .nav>ul{
+
+        }
+        .nav>ul>li{
+            float: left;
+            background: url("../../images/images/Img_10.gif") no-repeat left top;
+            
+        }
+        .nav>ul>li>a{
+            height:30px;
+            line-height: 30px;
+            width: 239px;
+            display:block;
+            background: #ccc;
+            transition: background .3s;
+            text-align: center;
+        }
+        .nav>ul>li:hover a{
+            background: none;
+        }
+        .list{
+            width: 239px;
+            height: 500px;
+            background:#428ee6;
+            margin: 200px auto;
+            clear: both;
+        }
+        .list ul{
+            padding: 20px 0;
+        }
+        .list>ul>li{
+            background:url("../../images/images/Img_10.gif") no-repeat center bottom;
+            position: relative;
+            height: 43px;/*加大宽度有缝*/
+
+        }
+        .list>ul>.active{
+            background: none;
+        }
+       .list>ul>li a{
+            height:41px;
+            line-height:41px;
+            width:224px;
+            text-align: center;
+            position:absolute;
+            left:50%;
+            top: -3px;
+            margin-left:-112px;
+
+        }
+        .list>ul>li:hover a,.list>ul>li.active a{
+            background: url("../../images/img_03.gif") no-repeat;
+            /*margin: 3px 0;*/
+        }
+        .list>ul>li:hover{
+            background: none;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <ul>
+        <li><a href="">lorem1</a></li>
+        <li><a href="">lorem2</a></li>
+        <li><a href="">lorem3</a></li>
+        <li><a href="">lorem4</a></li>
+        <li><a href="">lorem5</a></li>
+        <li><a href="">lorem6</a></li>
+    </ul>
+</div>
+<div class="list">
+    <ul>
+        <li><a href="">lorem1</a></li>
+        <li><a href="">lorem2</a></li>
+        <li class="active"><a href="">lorem3</a></li>
+        <li><a href="">lorem4</a></li>
+        <li><a href="">lorem5</a></li>
+        <li><a href="">lorem6</a></li>
+    </ul>
+
+</div>
+</body>
+</html>

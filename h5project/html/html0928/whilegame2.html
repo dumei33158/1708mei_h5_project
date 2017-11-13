@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gameguess</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function game2(){
+        var n=10;
+        var input=prompt("请输入数字：");//!=   !==  不一样；
+        while(input!=n){
+            if(input=="exit"){
+                alert("客官，猜对了再走呗");
+                return;
+            }
+            else if(isNaN(input)){
+                alert("请输入数字");
+            }
+            else if(input==""){
+                alert("不能为空");
+            }
+            else if(input>n){
+                alert("太大了还差的远呢");
+            }else{
+                alert("太小了还差的远呢");
+            }
+            input=prompt("请输入数字：");
+        }
+        alert("恭喜你，猜对啦")
+    }
+    game2();
+</script>

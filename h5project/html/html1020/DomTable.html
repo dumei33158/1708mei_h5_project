@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DomTable</title>
+    <style>
+        td{
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var table=document.createElement("table");
+    table.style.border="10px solid blue";
+    table.style.width="600px";
+    table.style.height="500px";
+
+    for(var i=0;i<9;i++){
+        var tr=document.createElement("tr");
+        tr.style.textAlign="center";
+        for(var j=0;j<9;j++){
+            var td=document.createElement("td");
+//            td.style.border="1px solid red";
+            td.innerText=j;
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+    document.body.appendChild(table);
+
+
+
+
+
+</script>

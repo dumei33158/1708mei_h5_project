@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象批量</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//    var peoPle=function pep(name,age) {
+//        this.name=name;
+//        this.age=age;
+//        this.run=function(){
+//            console.log(this.age+"岁的"+this.name+"才华横溢，声名远播")
+//        }
+//    };
+//    var ss=new peoPle("苏轼",18);
+//    var swk=new peoPle("孙悟空",18000);
+//    var df=new peoPle("杜甫",1800);
+//    console.log(ss);
+//    console.log(swk);
+//    console.log(df);
+//    console.log(ss.run());
+////    ss.run();
+//    swk.run();
+//    df.run();
+</script>
+
+<script>
+    function pep(name,age) {
+        this.name=name;
+        this.age=age;
+        this.run=function(){
+            console.log(this.age+"岁的"+this.name+"才华横溢，声名远播")
+        }
+    }
+    var ss=new pep("苏轼",18);
+    var swk=new pep("孙悟空",18000);
+    var df=new pep("杜甫",1800);
+//    console.log(pep.name);
+    ss.run();
+    swk.run();
+    df.run();
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/animate.min.css">
+    <style>
+        body{
+            height: 2000px;
+        }
+        #box{
+            font-size:30px;
+            font-weight: bold;
+            position: relative;
+display:none;
+            border: 1px solid #000;
+            width: 300px;
+            height:100px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="animated bounceOutUp" style="margin-top: 400px">Lorem ipsum dolor.</div>
+<div id="box">haah .</div>
+</body>
+</html>
+<script src="../../JS/jquery-3.2.1.js"></script>
+<script>
+   /* $(window).scroll(function(){
+        if($(this).scrollTop()>=30){
+            $("#box").show("slow").addClass("animated fadeInLeft");
+        }
+        setTimeout(function(){
+            $("#box").removeClass("fadeInLeft")
+        },2000);
+    });*/
+   $(window).scroll(function(){
+       if($(this).scrollTop()>=300) {
+           //链接animate.min.css一次只能设置一个animated属性
+           $("#box").show().removeClass("animated fadeOutLeft").addClass("animated fadeInLeft");
+           setTimeout(function(){
+               $("#box").show().removeClass("fadeInLeft").addClass("swing");//2秒后swing
+           },2000);
+       }else{
+           $("#box").addClass("animated fadeOutLeft");//小于300，提前走（不显示）
+       }
+
+
+   });
+
+</script>

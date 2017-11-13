@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testnext</title>
+</head>
+<body>
+<input type="text" id="txt" value="10"/>
+<input type="text" id="txt1" value="2"/>
+<input type="text" id="txt2" value="8"/>
+</body>
+</html>
+<script>
+    var u=txt.value;
+    u=u+1;
+   console.log(u);//show 字符101
+    console.log(txt.value);//show 字符10
+
+    var p=txt1.value;
+    p++;
+    console.log(p);//数值3
+    console.log(txt1.value);//字符2
+
+    var t=txt2.value-0;
+    t=t+1;
+    console.log(t);//数值9
+    console.log(txt2.value);//字符8
+
+
+    console.log(Number("12a"));
+    var arr=[12,3,4,5];
+    arr.length=2;
+    console.log(arr[3]);//show undefined
+    var x=0;
+    var y=20;
+    var n=x||y;
+    console.log(n);//输出20；
+    var arr1={"name":"jim","age":"18","sex":"男"};
+    //获取键名为name的值的两种方式是arr1.name和arr1["name"];
+    console.log(arr1.name);
+    console.log(arr1["name"]);
+
+</script>
+<script>
+    console.log("2a"<1);
+</script>

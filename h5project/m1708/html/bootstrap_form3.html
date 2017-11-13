@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--meta:vp适配手机-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--meta:compat强制IE以最高内核渲染代码(将IE=7设置为IE=edge)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+    <!--[if IE lte8]>
+<script src="../bootstrap/js/html5shiv.min.js"></script>
+<script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+<form action="" class="form-horizontal has-success">
+    <div class="form-group has-feedback" >
+        <label for="username" class="col-sm-2 text-right control-label">用户名：</label>
+        <div class="col-sm-10">
+        <input type="text" id="username" class="form-control"/>
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            <span class="help-block">请输入6-8位数字字母下划线组成的用户名，以非数字开头</span>
+        </div>
+    </div>
+    <div class="form-group has-feedback" >
+        <label for="password" class="col-sm-2 text-right control-label">密码：</label>
+        <div class="col-sm-10">
+            <input type="password" id="password" class="form-control"/>
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            <span class="help-block">请输入6位数字组成的密码</span>
+        </div>
+    </div>
+    <div class="form-group" >
+        <div class="col-sm-1 col-sm-offset-2">
+        <input type="submit" value="提交" class="btn btn-danger"/>
+        </div>
+        <div class="col-sm-1 col-sm-offset-0">
+            <input type="reset" value="重置" class="btn btn-warning"/>
+        </div>
+    </div>
+</form>
+</div>
+</body>
+</html>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script>
+$("#username").keyup(function(){
+    var reg=/^[a-zA-Z_]\w{5,7}$/;
+    var txt=$(this).val();
+    var res=reg.test(txt);
+    if(res){
+       $(this).next().removeClass("glyphicon-remove").addClass("glyphicon-ok").parent().parent().parent().removeClass("has-error").addClass("has-success");
+    }else{
+        $(this).next().removeClass("glyphicon-ok").addClass("glyphicon-remove").parent().parent().parent().removeClass("has-success").addClass("has-error");
+    }
+});
+$("#password").keyup(function(){
+    var reg=/^\d{6}$/;
+    var pwd=$(this).val();
+    var ret=reg.test(pwd);
+    if(ret){
+        $(this).next().removeClass("glyphicon-remove").addClass("glyphicon-ok").parent().parent().parent().removeClass("has-error").addClass("has-success");
+    }else{
+        $(this).next().removeClass("glyphicon-ok").addClass("glyphicon-remove").parent().parent().parent().removeClass("has-success").addClass("has-error");
+    }
+})
+</script>

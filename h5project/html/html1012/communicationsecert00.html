@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>secert</title>
+</head>
+<body>
+<textarea name="" id="txt" cols="30" rows="10"></textarea>
+<input type="button" id="sec" onclick="f1()" value="密聊">
+<input type="button" id="nosec" onclick="f2()" value="开聊">
+</body>
+</html>
+<script>
+    //未实现
+    function f1(){
+        var str=txt.value;
+        var code=[];
+        for(var i=0;i<str.length;i++){
+            if(str.charCodeAt(i)<10000){
+                str.charCodeAt(i)+=10000;
+                str.charCodeAt(i)+="";
+                str.charCodeAt(i)="0"+str.charCodeAt(i).slice(1);
+            }
+            code.push(str.charCodeAt(i));
+        }
+        txt.value=code.join("");
+    }
+    function f2() {
+        var str0=[];
+        var str=txt.value;
+        for(var i=0;i<str.length;i+=5){
+            str0.push(String.fromCharCode(str.substr(i,5)));
+        }
+        txt.value=str0.join("");
+    }
+</script>

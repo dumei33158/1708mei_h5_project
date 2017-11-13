@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>s</title>
+</head>
+<body>
+<input type="text" id="txt"/>
+<button onclick="a()">加密<button>
+    <button onclick="b()">解密<button>
+</body>
+</html>
+    <script>
+        function a(){
+            var str=txt.value;
+            var code=[];
+            for(var i=0;i<str.length;i++){
+                code[code.length]=str.charCodeAt(i);
+            }
+            code=code.join("0");
+            txt.value=code;
+        }
+        function b(){
+
+            var s=txt.value;
+            var str=s.split("0");
+            txt.value="";
+            for(var i=0;i<str.length;i++){
+                var code=String.fromCharCode(str[i]);
+//           var ss;
+//           ss+=code;
+                txt.value+=code;
+            }
+
+        }
+    </script>

@@ -1,0 +1,335 @@
+
+.header{
+    width: 100%;
+    height: 120px;
+    background: -webkit-linear-gradient(right,#d81718,#e64318);
+    position: relative;
+}
+.header a:first-child{
+    margin-left: 50.6%;
+    position: absolute;
+    margin-top: 20px;
+    font-weight: bold;
+    z-index: 2;
+}
+.header h2{
+    font-size: 40px;
+    font-weight: normal;
+}
+.header a>img{
+    margin-left: 25%;
+    position: absolute;
+    z-index: 1;
+}
+
+.nav{
+    height: 41px;
+    background: #333333;
+    padding: 0 11.3%;
+    position: relative;
+}
+.nav .yline{
+    color: #423b36;
+    font-weight: bold;
+    font-size: 14px;
+}
+.nav ul:first-child li{
+    float: left;
+    height: 41px;
+    line-height: 41px;
+    padding-right: 8px;
+}
+.nav ul:first-child li a{
+    color: #b0b0b0;
+}
+.nav ul li:hover a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.nav ul:last-child li:hover a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.shopping{
+    float: right;
+    position: relative;
+}
+.shopping .shT{
+    text-align: center;
+    width: 120px;
+    height: 41px;
+    background: #424242;
+    position: absolute;
+    top: -9.9px;
+    right: 0;
+    padding: 12px 22px 12px 0;
+    z-index: 4;
+    border: none;
+}
+.shopping .shT .shC{
+    width: 23px;
+    height: 19px;
+    background: #424242 url("images/toolbars.png") no-repeat 0 0;
+    display: inline-block;
+    margin-left: 17px;
+    vertical-align: middle;
+}
+.shopping .shT a{
+    color: #b0b0b0;
+    margin-left: 3px;
+}
+.shopping .shB{
+    width: 320px;
+    height: 110px;
+    position: absolute;
+    right: 0;
+    top: 31px;
+    display: none;
+    z-index: 3;
+    border: 1px solid #ccc;
+    border-top: 1px solid transparent;
+    background: #fff;
+
+}
+.shopping:hover .shT{
+    background: #ffffff;
+}
+.shopping:hover .shT>.shC{
+    background: #ffffff url("images/toolbars.png") no-repeat 0 0;
+}
+.shopping:hover .shT>a{
+    text-decoration: none;
+    color: #ff6700;
+}
+.shopping:hover .shB{
+    display: block;
+    box-shadow: -2px 1px 2px 2px rgba(0,0,0,.075);
+}
+.nav ul:last-child{
+    /*clear: both;*/
+    /*float: right;*/
+    margin-left: 78%;
+}
+.nav ul:last-child li{
+    float: left;
+    /*width: 36px;*/
+    /*border-left: 1px solid #393e3e;*/
+    /*padding: 0 28px;*/
+    box-sizing: border-box;
+    padding-right: 6px;
+    line-height: 22px;
+    height: 41px;
+}
+.nav ul:last-child li a{
+    color: #b0b0b0;
+}
+.center{
+    width: 77.6%;
+    margin: 0 auto;
+}
+.main{
+    border: 1px solid #ccc;
+}
+.mnav{
+    height: 101px;
+    background: #ffffff;
+    position: relative;
+    box-sizing: border-box;
+}
+.mnav .next{
+    width: 100%;
+    height: 230px;
+    background: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+.mnav img{
+    float:left;
+    margin-top: 20px;
+}
+.mnav ul{
+    margin-left: 11.9%;
+}
+.mnav ul li{
+    float:left;
+    height: 56px;
+    line-height: 56px;
+    margin-top: 20px;
+    padding-right: 23px;
+}
+.mnav ul li a{
+    color: #333333;
+    font-size: 16px;
+}
+.mnav ul>li:hover a{
+    color: #ff6700;
+    text-decoration: none;
+}
+.mnav ul>li:nth-child(3):hover .next{
+    display: block;
+}
+.mnav .search{
+    width: 296px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    line-height: 50px;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    z-index: 2;
+}
+.mnav .search input{
+    width: 76px;
+    height: 40px;
+    outline: none;
+    border: none;
+}
+.mnav .search>a{
+    color: #333333;
+    background: #eeeeee;
+    margin-right: 5px;
+}
+.mnav .search .glass{
+    float: right;
+    color: #616161;
+    width: 53px;
+    height: 50px;
+    padding: 9px;
+    box-sizing: border-box;
+    border-left: 1px solid #e0e0e0;
+}
+.mnav .search .glass .mycha{
+    font-size: 24px;
+    color: #616161;
+}
+.mnav .search:hover{
+    border: 1px solid #ccc3cc;
+}
+.mnav .search:hover .glass{
+    border-left: 1px solid #ccc3cc;
+}
+.glass:hover>a{
+    background: #ff6700;
+    display: block;
+    width: 53px;
+    height: 50px;
+}
+.glass>a:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+.mnav .search input:focus {
+    border: 1px solid #ff6700;
+}
+.mnav .search input:focus .glass{
+    border-left: 1px solid #ccc3cc;
+}
+.mnav .search>a:hover{
+    background: #ff6700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.banner{
+    height: 461px;
+    background:-webkit-linear-gradient(top,#a60024,#cb002d);
+    box-sizing: border-box;
+}
+
+.banner .list{
+    float: left;
+    height: 459px;
+    width: 235px;
+    background: -webkit-linear-gradient(top,#42000e,#4c0010);
+    padding-left: 28px;
+}
+.banner .list ul li{
+    height: 43px;
+    padding-top: 20px;
+    color: #ffffff;
+    line-height: 43px;
+}
+.banner .list ul li span{
+    float: right;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.banner .sale{
+    padding: 80px;
+    margin-left: 120px;
+}
+.banner img{
+    margin: -203px 0 0 307px;
+}
+.mhotp{
+    height: 171px;
+    background: #ffffff;
+    margin-top: 15px;
+}
+.mhotp>ul>li{
+    float: left;
+    width: 20%;
+    height: 169px;
+    border: 1px solid #f00;
+    margin-right: 17px;
+}
+.mhotp>ul>li:first-child{
+    width: 14.7%;
+    height: 171px;
+    background: #5f5750;
+}
+.mhotp .func li{
+    float: left;
+    padding: 18px;
+    width: 48px;
+    height: 84px;
+}
+.starp{
+    height: 466px;
+    background: #33ccff;
+}
+.appliance{
+    height: 732px;
+}
+.intelligence{
+    height: 696px;
+    border: 1px solid #00f;
+}
+.match{
+    height: 695px;
+    border: 1px solid #0f0;
+}
+.parts{
+    height: 695px;
+    border: 1px solid #ef0;
+}
+.circum{
+    height: 695px;
+    border: 1px solid #f50;
+}
+.recommend{
+    height: 381px;
+    border: 1px solid #000;
+}
+.buzz{
+    height: 496px;
+    border: 1px solid #631264;
+}
+.brief{
+    height: 501px;
+    border: 1px solid #3882f4;
+}
+.video{
+    height: 365px;
+    border: 1px solid #f882f4;
+}
+.footer{
+    width: 100%;
+    height: 438px;
+    margin-top: 61px;
+    border: 1px solid #ccc;
+}

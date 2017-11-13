@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1009homework_Dumei.html</title>
+</head>
+<style>
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+    #txt1,#txt2{
+        padding-left: 30px;
+        font-size: 26px;
+        border: none;
+    }
+    #txt2{
+        padding-left: 30px;
+        font-size: 16px;
+        border: none;
+        width: 500px;
+    }
+    #btn1,#btn2,#btn3,#btn4,#btn5{
+        height: 36px;
+        text-align: center;
+        border: none;
+        background: #cccccc;
+        color: black;
+        box-shadow: 1px -1px 1px 2px rgba(0,0,0,.0687);
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.09作业&nbsp;_Dumei</h1>
+    <p>1.随机生成一个四位的验证码（不重复的四个验证码）</p>
+    <input type="button" value="查看" id="btn1" onclick="f1()"/>
+    <input type="text" id="txt1">
+    <p>2.已知如下数组变量：var week=["日","一","二","三","四","五","六"];<br/>
+        请统一输出:“星期”+</p>
+    <input type="button" value="查看" id="btn2" onclick="f2()"/>
+    <input type="text" id="txt2">
+    <p>3.请用户输入5个数据  如果输入的为空 请用户名再次输入一次<br/>
+        将5个数导入到数组中   输出数组并输出最大数据<br/>
+        用户名输入exit  退出 不输入出最大值</p>
+    <input type="button" value="查看" id="btn3" onclick="f3()"/>
+    <p>4.创建一个保存了5个0-100的随机整数的数组，找出数组最大的那个数据 ，并输出在控制台中<br/>
+        扩展：获取数组中最大值的索引</p>
+    <input type="button" value="查看" id="btn4" onclick="f4()"/>
+    <p>5.var arr=[12,3,4,56,7,7]<br/>
+        输出数组中最大的数：两种方式实现<br/>
+        拓展：不改变数组内容的方法获取最大值及最大值的下标</p>
+    <input type="button" value="查看" id="btn5" onclick="f5()"/>
+</div>
+</body>
+</html>
+<script>
+    //1.随机生成一个四位的验证码（不重复的四个验证码）
+        function createCode(m,n){
+            var arr=[];
+            for(var i=m;i<=n;i++){
+                arr[arr.length]=String.fromCharCode(i);
+            }
+            return arr;
+        }
+        function isEx(V,arr){
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]==V){
+                    return true;
+                }
+            }
+        }
+        function f1(){
+            var NewArr=createCode(97,122).concat(createCode(65,90),createCode(48,57));
+            var arr=[];
+            for(var i=0;i<4;i++) {
+                var value=NewArr[parseInt(Math.random() * NewArr.length)];
+                while(isEx(value,arr)){
+                    value=NewArr[parseInt(Math.random()*NewArr.length)];
+                }
+                arr[arr.length]=value;
+            }
+            txt1.value=arr.join("   ");
+        }
+</script>
+<script>
+    //2.已知如下数组变量：var week=["日","一","二","三","四","五","六"];请统一输出:“星期”+
+//    function f2() {
+//        var w="星期";
+//        var week=["日","一","二","三","四","五","六"];
+//        txt2.value= w.concat(week[0])+"   "+w.concat(week[1])+"   "+w.concat(week[2])+"   "+w.concat(week[3])+"   "+w.concat(week[4])+"   "+w.concat(week[5])+"   "+w.concat(week[6]);
+//    }
+
+    function f2() {
+    var week=["日","一","二","三","四","五","六"];
+    for(var i=0;i<=week.length-1;i++) {
+        week[i]="星期"+week[i];
+    }
+    txt2.value=week.join("   ");
+    }
+</script>
+<script>
+    //3.请用户输入5个数据  如果输入的为空 请用户名再次输入一次;将5个数导入到数组中   输出数组并输出最大数据;用户名输入exit  退出 不输入出最大值
+    function f3() {
+        var arr=[];
+        for(i=0;i<5;){
+            var input=prompt("请输入5个数：");
+            if(input=="exit"){
+                break;
+            }else if(isNaN(input)){
+                alert("请输入数字，输入满5个数：");
+            }else if(input==="") {
+                alert("输入内容不能为空，请输入满5个数：");
+            }else{
+                arr[arr.length]=input-0;
+                i++;
+                arr2=Math.max.apply(0,arr);
+//                for(var n=1;n<=arr2.length-1;n++){
+//                    for(var m=0;m<arr2.length-n;m++){
+//                        if(arr2[m]>arr2[m+1]){
+//                            var temp=arr2[m];
+//                            arr2[m]=arr2[m+1];
+//                            arr2[m+1]=temp;
+//                        }
+//                    }
+//                }
+            }
+            console.log(arr);
+        }
+        if(arr.length==5){
+            alert( "您刚才输入了："+arr.join("  ")+"\n其中最大的是："+arr2+"其最大值的索引是");//有时候有bug
+    }
+    }
+</script>
+<script>
+    //4.创建一个保存了5个0-100的随机整数的数组，找出数组最大的那个数据 ，并输出在控制台中。扩展：获取数组中最大值的索引
+    function num(m) {
+        var arr=[];
+        for(var i=0;i<=m;i++){
+            arr[arr.length]=i;
+        }
+        return arr;
+    }
+    function f4() {
+        var arr2= num(100);
+        var arr1=[];
+        for(j=1;j<=5;j++){
+            arr1[arr1.length]=arr2[parseInt(Math.random()*arr2.length)]
+        }
+        alert("0-100的整数中\n您随机抽到的5个分别是：\n"+arr1.join("  "));
+        var arr=arr1;
+        for( var i=0;i<arr.length-1;i++){
+            if(arr[i]>arr[i+1]){
+                var temp=arr[i];
+                arr[i]=arr[i+1];
+                arr[i+1]=temp;
+            }
+        }
+    for(var v=0;v<arr.length;v++){
+        if(arr[v]==arr[arr.length-1]){
+            console.log(arr+"\n该数组中其中的最大值是\n"+arr[arr.length-1]+"\n其最大值的索引是\n"+v);//索引永远是最后一个，哈哈哈。。
+        }
+    }
+    }
+</script>
+<script>
+    //5.var arr=[12,3,4,56,7,7];输出数组中最大的数：两种方式实现;拓展：不改变数组内容的方法获取最大值及最大值的下标
+//    function f5() {
+//        var arr=[12,3,4,56,7,7];
+//        var m=0;
+//            for(var n=1;n<=arr.length-1;n++){
+//                for(var i=0;i<arr.length-n;i++){
+//                    if(arr[i]>arr[i+1]){
+//                        m=i;//好巧啊，只有56下标是3。纯属搞笑。。
+//                        var temp=arr[i];
+//                        arr[i]=arr[i+1];
+//                        arr[i+1]=temp;
+//                    }
+//                }
+//            }
+//            alert("[12,3,4,56,7,7]\n该数组中的最大值是：\n\n"+arr[arr.length-1]+"\n其中该数组的最大值索引是："+m);
+//    }
+    function f5(){
+        var arr=[12,3,4,56,7,7];
+        m=(Math.max.apply(null,arr));
+        alert(arr+"该数组中的最大值是：\n"+m);
+        //for(var i in arr){
+        //  if(arr[i]==m){
+        //alert(arr+"该数组的最大值索引是：\n"+i);}}
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]==m){
+                alert(arr+"该数组的最大值索引是：\n"+i);
+            }
+        }
+    }
+</script>

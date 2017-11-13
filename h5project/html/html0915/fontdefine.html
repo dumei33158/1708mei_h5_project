@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../bootstrap/bootstrap-3.3.5-dist/css/bootstrap.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        ul{
+
+        }
+        .ul1>li{
+            float: left;
+            width: 80px;
+            border: 1px solid #000;
+            position: relative;
+            text-align: center;
+            padding: 0 16px;
+        }
+        .uli,.uli0{
+            position: absolute;
+            top: 100%;
+            /*right: 32px;*/
+            left: 0;
+            display: none;
+            background: #acacac right;
+            width: 80px;
+        }
+        .uli>li,.uli0>li{
+
+            border: 1px solid #f00;
+        }
+        .ul1>li:hover ul{
+            display: block;
+        }
+        @font-face {
+            font-family: "Glyphicons Halflings";
+        }
+        @font-face {
+            font-family: "myfont";
+            src: url('../../fonts/chunkfive.ttf'),url('../../fonts/Chunkfive.otf');
+        }
+        p{
+            font-family: myfont;
+        }
+        div:target{
+            border: 1px solid #000;
+        }
+        input:focus{
+            color: blue;
+            font-weight: bold;
+            font-size: 24px;
+            background: #ccc;
+        }
+        textarea:focus{
+            color: purple;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .mypencil{
+            font-size: 500px;
+            color: #cd0067;
+        }
+        .mypencil:hover{
+            font-size: 800px;
+            color:#0000ff;
+        }
+        .myblack{
+            font-size: 500px;
+            color:#1100ff;
+        }
+        .myblack:hover{
+            font-size: 200px;
+            color: #fb001f;
+        }
+    </style>
+</head>
+<body>
+<a href="#one">霍老师</a>
+<div style="position: relative;">
+    <div style="width: 300px;height: 300px;overflow: scroll;word-break: break-all;box-shadow: 1px 2px 2px 3px rgba(0,0,0,.075);">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum inventore pariatur quaerat rerum voluptatibus. Accusantium, amet aspernatur, assumenda consectetur distinctio dolor eius, laudantium molestias nihil nisi officia omnis quibusdam rem!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus aspernatur expedita id ipsum iste, itaque iure magnam maiores molestias necessitatibus nostrum officiis perferendis possimus quibusdam velit voluptatibus. Eius, illo?</div>
+    <div style="width: 300px;height: 300px;background: #cd0067;word-break: break-all;box-shadow: 7px 8px 2px 3px rgba(0,0,0,.075);margin-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum inventore paritur adipisicing elit. Ab accusamus aspernatur expedita id ipsum is</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, architecto.</p>
+</div>
+<div>
+    <ul class="ul1">
+        <li><a href="">lorem</a></li>
+        <li><a href="">lorem</a></li>
+        <li><a href="">lorem</a>
+            <ul class="uli0">
+                <li><a href="">lorem0</a></li>
+                <li><a href="">lorem0</a></li>
+                <li><a href="">lorem0</a></li>
+                <li><a href="">lorem0</a></li>
+                <li><a href="">lorem0</a></li>
+            </ul>
+        </li>
+        <li><a href="">lorem</a></li>
+        <li><a href="">lorem1</a>
+            <ul class="uli">
+                <li><a href="">lorem2</a></li>
+                <li><a href="">lorem2</a></li>
+                <li><a href="">lorem2</a></li>
+                <li><a href="">lorem2</a></li>
+                <li><a href="">lorem2</a></li>
+            </ul>
+        </li>
+        <li><a href="">lorem</a></li>
+        <li><a href="">lorem</a></li>
+        <li><a href="">lorem</a></li>
+    </ul>
+    <p style="clear: both;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita ipsa necessitatibus nobis qui repellat? Consequatur doloribus expedita perferendis quod.</p>
+</div>
+<div id="one">个人简介</div>
+<span class="glyphicon  glyphicon-pencil mypencil"></span>
+用户名：<input type="text" value="小米8" />
+<textarea name="" id="" cols="30" rows="10">dddd</textarea>
+<span class="glyphicon glyphicon-file myblack"></span>
+</body>
+</html>

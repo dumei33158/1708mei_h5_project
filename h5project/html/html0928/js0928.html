@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var a=10;
+    function f(b){
+        b++;
+        console.log(b);
+    }
+    f(a);
+    console.log(a);
+</script>
+<script>
+    function change(x,y,z){
+     alert("根据您的购买情况，应收金额为："+parseInt(x*y)+"\n实际找零为："+parseInt(z-x*y))
+    }
+    change(8,9,100);
+</script>
+<script>
+    (function(){
+        function change(x,y,z){
+            var x=prompt("请输入商品单价：")-0;
+            var y=prompt("请输入购买商品数：")-0;
+            var z=prompt("请输入收款金额")-0;
+            alert("根据您的购买情况，应收金额为："+parseInt(x*y)+"\n实际找零为："+parseInt(z-x*y))
+        }
+        change(x,y,z);
+    })();
+</script>
+<script>
+    function change(){
+        var p=prompt("请输入商品单价：")-0;
+        var n=prompt("请输入购买商品数：")-0;
+        var c=prompt("请输入收款金额")-0;
+        alert("根据您的购买情况，应收金额为："+parseInt(p*n)+"\n实际找零为："+parseInt(c-p*n))
+    }
+    change();
+</script>

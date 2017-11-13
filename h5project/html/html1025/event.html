@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+<input type="button" value="点点" id="btn">
+</body>
+</html>
+<script>
+    btn.onclick=function(e){
+        console.log(arguments.length);
+        console.log(arguments[0]);//函数自动产生
+        console.log(window.event);
+        console.log(e);
+        var ev=e||window.event;//兼容性写法
+        console.log(ev);
+        var evs= e.target|| e.srcElement;
+        console.log(e.target);
+        console.log(e.srcElement);
+        console.log(evs);
+        console.log(e.type);
+    };
+
+</script>

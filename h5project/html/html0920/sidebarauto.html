@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/font-awesome.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <style>
+        a{
+            color: #ffffff;
+        }
+        .right{
+            width:10px;
+            height:100%;
+            background:#918989;
+            position: fixed;
+            right: 0;
+            top:0;
+        }
+        .sidebarwrap{
+            width: 40px;
+            position:absolute;
+            right:0;
+            top: 50%;
+            height: 50%;
+        }
+        .icon{
+        }
+        .icon>ul{
+            
+        }
+        .icon>ul>li{
+            position: relative;
+            padding: 18px 0;
+            text-align: center;
+            margin-bottom: 1px;/*拆散他两生出距离有缝看似一条线*/
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        .icon>ul>li>a{
+            position: absolute;
+            left:0;
+            top:0;
+            width:40px;
+            padding: 18px 0;
+        }
+        .icon>ul>li:first-child{
+            background: #918989 url("../../images/toolbars.png") no-repeat -85px -173px;
+
+        }
+        .icon>ul>li:nth-child(2){
+            background: #918989 url("../../images/toolbars.png") no-repeat -48px -1px;
+
+        }
+        .icon>ul>li:nth-child(3){
+            background: #918989 url("../../images/toolbars.png") no-repeat -46px -49px;
+
+        }
+        .icon>ul>li:nth-child(4){
+            background: #918989 url("../../images/toolbars.png") no-repeat -46px -100px;
+
+        }
+        .icon>ul>li:nth-child(5){
+            background: #918989 url("../../images/toolbars.png") no-repeat -186px -150px;
+
+        }
+        .icon>ul>li:nth-child(6){
+            background: #918989 url("../../images/toolbars.png") no-repeat -46px -150px;
+        }
+        .IconB{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 40px;
+            padding: 18px 0;
+            margin-bottom: 1px;
+            border: 1px solid #000;
+        }
+        .IconB>ul>li:first-child{
+           background: #918989;
+            width: 40px;
+            padding: 18px 0;
+            position: absolute;
+            right:0;
+            bottom:-40px;
+            text-align: center;
+        }
+        .IconB>ul>li:last-child{
+            background: #918989;
+            width: 40px;
+            padding: 18px 0;
+            position: absolute;
+            right:0;
+            bottom:0;
+            text-align: center;
+        }
+        .IconB>ul>li>a{
+            position: absolute;
+            left:0;
+            top:0;
+            width:40px;
+            padding: 18px 0;
+        }
+        .IconB>ul>li:first-child a,.IconB>ul>li:last-child a{
+            color: #ffffff;
+            padding: 10px 0;
+        }
+        .icon>ul>li:first-child:hover{
+            background: #d70a1c url("../../images/toolbars.png") no-repeat -85px -173px;
+        }
+        .icon>ul>li:nth-child(2):hover{
+            background: #d70a1c url("../../images/toolbars.png") no-repeat -48px -1px;
+
+        }
+        .icon>ul>li:nth-child(3):hover{
+            background: #d70a1c url("../../images/toolbars.png") no-repeat -46px -49px;
+
+        }
+        .icon>ul>li:nth-child(4):hover{
+            background: #d70a1c url("../../images/toolbars.png") no-repeat -46px -100px;
+
+        }
+        .icon>ul>li:nth-child(5):hover{
+            background: #d70a1c url("../../images/toolbars.png") no-repeat -186px -150px;
+
+        }
+        .icon>ul>li:nth-child(6):hover{
+            background: #d70a1c url("../../images/toolbars.png") no-repeat -46px -150px;
+        }
+        .IconB>ul>li:first-child:hover,.IconB>ul>li:last-child:hover{
+            background: #d70a1c;
+        }
+        .icon>ul>li>.slide{
+            width: 70px;
+            position: absolute;
+            right:35px;
+            top:0;
+            background: #d70a1c;
+            border-radius: 3px;
+            text-align: center;
+            padding-left: 3px;
+            z-index: -8;
+            opacity: 0;
+            transform: translate(70px);
+            transition: transform .3s ease 0.3s;
+        }
+        .IconB>ul>li>.slideB{
+            width: 50px;
+            position: absolute;
+            right:35px;
+            bottom:0;
+            background: #d70a1c;
+            border-radius: 3px;
+            text-align: center;
+            padding-left: 3px;
+            z-index: -8;
+            opacity: 0;
+            transform: translate(70px);
+            transition: transform .3s ease 0.3s;
+        }
+        .icon>ul>li>.slide a,.IconB>ul>li>.slideB a{
+            color: #ffffff;
+            display: block;
+            padding: 10px 0;
+        }
+        .icon>ul>li:first-child>.dot{
+            background: url("../../images/toolbars.png") no-repeat -151px -151px;
+            width: 6px;
+            height: 6px;
+            position:absolute;
+            right:12px;
+            top:10px;
+        }
+        .icon>ul>li:hover .slide{
+            transform: translate(-1px);
+            opacity: 1;
+        }
+        .IconB>ul>li:hover .slideB{
+            transform: translate(-1px);
+            opacity: 1;
+        }
+        .icon>ul>li:hover .dot{
+            background: none;
+        }
+    </style>
+</head>
+<body>
+<div class="right">
+    <div class="sidebarwrap">
+    <div class="icon">
+        <ul>
+            <li><a href=""></a>
+                <p class="dot"></p>
+            <div class="slide">
+                <a href="">京东会员</a>
+            </div>
+            </li>
+            <li><a href=""></a>
+                <div class="slide">
+                    <a href="">购物车</a>
+                </div>
+            </li>
+            <li><a href=""></a>
+                <div class="slide">
+                    <a href="">我的关注</a>
+                </div>
+            </li>
+            <li><a href=""></a>
+                <div class="slide">
+                    <a href="">我的足迹</a>
+                </div>
+            </li>
+            <li><a href=""></a>
+                <div class="slide">
+                    <a href="">我的消息</a>
+                </div>
+            </li>
+            <li><a href=""></a>
+                <div class="slide">
+                    <a href="">咨询JIMI</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+        <div class="IconB">
+            <ul>
+                <li><a href=""><i class="fa fa-angle-up"></i></a>
+                    <div class="slideB">
+                        <a href="">顶部</a>
+                    </div>
+                </li>
+                <li><a href=""><i class="fa fa-pencil"></i></a>
+                    <div class="slideB">
+                        <a href="">反馈</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

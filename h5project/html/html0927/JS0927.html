@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS+-*/%</title>
+</head>
+<body>
+<input type="button" value="霍老师" onclick="fruit('椰汁','宝蓝')">
+<input type="button" value="静格格" onclick="fruit('不想喝')">
+<input type="button" value="美哥" onclick="fruit('茉莉花茶')">
+<input type="button" value="卓哥" onclick="fruit('酸梅汤')">
+<input type="button" value="薇老师" onclick="fruit('芒果汁')">
+<input type="button" value="彭校长" onclick="fruit('很多汁')">
+<input type="button" value="权威老师" onclick="fruit('西瓜汁')">
+<input type="button" value="井玕" onclick="fruit('啥汁')">
+<input type="button" value="陈龙" onclick="fruit('你那儿有什么汁就喝什么汁')">
+<input type="button" value="朱强" onclick="fruit('随意你开心就好汁')">
+<input type="button" value="睿老师" onclick="fruit('金桔汁')">
+<input type="button" value="莫男" onclick="fruit('金橘汁')">
+<input type="text" id="txt">
+</body>
+</html>
+<script>
+    var n=prompt("请输入一个3位数：");
+    n=n-0;
+    console.log("百位数是："+(parseInt(n/100))+"\n十位数是："+(parseInt(n/10)%10)+"\n个位数是："+(parseInt(n%10)))
+</script>
+<script>
+    var n1=8;
+    n2=n1;
+
+    console.log(n1);
+    console.log(n2);
+</script>
+<script>
+    var num=prompt("请您输入年份：");
+    var isNumber=num%4&&(!num%100);
+
+</script>
+<script>
+    var input=prompt("");
+    (input==""&&console.log(主人你很懒，啥都没留))||(input!==""&&console.log(""))
+
+</script>
+<script>
+    var score=prompt("请输入您的成绩：");
+    score>=70 ? console.log("及格"):console.log("不及格");
+
+</script>
+<script>
+    var salary=prompt("请输入您的工资：");
+    salary>=20000?console.log("高工资"):salary>=8000?console.log("中等工资"):console.log("普通工资");
+    console.log(salary)
+</script>
+
+
+<script>
+//    function fruit() {
+//        console.log("开始榨汁")
+//        console.log("炸好了")
+//        console.log("请喝果汁")
+//    }
+//    fruit();
+//    function apple() {
+//        console.log("请喝苹果汁")
+//    }
+//    apple();
+//    function pear() {
+//        console.log("请喝梨汁")
+//    }
+//    pear();
+</script>
+    <script>
+    function fruit(kind,color) {
+        console.log("开始榨"+kind+color+"汁");
+        console.log(kind+color+"炸好了");
+        console.log("请喝"+kind+color+"请慢用");
+    }
+    fruit(kind,color);
+    </script>
+<script>
+    function perimeter(r) {
+       const PI=3.14;
+       var c=2*PI*r;
+        console.log(c)
+    }
+    perimeter(9);
+</script>
+<script>
+    function fun(x,y){
+        var sum=x+y;
+        return sum;
+    }
+    var res=fun(60,90);
+    res+=70;
+    document.getElementById(txt);
+
+    function Max(a,b){
+        var IMax=a>b?a:b;
+        return IMax;
+    }
+    var c=70;
+    document.write(Max(60,90)+c);
+
+</script>
+<script>
+    function getmax(x,y,z){
+        var max=x>y?x:y;
+            max=max>z?max:z;
+        return max;
+    }
+    document.write(getmax(50,190,68));
+</script>

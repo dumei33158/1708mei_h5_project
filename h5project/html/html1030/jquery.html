@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery</title>
+</head>
+<body>
+<ul id="menu">
+    <li>lorem1</li>
+    <li>lorem2</li>
+    <li>lorem3
+        <ul>
+            <li>Lorem ipsum dolor.
+                <ul>
+                    <li>Lorem ipsum.
+                        <ul class="Tu">
+                            <li class="mL">Lorem ipsum dolor sit amet.
+                                <ul>
+                                    <li>Lorem ipsum dolor.</li>
+                                </ul>
+                            </li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                        </ul>
+                    </li>
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum.</li>
+                </ul>
+            </li>
+            <li>Lorem ipsum dolor.
+                <a href="">超链接</a>
+            </li>
+        </ul>
+    </li>
+    <li>lorem4</li>
+    <li class="mL">lorem5</li>
+    <li>lorem6</li>
+    <li class="mL">lorem7</li>
+    <li>lorem8</li>
+    <li class="L0">lorem9</li>
+    <li>lorem10</li>
+</ul>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    $("#menu").css("color","red");
+    $(".mL").css("color","blue");
+    $("#menu>.mL").css("color","green");
+  /*  $("li").css("color","purple");*/
+    $("a").css("color","yellow");
+    $("*").css("font-size","28px");
+    $(".mL,.L0").css("font-weight","bold");
+ /*   $(".Tu>.mL").css("text-decoration","line-through");*/
+    $(".Tu li").css("text-decoration","underline");
+    $(".mL+li").css("border","1px solid #ccc");
+  /*  $(".mL~li").css("border","5px solid blue");*/
+    console.log($("li:first"));
+    console.log($("li:first-child"));
+    console.log($("li:last"));
+    console.log($("li:last-child"));
+    console.log($("li:odd"));
+    console.log($("li:even"));
+    console.log($("li:lt(6)"));
+    console.log($("li:eq(6)"));
+    console.log($("li:gt(6)"));
+    console.log($("li:not(.mL)"));
+</script>

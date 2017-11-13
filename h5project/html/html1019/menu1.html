@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nodestyle</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #menu{
+            width: 800px;
+            margin: 0 auto;
+            height: 40px;
+            border: 1px solid #f00;
+            position: relative;
+        }
+        #menu ul li{
+            float: left;
+            line-height: 40px;
+            margin: 0 10px;
+        }
+        #line{
+            width: 60px;
+            height: 10px;
+            background: #EA5200;
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            transition: left 0.3s;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <ul>
+        <li><a href="">lorem1</a></li>
+        <li><a href="">lorem2</a></li>
+        <li><a href="">lorem3</a></li>
+        <li><a href="">lorem4</a></li>
+        <li><a href="">lorem5</a></li>
+        <li><a href="">lorem6</a></li>
+    </ul>
+    <div id="line"></div>
+</div>
+</body>
+</html>
+<script>
+    //未解决
+    function $(id){
+        return document.getElementById(id);
+    }
+    var Lis=$("menu").getElementsByTagName("li");
+    /*for(var i=0;i<Lis.length;i++){
+        Lis[i].onmouseover=function(){
+            $("line").style.left+=80*i+"px";
+        };
+    }*/
+    for(var i=0;i<Lis.length;i++){
+        Lis[i].onmouseover=function(){
+            console.log(this.index);
+            $("line").style.left=80*(Lis[this.index]-Lis[i])+"px";
+    }
+    }
+//    Lis[0].onmouseover=function(){
+//        $("line").style.left="10px";
+//    };
+//    Lis[1].onmouseover=function(){
+//        $("line").style.left="80px";
+//    };
+//    Lis[2].onmouseover=function(){
+//        $("line").style.left="160px";
+//    };
+//    Lis[3].onmouseover=function(){
+//        $("line").style.left="230px";
+//    };
+//    Lis[4].onmouseover=function(){
+//        $("line").style.left="300px";
+//    };
+//    Lis[5].onmouseover=function(){
+//        $("line").style.left="380px";
+//    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvascircle</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000" style="border: 1px solid #000"></canvas>
+</body>
+</html>
+<script>
+    var elem=document.getElementById("canvas");
+    var canvas=elem.getContext("2d");
+    canvas.beginPath();
+    canvas.arc(450,450,200,0,Math.PI*2);
+    canvas.lineWidth=30;
+    canvas.strokeStyle="#ccc";
+    canvas.stroke();
+    canvas.closePath();
+
+    var x=0;
+    canvas.globalCompositeOperation="source-atop";//清除锯齿
+    function circle(){
+        canvas.beginPath();
+        x+=0.005;
+        canvas.arc(450,450,200,0,Math.PI*x);
+        if(x==2){
+            clearInterval(mytime);
+        }
+        canvas.strokeStyle="red";
+        canvas.lineWidth=30;
+        canvas.stroke();
+    }
+    var mytime=setInterval(circle,10);
+
+</script>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>menu1_2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #menu>li{
+            float: left;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #f00;
+            position: relative;
+        }
+        #menu>li ul{
+            position: absolute;
+            top: 40px;
+            left: 0;
+            border: 1px solid #f00;
+            background: #5d9ddb;
+            width:100px;
+            display: none;
+        }
+        div{
+            border: 1px solid #000;
+            width: 100px;
+            height: 40px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>lorem1</li>
+    <li>lorem2</li>
+    <li class="one">lorem3
+        <ul>
+            <li>lorem1</li>
+            <li>lorem2</li>
+            <li>lorem3</li>
+            <li>lorem4</li>
+            <li>lorem5</li>
+            <li>lorem6</li>
+        </ul>
+    </li>
+    <li class="one">lorem4
+        <ul>
+            <li>lorem222</li>
+            <li>lorem2</li>
+            <li>lorem3</li>
+            <li>lorem4</li>
+            <li>lorem5</li>
+            <li>lorem6</li>
+        </ul>
+    </li>
+    <li>lorem5</li>
+    <li>lorem6</li>
+</ul>
+</body>
+</html>
+    <script>
+        function $(id){
+            return document.getElementById(id);
+        }
+        var lis=$("menu").getElementsByClassName("one");
+        for(var i=0;i<lis.length;i++){
+            !function(n){
+                lis[n].onmouseover= function () {
+                    lis[n].getElementsByTagName("ul")[0].style.display="block";
+                };
+                lis[i].onmouseout= function () {
+                    lis[n].getElementsByTagName("ul")[0].style.display="none";
+                }
+            }(i)
+
+        }
+    </script>

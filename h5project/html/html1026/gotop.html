@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>gotop</title>
+</head>
+<style>
+    .up {
+        display: none; width: 100px; height: 100px; background: red;
+        position: fixed; right: 10px; bottom: 20px;
+    }
+</style>
+
+<body>
+<div id="top" class="up" >回到顶部</div>
+</body>
+</html>
+<script>
+    for(var i=0;i<=2000;i++){
+        document.write("测试内容，第"+i+"行<br/>");
+    }
+    function $(id){
+        return document.getElementById(id);
+    }
+    window.onscroll=function(){
+        var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+        if(scrollTop>=2000){
+            $("top").style.display="block";
+        }else{
+            $("top").style.display="none";
+        }
+    };
+    /*function GoTop(){
+     document.body.scrollTop -= 100;
+     document.documentElement.scrollTop -= 100;
+     if(document.body.scrollTop<=0){
+     clearInterval(mytime)
+     }
+     var mytime=setTimeout(GoTop,10);
+     console.log(111);
+     }*/
+
+    var x=10;
+    x++;
+
+    function goTop(){
+        var offset=document.documentElement.scrollTop||document.body.scrollTop;
+        console.log(offset);
+        var Time=4000;
+        var Interval=40;
+        var speed=offset/(Time/Interval);//每一次滑动的距离
+        function go(){
+            if(offset>0){
+                offset-=speed;
+                document.documentElement.scrollTop=offset;
+                document.body.scrollTop=offset;//如果没，没效果
+                setTimeout(go,Interval);
+            }
+        }
+        go();
+    }
+    $("top").onclick=goTop;
+</script>

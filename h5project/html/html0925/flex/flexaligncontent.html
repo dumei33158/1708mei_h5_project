@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .Flexbox{
+            width: 1000px;
+            height: 800px;
+            border: 1px solid #00f;
+            margin: 0 auto;
+            display: flex;
+            /*justify-content: flex-end;*/
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content:space-around;
+
+        }
+        .Flexbox>div{
+            border: 10px solid #0f0;
+            width: 500px;
+        }
+        .Flexbox>div:first-child{
+            border: 10px solid #0f0;
+            width: 300px;
+            padding: 100px;
+        }
+        .Flexbox>div:nth-child(2){
+            border: 30px solid #0f0;
+            width: 300px;
+            padding: 50px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="Flexbox">
+    <div>1  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, aspernatur cupiditate debitis dolore doloribus facilis reprehenderit sapiente sit sunt voluptatem.</div>
+    <div><img src="../../../images/price1.png" alt="">2 Lorem ipsum dol Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, mollitia.or sit.</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</div>
+</body>
+</html>

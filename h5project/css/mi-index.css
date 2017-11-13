@@ -1,0 +1,214 @@
+.wrap{
+    width: 100%;
+    background: #333;
+    position: relative;
+}
+.navCont{
+    width: 1384px;
+  /*  height: 62px;*/
+    margin: 0px auto;
+    background: #00cc99;
+}
+.navCont:before,.navCont:after{
+    content:"";
+    display: block;
+    clear: both;
+}
+.navCont .Logo{
+    width: 62px;
+    height: 62px;
+    display: block;
+    float: left;
+    background: red;
+    margin-top: 20px;
+}
+.NavWrap{
+    width: 771px;
+    /*height: 62px;*/
+    float: left;
+    margin-left: 210px;
+    background: #c0c0c0;
+}
+.NavWrap>ul{
+    float: left;
+}
+.NavWrap>ul>li{
+    float: left;
+    padding: 20px 16px 20px 0;
+}
+.NavWrap>ul>li>a{
+    line-height: 62px;/*避免其它受影响*/
+}
+.secUL .sec{
+    position: absolute;
+    width:100%;
+    height:0;
+    left:0;
+    top:100%;
+    background: #ffffff;
+    transition: height .3s;
+    overflow: hidden;
+
+}
+.secUL .sec:before{
+    content:"";
+    height:1px;
+    width:100%;
+    background: #ccc;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.secUL:hover .sec{
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,.05);
+    height: 231px;
+}
+.secUL>li:hover .sec{
+    z-index: 3;
+}
+.secUL .sec .secCont{
+    width: 1384px;
+    margin: 0 auto;
+}
+.secCont .secW{
+    width: 1384px;
+    margin: 0 auto;
+
+    height: 231px;
+}
+.secCont .secW li{
+    width: 206px;
+    height: 231px;
+    float: left;
+    position: relative;
+}
+.secCont .secW .new{
+    color: #ff6700;
+    text-align: center;
+    padding-top: 4px;
+}
+.secCont .secW .new span{
+    border: 1px solid #ff6700;
+    padding: 3px;
+    z-index: ;
+}
+.secCont .secW .secContDiv{
+    text-align: center;
+    width: 206px;
+    height: 101px;
+    margin: 16px 0 24px 0;
+    border-right: 1px solid #c0c0c0;
+    position: absolute;
+    left:0;
+    top: 19px;
+}
+.secCont .secW .secContDiv p{
+    line-height: 20px;
+}
+.secCont .secW .secContDiv p:last-child{
+    color: #ff6700;
+}
+.secUL .oneUL{
+    float:left;
+}
+.NavWrap .oneUL>li{
+    float:left;
+    line-height: 62px;
+    height: 62px;
+}
+.shopCart{
+    float: right;
+    width: 339px;
+    height: 56px;
+    background: #0000ff;
+    margin-top: 20px;
+    position: relative;
+}
+.shopCart input{
+    width: 283px;
+    height: 56px;
+    border: 1px solid #c0c0c0;
+    border-right: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.shopCart button{
+    width: 56px;
+    height: 56px;
+    float: right;
+    border: 1px solid #c0c0c0;
+    font-size: 18px;
+}
+.shopCart ul{
+    position: absolute;
+    left: 70px;
+    top: 20px;
+}
+.shopCart ul>li{
+    float: left;
+    padding-left: 10px;
+    background: #ccc;
+    margin-right: 10px;
+}
+.shopCart ul>li:hover{
+    background: #ff6700;
+}
+.shopCart ul>li:hover a{
+    color: #ffffff;
+}
+.banner {
+    width: 1384px;
+    height: 516px;
+    margin: 0 auto;
+    position: relative;
+    background: #264693;
+}
+.banner img{
+    float: right;
+    margin-right: 120px;
+}
+.banner .newslist{
+    width: 263px;
+    height: 515px;
+    background: rgba(15,28,59,.3);
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 2;
+}
+.banner .newslist>ul{
+    font-size: 14px;
+    color: #ffffff;
+}
+.banner .newslist>ul>li{
+    height: 47px;
+    padding: 10px 20px 5px 20px;
+}
+.banner .newslist>ul>li>a{
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 47px;
+}
+.banner .newslist>ul>li>i{
+    float: right;
+    line-height: 47px;
+    height: 47px;
+    font-weight: bold;
+}
+.banner .newslist>ul>li .Listshow{
+
+    height: 516px;
+    background: #c0f;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    display: none;
+    color: #1100ff;
+}
+.banner .newslist>ul>li:hover{
+    background: #ff6700;
+}
+.banner .newslist>ul>li:hover .Listshow{
+    z-index:1;
+    display: block;
+}

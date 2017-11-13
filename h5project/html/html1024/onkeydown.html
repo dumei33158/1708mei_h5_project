@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onkeydown</title>
+</head>
+<body>
+<textarea name="" id="area" cols="30" rows="10" maxlength="20"></textarea>
+你还可以输入<span id="sp">20</span>个字
+</body>
+</html>
+<script>
+    //输入最后一个字时拼音显示一个，，是输入法的问题
+    area.onkeyup=area.onkeypress=function(){
+        this.value=this.value.substr(0,20);
+        sp.innerText=20-this.value.length;
+    };
+
+</script>

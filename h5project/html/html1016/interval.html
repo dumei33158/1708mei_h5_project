@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>interval</title>
+</head>
+<body>
+<input type="text" id="txt" value="0">
+<input type="button" value="开始定时">
+<input type="text" id="txt1" value="10">
+<input type="button" value="倒计时">
+</body>
+</html>
+<script>
+    //效果没实现
+    var i=0;
+    function f0(){
+        i++;
+        if(i==10){
+           clearInterval(mytime0) ;
+        }
+        txt.value=i;
+    }
+    var mytime0=setInterval(f0,1000);
+
+</script>
+<script>
+    var i=10;
+    function f(){
+        i--;
+        if(i==0){
+            clearInterval(mytime) ;
+        }
+        txt1.value=i;
+    }
+    var mytime=setInterval(f,1000);//1000ms=1s
+</script>

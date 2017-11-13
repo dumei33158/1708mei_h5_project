@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .half2{
+            width: 300px;
+            height: 300px;
+            border: 30px solid #0000ff;
+            border-left: 30px solid #cddd33;
+            border-right: 30px solid #0bc938;
+            border-top: 30px solid #0000ff;
+            border-bottom: 30px solid #cc00ff;
+            border-radius: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*transform: rotate(0deg);*/
+            box-sizing: border-box;
+            /*transition: transform .3s;*/
+            animation: goon 1s linear infinite;
+            transform-origin:center center ;
+        }
+        .half2 span{
+            display: block;
+            animation: goon 1s linear infinite;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: center;
+            top:center;
+            font-size: 36px;
+            transform: scale(3.8);
+            /*transform-origin:center center ;*/
+
+
+        }
+        @-webkit-keyframes goon{
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="half2"><span>1</span></div>
+<div class="half2" style="position: absolute;left:300px;top:300px;"><span>1111111</span></div>
+<div class="half2" style="position: absolute;left:600px;top:600px;"><span>11111111 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem culpa error est nemo officiis, reiciendis saepe velit vitae voluptatum!</span></div>
+<div class="half2" style="position: absolute;left:900px;top:300px;"><span>111111111</span></div>
+<div class="half2" style="position: absolute;left:600px;top:200;"><span>111111111111 Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></div>
+<div class="half2" style="position: absolute;left:300px;top:100;"><span>11111111111111</span></div>
+<div class="half2" style="position: absolute;left:1200px;top:200;"><span>1111111111111111</span></div>
+</body>
+</html>

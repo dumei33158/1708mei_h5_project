@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanzhengma</title>
+</head>
+<body>
+<input type="text" id="txt"><span id="ma">AopMyu</span>
+<input type="button" value="验证" id="btn" onclick="f()">
+</body>
+</html>
+<script>
+    function f(){
+        if((txt.value.toUpperCase()==ma.innerText.toUpperCase())||(txt.value.toLowerCase()==ma.innerText.toLowerCase())){
+            alert("恭喜您通过验证");
+        }else{
+            alert("抱歉，再输一次吧");
+        }
+    }
+
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>****</title>
+</head>
+<body>
+<input type="text" id="txt2" value="" onclick="f()">
+</body>
+</html>
+<script>
+    function f() {
+//        var tel=txt2.value.match(/1[^1269]\d{9}/gi)+"";
+//        var ntel=tel.slice(-4);
+//        var newTel=tel.replace(ntel,"****");
+//        console.log(newTel);
+//        console.log(txt2.value.replace(txt2.value.match(/1[^1269]\d{9}/gi),newTel));
+        console.log(
+            txt2.value.replace(txt2.value.match(/1[^1269]\d{9}/gi),
+            (
+                (txt2.value.match(/1[^1269]\d{9}/gi)+"").replace(
+                    (txt2.value.match(/1[^1269]\d{9}/gi)+"").slice(-4),"****"))));
+    }
+//    var t=["18222390860"]+"";
+//    console.log(t.replace(t.slice(-4),"****"));
+</script>
+<script>
+    var str="小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+    var str1=str.split(";");
+    var str2=str1.split(":");
+
+    console.log(str1);
+    console.log(str2);
+    console.log(str2[1]);
+</script>

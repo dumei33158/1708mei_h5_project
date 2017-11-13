@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1101homework_Dumei.html</title>
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#fb001f,#ff00ff,#f9a1a1);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+     *{
+         margin: 0;
+         padding: 0;
+     }
+    a{
+        text-decoration: none;
+    }
+    .table1 td{
+        border:1px solid black;
+    }
+    .checkBox>div{
+        width: 600px;
+        height: 60px;
+        background: #fff;
+        margin: 20px auto 0;
+        border: 4px solid transparent;
+        position: relative;
+        line-height: 60px;
+        text-indent: 5em;
+
+    }
+    .checkBox>div .angle{
+        width:0;
+        height: 0;
+        border: 20px solid #008000;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        position: absolute;
+        left: 0;
+        top:0;
+        display: none;
+    }
+    .checkBox>div.active{
+        border: 4px solid #008000;
+    }
+    .checkBox>div.active .angle{
+        display: block;
+    }
+    .checkBox>div.active .angle .circle{
+        width:10px;
+        height:10px;
+        border-radius: 100%;
+        background: #fff;
+        margin: 0 auto;
+        position:absolute;
+        left: -15px;
+        top:-15px;
+    }
+    .checkBox>div input{
+        display: none;
+    }
+
+    .box{
+        width:900px;
+        height:500px;
+        border:1px solid red;
+        margin:0 auto;
+    }
+    .box label{ margin-bottom:20px;	width:596px;
+        height:65px;
+        display:block;
+    }
+   #Star>span{
+       display: inline-block;
+       width: 19px;
+       height: 19px;
+       margin:0 10px;
+   }
+    .backG{
+        background: url(../img/star.png);
+    }
+    .backL{
+        background: url(../img/star.png) 0 -28px;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.11.01作业&nbsp;_Dumei</h1>
+    <p>1.jquery创建一个3行3列的表格</p>
+    <div id="tab"></div>
+    <p>2.jquery实现以下四个按钮功能</p>
+    <table>
+        <tr>
+            <td>
+                <select id="select1" style="width:100px;" multiple size="5">
+                    <option value="News">News</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Education">Education</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Art">Art</option>
+                </select>
+            </td>
+            <td>
+                <button id="add">
+                    >|</button><br />
+                <button id="add_all">
+                    >></button><br />
+                <button id="remove_all">
+                    <<</button><br />
+                <button id="remove">
+                    |<</button>
+            </td>
+            <td>
+                <select id="select2" multiple="multiple" style="width:100px;" size="5">
+                </select>
+            </td>
+        </tr>
+    </table>
+    <p>3.jquery实现评分取消</p>
+    <div id="Star" style="width: 300px;height:30px;border: 1px solid #000;position:relative;overflow: hidden;padding-top: 4px;box-sizing: border-box">
+       <span class="ind"></span>
+       <span class="ind"></span>
+       <span class="ind"></span>
+       <span class="ind"></span>
+       <span class="ind"></span>
+    </div>
+    <p>4.jquery实现表格的增删改查</p>
+    <input type="text"/> <input type="button" value="查找"/><br/><br/>
+    <table style="width:700px;border-collapse:collapse;" class="table1">
+        <tr>
+            <td>书名</td>
+            <td>价格</td>
+            <td>库存</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td>机器猫</td>
+            <td>3.6</td>
+            <td>100</td>
+            <td>
+                <input type="button" value="修改" />
+                <input type="button" value="删除" />
+            </td>
+        </tr>
+        <tr>
+            <td>机器狗</td>
+            <td>3.6</td>
+            <td>200</td>
+            <td>
+                <input type="button" value="修改" />
+                <input type="button" value="删除" />
+            </td>
+        </tr>
+        <tr>
+            <td>机器狗</td>
+            <td>3.6</td>
+            <td>200</td>
+            <td>
+                <input type="button" value="修改" />
+                <input type="button" value="删除" />
+            </td>
+        </tr>	<tr>
+        <td>机器狗</td>
+        <td>3.6</td>
+        <td>200</td>
+        <td>
+            <input type="button" value="修改" />
+            <input type="button" value="删除" />
+        </td>
+    </tr>
+        <tr>
+            <td><input id="bookName" /></td>
+            <td><input id="bookPrice" /></td>
+            <td><input id="bookStorage" /></td>
+            <td><input type="button" value="增加" /></td>
+        </tr>
+    </table>
+    <p>5.jquery设置单选框选项的被选中样式</p>
+    <div class="checkBox">
+        <div class="active">
+            <div class="angle">
+                <div class="circle"></div>
+            </div>
+            <label for="k1">A EASE</label>
+            <input type="radio" name="like" id="k1" value="A"/>
+        </div>
+        <div>
+            <div class="angle">
+                <div class="circle"></div>
+            </div>
+            <label for="k2">B EASE</label>
+            <input type="radio" name="like" id="k2" value="B"/>
+        </div>
+        <div>
+            <div class="angle">
+                <div class="circle"></div>
+            </div>
+            <label for="k3">C EASE</label>
+            <input type="radio" name="like" id="k3" value="C"/>
+        </div>
+        <div>
+            <div class="angle">
+                <div class="circle"></div>
+            </div>
+            <label for="k4">D EASE</label>
+            <input type="radio" name="like" id="k4" value="D"/>
+        </div>
+    </div>
+    <p>6.jquery设置复选框选项的被选中样式</p>
+    <form>
+        <div class="box">
+            <label for="c1" name="a1">
+                <input type="checkbox" value="张三" id="c1" name="s1"/>
+            </label>
+            <label for="c2" name="a1">
+                <input type="checkbox" value="李四" id="c2" name="s1"/>
+            </label>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+<script src="../JS/jquery-1.11.3.js"></script>
+<script>
+    //1.jquery创建一个3行3列的表格
+    //方法1：
+   /*var table= $("<table></table>");
+    table.css({border:"1px solid blue",width:"300px",height:"200px"});
+        var tr=$("<tr></tr><tr></tr><tr></tr>");
+        tr.css({background:"#ccc"});
+        var td=$("<td>内容"+1+"</td><td>内容"+2+"</td><td>内容"+3+"</td>");
+        td.css({border:"1px solid blue"});
+            tr.append(td);
+        table.append(tr);
+    $("#tab").append(table);*/
+    //方法二：
+    var table= $("<table></table>");
+    table.css({borderCollapse:"collapse",width:"300px",height:"200px"});
+    for(var i=0;i<3;i++){
+        var tr=$("<tr></tr>");
+        tr.css({background:"#ff0"});
+        for(var j=1;j<4;j++){
+            var td=$("<td>内容"+j+"</td>");
+            tr.append(td);
+            td.css({border:"1px solid #f0f",textAlign:"center"});
+        }
+        table.append(tr);
+    }
+    $("#tab").append(table);
+    //以下方式实现不了，必须创建变量并赋值！
+   /* $("#tab").append($("<table></table>"));
+    $("<table></table>").css({border:"1px solid blue",width:"300px",height:"200px"});
+    $("<table></table>").append($("<tr></tr><tr></tr><tr></tr>"));
+    $("<tr></tr><tr></tr><tr></tr>").append($("<td>内容"+1+"</td><td>内容"+2+"</td><td>内容"+3+"</td>"))
+*/
+</script>
+<script>
+    //2..jquery实现以下四个按钮功能
+$("#add").click(function(){
+    $("#select2").append( $("#select1 option:selected").removeAttr("selected"));
+});
+    $("#add_all").click(function(){
+        $("#select2").append( $("#select1 option"));
+    });
+    $("#remove_all").click(function(){
+        $("#select2 option").appendTo( $("#select1"));
+    });
+    $("#remove").click(function(){
+        $("#select2 option:selected").removeAttr("selected").appendTo( $("#select1"));
+    });
+</script>
+<script>
+    //3.jquery实现评分取消
+    $("#Star>span").addClass("backG");
+    $("#Star>span").click(function(){
+        $(this).prevAll().addClass("backL");
+        $(this).toggleClass("backL");
+        $(this).nextAll().removeClass("backL");
+    });
+    //此方法不能实现当前点击亮再点击取消
+   /* $("#Star>span").css({background: "url(../img/star.png)"});
+    $("#Star>span").click(function(){
+        $(this).prevAll().css({background: 'url(../img/star.png) 0 -28px'});
+        $(this).css("background",'url(../img/star.png) 0 -28px');
+        $(this).nextAll().css({background: 'url(../img/star.png)'});
+    });*/
+</script>
+<script>
+    //4.jquery实现表格的增删改查
+    function changeColor(){
+        $(".table1 tr:not(:first,:last):visible:odd").css({background:"#e4393c"});
+        $(".table1 tr:not(:first,:last):visible:even").css({background:"#c3934e"});
+    }
+    changeColor();
+    //删除
+    $('[value="删除"]').click(function(){
+        $(this).parent().parent().remove();//删除自己所在的行
+    });
+    //修改
+    $('[value="修改"]').click(function(){
+        if($(this).val()=="修改"){
+            $(this).val("确定");
+            $(this).parent().prevAll().each(function(){
+                $(this).html($("<input type='' value='"+$(this).text()+"'/>"))
+            })
+        }else{
+            $(this).val("修改");
+            $(this).parent().prevAll().each(function(){
+                $(this).html($(this).find("input").val());
+            })
+        }
+    });
+    //增加
+    $('[value="增加"]').click(function(){
+        var tr= $("<tr></tr>");
+        var tds= $(this).parent().prevAll();
+        tds.each(function(){
+            var txt=$(this).find("input").val();
+            var td= $("<td>"+txt+"</td>");
+            tr.prepend(td);
+        });
+        var td=$(this).parent().parent().prev().find("td").last().clone(true);
+        tr.append(td);
+        $(this).parent().parent().before(tr);
+        changeColor();
+    });
+    //查找：
+    $('[value="查找"]').click(function(){
+     $(".table1 tr:not(:first,:last)").hide();
+     $(".table1 tr:not(:first,:last):contains('"+ $(this).prev().val()+"')").show();
+     })
+</script>
+<script>
+    //5.jquery设置单选框选项的被选中样式
+        $(".checkBox>div").click(function(){$(this).addClass("active").siblings().removeClass("active");});
+</script>
+<script>
+    //6.jquery设置复选框选项的被选中样式
+    //方法1：
+    $(".box label").css({background:"url(../img/option_bg.png)"});
+    $('[name="s1"]').css({display:"none"});
+    $(".box label").click(function(){
+        if($(this).find("input").prop("checked")){
+        $(this).css({background:"url(../img/option_sel_bg.png)"});
+        }else{
+            $(this).css({background:"url(../img/option_bg.png)"});
+        }
+    });
+    //方法2：
+    /*$('[name="s1"]').css({display:"none"});
+    $(".box label").addClass("sty1");
+    var n=0;
+    $(".box label").click(function(){
+        if($(this).find("input").prop("checked")){
+            $(this).addClass("sty2");
+            n++;
+            console.log(n);
+        }else{
+            $(this).removeClass("sty2");
+        }
+    })*/
+</script>
+

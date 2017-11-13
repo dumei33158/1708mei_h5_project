@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scroll</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        #inner{
+            position:fixed;
+            right:10px;
+            bottom:10px;
+            width: 80px;
+            height: 80px;
+            background: #ff903a;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur culpa nesciunt repellendus sunt totam. Animi aut corporis, cumque, deserunt eaque esse ipsa magnam magni minus molestias nesciunt nostrum optio ratione rerum ullam ut veniam vitae. Ad aliquam consectetur, consequatur culpa doloremque, error esse est exercitationem facere harum illum impedit inventore ipsum iste magnam, molestias mollitia neque nulla odit officia pariatur placeat quidem quo quod ullam unde veritatis voluptas. Aliquam architecto assumenda facere ipsa ipsum minus nam omnis optio placeat voluptates.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos pariatur quam tenetur ullam voluptatem. Ad doloribus earum est impedit ipsum iste itaque libero, minima vel vitae! Ad aliquam beatae delectus deserunt dignissimos dolores ducimus enim ex facere hic in, minus natus nemo numquam odit officiis quibusdam reiciendis reprehenderit repudiandae sapiente? Architecto at cum distinctio earum fuga modi mollitia placeat rem suscipit? Aspernatur atque, consectetur debitis dolores dolorum enim error et, facere harum ipsam magni mollitia obcaecati odit optio, perferendis possimus unde. Debitis magni nihil quibusdam quod? Aliquam cupiditate dolorem harum nobis perferendis rerum sed veritatis. Dolor dolorem ducimus fugit sequi voluptatum. A ad cupiditate error, iste nulla officia perspiciatis qui soluta tempora totam. A delectus incidunt itaque quisquam quos tenetur.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio laborum maxime nihil non perferendis praesentium sapiente temporibus totam vitae! A, accusantium asperiores, at culpa delectus dolores eius enim eos, eveniet excepturi fugit harum in inventore ipsum iste labore maiores odio officia quia quibusdam quis quisquam quod rem repudiandae sequi? A accusamus accusantium, amet at beatae dignissimos eaque exercitationem fugiat hic id, inventore ipsa iure laudantium magnam molestiae nisi nobis odit perferendis provident quae quo ratione recusandae similique temporibus unde, ut vel voluptatibus. Adipisci aut corporis eveniet harum laudantium numquam rerum tempora totam voluptas. Alias consectetur delectus dignissimos, esse facere facilis fugit, impedit laboriosam libero molestias nobis pariatur perferendis quasi quidem quisquam ratione recusandae, repellat temporibus tenetur ut. Accusamus atque beatae debitis dicta dignissimos doloremque ea enim esse fugiat ipsum natus obcaecati, odit omnis placeat quisquam reiciendis sit tenetur velit voluptate voluptatum! A dolorem eum eveniet exercitationem iure laboriosam maxime, odit omnis quam quas quibusdam repudiandae, sit, sunt voluptatem voluptatum! Ab corporis est et illum in iure natus nesciunt nulla omnis, optio provident quasi quisquam sequi soluta suscipit tempore unde. Architecto aspernatur at autem, delectus dolorum ducimus eos fugiat ipsam labore laborum maxime necessitatibus placeat quaerat quas qui rem similique sint suscipit tempora voluptatibus. Distinctio inventore iusto magni quos sed soluta sunt vel voluptates? Aspernatur at aut, beatae dolor ducimus excepturi expedita hic incidunt nobis reiciendis tempore unde! Accusantium in maiores temporibus. Ad aliquid in iusto possimus? Accusamus, aliquam architecto autem debitis delectus deleniti dignissimos dolor enim eum fugiat harum in inventore iste iure, iusto labore molestias natus nemo nesciunt numquam pariatur possimus quae quaerat quam quia quibusdam quidem recusandae sed sit tenetur. Cupiditate dicta fugit laboriosam libero quaerat quam reprehenderit sint voluptate voluptatum. Accusamus alias animi assumenda cumque ea eum laborum non officia, omnis quo repellat soluta tempora, totam.</div>
+
+<div id="inner">回到顶部</div>
+</body>
+</html>
+<script>
+    for(var i=1;i<2000;i++){
+        document.write("测试"+"第"+i+"行"+"<br/>")
+    }
+    window.onscroll=function(){
+        var scT=document.documentElement.scrollTop||document.body.scrollTop;
+        if(scT>=500){
+            inner.style.display="block";
+        }
+        else{
+            inner.style.display="none";
+        }
+    };
+    function goTop(){
+        document.documentElement.scrollTop-=100;
+        document.body.scrollTop-=100;
+        var mytime=setTimeout(goTop,10);
+        var n=document.documentElement.scrollTop||document.body.scrollTop;
+    if(n==0){
+       clearTimeout(mytime);
+    }
+    }
+    inner.onclick=goTop;
+//    inner.onclick=function () {
+//        document.documentElement.scrollTop=0;
+//        document.body.scrollTop=0;
+//        goTop();
+//    };
+
+</script>

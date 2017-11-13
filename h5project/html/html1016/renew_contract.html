@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xuqianhetong</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var enter=new Date("2016-5-20 8:0:0");
+    function xqht(myDate){
+        var date=new Date(myDate.getTime());
+        console.log("入职日期是："+date);
+        date.setFullYear(date.getFullYear()+3);
+        console.log("3年合同到期日期是："+date);
+        date.setMonth(date.getMonth()-1);
+        console.log("3年合同到期时提前1个月签合同日期是："+date);
+        if(date.getDay()==6){
+            date.setDate(date.getDate()-1);
+        }
+        else if(date.getDay()==0){
+            date.setDate(date.getDate()-2);
+        }
+        console.log("3年合同到期时提前1个月签合同逢周末提前至就近工作日（周五）日期是："+date);
+        date.setDate(date.getDate()-7);
+        console.log("3年合同到期续签时需提前一周提醒，提醒日期是："+date);
+        console.log("入职日期是："+myDate);
+    }
+    xqht(enter);
+</script>
+<script>
+    function xqht0(str){
+        var date1=new Date(str);
+        var mydate=new Date(date.getTime());
+        console.log("入职日期是："+date);
+        date.setFullYear(date.getFullYear()+3);
+        console.log("3年合同到期日期是："+date);
+        date.setMonth(date.getMonth()-1);
+        console.log("3年合同到期时提前1个月签合同日期是："+date);
+        if(date.getDay()==6){
+            date.setDate(date.getDate()-1);
+        }
+        else if(date.getDay()==0){
+            date.setDate(date.getDate()-2);
+        }
+        console.log("3年合同到期时提前1个月签合同逢周末提前至就近工作日（周五）日期是："+date);
+        date.setDate(date.getDate()-7);
+        console.log("3年合同到期续签时需提前一周提醒，提醒日期是："+date);
+        console.log("入职日期是："+myDate);
+    }
+    var strTime=document.getElementById("").value;
+    xqht0(strTime);
+</script>

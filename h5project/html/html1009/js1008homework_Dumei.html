@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1008homework_Dumei.html</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+    //11题
+    var name=prompt("请输入name");
+    if(name=="jt") {
+        alert('金团网');
+    }else if(name=="ejt"){
+        alert('金团相相贷');
+    }else if(name=="ejin"){
+        alert("网上综合金融体验馆");
+    }else{
+        alert("金团网络典当");
+    }
+    //14题
+    var sum=0;
+    for(var i=1;i<=100;i++){
+        sum+=i;
+    }
+    console.log(sum);
+
+    //17题
+    function f(){
+        var sum=1;
+        for(var i=1;i<=10;i++){
+            sum*=i;
+        }
+        console.log(sum);
+    }
+    f();
+    //18题
+    function f(){
+        for(var i=1;i<=6;i++){
+            if(i%2!=0){
+                for(var j=1;j<=9;j++){
+                    if(j%2==0){
+                        document.write("-");
+                    } else if(j%2!=0){
+                        document.write("!");
+                    }}
+            }
+            if(i%2==0){
+                for(var j=1;j<=9;j++){
+                    if(j%2==0){
+                        document.write("!");
+                    }else if(j%2!=0){
+                        document.write("-");
+                    }}
+            }
+            document.write("<br/>");
+        }
+    }
+    //问答题
+    f();
+    function find() {
+        var arr=[-1,-2,1,10,4,5,8];
+        max=(Math.max.apply(null,arr));
+    }
+    find();
+    document.write(max+"<br>");
+</script>

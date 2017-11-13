@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--meta:vp适配手机-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--meta:compat强制IE以最高内核渲染代码(将IE=7设置为IE=edge)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+    <!--[if IE lte8]>
+<script src="../bootstrap/js/html5shiv.min.js"></script>
+<script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+    <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">点我弹出/隐藏弹出框</button>
+</div>
+<div class="container-fluid" style="border: 1px solid darkblue;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover on 左侧
+    </button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover on 顶部
+    </button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover on 底部
+    </button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover on 右侧
+    </button>
+</div>
+<div class="container-fluid" style="border: 1px solid darkblue;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">可消失的弹出框</a>
+</div>
+</body>
+</html>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script>
+  $('[data-toggle="popover"]').popover()
+</script>

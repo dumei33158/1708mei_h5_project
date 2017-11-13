@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>size</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .size{
+        width: 800px;
+        height: 800px;
+        border: 1px solid #000;
+        margin:100px auto 100px;
+    }
+    #inN{
+        background: #f0f;
+        width: 300px;
+        height: 300px;
+        margin: 50px auto 0 60px;
+        border: 10px solid #000;
+        overflow:scroll ;
+        overflow-x: hidden;
+    }
+    .ouT{
+        width: 1000px;
+        height: 200px;
+        background: #ff0700;
+        margin:100px auto 100px;
+    }
+    #sub{
+        margin: 80px auto 80px;
+    }
+    p{
+        padding-left: 30px;
+    }
+    #box{
+        width: 300px;
+        height: 200px;
+    }
+</style>
+<body>
+<div class="size">
+    <div id="inN">
+        <div id="box">Lorem ipsum dolor sit amet.</div></div>
+    <input type="button" value="提交" id="sub"/>
+</div>
+<div class="ouT"><p>故天将降大任于斯人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能</p></div>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+//   var num=document.getElementsByClassName("inN")[0];
+    inN.onclick=function(e){
+        var e=e||event;
+//        console.log(e.clientX);
+//        console.log(e.clientY);
+//        console.log(e.pageX);
+//        console.log(e.pageY);
+
+    };
+inN.onscroll=function(e){
+    console.log(inN.scrollHeight);
+    console.log(inN.scrollWidth);
+    console.log(inN.scrollTop);
+    console.log(inN.scrollLeft);
+}
+
+</script>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //导入指定边界的数据
+    function creat(m,n){
+        var arr=[];
+        for(var i=m;i<=n;i++){
+            arr.push(i);
+        }
+        return arr;
+    }
+    function ex(V,arr){
+        for(var i=0;i<arr.length;i++){
+            if(V==arr[i]){
+                return true;
+            }
+        }
+    }
+    function createCode(){
+        var arrCode=creat(48,57).concat(creat(97,122),creat(65,90));
+        var testCode=[];
+        for(var i=0;i<4;i++){
+            var index=parseInt(Math.random()*arrCode.length);
+            while (ex(String.fromCharCode(arrCode[index]),testCode)){
+                index=parseInt(Math.random()*arrCode.length);
+            }
+            testCode.push(String.fromCharCode(arrCode[index]));
+        }
+        return testCode.join("");
+    }
+    //清空格
+    function Trime(str){
+        return str.replace(/^\s+|\s+$/g,"");
+    }
+    //验证
+    function testCodeFun(){
+        var code=createCode();
+        var  input=prompt("请输入内容"+code);
+        var reg=/^[a-zA-Z0-9]{4}$/;
+        while (true){
+            if(reg.test(Trime(input))){
+                if(code.toUpperCase()==Trime(input).toUpperCase()){
+                    alert("ok");
+                    break;
+                }else {
+                    alert("内容不对");
+                    input=prompt("请输入内容"+code);
+                }
+            }else {
+                alert("格式出错");
+                input=prompt("请输入内容"+code);
+            }
+        }
+    }
+    testCodeFun();
+
+
+
+    /*  function createCode(){
+          var arr= create(48,57).concat(create(65,90),create(97,122));
+          var testCode=[];
+          for(var i=0;i<4;i++){
+              var index=parseInt(Math.random()*arr.length);
+              while (ex(String.fromCharCode(arr[index]),testCode)){
+                  index=parseInt(Math.random()*arr.length);
+              }
+              testCode.push(String.fromCharCode(arr[index]))
+          }
+          return testCode.join("");
+      }
+
+      //验证
+      function test(){
+          var reg=/^[0-9a-zA-Z]{4}$/;
+          var code=createCode();
+          var input=prompt("请输入验证码："+code);
+          while (true){
+              if(reg.test(input)){
+                  if(input.toUpperCase()==code.toUpperCase()){
+                      alert("验证通过");
+                      break;
+                  }else{
+                      alert("未通过");
+                      input=prompt("请输入验证码："+code);
+                  }
+              }else {
+                  alert("格式不对");
+                  input=prompt("请输入验证码："+code);
+              }
+          }
+      }
+      test();*/
+</script>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 600px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            position: relative;
+        }
+        #list{
+            width:4200px;
+            height: 400px;
+            position: absolute;
+            /*            left: -600px;*/
+            top:0;
+            left: 0;
+            z-index: 1;
+        }
+        #list>img{
+            float:left;
+        }
+        .spanList span{
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            z-index: 2;
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0,0,0,.6);
+            color: #fff;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .spanList span:first-child{
+            left: 0;
+        }
+        .spanList span:last-child{
+            right: 0;
+        }
+        #BtnWrap{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            z-index: 2;
+        }
+        #BtnWrap span{
+            float: left;
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: #ccc;
+            border: 1px solid #f00;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+        #BtnWrap span.on{
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="list" style="left:-600px;">
+        <img src="img5.gif" alt=""/>
+        <img src="img1.gif" alt=""/>
+        <img src="img2.gif" alt=""/>
+        <img src="img3.gif" alt=""/>
+        <img src="img4.gif" alt=""/>
+        <img src="img5.gif" alt=""/>
+        <img src="img1.gif" alt=""/>
+    </div>
+    <div class="spanList">
+        <span id="left">&lt;</span>
+        <span id="right">&gt;</span>
+    </div>
+    <div id="BtnWrap">
+        <span class="on" index="0"></span>
+        <span index="1"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function $(id){
+        return document.getElementById(id);
+    }
+    var Spans=$("BtnWrap").getElementsByTagName("span");
+    var Index=0;
+    //按钮焦点切换
+    function showBtn(){
+        for(var i=0;i<Spans.length;i++){
+            Spans[i].className="";
+        }
+        Spans[Index].className="on";
+    }
+    //图片的切换
+    function Animation(offset){
+        $("list").style.left=parseInt($("list").style.left)+offset+"px";
+        if(parseInt($("list").style.left)>-600){
+            $("list").style.left=-3000+"px";
+        }
+        if(parseInt($("list").style.left)<-3000){
+            $("list").style.left=-600+"px";
+        }
+    }
+    //点击左按键切换小圆点位置及高亮同时更改图片位置
+    $("left").onclick=function(){
+        Index--;
+        if(Index<0){
+            Index=4;
+        }
+        showBtn();
+        Animation(600);
+    };
+    //右按键切换
+    $("right").onclick=function(){
+        Index++;
+        if(Index>4){
+            Index=0;
+        }
+        showBtn();
+        Animation(-600);
+    };
+//点击小圆点与图片切换同步
+    for(var i=0;i<Spans.length;i++){
+        Spans[i].onclick=function(){
+            var thisOffset=(this.getAttribute("index")-Index)*-600;
+            Animation(thisOffset);
+            Index=this.getAttribute("index");
+            showBtn();
+        }
+    }
+    /*   function showBtn(){
+     for(var i=0;i<Spans.length;i++){
+     Spans[i].className="";
+     }
+     Spans[Index].className="on"
+     }
+     //图片切换
+     function Animation(offset){
+     $("list").style.left=parseInt($("list").style.left)+offset+"px";
+     /!* console.log(parseInt($("list").style.left));*!/
+     if(parseInt($("list").style.left)>-600){
+     $("list").style.left=-3000+"px";
+     }
+     if(parseInt($("list").style.left)<-3000){
+     $("list").style.left=-600+"px";
+     }
+     }
+     $("left").onclick=function(){
+     Index--;
+     if(Index<0){
+     Index=4;
+     }
+     Animation(600);
+     showBtn();
+     };
+     $("right").onclick=function(){
+     Index++;
+     if(Index>4){
+     Index=0;
+     }
+     showBtn();
+     Animation(-600);
+     };*/
+</script>

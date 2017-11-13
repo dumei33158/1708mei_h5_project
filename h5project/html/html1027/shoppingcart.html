@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shoppingcart</title>
+</head>
+<body>
+<p>1.JS元素树实现购物车。补加一列具备删除功能</p>
+<table id="tb"  border="0" width="600px" align="center" bgcolor="green">
+    <tr align="center" bgcolor="#f5deb3">
+        <td>产品名称</td>
+        <td>产品单价</td>
+        <td>产品数量</td>
+        <td>总价</td>
+    </tr>
+    <tr align="center" bgcolor="#f5deb3">
+        <td>Phone5</td>
+        <td>500</td>
+        <td><input type="button" value="-"/><span>0</span><input type="button" value="+"/></td>
+        <td>0</td>
+    </tr>
+    <tr align="center" bgcolor="#f5deb3">
+        <td>Phone6</td>
+        <td>600</td>
+        <td><input type="button" value="-" /><span>0</span><input type="button" value="+" /></td>
+        <td>0</td>
+    </tr>
+    <tr align="center" bgcolor="#f5deb3">
+        <td>Phone7</td>
+        <td>700</td>
+        <td><input type="button" value="-" /><span>0</span><input type="button" value="+" /></td>
+        <td>0</td>
+    </tr>
+    <tr align="center" bgcolor="#f5deb3">
+        <td colspan="3">total</td>
+        <td id="tPrice">0</td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+    function $(id){
+        return document.getElementById(id)
+    }
+    //    console.log($("tb").getElementsByTagName("input"));
+    var Inp=$("tb").getElementsByTagName("input");
+    var num=0;
+    //    var Index=0;
+    for(var i=0;i<Inp.length;i++){
+        Inp[i].onclick=function(){
+            if(this.value=="+"){
+                this.previousElementSibling.innerText++;
+                num=this.previousElementSibling.innerText-0;
+            }else{
+                if(this.nextElementSibling.innerText<=0){
+                    this.nextElementSibling.innerText=0;
+                }else{
+                    this.nextElementSibling.innerText--;
+                }
+                num=this.nextElementSibling.innerText-0;
+            }
+            var price=this.parentElement.previousElementSibling.innerText-0;
+//    console.log(this.parentElement.nextElementSibling.innerText);
+//    console.log(this.parentElement.previousElementSibling.innerText);
+            this.parentElement.nextElementSibling.innerText=price*num;
+//            console.log( T_price);
+            To_tal();
+        }
+    }
+    var sum;
+    function To_tal(){
+        var sum=0;
+        var tRL=$("tb").getElementsByTagName("tr");
+        for(var i=1;i<=tRL.length-2; i++){
+            var tDq=tRL[i].getElementsByTagName("td");
+            sum+=Number(tDq[3].innerText);
+        }
+        $("tPrice").innerText=sum;
+//        console.log( $("total").innerText);
+    }
+    createLTd();
+    function createLTd(){
+        var tRL=$("tb").getElementsByTagName("tr");
+//        console.log(tRL);
+//        var tDL=tRL[0].getElementsByTagName("td");
+//        console.log(tDL);
+//        var sum=0;
+        for(var i=0;i<tRL.length;i++){
+//            var tDLq=tRL[i].getElementsByTagName("td");
+//            var tDL_ftr=tDLq[tRL.length-1].parentElement;
+            var tDLn=document.createElement("td");
+            var txtL=document.createTextNode("删除");
+            tRL[i].appendChild(tDLn);
+            tRL[i].lastElementChild.onclick=function () {
+                this.parentElement.parentElement.removeChild(this.parentElement);
+                To_tal();
+            };
+            if(i==0){
+                txtL=document.createTextNode("");
+                tDLn.appendChild(document.createTextNode("操作"));
+                tRL[i].lastElementChild.onclick=function (){}
+            }
+            if(i==tRL.length-1){
+                txtL=document.createTextNode("");
+                tDLn.appendChild(document.createTextNode("核算"));
+                tRL[i].lastElementChild.onclick=function (){
+                    alert("您最终确定购买的产品总价格是:"+this.previousElementSibling.innerText);
+                    sum+=Number(tDq[3].innerText);
+                }
+            }
+            tDLn.appendChild(txtL);
+//            console.log( tRL[i].lastElementChild);
+//            console.log(tRL[i].parentElement.parentElement);
+        }
+    }
+</script>

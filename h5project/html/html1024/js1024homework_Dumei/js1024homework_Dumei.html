@@ -1,0 +1,316 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>js1024homework_Dumei.html</title>
+</head>
+<style>
+    body{margin:0;
+        padding:0;}
+    li{
+        list-style: none;
+    }
+    .homework{
+        width: 230px;
+        background: #ffffff;
+        position:fixed;
+        right:0;
+        bottom:50%;
+        text-align: right;
+
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding: 8px 8px 0 10px ;
+        height: 50px;
+    }
+    h4{
+        line-height: 26px;
+        color: #000;
+        font-size: 16px;
+        text-align: left;
+    }
+</style>
+<style  type="text/css">
+    .p1{font-size:12px;
+        text-align:right;
+        height:28px;
+        width:80px;
+    }
+    .borSty{font-size:12px;
+        border:solid 1px #61b16a ;
+        width:150px;
+        height:20px;
+        float:left;
+    }
+    .submit{
+        font-size:12px;
+        background-color:#eeeeee;
+        border:solid 1px #cccccc ;
+        width:60px;
+        height:23px;
+        padding-top:3px;
+    }
+    textarea{
+        font-size:12px;
+        border:solid 1px #61b16a ;
+    }
+    #mytable{
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        width:760px;
+    }
+    #main{border-left:solid 1px #7bcc87;
+        border-right:solid 1px #7bcc87;
+        background-color:#f9f8ff;
+    }
+    #center{
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        width:80%;
+    }
+    .red{border:solid 1px #F00;
+        font-size:12px;
+        width:150px;
+        height:20px;
+        float:left;}
+    div{
+        margin-left:5px;
+        font-size:12px;
+        line-height:20px;
+        text-align:left;
+        float:left;
+        color:#F00;
+    }
+    .sty{ margin-left:50px;}
+</style>
+<body>
+<table id="mytable" border="0" cellspacing="0" cellpadding="0">
+    <form action="https://www.baidu.com" method="post" id="form01" name="myform">
+        <tr>
+        <td><img src="images/reg-top.jpg" /></td>
+    </tr>
+        <tr>
+            <td id="main"><table width="83%" border="0" cellpadding="0" cellspacing="0" id="center">
+                <tr><td width="112" class="p1"> 用户名：</td>
+                    <td width="496"> <input id="username" type="text" class="borSty" ><div id="userMess"></div></td>
+                </tr>
+                <tr><td class="p1" > 密&nbsp;&nbsp;码：</td>
+                    <td><input id="pwd" type="password"  class="borSty"><div id="pwdMess"></div></td>
+
+                </tr>
+                <tr>
+                    <td class="p1" width="112">再次输入密码：</td>
+                    <td><input id="regPwd" type="password"  class="borSty"><div id="regPwdMess"></div></td>
+                </tr>
+                <tr><td class="p1" >E-mail：</td>
+                    <td><input id="email" type="text" class="borSty" /><div id="emailMess"></div></td>
+                </tr>
+                <tr><td>性别：</td>
+                    <td>
+                        男<input id="sex1" type="radio"  name="sex" value="男"/>
+                        女<input id="sex2" type="radio"  name="sex" value="女"/>
+                    </td>
+                </tr>
+                <tr><td>省份：</td>
+                    <td>
+                            <select id="sheng">
+                                <option value="请选择你所在的省市">请选择你所在的省市</option>
+                                <option value="北京">北京</option>
+                                <option value="天津">天津</option>
+                                <option value="河北">河北</option>
+                                <option value="河南">河南</option>
+                                <option value="山西">山西</option>
+                                <option value="陕西">陕西</option>
+                                <option value="甘肃">甘肃</option>
+                            </select>
+                            <select id="city">
+                                <option>请选择你所在的城市</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr><td class="p1"> 个人简介：</td>
+                    <td><textarea id="intro" cols="30" rows="4"  placeholder="请填入您的个人信息，保证在20个字符以内，不能为空"></textarea><span id="sp">你还能输入</span><span id="sp1">20</span><span id="sp2">个字符</span></td>
+                </tr>
+            </table>
+            </td>
+        </tr>
+        <tr>
+            <td background="images/reg-end.jpg" style="height:63px; text-align:center;"><input name="B1" type="submit" value="提交" class="submit" />&nbsp;&nbsp;
+                <input name="B2" type="reset" id="reset" value="重置" class="submit">
+            </td>
+        </tr>
+    </form>
+</table>
+<div class="homework">
+    <h1>&laquo;&nbsp;&nbsp;2017.10.24作业<br/>&nbsp;_Dumei</h1>
+    <h4>1.Js实现页面表单注册、提交、验证、重置相关功能</h4>
+</div>
+</body>
+</html>
+<script>
+    //1.Js实现页面表单注册、提交、验证、重置相关功能
+             function isEmpty(str){
+                 var reg=/^\s*$/g;
+                 if (reg.test(str)||str===undefined||str===null){
+                     return true;
+                 }else{
+                     return false;
+                 }
+        }
+            username.onblur=function(){
+            var reg=/^[a-zA-Z_]\w{3,15}$/gi;
+                if(isEmpty(username.value) ){
+                    userMess.innerText="用户名不能为空";
+                    userMess.style="color:red";
+                }else{
+                    if(reg.test(username.value)){
+                        userMess.innerText="用户名格式输入正确";
+                        userMess.style="color:black";
+                        return true;
+                    }else{
+                        userMess.innerText="用户名必须由数字、下划线或字母字符组成的4-16位字符组成不以数字开头";
+                        userMess.style="color:red";
+                        return false;
+                    }
+                }
+};
+            pwd.onblur=function(){
+            var reg=/^[0-9a-zA-Z]{6,}$/g;
+                if( username.onblur()){
+                    if(isEmpty(pwd.value)){
+                        pwdMess.innerText="密码不能为空";
+                        pwdMess.style="color:red";
+                    }else{
+                        if(reg.test(pwd.value)){
+                            pwdMess.innerText="密码格式输入正确";
+                            pwdMess.style="color:black;";
+                            return true;
+                        }else{
+                            pwdMess.innerText="密码必须由字母或数字组成的不少于6位字符";
+                            pwdMess.style="color:red";
+                            return false;
+                        }
+                    }
+                }
+
+        };
+    regPwd.onblur=function(){
+        var reg=/^[0-9a-zA-Z]{6,}$/g;
+        if( pwd.onblur()){
+            if(isEmpty( regPwd.value)){
+                regPwdMess.innerText="密码不能为空";
+                regPwdMess.style="color:red";
+            }else{
+                if( regPwd.value== pwd.value){
+                    if(reg.test(regPwd.value)){
+                        regPwdMess.innerText="密码输入一致";
+                        regPwdMess.style="color:black;";
+                        return true;
+                    }else{
+                        regPwdMess.innerText="密码格式错误";
+                        regPwdMess.style="color:red";
+                    }
+                }else{
+                    regPwdMess.innerText="密码必须一致";
+                    regPwdMess.style="color:red";
+                }
+            }
+        }
+
+    };
+    email.onblur=function(){
+        if( regPwd.onblur()){
+            var reg=/^\w+@[a-zA-Z0-9]+-?\.[a-zA-Z]{2,6}\.?([a-zA-Z]{2,6})?$/gi;
+            if(isEmpty(email.value)){
+                emailMess.innerText="邮箱不能为空";
+                emailMess.style="color:red";
+            }else{
+                if(reg.test( email.value)){
+                    emailMess.innerText="邮箱格式输入正确";
+                    emailMess.style="color:black;";
+                    return true;
+                }else{
+                    emailMess.innerText="邮件格式如tom@sohu.com";
+                    emailMess.style="color:red";
+                    return false;
+                }
+            }
+        }
+    };
+    function sex() {
+        if (sex1.getAttribute("checked") || sex2.checked) {
+            return true;
+        } else {
+            alert("请准确输入您的性别");
+            return false;
+        }
+    }
+    function getCity() {
+        var arr = [
+            ['请选择你所在的城市'],
+            ['海淀', '朝阳', '东城', '崇文', '丰台', '昌平'],
+            ['红桥', '塘沽', '北辰'],
+            ['石家庄', '保定', '邢台', '衡水'],
+            ['洛阳', '开封', '周口', '漯河', '郑州'],
+            ['太原', '临汾', '忻州', '运城', '大同', '平遥'],
+            ['西安', '宝鸡', '延安', '咸阳', '安康'],
+            ['兰州', '敦煌', '武威', '陇南', '白银']
+        ];
+        var Index=sheng.selectedIndex;//直接获取selected的索引值
+        city.innerHTML="";//避免叠加
+        for(var i=0;i<arr[Index].length;i++){
+            var option=document.createElement("option");
+            option.value=option.innerText=arr[Index][i];//遍历每一个城市
+            city.appendChild(option);
+        }
+    }
+    sheng.onchange=getCity;//change
+    function pro(){
+        if(sheng.value=="请选择你所在的省市"){
+            alert("请准确输入您所在的省市");
+            return false;
+        }else{
+            return true;
+        }
+    }
+    intro.onkeyup=  intro.onblur=function(){
+        if(!(isEmpty( intro.value))){
+            this.value=this.value.substr(0,20);
+            sp.innerText="您还能输入";
+            sp1.innerText=20-this.value.length;
+            sp2.innerText="个字符";
+            return true;
+        }else{
+            sp.innerText="内容不能为空";
+            sp1.innerText="";
+            sp2.innerText="";
+            sp.innerText.style="color:red";
+            return false;
+        }
+    };
+    form01.onsubmit=function(){
+        if(email.onblur() &&sex()&&pro()&&intro.onblur()&&intro.keyup()){
+            return true;
+        }else{
+            return false;
+        }
+};
+   reset.onclick=function(){
+       username.value="";//未实现记忆功能
+       userMess.innerText="";
+       pwd.value="";
+       pwdMess.innerText="";
+       regPwd.value="";
+       regPwdMess.innerText="";
+       email.value="";
+       emailMess.innerText="";
+       intro.value="";
+       sp.innerText="";
+    }
+</script>
+

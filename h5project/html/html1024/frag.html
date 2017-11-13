@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>frag</title>
+</head>
+<body>
+<ul id="menu"></ul>
+</body>
+</html>
+<script>
+    var arr=["喜","怒","哀","乐","忧"];
+    var frag=document.createDocumentFragment();
+    for(var i=0;i< arr.length;i++){
+        var li=document.createElement("li");
+        li.innerText=arr[i];
+        frag.appendChild( li);
+    }
+    menu.appendChild( frag);
+</script>

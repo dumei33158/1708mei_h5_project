@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jqueryanimate</title>
+    <style>
+        .run{
+            width: 600px;
+            height: 500px;
+            /*border: 5px solid #00f;*/
+            background: url("../../images/hua.jpg");
+            background-size: cover;
+            position: relative;
+            margin: 500px 600px;
+         /*   animation: xuanzhuan 1s linear infinite normal;*/
+            transform-origin: center center;
+
+        }
+        .circle{
+            border: 20px solid #f00;
+            /*height: 0px;*/
+            /*width: 0px;*/
+            border-radius: 50%;
+       /*     animation: change 1s linear infinite normal;*/
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .run:hover{
+            animation-play-state: paused;
+        }
+        @-webkit-keyframes change{
+            0%{
+                transform: translate(0px,0px);
+            }
+            25%{
+                transform: translate(550px,0px);
+            }
+            50%{
+                transform: translate(550px,450px);
+            }
+            75%{
+                transform: translate(0px,450px);
+            }
+            100%{
+                transform: translate(0px,0px);
+            }
+        }
+      /*  @-webkit-keyframes xuanzhuan{
+            0%{
+                transform: rotate(300000060deg);
+            }
+        }*/
+    </style>
+</head>
+<body>
+<div class="run">
+    <div class="circle"></div>
+</div>
+</body>
+</html>
+<script src="../../JS/jquery-3.2.1.js"></script>
+<script>
+    //默认swing
+    $(".circle").animate({left:"560px"},2000).animate({top:"460px"},2000,"swing").animate({left:0},2000,"linear").animate({top:"0"},3000,"swing").animate({left:"-560px"},3000,"linear").animate({top:"460px"})
+</script>

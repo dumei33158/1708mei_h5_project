@@ -1,0 +1,546 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*|body*/
+html,body{
+	/*overflow:hidden;*/
+	width:100%;height:100%;
+}
+body {
+	font-size: 16px;
+	line-height: 1;
+	background-color: #FFF;
+	color: white;
+	-webkit-font-smoothing:antialiased;
+}
+#main{overflow:hidden;position:relative;height:100%;width:100%;}
+
+/*text*/
+a{text-decoration:none;}
+.T{font-size:20px;line-height:22px;}/*font-family:"微软雅黑","宋体";*/
+.T_t{font-size:28px;color:#fff;margin-bottom:10px;font-style:italic;font-weight:bold;text-shadow:1px 1px 1px rgba(0,0,0,0.45);}
+.T_0{color:#333;}
+.T_1{color:#fff;font-weight:bold;text-shadow:1px 1px 1px rgba(0,0,0,0.45);}
+/*button*/
+a.B:visited{color:#fff;}
+.B{
+	transition:box-shadow 0.35s,background 0.35s,color 0.35s;
+	-webkit-transition:box-shadow 0.35s,background 0.35s,color 0.35s;
+	-moz-transition:box-shadow 0.35s,background 0.35s,color 0.35s;
+	-ms-transition:box-shadow 0.35s,background 0.35s,color 0.35s;
+	-o-transition:box-shadow 0.35s,background 0.35s,color 0.35s;
+	overflow:hidden;text-overflow: ellipsis;white-space: nowrap;_white-space: normal;
+}
+.B.done{background-position:20px center;background-repeat:no-repeat;background-image:url(../img/project/done.png)/*tpa=http://tnc.org.cn/img/project/done.png*/;_background-image:url(../img/project/done.gif)/*tpa=http://tnc.org.cn/img/project/done.gif*/;}
+.B span{overflow:hidden;text-overflow: ellipsis;white-space: nowrap;_white-space: normal;}
+
+
+a.B_0{font-size:20px;color:#fff;line-height:1.75;padding:10px 100px;background-color:#00713d;font-style:italic;text-decoration:none;letter-spacing:1px;border-radius:3px;vertical-align: middle;}
+a.B_1{
+	font-size:20px;color:#fff;line-height:1.75;background-color:#00713d;font-style:italic;text-decoration:none;letter-spacing:1px;border-radius:3px;padding:10px;width:200px;display:inline-block;margin:0px 12px 20px;vertical-align: middle;
+}
+a.B_0:hover{/*box-shadow:2px 2px 4px rgba(0,113,61,0.5);*/color:#fff;background-color:#14965a;}
+a.B_1:hover{/*box-shadow:2px 2px 4px rgba(0,113,61,0.5);*/color:#fff;background-color:#14965a;}
+
+
+a.B_p1,a.B_p2,a.B_p3{font-size:20px;color:#fff;line-height:1.75;background-color:#339933;font-style:italic;text-decoration:none;letter-spacing:0px;border-radius:3px;padding:10px;width:200px;display:inline-block;margin:0px 12px 20px;vertical-align: middle;}
+a.B_p1:hover{/*box-shadow:2px 2px 4px rgba(51,153,51,0.5);*/color:#fff;background-color:#53b352;}
+a.B_p2{background-color:#0066cb;}
+a.B_p2:hover{/*box-shadow:2px 2px 4px rgba(0,102,203,0.5);*/color:#fff;background-color:#2b9ae1;}
+a.B_p3{width:220px;line-height:1;}
+a.B_p3 .sub_text{display:block;font-size:12px;}
+a.B_p3:hover{/*box-shadow:2px 2px 4px rgba(51,153,51,0.5);*/color:#fff;background-color:#53b352;}
+
+a.B_s1,a.B_s2{font-size:20px;color:#fff;line-height:1.75;background-color:#0883d1;font-style:italic;text-decoration:none;letter-spacing:0px;border-radius:3px;padding:10px;width:220px;display:inline-block;margin:0px 12px 20px;vertical-align: middle;}
+a.B_s2{width:220px;line-height:1;}
+a.B_s2 .sub_text{display:block;font-size:12px;}
+a.B_s2:hover{/*box-shadow:2px 2px 4px rgba(0,153,255,0.5);*/color:#fff;background-color:#2c9be2;}
+a.B_s1{width:200px;}
+a.B_s1:hover{/*box-shadow:2px 2px 4px rgba(0,153,255,0.5);*/color:#fff;background-color:#2c9be2;}
+
+.B_more{width:95px;height:24px;display:block;position:absolute;right:0px;top:0px;font-size:0;}
+.B_more .area{position:absolute;right:0px;top:0px;display:block;background:url(../img/page_1/more.png)/*tpa=http://tnc.org.cn/img/page_1/more.png*/ right 0px no-repeat;font-size:0;height:24px;width:24px;z-index:1;cursor:pointer;_background-image:url(../img/page_1/more.gif)/*tpa=http://tnc.org.cn/img/page_1/more.gif*/;}
+.B_more .hover{position:absolute;right:12px;top:0px;display:block;background:url(../img/page_1/more.png)/*tpa=http://tnc.org.cn/img/page_1/more.png*/ 0px -30px no-repeat;font-size:0;height:24px;width:0px;cursor:pointer;_background-image:url(../img/page_1/more.gif)/*tpa=http://tnc.org.cn/img/page_1/more.gif*/;}
+/*obj*/
+.obj{position:absolute;}
+/*menu*/
+.menu{
+	width:100%;height:88px;position:absolute;top:-150px;left:0px;z-index:100;display:block;
+}
+.menu_bg{width:100%;height:100%;background:#e7e7e7;display:block;opacity:0.65;filter:alpha(opacity=65);_filter:none;}
+
+
+/*load*/
+#load{/*background:#d3d3d3;*/width:100%;height:12px;position:absolute;left:0%;bottom:0%;z-index:100;display:block;}
+@-webkit-keyframes flash{
+0%,50%,100%{opacity: 1;}
+25%,75%{opacity: 0;}
+}
+@-moz-keyframes flash{
+0%,50%,100%{opacity: 1;}
+25%,75%{opacity: 0;}
+}
+#load #loadtip{
+	position:absolute;width:100%;height:30px;text-align:center;bottom:20px;
+	font-size:14px;color:#006735;line-height:30px;display:none;
+	-webkit-animation:flash 3s .0s ease both;
+	-moz-animation:flash 3s .0s ease both;
+	-webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+}
+#load #loadbar{position:relative;width:0%;height:12px;background:#00803a;box-shadow:2px 0px 4px rgba(0,0,0,0.35);border-radius:2px;}
+
+
+/*content*/
+/*.view{width:100%;height:100%;position:absolute;left:0px;display:none;overflow:hidden;top:100%;z-index:5;}*/
+.view{width:100%;height:100%;position:relative;display:block;overflow:hidden;}
+.view_bg{position:absolute;}
+.view.def{display:block;}
+
+#home{top:0px;display:block;
+	background: #f5f5f5; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+/*
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y1ZjVmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2Y1ZjVmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiYmJiYmIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, #f5f5f5 0%, #f5f5f5 75%, #bbbbbb 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(75%,#f5f5f5), color-stop(100%,#bbbbbb)); 
+background: -webkit-linear-gradient(top, #f5f5f5 0%,#f5f5f5 75%,#bbbbbb 100%); 
+background: -o-linear-gradient(top, #f5f5f5 0%,#f5f5f5 75%,#bbbbbb 100%);
+background: -ms-linear-gradient(top, #f5f5f5 0%,#f5f5f5 75%,#bbbbbb 100%);
+background: linear-gradient(top, #f5f5f5 0%,#f5f5f5 75%,#bbbbbb 100%); 
+*/
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#bbbbbb',GradientType=0 );*/ /* IE6-8 */
+}
+#v0_logo{width:237px;height:101px;left:50%;bottom:55%;margin-left:-119px;}
+#v0_text{width:80%;top:50%;/*left:50%;margin-left:-250px;margin-top:0px;*/margin:0 auto;text-align:center;position:relative;}
+#v0_more{left:50%;top:75%;margin-left:-134px;margin-top:-24px;display:none;}
+#v0_news{width:320px;height:80px;padding:26px 64px 26px 30px;display:block;background:url(../img/news/tip_bg.png)/*tpa=http://tnc.org.cn/img/news/tip_bg.png*/ 0px 0px no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/news/tip_bg.png');position:absolute;right:10px;bottom:10px;}/*414*/
+#v0_news .close{position:absolute;width:25px;height:25px;display:block;top:10px;right:10px;top:6px;right:27px;background:url(../img/news/close.gif)/*tpa=http://tnc.org.cn/img/news/close.gif*/ 3px 11px no-repeat;opacity:0.65;filter:alpha(opacity=65);}
+#v0_news .close:hover{opacity:1;filter:alpha(opacity=100);}
+#v0_news .ncont{width:320px;height:80px;display:block;position:relative;cursor:pointer;}
+#v0_news .ncont .tit{font-size:14px;line-height:1.75;margin-bottom:5px;font-weight:bold;display:block;color:#4b4b4b;}
+#v0_news .ncont .text{font-size:12px;line-height:1.5;color:#4b4b4b;display:block;}
+#v0_tip{width:47px;height:47px;display:none;background:url(../img/news/thum.png)/*tpa=http://tnc.org.cn/img/news/thum.png*/ 0px 0px no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/news/thum.png');position:absolute;bottom:150px;right:0px;opacity:0.65;}
+#v0_tip:hover{opacity:1;}
+/*page_1*/
+#tncChina{}
+#v1_text{width:70%;top:35%;/*left:50%;margin-left:-300px;margin-top:-54px;*/margin:0 auto;background:url(../img/page_1/icon_map.png)/*tpa=http://tnc.org.cn/img/page_1/icon_map.png*/ 0px center no-repeat;padding-left:120px;position:relative;}
+/*#v1_more{width:95px;height:24px;display:block;position:absolute;right:0px;top:0px;background:url(../img/page_1/more.png) 0px 0px no-repeat;font-size:0;}
+#v1_text:hover #v1_more,#v1_more:hover{background-position:0px -30px;}*/
+
+
+/*TNC WORLD*/
+#tncWorld{background:url(../img/page_1/case_2/bg_2.jpg)/*tpa=http://tnc.org.cn/img/page_1/case_2/bg_2.jpg*/ 0px 0px repeat;}
+#v2_text{width:70%;top:20%;/*left:50%;margin-left:-300px;margin-top:-54px;*/margin:0 auto;background:url(../img/page_1/case_2/icon_dot.png)/*tpa=http://tnc.org.cn/img/page_1/case_2/icon_dot.png*/ 0px center no-repeat;padding-left:120px;position:relative;}
+/*#v2_more{width:95px;height:24px;display:block;position:absolute;right:0px;top:0px;background:url(../img/page_1/more.png) 0px 0px no-repeat;font-size:0;}
+#v2_text:hover #v2_more,#v2_more:hover{background-position:0px -30px;}*/
+
+#v2_body{width:100%;height:50%;background:url(../img/page_1/case_2/map.png)/*tpa=http://tnc.org.cn/img/page_1/case_2/map.png*/ center 0px no-repeat;left:0%;top:40%;position:absolute;text-align:center;padding-top:10%;}
+.v2_point{opacity:1;cursor:pointer;display:inline-block;position:relative;margin:20px;}
+.v2_point .v2_icon{/*position:absolute;top:0px;left:0px;*/z-index:1;vertical-align:middle;}
+.v2_text{vertical-align:middle;display:inline-block;padding:0px 38px 0px 0px;border-radius:2px;font-size:16px;left:30px;top:-30px;width:120px;height:34px;line-height:34px;text-align:center;z-index:1;color:#fff;
+	background-position:right center;background-repeat:no-repeat;
+	box-shadow:-1px 1px 2px rgba(0,0,0,0.35);
+	transition:background 0.35s;-moz-transition:background 0.35s;-webkit-transition:background 0.35s;-o-transition:background 0.35s;-ms-transition:background 0.35s;}
+	
+#v2_point_1 .v2_text{background-color:rgba(51,204,255,0.65);background-image:url(../img/page_1/case_2/text_bg_1.jpg)/*tpa=http://tnc.org.cn/img/page_1/case_2/text_bg_1.jpg*/;background-color:#33ccff\9;}
+#v2_point_1:hover .v2_text{background-color:rgba(51,204,255,1);}
+
+#v2_point_2 .v2_text{background-color:rgba(240,72,72,0.65);background-image:url(../img/page_1/case_2/text_bg_2.jpg)/*tpa=http://tnc.org.cn/img/page_1/case_2/text_bg_2.jpg*/;background-color:#f04848\9;}
+#v2_point_2:hover .v2_text{background-color:rgba(240,72,72,1);}
+
+#v2_point_3 .v2_text{background-color:rgba(124,227,21,0.65);background-image:url(../img/page_1/case_2/text_bg_3.jpg)/*tpa=http://tnc.org.cn/img/page_1/case_2/text_bg_3.jpg*/;background-color:#7ce315\9;}
+#v2_point_3:hover .v2_text{background-color:rgba(124,227,21,1);}
+
+#v2_point_6 .v2_text{background-color:rgba(255,153,51,0.65);background-image:url(../img/page_1/case_2/text_bg_4.jpg)/*tpa=http://tnc.org.cn/img/page_1/case_2/text_bg_4.jpg*/;background-color:#ff9933\9;}
+#v2_point_6:hover .v2_text{background-color:rgba(255,153,51,1);}
+
+#v2_point_7 .v2_text{background-color:rgba(255,204,0,0.65);background-image:url(../img/page_1/case_2/text_bg_5.jpg)/*tpa=http://tnc.org.cn/img/page_1/case_2/text_bg_5.jpg*/;background-color:#ffcc00\9;}
+#v2_point_7:hover .v2_text{background-color:rgba(255,204,0,1);}
+
+/*TNC EVENT*/
+#tncEvent{background:url(../img/page_1/case_3/bg_3.jpg)/*tpa=http://tnc.org.cn/img/page_1/case_3/bg_3.jpg*/ 0px 0px repeat;}
+#v3_text{width:70%;top:17%;margin:0 auto;background:url(../img/page_1/case_3/icon_txt.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/icon_txt.png*/ 0px center no-repeat;padding-left:120px;position:relative;}
+#v3_body{width:1px;height:1px;display:none;top:50%;left:50%;margin-left:-603px;background:url(../img/page_1/case_3/line_bg.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/line_bg.png*/ 0px 0px no-repeat;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(method='clip',src='img/page_1/case_3/line_bg.png');}
+#v3_mask{width:1207px;height:0px;display:block;top:0px;left:0px;background:url(../img/page_1/case_3/line_all.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/line_all.png*/ 0px 0px no-repeat;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod ='crop',src='img/page_1/case_3/line_all.png');overflow:hidden;}
+#v3_mask_1{width:288px;height:0px/*642px*/;display:block;top:0px;left:0px;background:url(../img/page_1/case_3/line_1.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/line_1.png*/ 0px 0px no-repeat;font-size:0;zoom:1;}
+#v3_mask_2{width:0px/*460px*/;height:91px;display:block;top:597px;left:108px;background:url(../img/page_1/case_3/line_2.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/line_2.png*/ 0px 0px no-repeat;font-size:0;zoom:1;}
+#v3_mask_3{width:75px;height:0px/*156px*/;display:block;top:614px;left:530px;background:url(../img/page_1/case_3/line_3.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/line_3.png*/ 0px 0px no-repeat;font-size:0;zoom:1;}
+#v3_mask_4{width:0px/*238px*/;height:69px;display:block;top:770px;right:497px;background:url(../img/page_1/case_3/line_4.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/line_4.png*/ right 0px no-repeat;font-size:0;zoom:1;left:auto;}
+#v3_mask_5{width:774px;height:0px/*728px*/;display:block;top:838px;left:286px;background:url(../img/page_1/case_3/line_5.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/line_5.png*/ 0px 0px no-repeat;font-size:0;zoom:1;}/*1839*/
+
+.v3_point{padding:0 22px;line-height:20px;font-size:16px;font-family:'din_b';position:absolute;background:url(../img/page_1/case_3/cicle.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/cicle.png*/ 0px center no-repeat;cursor:pointer;color:#fff;display:block;_background-image:url(../img/page_1/case_3/cicle.gif)/*tpa=http://tnc.org.cn/img/page_1/case_3/cicle.gif*/;}
+.v3_point.R{background-position:right center;}
+.v3_point:visited{color:#fff;}
+.v3_point:hover{color:#00703c;text-shadow:1px 1px 4px rgba(255,255,255,0.35);}
+#v3_content{
+	width:600px;height:100px;display:block;position:absolute;left:50%;margin-left:-300px;top:47%;margin-top:-0px;
+}
+.v3_year{width:193px;height:128px;display:block;position:relative;left:0px;top:0px;font-family:'din_b';font-size:70px;font-weight:bold;line-height:90px;color:#fff;background:url(../img/page_1/case_3/year_bg.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/year_bg.png*/ 0px 0px no-repeat;text-align:center;float:left;}
+.v3_txt{
+	width:400px;height:auto;background:#ffd148;/*top:30px;left:200px;*/margin-top:30px;margin-left:7px;display:block;position:relative;float:left;min-height:66px;box-shadow:2px 2px 4px rgba(0,0,0,0.35);cursor:pointer;
+	/*transition:all 0.5s;-webkit-transition:all 0.5s;-ms-transition:all 0.5s;-moz-transition:all 0.5s;-o-transition:all 0.5s;*/
+}
+.v3_txt p{position:relative;z-index:1;padding:0px 25px 20px 20px;font-size:13px;line-height:15px;color:#5d4809;}
+.v3_txt span{font:inherit;display:block;padding:3px 0px;text-indent:10px;}
+.v3_txt .v3_more{position:absolute;right:10px;bottom:5px;font-family:'din_b';font-size:40px;line-height:1;color:#fff;display:none;text-shadow:rgba(0, 0, 0, 0.35) 1px 1px 2px;}
+.v3_txt span.hide{display:none;color:#ffd148;}
+.v3_txt_h{width:100%;height:30px;position:absolute;display:block;top:-30px;right:0px;background:url(../img/page_1/case_3/text_bg.png)/*tpa=http://tnc.org.cn/img/page_1/case_3/text_bg.png*/ right 0px no-repeat;}
+
+.v3_btn{transition:all 0.35s;-ms-transition:all 0.35s;-moz-transition:all 0.35s;-o-transition:all 0.35s;-webkit-transition:all 0.35s;z-index:10;}
+.v3_btn img{padding:20px;}
+.v3_left{position:absolute;left:10px;top:47%;margin-top:8px;opacity:0.75;}
+.v3_right{position:absolute;right:10px;top:47%;margin-top:8px;opacity:0.75;}
+.v3_btn:hover{opacity:1;}
+.v3_left:hover{transform:translateX(-5px);-webkit-transform:translateX(-5px);-moz-transform:translateX(-5px);-ms-transform:translateX(-5px);-o-transform:translateX(-5px);}
+.v3_right:hover{transform:translateX(5px);-webkit-transform:translateX(5px);-moz-transform:translateX(5px);-ms-transform:translateX(5px);-o-transform:translateX(5px);}
+
+
+/*page_2*/
+.pro_links{width:100%;top:70%;margin-top:-24px;left:0%;text-align:center;}
+#proPlace{}
+#v4_text{width:70%;top:35%;/*left:50%;margin-left:-300px;margin-top:-54px;*/margin:0 auto;background:url(../img/page_2/icon_txt_1.png)/*tpa=http://tnc.org.cn/img/page_2/icon_txt_1.png*/ 0px center no-repeat;padding-left:120px;position:relative;}
+#v4_links{}
+/*#v4_more{width:95px;height:24px;display:block;position:absolute;right:0px;top:0px;background:url(../img/page_1/more.png) 0px 0px no-repeat;font-size:0;}
+#v4_text:hover #v4_more,#v4_more:hover{background-position:0px -30px;}*/
+
+#proWater{}
+#v5_text{width:70%;top:35%;/*left:50%;margin-left:-300px;margin-top:-54px;*/margin:0 auto;background:url(../img/page_2/icon_txt_2.png)/*tpa=http://tnc.org.cn/img/page_2/icon_txt_2.png*/ 0px center no-repeat;padding-left:120px;position:relative;}
+#v5_links{}
+/*#v5_more{width:95px;height:24px;display:block;position:absolute;right:0px;top:0px;background:url(../img/page_1/more.png) 0px 0px no-repeat;font-size:0;}
+#v5_text:hover #v5_more,#v5_more:hover{background-position:0px -30px;}*/
+
+#proAtmosphere{}
+#v6_text{width:70%;top:35%;/*left:50%;margin-left:-300px;margin-top:-54px;*/margin:0 auto;background:url(../img/page_2/icon_txt_3.png)/*tpa=http://tnc.org.cn/img/page_2/icon_txt_3.png*/ 0px center no-repeat;padding-left:120px;position:relative;}
+#v6_links{}
+
+/*page_3*/
+.sci_links{width:100%;top:70%;margin-top:-24px;left:0%;text-align:center;}
+#sciFunc{}
+#v7_text{width:70%;top:35%;/*left:50%;margin-left:-300px;margin-top:-54px;*/margin:0 auto;background:url(../img/page_3/icon_txt_1.png)/*tpa=http://tnc.org.cn/img/page_3/icon_txt_1.png*/ 0px center no-repeat;padding-left:120px;position:relative;}
+#v7_links{}
+/*#v7_more{width:95px;height:24px;display:block;position:absolute;right:0px;top:0px;background:url(../img/page_1/more.png) 0px 0px no-repeat;font-size:0;}
+#v7_text:hover #v7_more,#v7_more:hover{background-position:0px -30px;}*/
+
+#sciInfo{}
+#v8_text{width:70%;top:35%;/*left:50%;margin-left:-300px;margin-top:-54px;*/margin:0 auto;background:url(../img/page_3/icon_txt_2.png)/*tpa=http://tnc.org.cn/img/page_3/icon_txt_2.png*/ 0px center no-repeat;padding-left:120px;position:relative;}
+#v8_links{}
+
+#sciProtect{}
+#v9_text{width:70%;top:35%;/*left:50%;margin-left:-300px;margin-top:-54px;*/margin:0 auto;background:url(../img/page_3/icon_txt_3.png)/*tpa=http://tnc.org.cn/img/page_3/icon_txt_3.png*/ 0px center no-repeat;padding-left:120px;position:relative;}
+#v9_links{}
+
+/*view_foot*/
+.view_foot{width:100%;height:30%;background:0px 0px repeat;display:block;position:absolute;left:0px;bottom:0px;}
+.foot_border{width:100%;height:8px;left:0px;top:0px;display:block;position:relative;}
+.foot_cursor{width:62px;height:32px;left:50%;margin-left:-31px;top:0px;display:block;background:0px bottom no-repeat;position:absolute;zoom:1;}
+.foot_links{width:100%;top:30px;left:0%;text-align:center;}
+.foot_link{font-size:0;width:86px;height:116px;display:inline-block;vertical-align:middle;*zoom:1;position:relative;background-position:0px 0px;background-repeat:no-repeat;margin:0px 50px;}
+.foot_link img{width:100%;height:100%;}
+.foot_link:hover,.foot_link.current{background-position:0px -116px;}
+
+.view_body{width:100%;height:70%;display:block;position:absolute;left:0%;top:0%;}
+.view_content{width:100%;height:100%;display:none;position:absolute;left:100%;top:0%;overflow:hidden;}
+/*.view_list{width:1000px;height:200px;display:block;position:absolute;left:50%;margin-left:-500px;top:50%;margin-top:-50px;overflow:hidden;}*/
+.view_list{width:90%;height:100%;display:block;position:absolute;left:50%;margin-left:-45%;top:0%;text-align:center;}
+.view_ul{width:100%;height:100%;left:100%;top:0px;text-align:center;zoom:1;display:inline-block;position:absolute;}
+.view_ul.current{left:0%;}
+.view_center{width:100%;height:100%;zoom:1;display:table-cell;vertical-align:middle;position:relative;text-align:center;}
+.view_inline{width:100%;zoom:1;display:inline;vertical-align:middle;}
+.view_li{float:left;margin:0px 8px;position:relative;display:inline;}
+
+.B_left,.B_right{transition:all 0.35s;-ms-transition:all 0.35s;-moz-transition:all 0.35s;-o-transition:all 0.35s;-webkit-transition:all 0.35s;}
+.B_left{position:absolute;left:50%;margin-left:-565px;top:50%;margin-top:-43px;opacity:0.75;display:none;}
+.B_right{position:absolute;left:50%;margin-left:500px;top:50%;margin-top:-43px;opacity:0.75;}
+.B_left img,.B_right img{padding:20px;}
+.B_left:hover,.B_right:hover{opacity:1;}
+.B_left:hover{transform:translateX(-5px);-webkit-transform:translateX(-5px);-moz-transform:translateX(-5px);-ms-transform:translateX(-5px);-o-transform:translateX(-5px);}
+.B_right:hover{transform:translateX(5px);-webkit-transform:translateX(5px);-moz-transform:translateX(5px);-ms-transform:translateX(5px);-o-transform:translateX(5px);}
+.B_loading{position:absolute;left:50%;margin-left:-16px;bottom:20px;display:none;}
+
+.search_div{position:absolute;top:50px;left:30px;display:block;}
+.T_search{width:210px;height:30px;display:block;background:#eee;border-radius:3px;outline:none;font-size:13px;line-height:30px;padding:2px 10px;margin:0px 4px 10px 0px;float:left;border:none;}
+.B_search{background:#666;color:#fff;font-size:13px;line-height:34px;border-radius:3px;height:34px;width:50px;float:left;text-align:center;
+	transition:background 0.5s;-webkit-transition:background 0.5s;-moz-transition:background 0.5s;-ms-transition:background 0.5s;-o-transition:background 0.5s;
+}
+.B_search:hover{background:#999;}
+.search_text{position:absolute;left:0px;top:265px;padding:10px 10px 10px 30px;font-size:13px;line-height:20px;color:#666;}
+/*page_4*/
+#news{background:#d4d8db;}
+#news .view_foot{background-image:url(../img/page_4/bg_1.jpg)/*tpa=http://tnc.org.cn/img/page_4/bg_1.jpg*/;}
+#news .foot_border{background-color:#8a4e06;}
+#news .foot_cursor{background-image:url(../img/page_4/triangle.png)/*tpa=http://tnc.org.cn/img/page_4/triangle.png*/;_background-image:url(../img/page_4/triangle.gif)/*tpa=http://tnc.org.cn/img/page_4/triangle.gif*/;}
+#news_link_0{background-image:url(../img/page_4/menu_1.png)/*tpa=http://tnc.org.cn/img/page_4/menu_1.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_4/menu_1_0.png');}
+#news_link_0:hover,#news_link_0.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_4/menu_1_1.png');}
+#news_link_1{background-image:url(../img/page_4/menu_2.png)/*tpa=http://tnc.org.cn/img/page_4/menu_2.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_4/menu_2_0.png');}
+#news_link_1:hover,#news_link_1.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_4/menu_2_1.png');}
+#news_link_2{background-image:url(../img/page_4/menu_3.png)/*tpa=http://tnc.org.cn/img/page_4/menu_3.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_4/menu_3_0.png');}
+#news_link_2:hover,#news_link_1.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_4/menu_3_1.png');}
+
+/*.news_a{width:234px;height:200px;display:block;background:url(../img/page_4/li_bg.jpg) 0px bottom repeat-x;}*/
+.news_a{width:234px;height:200px;display:inline-block;background:url(../img/page_4/li_bg.jpg)/*tpa=http://tnc.org.cn/img/page_4/li_bg.jpg*/ 0px bottom repeat-x;position:relative;margin:4px;vertical-align:middle;}
+.news_title{width:100%;height:28px;display:block;line-height:28px;font-size:16px;color:#666;overflow: hidden;text-overflow: ellipsis;zoom:1;white-space:nowrap;_white-space: normal;}
+.news_img{width:234px;height:140px;display:block;overflow:hidden;background:url(../img/loading_gray.gif)/*tpa=http://tnc.org.cn/img/loading_gray.gif*/ center center no-repeat;position:relative;}
+.news_date{width:100%;height:28px;display:block;line-height:28px;font-size:24px;color:#fff;font-weight:bold;text-align:right;font-family:'din_b'}
+.news_text{width:100%;height:172px;display:block;position:absolute;top:28px;left:0px;background:url(../img/page_4/text_bg.jpg)/*tpa=http://tnc.org.cn/img/page_4/text_bg.jpg*/ 0px 0px no-repeat;overflow:hidden;display:none;_background-image:url(../img/page_4/text_bg.jpg)/*tpa=http://tnc.org.cn/img/page_4/text_bg.jpg*/;}
+.news_text p{padding:20px 20px;color:#fff;font-size:12px;line-height:18px;overflow:hidden;zoom:1;word-break: break-all;width:194px;height:132px;-ms-word-break: break-all;float:left;display:block;}
+.news_content .news_a:hover .news_title,.news_content .news_a.hover .news_title{color:#983300;}
+/*.view_a:hover .news_text,.view_a.hover .news_text{display:block;}*/
+
+
+/*page_5*/
+#interactive{background:#d4d8db;}
+#interactive .view_foot{background-image:url(../img/page_5/case_0/bg.jpg)/*tpa=http://tnc.org.cn/img/page_5/case_0/bg.jpg*/;}
+#interactive .foot_border{background-color:#304e18;}
+#interactive .foot_cursor{background-image:url(../img/page_5/case_0/triangle.png)/*tpa=http://tnc.org.cn/img/page_5/case_0/triangle.png*/;_background-image:url(../img/page_5/case_0/triangle.gif)/*tpa=http://tnc.org.cn/img/page_5/case_0/triangle.gif*/;}
+#interactive_link_0{background-image:url(../img/page_5/case_0/menu_1.png)/*tpa=http://tnc.org.cn/img/page_5/case_0/menu_1.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_5/case_0/menu_1_0.png');}
+#interactive_link_0:hover,#interactive_link_0.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_5/case_0/menu_1_1.png');}
+#interactive_link_1{background-image:url(../img/page_5/case_0/menu_2.png)/*tpa=http://tnc.org.cn/img/page_5/case_0/menu_2.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_5/case_0/menu_2_0.png');}
+#interactive_link_1:hover,#interactive_link_1.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_5/case_0/menu_2_1.png');}
+#interactive_link_2{background-image:url(../img/page_5/case_0/menu_3.png)/*tpa=http://tnc.org.cn/img/page_5/case_0/menu_3.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_5/case_0/menu_3_0.png');}
+#interactive_link_2:hover,#interactive_link_2.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_5/case_0/menu_3_1.png');}
+#interactive_link_3{background-image:url(../img/page_5/case_0/menu_4.png)/*tpa=http://tnc.org.cn/img/page_5/case_0/menu_4.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_5/case_0/menu_4_0.png');}
+#interactive_link_3:hover,#interactive_link_3.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_5/case_0/menu_4_1.png');}
+#interactive_link_4{background-image:url(../img/page_5/case_0/menu_5.png)/*tpa=http://tnc.org.cn/img/page_5/case_0/menu_5.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_5/case_0/menu_5_0.png');}
+#interactive_link_4:hover,#interactive_link_4.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_5/case_0/menu_5_1.png');}
+
+
+/*.active_a{width:234px;height:200px;display:block;background:url(../img/page_4/li_bg.jpg) 0px bottom repeat-x;}*/
+.active_a{width:234px;height:200px;display:inline-block;background:url(../img/page_4/li_bg.jpg)/*tpa=http://tnc.org.cn/img/page_4/li_bg.jpg*/ 0px bottom repeat-x;position:relative;margin:4px;vertical-align:middle;}
+.active_title{width:100%;height:28px;display:block;line-height:28px;font-size:16px;color:#666;overflow: hidden;text-overflow: ellipsis;zoom:1;white-space:nowrap;_white-space: normal;}
+.active_title b{font-weight:bold;font-size:20px;}
+.active_img{width:234px;height:172px;display:block;overflow:hidden;background:url(../img/loading_gray.gif)/*tpa=http://tnc.org.cn/img/loading_gray.gif*/ center center no-repeat;position:relative;}
+
+.active_txt{width:234px;height:172px;display:block;overflow:hidden;position:relative;}
+.active_txt p{padding:10px 20px 10px 0px;overflow:hidden;line-height:1.75;font-size:12px;color:#666;width:214px;height:142px;display:block;}
+.active_txt p:hover{}
+
+
+.active_date{width:100%;height:28px;display:block;line-height:28px;font-size:24px;color:#fff;font-weight:bold;text-align:right;font-family:'din_b'}
+.active_text{width:100%;height:172px;display:block;position:absolute;top:28px;left:0px;background:url(../img/page_5/case_0/text_bg.jpg)/*tpa=http://tnc.org.cn/img/page_5/case_0/text_bg.jpg*/ 0px 0px no-repeat;overflow:hidden;display:none;_background-image:url(../img/page_5/case_0/text_bg.jpg)/*tpa=http://tnc.org.cn/img/page_5/case_0/text_bg.jpg*/;}
+.active_text p{padding:20px 20px;color:#fff;font-size:12px;line-height:1.5;overflow:hidden;zoom:1;word-break: break-all;width:194px;}
+.interactive_content .active_a:hover .active_title,.interactive_content .active_a.hover .active_title,.interactive_content .active_a:hover .active_txt p{color:#5e8827;}
+
+.QA_a{background:none;}
+
+/*page_6*/
+#acount{background:#d4d8db;z-index:6;}
+#acount .view_foot{background-image:url(../img/page_6/case_0/bg.jpg)/*tpa=http://tnc.org.cn/img/page_6/case_0/bg.jpg*/;}
+#acount .foot_border{background-color:#0e233f;}
+#acount .foot_cursor{background-image:url(../img/page_6/case_0/triangle.png)/*tpa=http://tnc.org.cn/img/page_6/case_0/triangle.png*/;_background-image:url(../img/page_6/case_0/triangle.gif)/*tpa=http://tnc.org.cn/img/page_6/case_0/triangle.gif*/;}
+#acount_link_0{background-image:url(../img/page_6/case_0/menu_1.png)/*tpa=http://tnc.org.cn/img/page_6/case_0/menu_1.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_1_0.png');}
+#acount_link_0:hover,#acount_link_0.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_1_1.png');}
+#acount_link_1{background-image:url(../img/page_6/case_0/menu_2.png)/*tpa=http://tnc.org.cn/img/page_6/case_0/menu_2.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_2_0.png');}
+#acount_link_1:hover,#acount_link_1.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_2_1.png');}
+#acount_link_2{background-image:url(../img/page_6/case_0/menu_3.png)/*tpa=http://tnc.org.cn/img/page_6/case_0/menu_3.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_3_0.png');}
+#acount_link_2:hover,#acount_link_2.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_3_1.png');}
+#acount_link_3{background-image:url(../img/page_6/case_0/menu_4.png)/*tpa=http://tnc.org.cn/img/page_6/case_0/menu_4.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_4_0.png');}
+#acount_link_3:hover,#acount_link_3.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_4_1.png');}
+#acount_link_4{background-image:url(../img/page_6/case_0/menu_5.png)/*tpa=http://tnc.org.cn/img/page_6/case_0/menu_5.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_5_0.png');}
+#acount_link_4:hover,#acount_link_4.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_5_1.png');}
+#acount_link_5{background-image:url(../img/page_6/case_0/menu_6.png)/*tpa=http://tnc.org.cn/img/page_6/case_0/menu_6.png*/;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_6_0.png');}
+#acount_link_5:hover,#acount_link_5.current{_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/page_6/case_0/menu_6_1.png');}
+
+
+/*.mytnc_a,.mytnc_div{width:234px;height:200px;display:block;background:none;}*/
+.mytnc_a,.mytnc_div{width:234px;height:200px;display:inline-block;position:relative;margin:4px;vertical-align:middle;background:none;}
+.mytnc_title{width:100%;height:28px;display:block;line-height:28px;font-size:16px;color:#666;overflow: hidden;text-overflow: ellipsis;zoom:1;white-space:nowrap;_white-space: normal;}
+.mytnc_title b{font-weight:bold;font-size:20px;}
+.mytnc_img{width:234px;height:172px;display:block;overflow:hidden;background:url(../img/loading_gray.gif)/*tpa=http://tnc.org.cn/img/loading_gray.gif*/ center center no-repeat;position:relative;}
+
+.join_img{width:220px;height:154px;display:block;overflow:hidden;background:url(../img/loading_gray.gif)/*tpa=http://tnc.org.cn/img/loading_gray.gif*/ center center no-repeat;position:relative;}
+.join_text{width:220px;height:154px;display:block;background:#233e5c url(../img/feature/m_style.png)/*tpa=http://tnc.org.cn/img/feature/m_style.png*/ 155px center no-repeat;_background-image:url(../img/feature/m_style.gif)/*tpa=http://tnc.org.cn/img/feature/m_style.gif*/;left:0px;top:0px;position:absolute;line-height:157px;text-align:center;color:#fff;font-size:15px;opacity:0;filter:alpha(opacity=0);cursor:pointer;
+	transition:all 0.35s ease-out;-webkit-transition:all 0.35s ease-out;-moz-transition:all 0.35s ease-out;-ms-transition:all 0.35s ease-out;-o-transition:all 0.35s ease-out;
+}
+.mytnc_a:hover .join_text{display:block;background-color:#2b5788;background-position:160px center;opacity:100;filter:alpha(opacity=100);}
+
+.mytnc_p{
+	font-size: 12px;line-height: 1.75;color:#666;display:block;
+	padding: 10px 20px 10px 0px;width: 214px;height: 122px;overflow: hidden;
+}
+.mytnc_name{padding: 5px 0px;font-size: 16px;color:#333;line-height:1.75;}
+.mytnc_time{font-size:14px;line-height: 1.2;color:#333;}
+
+.mytnc_date{width:100%;height:28px;display:block;line-height:28px;font-size:24px;color:#fff;font-weight:bold;text-align:right;font-family:'din_b'}
+.mytnc_text{width:100%;height:172px;display:block;position:absolute;top:28px;left:0px;background:url(../img/page_6/case_0/text_bg.jpg)/*tpa=http://tnc.org.cn/img/page_6/case_0/text_bg.jpg*/ 0px 0px no-repeat;overflow:hidden;display:none;_background-image:url(../img/page_6/case_0/text_bg.jpg)/*tpa=http://tnc.org.cn/img/page_6/case_0/text_bg.jpg*/;}
+.mytnc_text p{padding:20px 20px;color:#fff;font-size:12px;line-height:1.5;overflow:hidden;zoom:1;word-break: break-all;width:194px;}
+.mytnc_content .mytnc_a:hover .mytnc_title,.mytnc_content .mytnc_a.hover .mytnc_title{color:#233e5c;}
+.mytnc_content .mytnc_a:hover .mytnc_p,.mytnc_content .mytnc_a.hover .mytnc_p{color:#233e5c;}
+
+.mytnc_btn{padding:0px 30px;font-size:15px;line-height:1.75;background:#233e5c url(../img/feature/m_style.png)/*tpa=http://tnc.org.cn/img/feature/m_style.png*/ 155px center no-repeat;_background-image:url(../img/feature/m_style.gif)/*tpa=http://tnc.org.cn/img/feature/m_style.gif*/;border-radius:0px;display: block;text-align: center;margin-top:25px;width:160px;height:150px;color:#fff;
+	transition:all 0.35s ease-out;-webkit-transition:all 0.35s ease-out;-moz-transition:all 0.35s ease-out;-ms-transition:all 0.35s ease-out;-o-transition:all 0.35s ease-out;
+}
+.mytnc_btn span{font:inherit;line-height:154px;color:#fff;}
+.mytnc_btn:hover{background-color:#2b5788;background-position:160px center;}
+
+.MSG_a,.mytnc_div{background:none;}
+/*user ul*/
+.user_list{height:246px;margin-top:-60px;top:50%;}
+.user_login{position:absolute;width:420px;height:246px;background:#FFF;border-radius:5px;left:50%;margin-left:-210px;top:0px;}
+.login_tip{margin-top:10px;}
+.login_ul{margin-top:10px;margin-left:30px;}
+.login_ul li{margin:0px 20px 0px 0px;float:left;display:inline;}
+.B_login{width:169px;height:37px;display:block;background-position:0px 0px;background-repeat:no-repeat;}
+.B_login:hover{background-position:0px -37px;}
+.B_login_sina{background-image:url(../img/page_6/sina.jpg)/*tpa=http://tnc.org.cn/img/page_6/sina.jpg*/;}
+.B_login_qq{background-image:url(../img/page_6/qq.jpg)/*tpa=http://tnc.org.cn/img/page_6/qq.jpg*/;}
+
+.user_ul{position:absolute;width:556px;height:234px;left:50%;margin-left:-278px;display:block;}
+.user_ul li{
+	float:left;display:block;height:230px;margin:0px 2px;position:relative;
+}
+.user_title{line-height:1.75;font-size:16px;font-style:italic;font-weight:normal;color:#666;}
+.user_head{padding:6px;background:#f7f7f9;border-radius:3px;margin-bottom:4px;}
+.user_name{padding:6px;background:#f7f7f9;border-radius:3px;color:#666;width:136px;font-size:14px;line-height:20px;height:20px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;_white-space:normal;text-align:center;}
+.user_info{width:400px;height:188px;border-radius:3px;color:#666;background:#f7f7f9;display:block;text-align:left;}
+.user_dl{padding:30px;}
+.user_dl dd{margin:10px 0px;font-size:14px;line-height:20px;}
+.user_type{width:50px;display:inline-block;text-align:right;margin-right:30px;}
+.user_link,.user_logout{position:absolute;font-size:14px;color:#233e5c;line-height:1.75;text-align:none;right:10px;top:33px;cursor:pointer;}
+.user_link{right:78px;}
+.user_link:hover,.user_logout:hover{text-decoration:underline;}
+/*page_7*/
+#foot{top:0%;z-index:0;}
+.foot_body{width:100%;height:430px;display:block;position:absolute;left:0px;bottom:0px;}
+.foot_l{width:100%;height:100%;display:block;float:left;position:relative;background:#eee;}
+.foot_r{width:30%;height:100%;display:block;float:left;position:relative;background:#d2d2d2;}
+.foot_t{width:100%;height:340px;display:block;text-align:center;}
+.foot_b{width:100%;height:90px;display:block;text-align:center;}
+.foot_body .foot_b a,.foot_b span{margin:0px 25px;color:#FFF;text-decoration:none;font-size:18px;line-height:50px;}
+.foot_body .foot_b a:hover{text-decoration:underline;}
+.foot_l .foot_b{background:#036635;}
+.foot_r .foot_b{background:#024926;}
+.foot_copy{width:100%;height:40px;display:block;text-align:center;color:#FFF;font-size:18px;}
+
+.foot_t span{display:inline-block;}
+.foot_ul{padding:30px 0px;}
+.foot_ul li{float:left;margin:0px 18px;display:inline;zoom:1;}
+.foot_ul dl{text-align:left;}
+.foot_ul dt{color:#666;font-size:18px;line-height:2;margin-top:10px;}
+.foot_ul dd,.foot_body .foot_ul dd a{color:#777;font-size:15px;line-height:1.75;text-decoration:none;}
+.foot_body .foot_ul dd a:hover{color:#063;text-decoration:underline;}
+/*feature*/
+.fea_mask{width:100%;height:100%;position:absolute;left:0px;top:0px;display:none;z-index:200;background:#000;opacity:0.35;filter:alpha(opacity=35);}
+
+.feature{width:65%;height:100%;left:100%;top:0%;display:none;z-index:201;background:#FFF;position:absolute;box-shadow:2px 2px 4px rgba(0,0,0,0.35);opacity:0;*zoom:1;}
+.fea_head{position:relative;width:100%;height:100px;display:block;overflow:hidden;background:#00713d;}
+.fea_head p{padding:50px 60px;font-size:14px;line-height:1.75;color:#FFF;}
+.fea_head p a,.fea_head p a:visited{font-size:14px;line-height:1.75;text-decoration:none;color:#FFF;font-style:italic;}
+.fea_head p a:hover{text-decoration:underline;}
+.fea_head ul{height:100px;width:1000px;position:absolute;float:left;}
+.fea_head ul li{background:url(../img/nav/nav_bg.jpg)/*tpa=http://tnc.org.cn/img/nav/nav_bg.jpg*/ 0px 0px no-repeat;float:left;display:inherit;height:99px;}
+.fea_head ul li.fea_view,.fea_head ul li.fea_sec{padding:8px 22px 0px 46px;font-size:14px;color:#33aa52;line-height:91px;font-style:normal;}
+.fea_head ul li.fea_sec{max-width:300px;}
+.fea_head ul li span{font-size:14px;color:#33aa52;line-height:91px;display:block;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;_white-space:normal;}
+.fea_head ul li.head{font-size:0;}
+.fea_head ul li.last{width:10px;height:99px;display:block;font-size:0;}
+
+
+.fea_body{width:100%;display:block;position:relative;z-index:1;background:#FFF;*zoom:1;font-size:0px;}
+.fea_ul{position:absolute;width:10px;top:160px;left:150px;z-index:0;*zoom:1;}
+.fea_ul li{height:60px;margin-bottom:2px;display:block;position:relative;}
+.fea_ul li a{
+	font-size:14px;line-height:60px;text-align:center;width:60px;height:60px;;position:absolute;right:0px;top:0px;color:#663401;background:#d1d1d1;text-decoration:none;border-radius:3px 0px 0px 3px;font-style:italic;*zoom:1;left:auto;
+	transition:background 0.5s;-webkit-transition:background 0.5s;-moz-transition:background 0.5s;-ms-transition:background 0.5s;-o-transition:background 0.5s;
+}
+.fea_ul li a span{display:none;}
+.fea_ul li a.current{width:120px;background:#ffd148;}
+.fea_ul li a:hover{background:#ffd148;}
+.fea_ul li a.current span{display:block;}
+.fea_close{
+	font-size:14px;line-height:63px;height:63px;width:70px;position:absolute;background:url(../img/nav/return.png)/*tpa=http://tnc.org.cn/img/nav/return.png*/ 0px 0px no-repeat;left:-90px;top:20px;color:#FFF;text-shadow:1px 1px 2px rgba(153,153,153,0.35);display:block;font-size:0;_background:none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/nav/return_0.png');
+}
+a.fea_close:hover{background-position:0px -63px;text-decoration:underline;_background:none;_background-position:0px 0px;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/nav/return_1.png');}
+
+
+#fea_world li{/*height:50px;*/}
+#fea_world li a{/*height:50px;line-height:50px;*/}
+
+/*tip*/
+.tips{
+	width:170px;height:60px;display:block;left:50%;margin-left:-85px;position:absolute;z-index:10;display:none;top:100%;/*bottom:50px;*/margin-top:0px;zoom:1;
+}
+.t_mouse{width:33px;height:58px;display:block;position:absolute;left:0px;top:1px;}
+.t_key{width:93px;height:60px;display:block;position:absolute;right:0px;top:0px;}
+.t_mouse div,.t_key div{width:100%;height:100%;display:block;position:absolute;left:0px;top:0px;background-position:0px 0px;background-repeat:no-repeat;}
+.t_mouse .t_mouse_0{background-image:url(../img/tip/mouse_0.png)/*tpa=http://tnc.org.cn/img/tip/mouse_0.png*/;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tip/mouse_0.png');}
+.t_mouse .t_mouse_1{background-image:url(../img/tip/mouse_1.png)/*tpa=http://tnc.org.cn/img/tip/mouse_1.png*/;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tip/mouse_1.png');display:none;}
+.t_key .t_key_0{background-image:url(../img/tip/key_0.png)/*tpa=http://tnc.org.cn/img/tip/key_0.png*/;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tip/key_0.png');}
+.t_key .t_key_1{background-image:url(../img/tip/key_1.png)/*tpa=http://tnc.org.cn/img/tip/key_1.png*/;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tip/key_1.png');display:none
+;}
+.t_tip{
+	position:absolute;display:block;width:228px;height:34px;left:50%;margin-left:-114px;top:65px;background:url(../img/tip/tip.png)/*tpa=http://tnc.org.cn/img/tip/tip.png*/ 0px 0px no-repeat;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tip/tip.png');zoom:1;vertical-align:middle;
+}
+
+/*B_search*/
+#B_search{position:absolute;left:110px;bottom:26px;width:60px;height:60px;display:block;opacity:0.5;filter:alpha(opacity:50);font-size:0;background:url(../img/search.png)/*tpa=http://tnc.org.cn/img/search.png*/ no-repeat;z-index:100;_background-image:url(../img/search.gif)/*tpa=http://tnc.org.cn/img/search.gif*/;_left:110px;_bottom:26px;_width:35px;_height:36px;
+	transition:all 0.35s;-webkit-transition:all 0.35s;-moz-transition:all 0.35s;-ms-transition:all 0.35s;-o-transition:all 0.35s;}
+#B_search:hover{
+	opacity:1;filter:alpha(opacity:100);
+}
+/*B_audio*/
+#B_audio{position:absolute;left:30px;bottom:25px;width:70px;height:60px;display:block;opacity:0.55;filter:alpha(opacity:50);font-size:0;background:url(../img/music.png)/*tpa=http://tnc.org.cn/img/music.png*/ no-repeat;z-index:100;_left:30px;_bottom:28px;_width:48px;_height:34px;
+	transition:all 0.35s;-webkit-transition:all 0.35s;-moz-transition:all 0.35s;-ms-transition:all 0.35s;-o-transition:all 0.35s;
+}
+#B_audio.play{background-position:0px 0px;}
+#B_audio.play:hover{opacity:1;}
+#B_audio.pause{background-position:0px -64px;}
+#B_audio.pause:hover{opacity:1;}
+/*scroll*/
+.bscroll{
+	position:absolute;right:0px;top:0px;width:1px;height:100%;display:block;
+}
+.bscroll div{width:100%;height:200%;display:block;}
+.mscroll{
+	transition:opacity 0.5s;-webkit-transition:opacity 0.5s;-moz-transition:opacity 0.5s;
+	-ms-transition:opacity 0.5s;-o-transition:opacity 0.5s;
+	opacity:0.35;filter:alpha(opacity=35);position:relative;
+}
+.mscroll:hover{
+	opacity:1;filter:alpha(opacity=100);
+}
+.mscroll div{cursor:pointer;}
+.tnc_ads {
+	position: absolute;
+	top: 125px;
+	right: 12px;
+	display: block;
+	text-align: right;
+}
+.tnc_ads .tnc_ad {
+  line-height: 0;
+  font-size: 0;
+  margin: 0 0 10px;
+  display: block;
+}

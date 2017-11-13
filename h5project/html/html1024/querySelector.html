@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>querySelector</title>
+</head>
+<body>
+<ul  class="nav">
+    <li>lorem1</li>
+    <li>lorem2</li>
+    <li class="b">lorem3</li>
+    <li>lorem4</li>
+    <li>lorem5</li>
+    <li>lorem6</li>
+</ul>
+</body>
+</html>
+<script>
+    var Lis=document.querySelectorAll(".nav li");
+    console.log(Lis);
+    Lis[5].style="color:red";
+    var li0=document.querySelector(".nav .b");
+//    li0.style="font-size:36px;"
+    li0.style.fontSize="48px"
+</script>

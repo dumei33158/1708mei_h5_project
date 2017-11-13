@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom</title>
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="box1" class="wrap" align="center">Lorem ipsum dolor.
+<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span id="sp1">lorem1</span><span id="sp2">lorem2</span><span id="sp3">lorem3</span></p>
+    <input type="text" id="txt" name="userName">
+    <input type="button" value="点点点" onclick="f()">
+    <p class="wrap">Lorem ipsum dolor sit amet.</p>
+</div>
+<p class="wrap">Lorem ipsum dolor Lorem ipsum dolor sit amet.sit amet.</p>
+<input type="text" id="txt1" name="userName">
+</body>
+</html>
+<script>
+    var box1=document.getElementById("box1");
+    console.log(box1.nodeName);
+    console.log(box1.attributes[1].nodeName);
+    console.log(box1.firstChild.nodeName);
+    console.log(document.nodeName);
+    console.log(box1.nodeType);
+    console.log(box1.attributes[1].nodeType);
+    console.log(box1.firstChild.nodeType);
+    console.log(document.nodeType);
+    console.log(box1.nodeValue);
+    console.log(box1.attributes[1].nodeValue);
+    console.log(box1.firstChild.nodeValue);
+    console.log(document.nodeValue);
+    console.log(box1.attributes[0]);
+    console.log(box1.attributes["class"]);
+    console.log(box1.attributes["class"].name);
+    console.log(box1.attributes["align"].value);
+    console.log(box1.getAttribute("class"));
+    console.log(box1.className);
+    var ats=box1.attributes;
+    for(var j=0;j<ats.length;j++){
+        console.log(box1.attributes[j]);
+    }
+    function f(){
+//        document.getElementById("box1").className="red";
+        document.getElementById("box1").setAttribute("class","red")
+    }
+    //获取
+    var p01=document.getElementById("p1");
+    for(var i=0;i<p01.length;i++){
+        console.log(p01[i])
+    }
+    console.log(p01);
+    console.log(document.getElementById("box1"));//输出一个ID值为box1的元素（<div id="box1" class="wrap" align="center" style="color:red">Lorem ipsum dolor.<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span id="sp1">lorem1</span><span id="sp2">lorem2</span><span id="sp3">lorem3</span></p><input type="text" id="txt" name="userName"><input type="button" value="点点点" onclick="f()"><p class="wrap" style="color:purple">Lorem ipsum dolor sit amet.</p></div>）
+    console.log(document.getElementsByClassName("wrap"));//输出一组class值为wrap的元素类数组：(3) [div#box1.wrap, p.wrap, p.wrap, box1: div#box1.wrap]
+    var io9=document.getElementsByClassName("wrap");//输出一组class值为wrap的类数组元素：(3) [div#box1.wrap, p.wrap, p.wrap, box1: div#box1.wrap]
+    console.log(io9[1].attributes["class"]);//输出class="wrap"
+    console.log(io9[1].attributes["class"].value);//输出wrap
+    io9[0].setAttribute("style","color:red");//设置一组class值为wrap的类数组元素中的第1个class值为wrap的字体颜色
+    io9[1].setAttribute("style","color:purple");//设置一组class值为wrap的类数组元素中的第2个class值为wrap的字体颜色
+    io9[2].setAttribute("style","color:blue");//设置一组class值为wrap的类数组元素中的第3个class值为wrap的字体颜色
+    console.log(document.getElementsByTagName("span"));//输出一组元素标签名儿为span的元素类数组：(3) [span#sp1, span#sp2, span#sp3, sp1: span#sp1, sp2: span#sp2, sp3: span#sp3]
+    console.log(document.getElementsByName("userName"));//输出一组指定名儿为userName的元素类数组：(2) [input#txt, input#txt1]
+
+</script>

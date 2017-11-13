@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>followmousemove</title>
+    <style>
+        #Pic{
+            position:absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <img src="mousemove.gif" alt="" id="Pic"/>
+</body>
+</html>
+<script>
+    document.onmousemove=function(e){
+        var x= e.clientX-Pic.width/2;
+        var y= e.clientY-Pic.height/2;
+        Pic.style.left=x+"px";
+        Pic.style.top=y+"px";
+    };
+    document.onclick=function(){
+        document.onmousemove=null;
+    }
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eventadd&remove</title>
+</head>
+<body>
+<input type="button" value="点点" id="btn">
+<div id="box" style="width: 300px; height: 300px; border: 1px solid #000">
+    <a href="http://www.baidu.com" id="btnc">百度</a>
+</div>
+</body>
+</html>
+<script>
+    var eventObj={
+        //事件绑定
+        addEvent:function(E,T,F){
+            if(E.addEventListener){
+                E.addEventListener(T,F);
+            }else if(E.attachEvent){
+                E.attachEvent("on"+T,F);
+            }else{
+                E["on"+T]=F;
+            }
+        },
+        //事件解除绑定
+        delEvent:function(E,T,F){
+            if(E.removeEventListener){
+                E.removeEventListener(T,F);
+            }else if(E.detachEvent){
+                E.detachEvent("on"+T,F);
+            }else{
+                E["on"+T]=null;
+            }
+        },
+        //阻止事件的默认行为
+        preventDefault:function(e){
+            var e=e||window.event;
+            if(e.preventDefault){
+                e.preventDefault();
+            }else {
+                e.returnValue=false;
+            }
+        },
+        //阻止事件冒泡
+        stopPropagation:function(e){
+            var e=e||window.event;
+            if(e.stopPropagation){
+                e.stopPropagation();
+            }else {
+                e.cancelBubble=true;
+            }
+        },
+        //获取事件源
+        getE:function(e){
+            var e=e||window.event;
+            return e.target|| e.srcElement;
+        }
+    };
+    function f(){
+        alert("昨天是1024，程序员的节日，1GB=1024MB，我们正行进在程序员的路上，仿佛打开了认识世界的另一扇大门，世界如此生动，计算机如此复杂")
+    }
+    eventObj.addEvent(btn,"click",f);//句柄的方式绑定
+    eventObj.addEvent(btn,"click",function(){alert("继续听课")});//匿名函数方式绑定
+    eventObj.addEvent(box,"click",function(){
+        alert("听说是个盒子");
+    });
+    //匿名函数方式解除事件对象默认行为及阻止事件对象冒泡
+   /* eventObj.addEvent(btnc,"click",function(e){
+        eventObj.preventDefault(e);
+        eventObj.stopPropagation(e);
+    })*/
+    function f3(e){
+        eventObj.preventDefault(e);
+        eventObj.stopPropagation(e);
+    }
+    eventObj.addEvent(btnc,"click",f3); //函数句柄和形参结合解除事件对象默认行为及阻止事件对象冒泡
+   /*function f3(){
+        eventObj.preventDefault();
+        eventObj.stopPropagation();
+    }
+    eventObj.addEvent(btnc,"click",f3); //函数句柄解除事件对象默认行为及阻止事件对象冒泡（老师有疑问，不建议这样写）
+*/</script>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1030homework_Dumei.html</title>
+
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.30作业&nbsp;_Dumei</h1>
+    <p>1.jquery实现词《沁园春·雪》的修饰美化</p>
+    <p>要求如下：<br/>
+        1>让id为mp的元素文字大小变成30px<br/>
+        2>让class名为.c1的元素背景为#CCFF99<br/>
+        3> 将所有的div和p，统一显示间距<br/>
+        4> 将所有的div增加 2像素 实线 红色<br/>
+        5>将div下的所有子div中文字变蓝色blue<br/>
+        6>将div中包含的div颜色变成#FF99FF<br/>
+        7>将div的所有兄弟标签p的字体颜色变成蓝色<br/>
+        8>将紧跟着div的p标签的边框设为2像素 实线 #009900<br/>
+    </p>
+    <div id="poem">
+        <h2>沁园春·雪</h2>
+        <h3>毛泽东</h3>
+        <div>
+	<span><div>北国风光，千里冰封，万里雪飘。
+        <div>望长城内外，惟余莽莽；大河上下，顿失滔滔。</div>
+        <p>山舞银蛇，原驰蜡象，欲与天公试比高。</p>
+        <p>须晴日，看红装素裹，分外妖娆。</p>
+    </div></span>
+            <p id="mp">江山如此多娇，引无数英雄竞折腰。</p></div>
+        <p class="c1">惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。</p>
+        <p class="c1">一代天骄，成吉思汗，只识弯弓射大雕。</p>
+        <p>俱往矣，数风流人物，还看今朝。</p>
+    </div>
+    <p>2.jquery实现通讯录table表格的样式修饰美化</p>
+     <h2>Rteam部门通讯录</h2>
+    <table id="tab1" border="1px" style="border-collapse: collapse;width: 800px;text-align: center">
+        <thead>
+        <tr>
+            <th>工号</th>
+            <th>所在部门</th>
+            <th>职位</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>出生日期</th>
+            <th>联系电话</th>
+            <th>QQorWechat</th>
+            <th>备注</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>lorem1</td>
+            <td>lorem2</td>
+            <td>lorem3</td>
+            <td>睿老师</td>
+            <td>男</td>
+            <td>lorem6</td>
+            <td>lorem7</td>
+            <td>lorem8</td>
+            <td>lorem9</td>
+            <td>lorem10</td>
+        </tr>
+        <tr>
+            <td>lorem1</td>
+            <td>lorem2</td>
+            <td>lorem3</td>
+            <td>霍老师</td>
+            <td>男</td>
+            <td>lorem6</td>
+            <td>lorem7</td>
+            <td>lorem8</td>
+            <td>lorem9</td>
+            <td>lorem10</td>
+        </tr>
+        <tr>
+            <td>lorem1</td>
+            <td>lorem2</td>
+            <td>lorem3</td>
+            <td>莫老师</td>
+            <td>男</td>
+            <td>lorem6</td>
+            <td>lorem7</td>
+            <td>lorem8</td>
+            <td>lorem9</td>
+            <td>lorem10</td>
+        </tr>
+        <tr>
+            <td>lorem1</td>
+            <td>lorem2</td>
+            <td>lorem3</td>
+            <td>静格格</td>
+            <td>女</td>
+            <td>lorem6</td>
+            <td>lorem7</td>
+            <td>lorem8</td>
+            <td>lorem9</td>
+            <td>lorem10</td>
+        </tr>
+        <tr>
+            <td>lorem1</td>
+            <td>lorem2</td>
+            <td>lorem3</td>
+            <td>美哥</td>
+            <td>女</td>
+            <td>lorem6</td>
+            <td>lorem7</td>
+            <td>lorem8</td>
+            <td>lorem9</td>
+            <td>lorem10</td>
+        </tr>
+        <tr>
+            <td>lorem1</td>
+            <td>lorem2</td>
+            <td>lorem3</td>
+            <td>威少</td>
+            <td>男</td>
+            <td>lorem6</td>
+            <td>lorem7</td>
+            <td>lorem8</td>
+            <td>lorem9</td>
+            <td>lorem10</td>
+        </tr>
+        <tr>
+            <td>lorem1</td>
+            <td>lorem2</td>
+            <td>lorem3</td>
+            <td>井少</td>
+            <td>男</td>
+            <td>lorem6</td>
+            <td>lorem7</td>
+            <td>lorem8</td>
+            <td>lorem9</td>
+            <td>lorem10</td>
+        </tr>
+        <tr>
+            <td>lorem1</td>
+            <td>lorem2</td>
+            <td>lorem3</td>
+            <td>龙少</td>
+            <td>男</td>
+            <td>lorem6</td>
+            <td>lorem7</td>
+            <td>lorem8</td>
+            <td>lorem9</td>
+            <td>lorem10</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td>lorem1</td>
+            <td>lorem2</td>
+            <td>lorem3</td>
+            <td>……</td>
+            <td>啊哈哈</td>
+            <td>lorem6</td>
+            <td>lorem7</td>
+            <td>lorem8</td>
+            <td>lorem9</td>
+            <td>lorem10</td>
+        </tr>
+        </tfoot>
+    </table>
+    <p>3.jquery实现购物车table表格的样式修饰美化</p>
+    <table id="tab2">
+        <tr>
+            <td>书名</td>
+            <td>价格</td>
+            <td>库存</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td>机器猫</td>
+            <td>3.6</td>
+            <td>100</td>
+            <td>
+                <input type="button" value="修改">
+                <input type="button" value="删除">
+            </td>
+        </tr>
+        <tr>
+            <td>机器狗</td>
+            <td>3.6</td>
+            <td>200</td>
+            <td>
+                <input type="button" value="修改">
+                <input type="button" value="删除">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td>
+                <input type="button" value="增加">
+            </td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>
+<script src="../JS/jquery-1.11.3.js"></script>
+<script>
+    //1.jquery实现词《沁园春·雪》的修饰美化
+    $("#mp").css("font-size","30px");
+    $(".c1").css("background","#CCFF99");
+    $("#poem div,#poem p").css("line-height","30px");
+    $("#poem div").css("border","2px solid red");
+    $("#poem div>div").css("color","blue");
+    $("#poem div div").css("background","#FF99FF");
+    $("#poem div~p").css("color","blue");
+    $("#poem div+p").css("border","2px solid #009900");
+</script>
+<script>
+    //2.jquery实现通讯录table表格的样式修饰美化
+$("#tab1").css("border","5px solid green");
+$("#tab1 th").css("background","blue");
+$("#tab1 th").css("color","white");
+$("#tab1 td").css("border","1px solid blue");
+$("#tab1 td:first-child").css("text-align","left");
+$("#tab1 td:nth-child(8)").css("text-align","left");
+$("#tab1 td:nth-child(4)").css("font-weight","bold");
+$("#tab1 tr:odd").css("background","#ffcfcf");
+$("#tab1 tr:even").css("background","#ccc");
+</script>
+<script>
+    //3.3.jquery实现购物车table表格的样式修饰美化
+$("#tab2").css("border","1px solid #000");
+$("#tab2").css("border-collapse","collapse");
+$("#tab2 td").css("border","1px solid #000");
+$("#tab2 td").css("font-family","宋体");
+$("#tab2 td:not(:last-child)").css("width","220px");
+$("#tab2 td").css("font-size","20px");
+$("#tab2 tr:not(:first,:last)").css("background","#f0f");
+$("#tab2 tr:eq(2)").css("background","#0f0");
+</script>
+

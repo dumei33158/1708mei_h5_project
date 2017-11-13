@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js1107homework_Dumei</title>
+    <!--meta:vp适配手机-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--meta:compat强制IE以最高内核渲染代码(将IE=7设置为IE=edge)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+    <!--[if IE lte8]>
+<script src="../bootstrap/js/html5shiv.min.js"></script>
+<script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        body{
+            background: #eee;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+       /* .photo_index {
+            width:41%;
+            margin: 0 auto;
+        }*/
+        .nav{
+            background: #034d50;
+            border: 1px solid #034d50;
+            border-radius: 7px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            margin-bottom: 22px;
+        }
+        .nav .N_font{
+            float: left;
+        }
+        .nav .N_font>li{
+            float: left;
+            margin-right: 20px;
+            line-height: 48px;
+        }
+        .nav .N_font>li>a{
+            font-size: 1.3rem;
+            display: block;
+            color: #f9ffff;
+        }
+        .nav .N_search{
+            line-height: 48px;
+            float: right;
+        }
+        .nav .N_search .N_look{
+            height: 27px;
+            width: 248px;
+        }
+        .content{
+            margin-top: 10px;
+            overflow: hidden;
+            border: 1px solid transparent;
+            padding: 0;
+        }
+        .content .informationL{
+            float: left;
+           /* width: 156px;*/
+            height: 170px;
+            padding: 19px;
+            background: #56085c;
+            border-radius: 7px;
+            box-sizing: border-box;
+            margin: 0 10px 22px 0;
+        }
+        .content .informationL>ul{
+
+        }
+        .content .informationL>ul>li{
+            /*width: 116px;*/
+            height: 37px;
+            line-height: 37px;
+            padding-left: 9px;
+            margin-bottom: 10px;
+            background: #fff;
+        }
+        .content .informationL>ul>li>a{
+            display: block;
+            font-size: 1rem;
+            color:#000400;
+        }
+        .content .centerS{
+            float: left;
+           /* height:405px;*/
+           /* width: 470px;*/
+            padding-top: 20px;
+            background: #ffb951;
+            box-sizing: border-box;
+            border-radius: 7px;
+            margin:0 10px 22px 0;
+        }
+        .content .centerS>ul{
+            margin-bottom: 22px;
+            float: left;
+        }
+        .content .centerS>ul>li{
+            float: left;
+         margin: 10px 2px 0 0;
+           /* border: 1px solid #000;*/
+            width: 24%;
+        }
+        .content .centerS>ul>li>a>img{
+            /* width: 108px;
+             height: 81px;*/
+            width: 100%;
+        }
+        .content .centerS .p_text{
+            clear: both;
+        }
+        .content .centerS .p_text>p{
+            line-height: 22px;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            color:#000007;
+        }
+        .content .informationR{
+            float: left;
+            background: #5a5708;
+          /*  width: 141px;*/
+            /*height: 346px;*/
+            border-radius: 7px;
+            margin-bottom:22px;
+
+        }
+        .content .informationR>p{
+            margin-top: 20px;
+            line-height: 22px;
+            font-size: 0.9rem;
+            color:#fff;
+        }
+
+        .foot:before,.foot:after{
+            content:"";
+            display: none;
+        }
+        .foot{
+            clear: both;
+            height: 45px;
+            border-top: 2px solid #08575c;
+            text-align: center;
+        }
+        .foot>p{
+            font-size: 1rem;
+            margin-top: 10px;
+            color: #000106;
+        }
+        .foot>p>span{
+            margin: 0 5px;
+        }
+        @media (max-width: 768px) {
+            .content .centerS>ul>li{
+                width: 42%;
+                margin: 5px;
+            }
+        }
+        /*绿色的消失和有间距时成行没实现*/
+       /* @media (min-width: 768px)and(max-width: 992px) {
+            .content .informationL{
+
+            }
+            .content .centerS{
+
+            }
+            .content .informationR{
+                display: none;
+            }
+        }*/
+        /*.col-mdr-3{
+            width: 32.2%;
+        }*/
+        /*@media (min-width: 992px) {
+
+        }
+        @media (min-width: 1200px) {
+
+        }*/
+    </style>
+</head>
+<body>
+<div class="photo_index col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="nav col-md-12 col-sm-12 col-xs-12">
+    <ul class="N_font">
+        <li><a href="">首页</a></li>
+        <li><a href="">影集</a></li>
+        <li><a href="">活动</a></li>
+    </ul>
+    <div class="N_search">
+        <input class="N_look" type="text" id="searCh" value="search…"/>
+    </div>
+</div>
+<div class="content col-md-12 col-sm-12">
+    <div class="informationL col-md-4 col-sm-4 col-xs-12">
+        <ul>
+            <li><a href="">豆蔻年华</a></li>
+            <li><a href="">花样青春</a></li>
+            <li><a href="">激情岁月</a></li>
+        </ul>
+    </div>
+    <div class="centerS col-md-4 col-sm-4 col-xs-12">
+        <ul>
+            <li><a href=""><img src="../images/1.jpg" alt=""/></a></li>
+            <li><a href=""><img src="../images/2.jpg" alt=""/></a></li>
+            <li><a href=""><img src="../images/3.jpg" alt=""/></a></li>
+            <li><a href=""><img src="../images/4.jpg" alt=""/></a></li>
+        </ul>
+        <div class="p_text">
+            <p>Lorem ipsumi itrferendis, qempora tempore unde veritatis? Delectus minus officiis praesentium. Necessitatibus, odio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At laudantium neque quia repellendus sit totam vero voluptas voluptatem voluptates voluptatum? Ad aliquam atque aut cupiditate dolor et, facilis illum ipsam laboriosam nihil, praesentium quae quasi quo rerum totam! Ad eius eligendi eum fuga ipsum magnam mollitia nulla porro quo reiciendis?</p>
+            <p>Lorem ipsum Lorem ipsum dolor. Lorem ipsum dolor sit ipsum dolor sit. Lorem ipsum dolor sit amet. dolor sit amet, consectetur adipisicing elit. Architecto culpa cumque, cupiditate distinctio dolor doloribus labore neque porro repellendus voluptatum.</p>
+        </div>
+    </div>
+    <div class="informationR col-md-3 col-sm-3 col-xs-12">
+        <p>Lorem ipsum dolor Lorem ipsum dolorsectetur adipisicing elit. sit amet, consectetur adipisicing elit. Architecto assumenda blanditiis, consequatur consequuntur deleniti molestiae praesentium ratione sit ullam veritatis.</p>
+    </div>
+</div>
+<div class="foot col-md-12 col-sm-12 col-xs-12">
+    <p>COPYLEFT<span>&reg;</span>TERENA.COM.CN</p>
+</div>
+</div>
+</body>
+</html>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script>
+    $("#searCh").val().css({
+        fontSize:"0.9rem"
+    })
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvasmoveline</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000" style="border: 1px solid #000"></canvas>
+</body>
+</html>
+<script>
+    var elem=document.getElementById("canvas");
+    var canvas=elem.getContext("2d");
+    var cas=elem.getContext("2d");
+    canvas.beginPath();
+    canvas.moveTo(100,100);
+    canvas.lineTo(300,300);
+    canvas.lineTo(500,100);
+    canvas.lineTo(600,200);
+    canvas.lineTo(800,100);
+    canvas.closePath();
+    canvas.strokeStyle="blue";
+    canvas.lineWidth=10;
+    canvas.lineCap="round";
+    canvas.lineJoin="mister";
+    canvas.stroke();
+    cas.fillStyle="#f0f";
+    cas.beginPath();
+    cas.arc(600,600,200,0,Math.PI*1.5,false);//x轴y轴半径从0到pi,顺时针
+    cas.closePath();
+    cas.beginPath();
+    cas.arc(800,400,100,0,Math.PI*1.5,true);
+    cas.arc(200,300,300,0,Math.PI,true);
+    cas.arc(300,600,100,0,Math.PI,false);
+    cas.arc(200,200,100,0,Math.PI*2,false);
+    cas.closePath();
+    cas.stroke();
+    cas.fill();
+
+</script>

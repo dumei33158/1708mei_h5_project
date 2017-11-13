@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var str="   1    123.23abc123";
+    var n=12;
+    var s=parseInt(str);
+    console.log(s);//show:1;
+    console.log(typeof s);//show:number
+    console.log(s+n);//show:13;
+    var str2="    12abc.345.00";
+    var num=parseFloat(str2);
+    console.log(num);//show:12
+    console.log(parseInt(true));//show:NaN
+    console.log(Number(123+true));//show:124
+    console.log(typeof String(123));//show:string
+    console.log(String(n));
+    console.log(typeof String(n));
+    console.log(n.toString());
+    console.log(typeof n.toString());
+</script>

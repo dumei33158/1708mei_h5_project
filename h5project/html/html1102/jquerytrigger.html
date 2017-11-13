@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquerytrigger</title>
+</head>
+<body>
+<div id="future" style="width: 300px;height: 300px;border: 1px solid #000;"></div>
+<form action="http://www.baidu.com">
+用户名：<input id="user" type="text" value="">
+密码：<input id="pwd" type="password">
+绑定事件：<input id="btnb" type="button" value="绑定">
+解除事件：<input id="btnj" type="button" value="解除">
+data：<input id="btnd" type="button" value="data">
+many：<input id="btnm" type="button" value="many">
+super：<input id="btns" type="button" value="super">
+
+</form>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+  /*  $("#pwd").keyup(function(){$("#user").val("123")});*/
+    $("#btnb").on("click mouseover",function(){
+        console.log("888888");
+    });
+    /*$("#btnb").off("click");*/
+  //多个事件绑定
+  $("#btnm").on({
+      click:function(){console.log(123)},
+      mouseover:function(){console.log(345)}
+  });
+  //高级用法---未来
+  $("#btns").click(function(){
+      $("#future").append($('<input id="btnf" type="button" value="future">'));
+  });
+  $("#future").on("click","#btnf",{"name":"静格格"},function(e){
+      alert(e.data.name+"\t稀里糊涂来学习然后要到未来去，来吧！未来元素，哈哈哈");
+  });
+</script>

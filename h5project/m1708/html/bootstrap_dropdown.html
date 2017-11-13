@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--meta:vp适配手机-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--meta:compat强制IE以最高内核渲染代码(将IE=7设置为IE=edge)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+    <!--[if IE lte8]>
+<script src="../bootstrap/js/html5shiv.min.js"></script>
+<script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+    <!--上拉菜单直接将 <div class="dropdown">改为 <div class="dropup">-->
+    <div class="dropdown">
+        <button class="btn btn-success mybtn" data-toggle="dropdown">
+            <span>下拉菜单</span>
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu myul">
+            <li class="dropdown-header"><a href="#">lorem1</a></li>
+            <li><a href="#">lorem2</a></li>
+            <li  class="dropdown-header"><a href="#">lorem3</a></li>
+            <li class="disabled"><a href="#">lorem4</a></li>
+            <li class="divider"></li>
+            <li><a href="#">lorem5</a></li>
+            <li><a href="#">lorem6</a></li>
+            <li class="disabled"><a href="#">lorem7</a></li>
+            <li class="dropdown-header"><a href="#">lorem8</a></li>
+            <li><a href="#">lorem9</a></li>
+            <li><a href="#">lorem10</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container" style="margin-left: 300px;">
+    <!--上拉菜单直接将 <div class="dropdown">改为 <div class="dropup">-->
+    <div class="dropdown">
+        <button class="btn btn-warning my_btn">
+            <span>下拉菜单</span>
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu my_ul">
+            <li class="dropdown-header"><a href="#">lorem1</a></li>
+            <li><a href="#">lorem2</a></li>
+            <li  class="dropdown-header"><a href="#">lorem3</a></li>
+            <li class="disabled"><a href="#">lorem4</a></li>
+            <li class="divider"></li>
+            <li><a href="#">lorem5</a></li>
+            <li><a href="#">lorem6</a></li>
+            <li class="disabled"><a href="#">lorem7</a></li>
+            <li class="dropdown-header"><a href="#">lorem8</a></li>
+            <li><a href="#">lorem9</a></li>
+            <li><a href="#">lorem10</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script>
+    $(".mybtn").outerWidth($(".myul").outerWidth());
+    $(".myul>li>a").click(function(e){
+        e.preventDefault();
+        if(!$(this).parent().hasClass("disabled")){
+            $(".mybtn>span:first-child").text($(this).text());
+        }
+    });
+    //js实现无data-toggle="dropdown"属性时的下拉菜单效果
+    $(".my_btn").outerWidth($(".my_ul").outerWidth());
+    $(".my_btn").click(function(){
+        $(".my_ul").toggle();
+        /*$(".myul").dropdown("toggle");*/
+    });
+    $(".my_ul>li>a").click(function(e){
+        e.preventDefault();
+        if(!$(this).parent().hasClass("disabled")){
+            $(".my_btn>span:first-child").text($(this).text());
+        }
+    });
+</script>

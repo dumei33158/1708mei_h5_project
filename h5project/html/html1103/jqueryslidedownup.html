@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slidedownup</title>
+        <style>
+            @import url("../../css/reset.css");
+            body {
+                font-size: 14px;
+                color: #575757;
+                font-family:microsoft yahei;
+            }
+            .sfq {
+                width: 350px;
+                border: 1px solid #ccc;
+                margin: 20px auto;
+            }
+            .sfq dt {
+                line-height: 30px;
+                background: #4979ff;
+                color: #fff;
+                padding: 5px;
+                transition: all .3s;
+            }
+
+            .sfq dd {
+                height: 150px;
+                padding: 5px;
+                background: #eee;
+                display: none;
+            }
+            .sfq dl:first-child dd{
+                display: block;
+            }
+            .sfq .high {
+                background: #ff6bd4;
+            }
+        </style>
+    </head>
+<body>
+
+<div class="sfq">
+    <dl>
+        <dt class="high">标题1</dt>
+        <dd>内容1</dd>
+    </dl>
+    <dl>
+        <dt>标题2</dt>
+        <dd>内容2</dd>
+    </dl>
+    <dl>
+        <dt>标题3</dt>
+        <dd>内容3</dd>
+    </dl>
+    <dl>
+        <dt>标题4</dt>
+        <dd>内容4</dd>
+    </dl>
+    <dl>
+        <dt>标题5</dt>
+        <dd>内容5</dd>
+    </dl>
+    <dl>
+        <dt>标题6</dt>
+        <dd>内容6</dd>
+    </dl>
+</div>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+$(".sfq dl dt").click(function(){
+    $(this).addClass("high").next().slideDown();
+    $(this).parent().siblings().find("dt").removeClass("high").next().slideUp();
+})
+</script>

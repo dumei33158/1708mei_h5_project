@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onfocus</title>
+</head>
+<body>
+<input type="text" value="请输入内容" id="txt">
+</body>
+</html>
+<script>
+    function isEmpty(str){
+        var reg=/^\s*$/;
+        if(str===undefined||str===null||reg.test(str)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    txt.onfocus=function(){
+        this.value="";
+    };
+    txt.onblur=function(){
+        if(isEmpty(this.value)){
+            this.value="请输入内容"
+        }
+    }
+</script>

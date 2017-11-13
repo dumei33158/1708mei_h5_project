@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+/*    function getMax(a,b){
+        //取两数最大值 输出在控制台
+        var big=a>b?a:b;
+        return big;
+        console.log("你猜，我会不会显示");
+    }
+    var y=getMax(12,20);
+    document.write(y);
+    console.log(y+20);*/
+
+    function getMax(a,b,c){
+        var max=a>b?a:b;
+        max=max>c?max:c;
+        return max;
+    }
+    var y=getMax(10,20,6);
+    document.write(y);
+    console.log(y);
+
+
+  /*  var res=getMax(12,15);
+    document.write(res);
+    var c=20;
+    /!*res+=c;*!/
+    res=res+c;
+  /!* c+=res;*!/
+   console.log(res);
+*/
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var str="no zuo no die";
+    var index=str.indexOf("no",0);
+    var n=0;
+    var sum=0;
+    while(index!=-1){
+        console.log(str+"中\n第"+(n+1)+"个'no'在"+index+"\n位置");
+        index=str.indexOf("no",index+1);
+        n++;
+        sum+=n;
+    }
+
+    var str1="no zuo no die";
+    var reg=/no/gi;
+    var arr=str1.match(reg);
+    var newArr=[];
+    var index1=str1.indexOf("no",0);
+    var n=0;
+    while(index1!=-1){
+        n++;
+        console.log(str+"中第"+n+"个'no'"+"在"+index1+"\n位置发现目标");
+        index1=str1.indexOf("no",index1+1);
+        newArr.push("no");
+    }
+    if(newArr!=null){
+        console.log("一共有"+newArr.length+"个no");
+    }else{
+        console.log("一个都没有");
+    }
+
+
+    var id_Card="620421199210200466";
+    console.log("出生日期："+id_Card.substr(6,4)+"年"+id_Card.slice(10,12)+"月"+id_Card.slice(12,14)+"日");
+    //console.log(id_Card.slice(-12,-4));负数从-1开始
+    var str="静格格和美哥要用English对话，静格格她两还要用ASCII码交谈，80808080+-、。，：后果难以想象啊！静格格已崩溃";
+    var reg=/静格格/g;
+    document.write(str.replace(reg,"***"));
+
+     var str0="Be:st wis:hes t:o yo:u";
+     console.log(str0.split(""));
+     console.log(str0.split(" "));
+
+     var str2=str0.split(" ");
+     for(var i=0;i<str2.length;i++){
+         str2[i]=str2[i][0].toUpperCase()+str2[i].slice(1);
+     }
+    console.log(str2);
+</script>

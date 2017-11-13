@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuerymouseevent</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding: 40px;
+        }
+        #tooltip{
+            position:absolute;
+            left: 0;
+            top:0;
+        }
+        #tooltip img{
+            width:0;
+            height:0;
+            transition: all .3s;
+        }
+        li{
+            list-style:none;
+            float:left;
+            margin-right:10px;
+            border:1px solid #AAAAAA;
+        }
+    </style>
+    <script src="../../JS/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            var x=10;
+            var y=10;
+            function f1(e){
+                $("#picB").append($( '<div id="tooltip"><img alt="'+$(this).attr("title")+'" src="'+$(this).attr("href")+'" /></div>'));
+                $("#tooltip").css({
+                    top: e.clientY+y+"px",
+                    left: e.clientX+x+"px"
+                }).fadeIn();
+                $("#tooltip>img").css({
+                    width:"300px",
+                    height:"200px"
+                });
+                console.log(111);
+            }
+            function f2(e){
+                $("#tooltip").css({
+                    top: e.clientY+y+"px",
+                    left: e.clientX+x+"px"
+                });
+              /*  console.log(222);*///移动很多次，产生很多次
+            }
+           function f3(){
+               $("#tooltip").remove();
+           }
+            $("a.tooltip").on({
+                mouseenter:f1,
+                mousemove:f2,
+                mouseleave:f3
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="picB"></div>
+<a href="images/apple_1.jpg" class="tooltip" title="这是我的超链接提示1.">提示1.</a>
+<p>
+    <a href="images/apple_2.jpg" class="tooltip" title="这是我的超链接提示2.">提示2.</a></p>
+<p>
+    <a href="#" title="这是自带的提示1.">自带提示1.</a></p>
+<p>
+    <a href="#" title="这是自带的提示2.">自带提示2.</a></p>
+<br />
+<ul>
+    <li>
+        <a href="images/apple_1_bigger.jpg" class="tooltip" title="苹果 iPod">
+            <img alt="苹果 iPod" src="images/apple_1.jpg" />
+        </a>
+    </li>
+    <li><a href="images/apple_2_bigger.jpg" class="tooltip" title="苹果 iPod nano">
+        <img alt="苹果 iPod nano" src="images/apple_2.jpg" />
+    </a></li>
+    <li><a href="images/apple_3_bigger.jpg" class="tooltip" title="苹果 iPhone">
+        <img alt="苹果 iPhone" src="images/apple_3.jpg" />
+    </a></li>
+    <li><a href="images/apple_4_bigger.jpg" class="tooltip" title="苹果 Mac">
+        <img alt="苹果 Mac" src="images/apple_4.jpg" />
+    </a></li>
+</ul>
+</body>
+</html>
+<!--方法1：-->
+<!--<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    var x=10;
+    var y=10;
+    $("a.tooltip").mouseover(function(e){
+        $("#picB").append($( '<div id="tooltip"><img alt="'+$(this).attr("title")+'" src="'+$(this).attr("href")+'" /></div>'));
+        $("#tooltip").css({
+            top: e.clientY+y+"px",
+            left: e.clientX+x+"px"
+        }).fadeIn();
+        $("#tooltip>img").css({
+            width:"300px",
+            height:"200px"
+        });
+    }).mouseout(function(){
+        $("#tooltip").remove();
+    }).mousemove(function(e){
+        $("#tooltip").css({
+            top: e.clientY+y+"px",
+            left: e.clientX+x+"px"
+        });
+    });
+</script>-->

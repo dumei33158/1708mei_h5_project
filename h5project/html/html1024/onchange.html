@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onchange</title>
+    <style>
+        #city{
+            width:180px;
+        }
+    </style>
+
+</head>
+<body>
+<p>1.按以下要求实现二级联动：用两种方法实现：索引数组和关联数组</p>
+<select name="" id="pro">省/市
+    <option value="北京">北京</option>
+    <option value="河南">河南</option>
+    <option value="河北">河北</option>
+</select>
+<input type="button" value="下辖" id="btn1" onclick="f1()"/>
+<textarea name="" id="txt1" cols="30" rows="10"></textarea>
+<br/>
+<select name="" id="proe">省/市
+    <option value="北京">北京</option>
+    <option value="河南">河南</option>
+    <option value="河北">河北</option>
+</select>
+<input type="button" value="下辖" id="btn1e" onclick="f1e()"/>
+<textarea name="" id="txt1e" cols="30" rows="10"></textarea>
+
+<form action="" name="reg">
+    <select id="sheng">
+        <option>请选择你所在的省市</option>
+        <option value="北京">北京</option>
+        <option value="天津">天津</option>
+        <option value="河北">河北</option>
+        <option value="河南">河南</option>
+        <option value="山西">山西</option>
+        <option value="陕西">陕西</option>
+    </select>
+    <select id="city">
+        <option>请选择你所在的城市</option>
+    </select>
+</form>
+
+</body>
+</html>
+<script>
+    //1.按以下要求实现二级联动：用两种方法实现：索引数组和关联数组
+    function f1(){
+        var area=["北京","河南","河北"];
+        var city=[["朝阳","西城","东城","海淀"],["郑州","开封","鹤壁","周口","洛阳"],["石家庄","邯郸","保定","雄安新区","廊坊","承德","唐山"]];
+        txt1.value=city[area.indexOf(pro.value)].join("\n");
+    }
+    function f1e(){
+        var mrea={"北京":["朝阳","西城","东城","海淀"],"河南":["郑州","开封","鹤壁","周口","洛阳"],"河北":["石家庄","邯郸","保定","雄安新区","廊坊","承德","唐山"]};
+        for(var i in mrea) {
+            if (proe.value==i) {
+                txt1e.value = mrea[i].join("\n");
+            }
+        }
+    }
+</script>
+<script>
+    function getCity() {
+        var arr = [
+            ['请选择你所在的城市'],
+            ['海淀', '朝阳', '东城', '崇文', '丰台', '昌平'],
+            ['西辰', '塘沽', '北辰'],
+            ['石家庄', '保定', '邢台', '衡水'],
+            ['洛阳', '开封', '周口', '漯河', '郑州'],
+            ['太原', '临汾', '忻州', '运城', '大同', '平遥'],
+            ['西安', '宝鸡', '延安', '咸阳', '安康']
+        ];
+        var Index=sheng.selectedIndex;//直接获取selected的索引值
+        city.innerHTML="";//避免叠加
+        for(var i=0;i<arr[Index].length;i++){
+            var option=document.createElement("option");
+            option.value=option.innerText=arr[Index][i];//遍历每一个城市
+            city.appendChild(option);
+        }
+    }
+    sheng.onchange=getCity;//change
+</script>

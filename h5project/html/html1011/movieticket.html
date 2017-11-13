@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>movieticket</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var arr=[];
+    for(var i=1;i<=5;i++){
+        arr.push("来宾"+i);
+    }
+    document.write(arr.join("  "));
+    document.write("<br/>");
+
+    for(var count=5;count>=0;count--){
+        arr.shift();
+    }
+    document.write(arr.join("  "));
+    document.write("<br/>");
+</script>

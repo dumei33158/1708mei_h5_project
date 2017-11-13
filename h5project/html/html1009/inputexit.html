@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exit</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function infor() {
+       var arr=[];
+       var input=prompt("请输入姓名");
+       while(input!="exit"){
+           arr[arr.length]=input;
+           input=prompt("请输入姓名");
+           for(var i=0;i<arr.length;i++){
+               if(arr[i]==input){
+               input=prompt("您输入的姓名不能重复，请重新输入");
+               }
+           }
+       }
+       console.log(arr);
+    }
+    infor();
+</script>

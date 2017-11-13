@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>star</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div style="width: 300px;height:300px;border: 1px solid #000;text-align: center" onclick="b1()">
+
+</div>
+<input type="text" onclick="jiu9()"><br/>
+
+</body>
+</html>
+<script>
+    for(var i=1;i<=10;i++){
+        //外层控制行；
+//        document.write("**********");
+        for(var j=9;j>=0;j--){
+            //内层控制列；
+            document.write(j);
+        }
+        document.write("*");
+        document.write("<br/>");
+    }
+
+</script>
+
+<script>
+    for(var m=1;m<=10;m++){
+        for(var b=1;b<=m;b++){
+            document.write("*");
+        }
+        document.write("<br/>");
+    }
+
+</script>
+<script>
+    for(var o=1;o<=10;o++){
+        for(var p=1;p<=11-o;p++){
+            document.write("*");
+        }
+        document.write("<br/>");
+    }
+</script>
+<script>
+    for(var o=1;o<=10;o++){
+        for(var p=1;p<=11-o;p++){
+            document.write(p);
+        }
+        document.write("<br/>");
+    }
+</script>
+<script>
+    function b1() {
+        for(var h=1;h<=10;h++){
+            for(var r=1;r<=h;r++){
+                document.write("\t*");
+            }
+            document.write("<br/>");
+    }
+    }
+</script>
+<script>
+    for(var x=10;x>=0;x--){
+        for(var h=1;h<=x+1;h++){
+            document.write("-");
+        }
+        for(var r=1;r<=h;r++){
+            document.write("*");
+        }
+        document.write("<br/>");
+    }
+</script>
+<script>
+    for(var i=1;i<=10;i++){
+        for(var h=1;h<=10-i;h++){
+            document.write("&nbsp;");
+        }
+        for(var r=1;r<=i;r++){
+            document.write("\t*");
+        }
+        document.write("<br/>");
+    }
+</script>
+<script>
+    function jiu9(){
+        var str="";
+        for(var m=1;m<=9;m++){
+            str="";
+            for(var i=1;i<=m;i++){
+                str+=i+"*"+m+"="+i*m+"\t";
+            }document.write(str);
+            document.write("<br/>");
+        }
+    }
+    jiu9();
+</script>
+
+<script>
+    function jiu10(x){
+        var str="";
+        for(var m=1;m<=x;m++){
+            for(var i=1;i<=m;i++){
+                str=i+"*"+m+"="+i*m+"\t";
+            document.write(str);
+            }
+            document.write("<br/>");
+        }
+    }
+    jiu10(12);
+</script>

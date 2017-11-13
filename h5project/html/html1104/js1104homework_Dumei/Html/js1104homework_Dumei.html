@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1104homework_Dumei.html</title>
+    <link rel="stylesheet" href="../css/animate.min.css"/>
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+     *{
+         margin: 0;
+         padding: 0;
+     }
+    a{
+        text-decoration: none;
+    }
+   /* body{
+        height:2000px;
+    }*/
+    #menu{
+        width: 800px;
+        margin: 0 auto 200px;
+        height: 40px;
+        border: 1px solid #f00;
+        position: relative;
+    }
+    #menu ul li{
+        float: left;
+        line-height: 40px;
+        margin: 0 10px;
+        position: relative;
+    }
+    #menu ul li:not(:first-child):before{
+        content:"";
+        width: 1px;
+        height:28px;
+        background: #ccc;
+        position:absolute;
+        left:-11px;
+        top:6px;
+    }
+    #menu ul li:hover{
+        cursor: pointer;
+    }
+    #line{
+        width: 60px;
+        height: 10px;
+        background: #EA5200;
+        position: absolute;
+        left: 5px;
+        bottom: 0;
+        transition: left 0.3s;
+    }
+    #cont{
+        clear: both;
+        width: 800px;
+        height: 200px;
+        border: 1px solid #f00;
+        position:absolute;
+        left:-1px;
+        top:40px;
+        z-index: 3;
+        background: #fff;
+    }
+    #cont div{
+        display: none;
+    }
+    #cont div:first-child{
+        display: block;
+    }
+    #container,#W_carousel{
+        width: 600px;
+        height: 400px;
+        border: 1px solid #000;
+        margin: 0 auto;
+        position: relative;
+        /*隐藏*/
+    }
+    #list,#list_p{
+        width:600px;
+        height: 400px;
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: 1;
+    }
+    #list_p>img{
+        float:left;
+    }
+    #list>img{
+        float:left;
+        position: absolute;
+        top:0;
+        left: 0;
+        opacity: 0;
+        transition: all 0.8s;
+    }
+
+    #list>img.opa{
+        /*此处需要带上级，不然无效*/
+        opacity: 1;
+        z-index: 1;
+
+    }
+    .spanList span{
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        z-index: 2;
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0,0,0,.6);
+        color: #fff;
+        font-size: 20px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .spanList span:first-child{
+        left: 0;
+    }
+    .spanList span:last-child{
+        right: 0;
+    }
+    #BtnWrap, #BtnWrapC{
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        z-index: 2;
+    }
+    #BtnWrap span,#BtnWrapC span{
+        float: left;
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: #ccc;
+        border: 1px solid #f00;
+        border-radius: 5px;
+        margin-right: 5px;
+    }
+    #BtnWrap span.on,#BtnWrapC span.on{
+        background: #f00;
+    }
+
+    #pur{
+        height:80px;
+        background: purple;
+
+    }
+    .hgo{
+        height:800px;
+    }
+    #gre{
+        width: 300px;
+        height:400px;
+        background: green;
+        float: left;
+        position:relative;
+        z-index: 2;
+    }
+    #pin{
+        width: 700px;
+        height:800px;
+        background: pink;
+        float: right;
+    }
+    #ouT_Box{
+        width: 400px;
+        height: 200px;
+        border:1px solid red;
+        margin:0 auto;
+        line-height: 25px;
+        overflow-y: scroll;
+        overflow: hidden;
+    }
+    #ouT_Box>div{
+        width: 300px;
+    }
+    #box{
+        border: 1px solid #000;
+        width: 1020px;
+        margin: 0 auto;
+    }
+    #outBox{
+        width: 1000px;
+        height: 200px;
+        border: 10px solid #000;
+        overflow:hidden;
+        position: relative;
+    }
+    #boxCount{
+        width:2400px;
+        height: 200px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    #boxCount>div{
+        float: left;
+        width: 200px;
+        height: 200px;
+    }
+    #boxCount>div:nth-child(7n){
+        background: #0dcccc;
+    }
+    #boxCount>div:nth-child(7n+1){
+        background: #f0ad4e;
+    }
+    #boxCount>div:nth-child(7n+2){
+        background: #00ffff;
+    }
+    #boxCount>div:nth-child(7n+3){
+        background: #43f048;
+    }
+    #boxCount>div:nth-child(7n+4){
+        background: #de26f0;
+    }
+    #boxCount>div:nth-child(7n+5){
+        background: #f0191e;
+    }
+    #boxCount>div:nth-child(7n+6){
+        background: #eff01e;
+    }
+    #Wleft,#Wright{
+        width: 40px;
+        height: 40px;
+    }
+    .up {
+        display: none;
+       /* opacity: 0;*/
+        /*此处opacity为0后，用show出不来*/
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: fixed;
+        right: 10px;
+        bottom: 20px;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.11.04作业&nbsp;_Dumei</h1>
+    <p>1.jquery实现二级菜单切换展示效果</p>
+    <div id="menu">
+        <ul>
+            <li>lorem1</li>
+            <li>lorem2</li>
+            <li>lorem3</li>
+            <li>lorem4</li>
+            <li>lorem5</li>
+            <li>lorem6</li>
+        </ul>
+        <div id="line"></div>
+        <div id="cont">
+            <div>111</div>
+            <div>222</div>
+            <div>333</div>
+            <div>444</div>
+            <div>555</div>
+            <div>666</div>
+        </div>
+    </div>
+    <p>2.实现轮播图：一张图片，将图片路径存入数组中，用修改标签的属性实现以下轮播</p>
+    <div id="W_carousel">
+        <div id="list_p">
+            <img src="../img/img1.gif" alt=""/>
+        </div>
+        <div class="spanList">
+            <span id="Cleft">&lt;</span>
+            <span id="Cright">&gt;</span>
+        </div>
+        <div id="BtnWrapC">
+            <span class="on"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <p>3.实现渐隐渐现轮播图</p>
+    <div id="container">
+        <div id="list">
+            <img class="opa" src="../img/img1.gif" alt=""/>
+            <img src="../img/img2.gif" alt=""/>
+            <img src="../img/img3.gif" alt=""/>
+            <img src="../img/img4.gif" alt=""/>
+            <img src="../img/img5.gif" alt=""/>
+        </div>
+        <div class="spanList">
+            <span id="left">&lt;</span>
+            <span id="right">&gt;</span>
+        </div>
+        <div id="BtnWrap">
+            <span class="on"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <p>4.实现：当滚动条>1000时，红框出现，点击红块，滚动条缓缓回到顶部（请滑动滚动条查看）</p>
+    <p>5.鼠标跟随：当滚动条滚动大于800（绿色块顶上元素的高度），停止跟随滚动条滚动，当滚动条滚动小于或者等于800时，继续跟随滚动条移动</p>
+    <div id="pur"></div>
+    <div class="hgo">
+    <div id="gre"></div>
+    <div id="pin"></div>
+    </div>
+    <p>6.无缝滚动，间隙滚动</p>
+    <div id="ouT_Box">
+        <div>
+            <ul id="innerBox1">
+                <li>lorem1</li>
+                <li>lorem2</li>
+                <li>lorem3</li>
+                <li>lorem4</li>
+                <li>lorem5</li>
+                <li>lorem7</li>
+                <li>lorem8</li>
+                <li>lorem9</li>
+                <li>lorem10</li>
+                <li>lorem11</li>
+                <li>lorem12</li>
+                <li>lorem13</li>
+            </ul>
+            <ul>
+                <li>lorem1</li>
+                <li>lorem2</li>
+                <li>lorem3</li>
+                <li>lorem4</li>
+                <li>lorem5</li>
+                <li>lorem7</li>
+                <li>lorem8</li>
+                <li>lorem9</li>
+                <li>lorem10</li>
+                <li>lorem11</li>
+                <li>lorem12</li>
+                <li>lorem13</li>
+            </ul>
+        </div>
+    </div>
+    <p>7.表单验证</p>
+    <form action="http://www.baidu.com" id="sub">
+    <input type="text" id="txtFs"/><span id="userTip">请输入4-6个数字、字母和下划线组成的用户名</span><br/>
+    <input type="password" id="pwdFs"/><span id="pwdTip">请输入6个数字的密码</span><br/>
+    <input type="submit" value="提交"/>
+    </form>
+    <p>8.左右滚动</p>
+    <div id="box">
+        <button id="Wleft">&lt;</button>
+        <button id="Wright">&gt;</button>
+        <div id="outBox">
+            <div id="boxCount">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+            </div>
+        </div>
+    </div>
+    <p>以下文字仅用于测试：</p>
+</div>
+<div id="top" class="up" >回到顶部</div>
+</body>
+</html>
+<script src="../JS/jquery-1.11.3.js"></script>
+<script>
+    for(var j=0;j<100;j++){
+        $(".homework").append($('<p>lorem'+j+'</p><br/>'))
+    }
+</script>
+<script>
+    //1.jquery实现二级菜单切换展示效果
+    $("#menu>ul>li").click(function(){
+        /*e.stopPropagation();
+        e.preventDefault();*/
+        var inx=$(this).index();
+      /* console.log(inx);*/
+        $("#cont>div").eq(inx).css({display:"block"}).siblings().css({display:"none"});
+    $("#line").css({
+        left:"74.3"*+inx+5+"px"
+    })
+    })
+</script>
+<script>
+    //2.实现轮播图：一张图片，将图片路径存入数组中，用修改标签的属性实现以下轮播
+    var arrP=["../img/img1.gif","../img/img2.gif","../img/img3.gif","../img/img4.gif","../img/img5.gif"]
+    var ind=0;
+    function fun(){
+        $("#BtnWrapC>span").eq(ind).addClass("on").siblings().removeClass("on");
+        $("#list_p img").attr("src",""+arrP[ind]+"");
+    }
+    $("#Cright").click(function(){
+        ind++;
+        if(ind>4){
+            ind=0;
+        }
+        fun();
+    });
+    $("#Cleft").click(function(){
+        ind--;
+        if(ind<0){
+            ind=4;
+        }
+        fun();
+    });
+    $("#BtnWrapC>span").click(function(){
+        ind=$(this).index();
+        fun();
+    });
+    $("#W_carousel").hover(
+        function fc(){clearInterval(mytime)},
+        function fs(){
+            mytime=setInterval('$("#Cright").click()',1000)
+        }
+    );
+    var mytime=setInterval('$("#Cright").click()',1000);
+</script>
+<script>
+    //3.实现渐隐渐现轮播图
+    var Index=0;
+    function fade(){
+        $("#BtnWrap>span").eq(Index).addClass("on").siblings().removeClass("on");
+        /*$("#list>img").removeClass("opa");*/
+        $("#list>img").eq(Index).addClass("opa").siblings().removeClass("opa");
+      /*  $("#list>img").eq(Index).fadeIn().siblings().fadeOut();*/
+    }
+    $("#right").click(function(){
+        Index++;
+        if(Index>4){
+            Index=0;
+        }
+        fade();
+    });
+    $("#left").click(function(){
+        Index--;
+        if(Index<0){
+            Index=4;
+        }
+        fade();
+    });
+    $("#BtnWrap>span").click(function(){
+        Index=$(this).index();
+        fade();
+    });
+    $("#container").mouseenter(function(){
+        clearInterval(mytime2);
+    });
+    $("#container").mouseleave(function(){
+        mytime2=setInterval('$("#right").click()',1000);
+    });
+    var mytime2=setInterval('$("#right").click()',1000);
+</script>
+<script>
+    //4.实现：当滚动条>1000时，红框出现，点击红块，滚动条缓缓回到顶部（请滑动滚动条查看）
+    $(window).scroll(function(){
+        if($(window).scrollTop()>1000){
+            $("#top").show();
+        }else{
+            $("#top").hide();
+        }
+
+    });
+    $("#top").click(function(){
+       /* $(window).scrollTop()-=200;
+        if($(window).scrollTop()<0){
+            $(window).scrollTop()=0
+        }
+        setTimeout('$("#top").click()',1000);//没实现*/
+        $("body,html").animate({scrollTop:0},5000);//必须要用$("html,body")或$("html,body")不能用$(window)
+    });
+</script>
+<script>
+    //5.鼠标跟随：当滚动条滚动大于800（绿色块顶上元素的高度），停止跟随滚动条滚动，当滚动条滚动小于或者等于800时，继续跟随滚动条移动
+    //jquery里窗口事件可以是多个事件分开写，不影响，而在JS里需要写在一个窗口下，如一个scroll或一个load
+    $(window).scroll(function(){
+        /* console.log($(window).scrollTop());//1295
+        console.log($("#gre")[0].offsetTop);//1294*/
+        if( $(window).scrollTop()>1294){
+            $("#gre").css({
+                position:"fixed",
+                top:"0"
+            })
+        }else{
+            $("#gre").css({
+                position:"relative"
+            })
+        }
+    })
+</script>
+<script>
+    //6.无缝滚动，间隙滚动
+  /*  console.log($("#innerBox1").offsetTop());*/
+    var bSC=0;
+    function fun6(){
+        bSC++;
+        if(bSC>$("#innerBox1")[0].offsetHeight){
+            bSC=0;
+        }
+        $("#ouT_Box").animate({scrollTop:bSC},10);
+        if(bSC%50==0){
+            clearInterval(mytime6);
+            mytime2=setTimeout(function () {
+                mytime6=setInterval(fun6,10)
+            },2000);
+        }
+    }
+    var mytime6=setInterval(fun6,10);
+    var mytime2;
+$("#ouT_Box").hover(function(){
+    clearInterval(mytime6);
+    clearTimeout( mytime2);
+},function(){
+    clearTimeout( mytime2);
+    mytime6=setInterval(fun6,10);
+});
+  //$("#innerBox1").offsetTop()获取不到why?
+ //$("#innerBox1").offsetHeight()也获取不到why?
+    /*$("#ouT_Box").scroll(function(){
+        console.log($("#ouT_Box").scrollTop());
+    });
+    /*console.log($("#innerBox1")[0].offsetTop);//2116
+    console.log($("#innerBox1")[0].offsetHeight);//300
+    console.log($("#innerBox1").offsetTop);//undefined
+    console.log($("#innerBox1").offset().top);//2116*/
+    /*console.log($("#innerBox1").offsetTop());//TypeError not a function
+*/
+</script>
+<script>
+    //7.表单验证
+    var regk=/^\s*$/g;
+    function isEmpty(str){
+        if(regk.test(str)||str===undefined||str===null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    var reg=/^[a-zA-Z_]\w{3,5}$/;
+    var userN="";
+    $("#txtFs").blur(function(){
+        if(reg.test($("#txtFs").val())){
+            $("#userTip").text("用户名格式输入正确");
+            userN=$("#txtFs").val();
+            $("#userTip").css({
+                color:"black"
+            });
+            return true;
+        }else{
+            $("#userTip").text("用户名格式输入错误，请重新输入4-6个数字、字母和下划线组成的用户名");
+            $("#userTip").css({
+                color:"red"
+            });
+            return false;
+        }
+    });
+    var reg_p=/^\d{6}$/;
+    var pwdM="";
+    $("#pwdFs").blur(function(){
+        if(reg_p.test($("#pwdFs").val())){
+            $("#pwdTip").text("密码格式输入正确");
+            $("#pwdTip").css({
+                color:"black"
+            });
+            pwdM=$("#pwdFs").val();
+            return true;
+        }else{
+            $("#pwdTip").text("密码格式输入错误，请重新输入6个数字的密码");
+            $("#pwdTip").css({
+                color:"red"
+            });
+            return false;
+        }
+    });
+    $("#sub").submit(function(){
+        if(isEmpty($("#txtFs").val())||isEmpty($("#pwdFs").val())||$("#txtFs").val()!=userN||$("#pwdFs").val()!=pwdM){
+            alert("提交内容必须符合格式要求且不能为空\n请输入正确的内容进行提交");
+            return false;
+        }else{
+            return true;
+        }
+
+    })
+</script>
+<script>
+    //8.左右滚动
+
+   /* var Ln=$("#boxCount")[0].offsetLeft;
+    console.log(Ln);*/
+    /*var ine=$("#boxCount>div").index();
+    console.log(ine);*/
+    //找不到index值
+    var n1=0;
+    function lrG(){
+//        $("#outBox").scrollLeft();
+//        console.log( $("#outBox")[0].offsetLeft);//输出是0？？？
+       n1--;
+       if(n1<-1400){
+           n1=0;
+       }else if(n1>-1){
+           n1=-1400;
+       }
+       $("#boxCount").animate({left:n1},10);
+    }
+   var my=setInterval(lrG,10);
+    $("#box").mouseover(function(){
+        clearInterval(my);
+    });
+    $("#box").mouseout(function(){
+        my=setInterval(lrG,10);
+    });
+    $("#Wleft").click(function(){
+        var n=n1%200;
+        if(n==0){
+            n1-=200;
+        }else{
+            n1-=200+n;
+        }
+        lrG();
+    });
+    $("#Wright").click(function(){
+        var n=(n1++)%200;
+        if(n==0){
+            n1-=-200;
+        }else{
+            n1-=n;
+        }
+        lrG();
+    });
+   /* var n=0;
+    var flag=0;
+$("#Wleft").click(function(){
+    n++;
+    if(n>6){
+        n=0
+    }
+    $("#boxCount").css({
+           left:"-200"*+n+"px"
+    });
+});
+    $("#Wright").click(function(){
+        n--;
+        if(n<0){
+            n=6
+        }
+        $("#boxCount").css({
+            left:"-200"*+n+"px"
+        });
+    });
+
+    $("#outBox").hover(
+        function mo(){
+            clearInterval(myTime);
+        },function mou(){
+            myTime=setInterval(' $("#Wleft").click()',1000);
+
+    });
+    var myTime=setInterval(' $("#Wleft").click()',1000);*/
+
+    /*//JS代码实现：
+   function start(){
+        outBox.scrollLeft++;
+        if(outBox.scrollLeft==1400){
+            outBox.scrollLeft=0;
+        }
+    }
+    var myTime=setInterval(start,10);
+    box.onmouseover=function(){
+        clearInterval(myTime);
+    };
+    box.onmouseout=function(){
+        clearInterval(myTime);
+        myTime=setInterval(start,10);
+    };
+    Wright.onclick=function(){
+        if(outBox.scrollLeft%200==0){
+            if(outBox.scrollLeft==0){
+                outBox.scrollLeft=1400;
+            }
+            outBox.scrollLeft-=200;
+        }else{
+            outBox.scrollLeft=outBox.scrollLeft-outBox.scrollLeft%200;
+        }
+
+    };
+    Wleft.onclick=function(){
+        if(outBox.scrollLeft%200==0){
+            outBox.scrollLeft+=200;
+            if(outBox.scrollLeft==1400){
+                outBox.scrollLeft=0;
+            }
+        }else{
+            outBox.scrollLeft=outBox.scrollLeft+(200-outBox.scrollLeft%200);
+        }
+    };*/
+</script>

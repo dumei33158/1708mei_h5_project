@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>double dimensional array </title>
+</head>
+<body>
+<select name="addr" id="pro">省/市/区
+    <option value="选择省份">选择省份</option>
+    <option value="国外">国外</option>
+    <option value="北京">北京</option>
+    <option value="上海市">上海</option>
+    <option value="天津市">天津</option>
+    <option value="重庆市">重庆</option>
+    <option value="广东省">广东</option>
+    <option value="河北">河北</option>
+    <option value="辽宁省">辽宁</option>
+    <option value="吉林省">吉林</option>
+    <option value="黑龙江省">黑龙江</option>
+    <option value="河南省">河南</option>
+    <option value="湖北省">湖北</option>
+    <option value="湖南省">湖南</option>
+    <option value="山西省">山西</option>
+    <option value="山东省">山东</option>
+    <option value="陕西省">陕西</option>
+    <option value="四川省">四川</option>
+    <option value="安徽省">安徽</option>
+    <option value="江苏省">江苏</option>
+    <option value="福建省">福建</option>
+    <option value="江西省">江西</option>
+    <option value="海南省">海南</option>
+    <option value="浙江省">浙江</option>
+    <option value="广东省">广东</option>
+    <option value="云南省">云南</option>
+    <option value="贵州省">贵州</option>
+    <option value="甘肃省">甘肃</option>
+    <option value="青海省">青海</option>
+    <option value="台湾省">台湾</option>
+    <option value="内蒙古自治区">内蒙古自治区</option>
+    <option value="宁夏回族自治区">宁夏回族自治区</option>
+    <option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+    <option value="西藏自治区">西藏自治区</option>
+    <option value="广西壮族自治区">广西壮族自治区</option>
+    <option value="香港特别行政区">香港特别行政区</option>
+    <option value="澳门特被行政区">澳门特被行政区</option>
+</select>
+<input type="button" id="btn" onclick="area()" value="下辖：">
+<input type="text" id="txt" style="width: 300px;margin-right: 10px;">市
+</body>
+</html>
+<script>
+    function area(){
+        var province=["河北","湖南","山东","云南","甘肃"];
+        var city=[["石家庄","邯郸","保定","雄安新区"],["长沙","常德"],["泰安","济南","德州"],["昆明","西双版纳","大理","丽江"],["兰州","敦煌","武威","白银","酒泉"]];
+        for(var i=0;i<province.length;i++){
+          if(province[i]==pro.value){
+             txt.value=city[i].join("    ");
+          }
+        }
+    }
+//txt.value=city[province.indexOf(pro.value)];替换循环
+</script>

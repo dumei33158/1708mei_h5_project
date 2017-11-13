@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .wrap{
+                width: 300px;
+                height: 200px;
+                background: #ccc;
+                margin: 20px auto;
+                overflow: hidden;
+                position: relative;
+            }
+            .wrap img{
+               transition: all .6s;
+            }
+            .wrap:hover img{
+                transform: scale(1.3);
+            }
+            .mark{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .case-one img{
+                transition:all .5s;
+            }
+            .case-one:hover img{
+                transform: scale(1.3);
+            }
+        .outer{
+            width: 100px;
+            height: 100px;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background:red;
+        }
+        .outer:hover .inner{
+            background: #ccc;
+        }
+            .case-one img{
+                transition: all .5s;
+            }
+        .case-one:hover img{
+/*            width: 1000px;*/
+            -moz-transform:scale(1.33);
+            -webkit-transform:scale(1.33);
+            -o-transform:scale(1.33);
+            -ms-transform:scale(1.33);
+            transform:scale(1.33);
+        }
+    </style>
+    <link rel="stylesheet" href="sty.css"/>
+</head>
+<body>
+    <div class="wrap">
+        <img src="001.jpg" alt=""/>
+        <div class="mark">
+            <div class="cover-row"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="cover-row"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+    </div>
+    <div class="case-list">
+        <ul>
+            <li>
+                <div class="case-one" style="border: 1px solid #000;">
+                    <div class="case-one-img move-cntr hover-shadow">
+                        <img class="move-target lazy" src="001.jpg"  alt="">
+                        <div class="cover-glass on">
+                            <div class="cover-row on"><i></i><i></i><i></i><i></i><i></i></div>
+                            <div class="cover-row on"><i></i><i></i><i></i><i></i><i></i></div>
+                        </div>
+                    </div>
+                    <div class="case-one-desc">
+                        <h4><a href="http://www.eidea.net.cn/" target="_balnk">易点新官网</a></h4>
+                        <span>类别：响应式企业官网</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="case-one">
+                    <div class="case-one-img move-cntr hover-shadow"><a href="http://www.eidea.net.cn/" target="_balnk">
+                        <img class="move-target lazy" src="001.jpg" data-original="001.jpg" alt="">
+                        <div class="cover-glass on">
+                            <div class="cover-row on"><i></i><i></i><i></i><i></i><i></i></div>
+                            <div class="cover-row on"><i></i><i></i><i></i><i></i><i></i></div>
+                        </div>
+                    </a></div>
+                    <div class="case-one-desc">
+                        <h4><a href="http://www.eidea.net.cn/" target="_balnk">易点新官网</a></h4>
+                        <span>类别：响应式企业官网</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="case-one">
+                    <div class="case-one-img move-cntr hover-shadow"><a href="http://www.eidea.net.cn/" target="_balnk">
+                        <img class="move-target lazy" src="001.jpg" data-original="001.jpg" alt="" style="display: inline; transform: scale(1.33) translate3d(-32.5175px, -26.7813px, 0px); transition: transform 0.25s linear;">
+                        <div class="cover-glass on">
+                            <div class="cover-row on"><i></i><i></i><i></i><i></i><i></i></div>
+                            <div class="cover-row on"><i></i><i></i><i></i><i></i><i></i></div>
+                        </div>
+                    </a></div>
+                    <div class="case-one-desc">
+                        <h4><a href="http://www.eidea.net.cn/" target="_balnk">易点新官网</a></h4>
+                        <span>类别：响应式企业官网</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+<div class="outer">
+    <div class="inner">ss</div>
+</div>
+</body>
+</html>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    var x=$(".cover-glass").outerWidth();
+    var y=$(".cover-glass").outerHeight();
+    $(".cover-glass img").css({
+        width:x+"px",
+        height:y+"px"
+    });
+    $(".cover-glass").hover(function(e){
+        $(this).removeClass("on");
+        setTimeout(function(){
+            $(".cover-glass").addClass("on");
+        },200);
+    }).mousemove(function(e){
+        if(e.offsetX>=50){
+            e.offsetX=50;
+        }else{
+            e.offsetX= e.offsetX;
+        }
+        if(e.offsetY>=50){
+            e.offsetY=50;
+        }else{
+            e.offsetY= e.offsetY;
+        }
+       $(this).prev().css({
+           "transform":"scale(1.33) translate(-"+ e.offsetX+"px,-"+e.offsetX+"px)",
+           "treansition":" transform 0.5s ease"
+       });
+    });
+
+</script>

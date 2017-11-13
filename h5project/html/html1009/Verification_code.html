@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yanzhenma</title>
+</head>
+<body>
+<input type="text" id="fn">
+<input type="button" onclick="testCode()">
+</body>
+</html>
+<!--<script>-->
+    <!--function f(){-->
+        <!--var arr = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m","Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M","0","1","2","3","4","5","6","7","8","9"];-->
+
+        <!--for(var fn.value=0;fn.value<arr.length;fn.value++){-->
+            <!--var fn.value=Math.random()*(arr.length-1-arr[0]+1)+arr[0];-->
+            <!--for(var i=1;i<=4;i++){-->
+            <!--}-->
+        <!--}-->
+
+    <!--}-->
+<!--</script>-->
+<script>
+    //产生指定区间ASCII码的字符
+    function createCode(m,n){
+    var arr=[];
+    for(var i=m;i<=n;i++){
+        arr[arr.length]=String.fromCharCode(i);
+    }
+    return arr;
+    }
+    //判断指定数据在数组中是否存在
+    function isEx(V,arr){
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]==V){
+                return true;
+            }
+        }
+    }
+    function testCode(){
+        var NewArr=createCode(97,122).concat(createCode(65,90),createCode(48,57));
+        var arr=[];
+        for(var i=0;i<4;i++) {
+          //随机产生下标
+            var value=NewArr[parseInt(Math.random() * NewArr.length)];
+            while(isEx(value,arr)){
+                value=NewArr[parseInt(Math.random()*NewArr.length)];
+            }
+            arr[arr.length]=value;
+        }
+        fn.value=arr;
+    }
+</script>

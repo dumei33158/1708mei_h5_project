@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: url("../../images/images_gua/body_bg.gif") repeat-x;
+            width: 960px;
+            margin: 0 auto;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        .header{
+            height: 101px;
+            /*border:1px solid #f00;*/
+            background: url("../../images/images_gua/1012301117307790.jpg") repeat-x;
+        }
+        .header a img{
+            margin:23px 0 0 28px;
+            float: left;
+        }
+        .header ul{
+            float: right;
+            margin-top: 12px;
+            font-size: 12px;
+        }
+        .header ul li{
+            float:left;
+            color: #767175;
+        }
+        .header ul li a{
+            color: #767175;
+            margin-right: 7px;
+        }
+        .header .active,.header ul li a:hover{
+            color: #f34900;
+            text-decoration: underline;
+        }
+        .nav{
+            clear: both;
+
+        }
+        .nav ul{
+            height: 30px;
+        }
+        .nav ul li{
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            /*border: 1px solid #f00;*/
+            background: url("../../images/images_gua/nav_line.gif") no-repeat right center;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .nav .kmusic{
+            color: #fff503;
+        }
+        .nav ul li a{
+            color: #f1fff9;
+            font-weight: bold;
+            display: block;
+            width: 90px;
+            padding: 3px;
+        }
+        .nav ul li a>img{
+            position: absolute;
+            left:72px;
+            top:-7px;
+        }
+        .nav ul li a:hover{
+            background: url("../../images/images_gua/jhgj.jpg");
+        }
+        .notice{
+            height: 36px;
+            /*border: 1px solid #f00;*/
+            clear: both;
+        }
+        .notice a{
+            font-size: 12px;
+            color: #727272;
+            display: block;
+            margin-top: 14px;
+        }
+        .notice a img{
+            vertical-align: middle;
+            float: left;
+        }
+        .notice p{
+            font-size: 12px;
+            color: #fd4900;
+            float: right;
+            margin: -16px 11px 0px 0px;
+        }
+        .notice p img{
+
+        }
+        .banner{
+
+        }
+        .content{
+
+        }
+        .content .left{
+            width: 700px;
+            height: 258px;
+            /*border: 1px solid #00f;*/
+            float: left;
+        }
+        .content .left .lfirst{
+            height: 34px;
+            background: url("../../images/images_gua/bg.gif");
+            font-size: 14px;
+            font-weight: bold;
+            color: #0073a6;
+            box-sizing: border-box;
+            padding: 8px 0 0 30px;
+        }
+        .content .left .lsecond{
+            font-size: 12px;
+        }
+        .content .left .lsecond table{
+            width: 678px;
+            height: 202px;
+            box-sizing: border-box;
+            margin: 5px 20px 14px 12px;
+        }
+        .content .left .lsecond table tr{
+
+        }
+        .content .left .lsecond table tr td{
+            padding: ;
+        }
+        .content .left .lsecond table tr p{
+            width: 219px;
+            line-height: 25px;
+            color: #6d6d6d;
+        }
+        .content .left .lsecond table tr td img{
+            border: 1px solid #d9d9d9;
+            padding: 1px;
+        }
+        .content .left .lsecond table tr td ul li{
+            line-height: 14px;
+        }
+        .content .left .lsecond table tr td ul li a{
+            color: #6d6d6d;
+            display: block;
+            border-bottom: dashed 1px #333333;
+            padding:8px 0 5px 10px;
+            width: 260px;
+        }
+        .content .left .lsecond table tr td h5>a{
+            color: #0073a6;
+            font-size: 14px;
+        }
+        .content .left .lsecond table tr td a span{
+            float: right;
+            margin-right: 22px;
+        }
+        .content .right{
+            width: 250px;
+            height: 258px;
+            /*background: #0000ff;*/
+            float: right;
+        }
+        .content .right .rfirst{
+            height: 33px;
+            background: url("../../images/images_gua/bga.gif");
+            font-size: 14px;
+            font-weight: bold;
+            color: #0073a6;
+            box-sizing: border-box;
+            padding: 10px 0 0 30px;
+        }
+        .content .right .rsecond{
+            margin: 10px 0 0 12px;
+            font-size: 12px;
+            font-family: 宋体;
+            padding-bottom: 10px;
+        }
+        .content .right .rsecond dl{
+            overflow: hidden;
+            /*margin-bottom: 3px;*/
+        }
+        .content .right .rsecond dt{
+            float: left;
+            border: 1px solid #d9d9d9;
+            padding: 1px;
+            height: 60px;
+            margin-bottom: 5px;
+        }
+        .content .right .rsecond dd{
+            width: 160px;
+            float: right;
+            line-height: 20px;
+        }
+        /*.content .right .rsecond table{*/
+            /*width: 228px;*/
+            /*height: 64px;*/
+            /*/!*border: 1px solid #f00;*!/*/
+        /*}*/
+        /*.content .right .rsecond table tr td img{*/
+            /*border: 1px solid #d9d9d9;*/
+            /*padding: 1px;*/
+            /*margin-right: 14px;*/
+        /*}*/
+        .content .right .rsecond .blue{
+            color: #0073a6;
+        }
+        .content .right .rsecond .black{
+            color: #333333;
+        }
+        .show{
+            height: 148px;
+            border: 1px solid #d5d5d5;
+            clear: both;
+            box-sizing: border-box;
+            padding:10px 0 14px 0;
+        }
+        .show .picture{
+            height: 124px;
+            background: url("../../images/images_gua/05.gif") repeat-x;
+            text-align: center;
+        }
+        .show .picture img{
+            width: 128px;
+            margin:19px 3px 0 0;
+        }
+        .footer{
+            height:156px;
+            /*background: #5b8a00;*/
+        }
+        .footer ul{
+            margin: 24px 0 0 191px;
+        }
+        .footer ul li{
+            float: left;
+            width: 74px;
+            text-align: center;
+            vertical-align: middle;
+            background: url("../../images/images_gua/line.gif") no-repeat right center;
+            /*border: 1px solid #f00;*/
+        }
+        .footer .shengming{
+            background: none;
+        }
+        .footer ul li a{
+            font-size: 12px;
+            color: #747474;
+        }
+        .footer p{
+            font-size: 12px;
+            clear: both;
+            text-align: center;
+            margin-top: 14px;
+            line-height: 28px;
+            color: #747474;
+        }
+        .footer .end{
+            text-align: center;
+        }
+        .footer .end img{
+            vertical-align: middle;
+        }
+        .footer ul li a:hover{
+            color: #ff0107;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href=""><img src="../../images/images_gua/guagualogo2.gif" alt=""/></a>
+        <ul>
+            <li><a href="" class="active">注册</a></li>
+            <li>-</li>
+            <li><a href="">登录</a></li>
+            <li>-</li>
+            <li><a href="">忘记密码</a></li>
+            <li>-</li>
+            <li><img src="../../images/images_gua/icon.gif" alt=""/></li>
+            <li><a href="">帮助</a></li>
+        </ul>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">软件下载</a></li>
+            <li><a href="">呱呱商城</a></li>
+            <li><a href="">活动中心</a></li>
+            <li><a href="">排行榜</a></li>
+            <li><a href="" class="kmusic">k歌伴侣<img src="../../images/images_gua/new.gif"/></a></li>
+            <li><a href="">论坛社区</a></li>
+            <li><a href="">客服中心</a></li>
+        </ul>
+    </div>
+    <div class="notice">
+            <a href=""><img src="../../images/images_gua/notice.gif" alt=""/>&nbsp;&nbsp;&nbsp;呱呱公告：呱呱视频社区严惩低俗24举报流程通告</a>
+            <p><img src="../../images/images_gua/music.gif" alt=""/>&nbsp;&nbsp;&nbsp;今天是2011年1月20日&nbsp;&nbsp;&nbsp;星期四</p>
+    </div>
+    <div class="banner">
+        <a href=""><img src="../../images/images_gua/banner.jpg" alt=""/></a>
+    </div>
+    <div class="content">
+        <div class="left">
+            <div class="lfirst">中华情</div>
+            <div class="lsecond">
+                <table>
+                    <tr>
+                        <td rowspan="3"><a href=""><img src="../../images/images_gua/1011221442015370.jpg"/></a></td>
+                        <td><h5><a href="">呱呱首届网络诗歌朗诵大赛</a></h5></td>
+                        <td colspan="3"><h5><a href="">专业的评委阵容</a></h5></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">
+                            <ul>
+                                <li><a href="">[报道]首届网络朗诵大赛再添辉煌<span>12/10</span></a></li>
+                                <li><a href="">[记忆]年轻选手《我的心》声势宏大<span>12/10</span></a></li>
+                                <li><a href="">[报道]再起风云 10进5谁与争锋<span>12/10</span></a></li>
+                                <li><a href="">[报道]新人诞生的摇篮<span>12/09</span></a></li>
+                                <li><a href="">[大赛]耿耿老师妙语连珠<span>12/09</span></a></li>
+                                <li><a href="">[海选]殷瑜老师第四日点评<span>12/09</span></a></li>
+                            </ul>
+                        </td>
+                        <td colspan="3"><p>诗歌，是我国悠久的文化遗产，吸引了许多人的灵魂。作为新时代的网络人，追求一份浪漫，寻找一丝恬静，这是充满诗意的声音。</p></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href=""><img src="../../images/images_gua/1011221536530590.jpg"/></a></td>
+                        <td><a href=""><img src="../../images/images_gua/1011221536149030.jpg"/></a></td>
+                        <td><a href=""><img src="../../images/images_gua/1011221534248440.jpg"/></a></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <div class="right">
+            <div class="rfirst">参赛选手</div>
+            <div class="rsecond">
+                <!--<table>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="3"><img src="../../images/images_gua/1011221538498860.jpg" alt=""/></td>-->
+                        <!--<td><a href="" class="blue">偶然（ID：43630761）</a></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="black">参赛宣言：</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="black">开心阅读!</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="3"><img src="../../images/images_gua/1011221541127090.jpg" alt=""/></td>-->
+                        <!--<td><a href="" class="blue">永恒（ID：44179581）</a></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="black">参赛宣言：</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="black">我参与，我快乐！</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td rowspan="3"><img src="../../images/images_gua/1011221544193650.jpg" alt=""/></td>-->
+                        <!--<td><a href="" class="blue">哑巴学诵（ID：44367021）</a></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="black">参赛宣言：</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="black">重在参与 挑战自我！</td>-->
+                    <!--</tr>-->
+                <!--</table>-->
+                <dl>
+                    <dt><img src="../../images/images_gua/1011221538498860.jpg" alt=""/></dt>
+                    <dd class="blue">偶然（ID：43630761）</dd>
+                    <dd class="black">参赛宣言:</dd>
+                    <dd class="black">开心阅读!</dd>
+                </dl>
+                <dl>
+                    <dt><img src="../../images/images_gua/1011221541127090.jpg" alt=""/></dt>
+                    <dd class="blue">永恒（ID：44179581）</dd>
+                    <dd class="black">参赛宣言:</dd>
+                    <dd class="black">我参与，我快乐！</dd>
+                </dl>
+                <dl>
+                    <dt><img src="../../images/images_gua/1011221544193650.jpg" alt=""/></dt>
+                    <dd class="blue">哑巴学诵（ID：44367021）</dd>
+                    <dd class="black">参赛宣言:</dd>
+                    <dd class="black">重在参与 挑战自我！</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="show">
+        <div class="picture">
+            <a href=""><img src="../../images/images_gua/0911111820569210.gif" alt=""/></a>
+            <a href=""><img src="../../images/images_gua/0911111820060610.gif" alt=""/></a>
+            <a href=""><img src="../../images/images_gua/0911111818424990.gif" alt=""/></a>
+            <a href=""><img src="../../images/images_gua/0911111817455300.gif" alt=""/></a>
+            <a href=""><img src="../../images/images_gua/0911111817145460.gif" alt=""/></a>
+            <a href=""><img src="../../images/images_gua/0911111816491710.gif" alt=""/></a>
+            <a href=""><img src="../../images/images_gua/0911111815476080.gif" alt=""/></a>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li><a href="">关于我们</a></li>
+            <li><a href="">服务条款</a></li>
+            <li><a href="">广告服务</a></li>
+            <li><a href="">商务洽谈</a></li>
+            <li><a href="">招聘信息</a></li>
+            <li><a href="">客服中心</a></li>
+            <li><a href="">呱呱博客</a></li>
+            <li class="shengming"><a href="">郑重声明</a></li>
+        </ul>
+        <p>Copyright&nbsp;©&nbsp;17guagua.com All Rights Reservered ICP证号：浙B2-20100361</p>
+        <div class="end">
+            <a href=""><img src="../../images/images_gua/copyrightpic.gif" alt=""/></a>
+            <a href=""><img src="../../images/images_gua/i_lo2.gif" alt="" width="55"/></a>
+            <a href=""><img src="../../images/images_gua/pic1.gif" alt=""/></a>
+        </div>
+    </div>
+</body>
+</html>

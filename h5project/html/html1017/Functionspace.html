@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kong</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//    var fun=new Function("var str;var reg=/^\s*$/g;if(str==undefinded||str==""||str==null){}");
+</script>
+<script>
+    function isEmpty(str){
+        var reg=/^\s*$/g;
+        if(str===undefined||str===null||reg.test(str)){
+            return true;
+        }
+        else{
+            return flase;
+        }
+    }
+    isEmpty("");
+    console.log(isEmpty(""));
+</script>
+<script>
+    function isEmpty0=new Function("str","var reg=\/^\\s*$\/g;if(str===undefined||str===null||reg.test(str)){return true;}else{return false;}");
+    console.log(isEmpty0("  "));
+</script>
+<script>
+    var f1
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="小丽" onclick="orange('pear')">
+    <input type="button" value="小明" onclick="orange('apple')">
+    <input type="button" value="小张" onclick="orange('mango')">
+    <input type="button" value="王巧玲" onclick="fruit('mango','liulian')">
+    <input type="text" id="txt">
+</body>
+</html>
+<script>
+/*    function orange(fruit){
+        console.log("开始榨汁...");
+        console.log("果汁一炸好...");
+        console.log("请和"+fruit+"汁...");
+    }
+    function fruit(f1,f2){
+        console.log("启动...");
+        console.log("开始炸："+f1+"和"+f2);
+        console.log("您的"+f1+f2+"混合口味的果汁已经好，请取餐");
+    }
+    function sum(n1,n2){
+        console.log(n1+n2);
+    }
+    sum(10,20);
+    function area(r){
+        const PI=3.14;
+        var s=PI*r*r;
+        console.log(s);
+    }
+    area(5);
+    function chou(r){
+        const PI=3.14;
+        var c=2*PI*r;
+        console.log(c);
+    }
+    chou(2);*/
+    function fun(a,b){
+        var sum=a+b;
+       return sum;
+    }
+
+    var res=fun(10,20);
+    console.log(res);
+    res+=20;
+    document.getElementById("txt").value=res;
+</script>

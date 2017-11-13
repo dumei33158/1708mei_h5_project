@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>topgo</title>
+</head>
+<style>
+    .up {
+        display: none; width: 100px; height: 100px; background: red;
+        position: fixed; right: 10px; bottom: 20px;
+    }
+</style>
+
+<body>
+<div id="top" class="up" >回到顶部</div>
+</body>
+</html>
+<script>
+    for(var i=1;i<=2000;i++){
+        document.write("测试内容，第"+i+"行<br/>");
+    }
+    function $(id){
+        return document.getElementById(id);
+    }
+    window.onscroll=function(){
+        var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+        if(scrollTop>=2000){
+            $("top").style.display="block";
+        }else{
+            $("top").style.display="none";
+        }
+    };
+    //方法一
+    /*$("top").onclick=function(){
+        var offset=document.documentElement.scrollTop||document.body.scrollTop;//偏移量
+        var Time=2000;//位移需要的总时间
+        var Interval=10;//间隔多久走一次
+        var speed=offset/(Time/Interval);//每一次滑动的距离
+        function go(){
+            //动画停止的条件
+            //动画 speed
+            if(document.documentElement.scrollTop>0||document.body.scrollTop>0){
+                document.documentElement.scrollTop=document.documentElement.scrollTop-speed;
+                document.body.scrollTop=document.body.scrollTop-speed;
+                setTimeout(go,Interval);
+            }
+        }
+        go();
+    };*/
+
+    //方法二
+    $("top").onclick=function(){
+        var offset=document.documentElement.scrollTop||document.body.scrollTop;
+        var Time=2000;//位移需要的总时间
+        var Interval=10;//间隔多久走一次
+        var speed=offset/(Time/Interval);//每一次滑动的距离
+        function go(){
+            //动画停止的条件
+            //动画 speed
+            if(offset>0){
+                offset-=speed;
+                document.documentElement.scrollTop=document.body.scrollTop=offset;
+                setTimeout(go,Interval);
+            }
+        }
+        go();
+    };
+</script>

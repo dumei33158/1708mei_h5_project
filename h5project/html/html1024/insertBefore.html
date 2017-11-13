@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insertBefore</title>
+</head>
+<body>
+<ul id="menu">
+    <li>lorem1</li>
+    <li>lorem2</li>
+    <li id="oldLi">lorem3</li>
+    <li>lorem4</li>
+    <li>lorem5</li>
+    <li>lorem6</li>
+</ul>
+</body>
+</html>
+<script>
+    var Li=document.createElement("li");
+    Li.innerText="replace";
+    menu.replaceChild(Li,oldLi);
+    var Li1=document.createElement("li");
+    Li1.innerText="insertBefore";
+    menu.insertBefore(Li1,Li);
+</script>

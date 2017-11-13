@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>objproto</title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="../../JS/jquery-3.2.1.min.js"></script>
+<script>
+    function Father(name,score){
+        this.name=name;
+        this.score=score;
+        this.go=function(){
+            this.score+100;
+        }
+    }
+    var s1=new Father();
+    console.log(s1);
+    console.log(s1.name);
+    console.log(s1.score);
+    console.log(s1.go);
+</script>

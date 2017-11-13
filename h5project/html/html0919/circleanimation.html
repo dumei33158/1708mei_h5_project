@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    .run{
+    width: 600px;
+    height: 500px;
+    /*border: 5px solid #00f;*/
+        background: url("../../images/hua.jpg");
+        background-size: cover;
+    position: relative;
+        margin: 500px 600px;
+    animation: xuanzhuan 1s linear infinite normal;
+    transform-origin: center center;
+
+    }
+    .circle{
+    border: 20px solid #f00;
+    /*height: 0px;*/
+    /*width: 0px;*/
+    border-radius: 50%;
+    animation: change 1s linear infinite normal;
+    position: absolute;
+   left: 0;
+    top: 0;
+    }
+    .run:hover{
+        animation-play-state: paused;
+    }
+    @-webkit-keyframes change{
+    0%{
+    transform: translate(0px,0px);
+    }
+    25%{
+    transform: translate(550px,0px);
+    }
+    50%{
+    transform: translate(550px,450px);
+    }
+    75%{
+    transform: translate(0px,450px);
+    }
+    100%{
+    transform: translate(0px,0px);
+    }
+    }
+    @-webkit-keyframes xuanzhuan{
+    0%{
+    transform: rotate(300000060deg);
+    }
+    }
+    </style>
+    </head>
+    <body>
+    <div class="run">
+    <div class="circle"></div>
+    </div>
+    </body>
+</html>

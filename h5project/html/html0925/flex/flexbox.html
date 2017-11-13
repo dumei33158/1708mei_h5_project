@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flexbox</title>
+    <style>
+        @media all and (min-width: 1200px){
+           body{
+               background: #08054e;
+           }
+            .bigbox{
+                background: #7da3b6;
+            }
+        }
+        @media all and (min-width: 768px) and (max-width: 1200px){
+            body{
+                background: #ff903a;
+            }
+            .bigbox{
+                background: #00ff00;
+            }
+        }
+        .bigbox{
+            margin: 0 auto;
+            width: 80%;
+            border: 1px solid #00f;
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+            justify-content: space-around;
+        }
+        .bigbox>div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #0f0;
+            background: #fb0010;
+            margin-bottom: 30px;
+
+        }
+    </style>
+
+</head>
+<body>
+<div class="bigbox">
+    <div></div>
+    <div style="background: #ffff00"></div>
+    <div></div>
+    <div></div>
+    <div style="background: #f882f4"></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>

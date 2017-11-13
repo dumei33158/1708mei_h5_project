@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar{
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+        .sidebar>a{
+            width: 52px;
+            height: 52px;
+            background: url("../../images/elevator2.png");
+            display: block;
+            margin-bottom: 2px;
+            position: relative;
+            transition: background .3s;
+        }
+        .sidebar>a img{
+            position: absolute;
+            right: 52px;
+            bottom:0;
+            transform: scale(0);
+            transition: transform .3s;
+            transform-origin: right bottom;
+            opacity: 0;
+        }
+        .sidebar .center{
+            background: url("../../images/elevator2.png") center -124px;
+        }
+        .sidebar .bottom{
+            background: url("../../images/elevator2.png") center -248px;
+        }
+        .sidebar>a:hover img{
+            transform: scale(1);
+            opacity: 1;
+        }
+        .sidebar .top:hover{
+            background: url("../../images/elevator2.png") center -62px;
+        }
+        .sidebar .center:hover{
+            background: url("../../images/elevator2.png") center -186px;
+        }
+        .sidebar .bottom:hover{
+            background: url("../../images/elevator2.png") center -309px;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <a href="" class="top">
+        <img src="../../images/elevator2_01.gif" alt=""/>
+    </a>
+    <a href="" class="center">
+        <img src="../../images/elevator2_03.gif" alt=""/>
+    </a>
+    <a href="" class="bottom"></a>
+</div>
+</body>
+</html>

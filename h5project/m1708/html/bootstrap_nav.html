@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--meta:vp适配手机-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--meta:compat强制IE以最高内核渲染代码(将IE=7设置为IE=edge)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+    <!--[if IE lte8]>
+<script src="../bootstrap/js/html5shiv.min.js"></script>
+<script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <style>
+        .mynav> li.active > a, .mynav> li.active > a:hover, .mynav> li.active > a:focus {
+            color: #fff;
+            background-color: forestgreen;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-pills mynav nav-justified">
+        <li data-toggle="tab" class="active"><a href="">lorem1</a></li>
+        <li data-toggle="tab"><a href="">lorem2</a></li>
+        <li data-toggle="tab"><a href="">lorem3</a></li>
+        <li data-toggle="tab"><a href="">lorem4</a></li>
+        <li data-toggle="tab"><a href="">lorem5</a></li>
+        <li data-toggle="tab" class="dropdown" id="m_dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">lorem6</a>
+            <ul class="dropdown-menu">
+                <li><a href="">lorem1</a></li>
+                <li><a href="">lorem2</a></li>
+                <li><a href="">lorem3</a></li>
+                <li><a href="">lorem4</a></li>
+                <li><a href="">lorem5</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="container-fluid" style="border: 1px solid orchid;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <ul class="nav nav-pills mynav2 nav-justified">
+        <li data-toggle="tab" class="active"><a href="">lorem1</a></li>
+        <li data-toggle="tab"><a href="">lorem2</a></li>
+        <li data-toggle="tab"><a href="">lorem3</a></li>
+        <li data-toggle="tab"><a href="">lorem4</a></li>
+        <li data-toggle="tab"><a href="">lorem5</a></li>
+        <li data-toggle="tab" class="dropdown" id="m_dropdown2">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">lorem6</a>
+            <ul class="dropdown-menu">
+                <li><a href="">lorem1</a></li>
+                <li><a href="">lorem2</a></li>
+                <li><a href="">lorem3</a></li>
+                <li><a href="">lorem4</a></li>
+                <li><a href="">lorem5</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="container-fluid" style="border: 1px solid #f0ad40;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <ul class="nav nav-tabs nav-justified">
+        <li data-toggle="tab" class="active"><a href="">lorem1</a></li>
+        <li data-toggle="tab"><a href="">lorem2</a></li>
+        <li data-toggle="tab"><a href="">lorem3</a></li>
+        <li data-toggle="tab"><a href="">lorem4</a></li>
+        <li data-toggle="tab"><a href="">lorem5</a></li>
+        <li data-toggle="tab"><a href="">lorem6</a></li>
+    </ul>
+</div>
+<div class="container-fluid" style="border: 1px solid #fa000c;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#tab_1"  data-toggle="tab" >lorem1</a></li>
+        <li><a href="#tab_2"  data-toggle="tab">lorem2</a></li>
+        <li><a href="#tab_3"  data-toggle="tab">lorem3</a></li>
+        <li><a href="#tab_4"  data-toggle="tab">lorem4</a></li>
+        <li><a href="#tab_5"  data-toggle="tab">lorem5</a></li>
+        <li><a href="#tab_6"  data-toggle="tab">lorem6</a></li>
+    </ul>
+    <div class="tab-content" >
+        <div class="tab-pane fade in active" id="tab_1" style="background: hotpink;height:300px;">lorem12311</div>
+        <div class="tab-pane fade" id="tab_2" style="background: darkorchid;height:300px;">lorem12322</div>
+        <div class="tab-pane fade" id="tab_3" style="background: aquamarine ;height:300px;">lorem12333</div>
+        <div class="tab-pane fade" id="tab_4" style="background: chocolate;height:300px;">lorem12344</div>
+        <div class="tab-pane fade" id="tab_5" style="background: #ff6bd4;height:300px;">lorem12355</div>
+        <div class="tab-pane fade" id="tab_6" style="background: midnightblue ;height:300px;">lorem12366</div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script>
+    $("#m_dropdown").on("show.bs.dropdown",function(){
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+    $("#m_dropdown2").on("show.bs.dropdown",function(){
+        $(this).addClass("active").siblings().removeClass("active");
+    })
+</script>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carousel</title>
+    <style>
+        li{
+            list-style: none;
+        }
+        p{
+            line-height: 26px;
+        }
+        #banner{
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            width:790px;
+            height: 340px;
+        }
+        #rLad{
+            float:right;
+            position:absolute;
+            right:50%;
+            bottom:50%;
+            margin-right:-13%;
+            margin-bottom: -20%;
+        }
+        #List_pic{
+            width:6320px;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+        #List_pic>img{
+            transition: all .4s;
+            float: left;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+        #spanList>span{
+            position: absolute;
+            top:50%;
+            margin-top: 0;
+            font-size: 28px;
+            color: greenyellow;
+            z-index: 10;
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0,0,0,.6);
+            cursor: pointer;
+
+        }
+        #left{
+            left: 0;
+        }
+        #right{
+            right: 0;
+        }
+        #rLad>li{
+            float:left;
+            border: 10px solid #fff;
+            width: 0;
+            border-radius: 50%;
+            margin-left: 8px;
+            cursor: pointer;
+            z-index: 1;
+            transition: all .4s;
+        }
+        #rLad>li:hover, #rLad>li.active{
+            border:10px solid blue;
+        }
+
+    </style>
+</head>
+<body>
+<p>2.JS实现网页轮播图</p>
+<div id="banner">
+    <div id="List_pic">
+    <img src="banner1.jpg" alt="" />
+    <img src="banner2.jpg" alt="" />
+    <img src="banner3.jpg" alt="" />
+    <img src="banner4.jpg" alt="" />
+    <img src="banner5.jpg" alt="" />
+    <img src="banner6.jpg" alt="" />
+    <img src="banner7.jpg" alt="" />
+    <img src="banner8.jpg" alt="" />
+    </div>
+    <div id="spanList">
+        <span id="left">&lt;</span>
+        <span id="right">&gt;</span>
+    </div>
+    <ul id="rLad">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    function $(id){
+        return document.getElementById(id);
+}
+    var Index=0;
+    var Lis=$("rLad").getElementsByTagName("li");
+    $("right").onclick=function(){
+        for(var i=0;i<Lis.length;i++){
+            Index++;
+            if(Index<=Lis.length){
+                Index=0;
+            }
+            $("List_pic").style.left=(-790)*Index+"px";
+        }
+    }
+
+</script>

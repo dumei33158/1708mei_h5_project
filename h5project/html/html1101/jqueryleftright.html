@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<h3>下拉框应用</h3>
+<table>
+    <tr>
+        <td>
+            <select id="select1" style="width:100px;" multiple size="5">
+                <option value="News">News</option>
+                <option value="Sport">Sport</option>
+                <option value="Education">Education</option>
+                <option value="Technology">Technology</option>
+                <option value="Art">Art</option>
+            </select>
+        </td>
+        <td>
+            <button id="add">
+                >|</button><br />
+            <button id="add_all">
+                >></button><br />
+            <button id="remove_all">
+                <<</button><br />
+            <button id="remove">
+                |<</button>
+        </td>
+        <td>
+            <select id="select2" multiple="multiple" style="width:100px;" size="5">
+            </select>
+        </td>
+    </tr>
+</table>
+<div class="box"></div>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script type="text/javascript">
+    $("#add").click(function(){
+        $("#select2").append($("#select1 option:selected").removeAttr("selected"))
+    });
+     $("#remove").click(function(){
+     $("#select1").append($("#select2 option:selected").removeAttr("selected"));
+     });
+     $("#add_all").click(function(){
+     $("#select2").append($("#select1 option"));
+     });
+     $("#remove_all").click(function(){
+     $("#select1").append($("#select2 option"));
+     });
+</script>

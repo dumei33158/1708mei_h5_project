@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var str="abc";
+    console.log(str);//show:abc
+    console.log("\u4e00");//show:一
+    console.log("\u9fa5");//show:龥
+    var n=prompt("");
+    n=n-0;
+    console.log(typeof n);//show:number
+    var b=true;
+    var a=true;
+    var c=false;
+    var d=false;
+    console.log(a+b+true);//show:3
+    console.log(a+c);//show:1
+    console.log(d+c);//show:0
+    console.log(a-b);//show:0
+    console.log(a-c);//show:1
+    console.log(c-a);//show:-1
+    console.log(d-c);//show:0
+    console.log(a*b);//show:1
+    console.log(a*c);//show:0
+    console.log(d*c);//show:0
+    console.log(a/b);//show:1
+    console.log(a/c);//show:Infinity
+    console.log(d/c);//show:NaN
+    var np;
+    console.log(np);
+    console.log(typeof np);
+/*console.log(12/0);*/
+/*  var num=prompt("请您输入一个数字")-0;
+  var res=num%2;
+  console.log(res);*/
+
+/*  var num2=prompt("请输入一个三位的纯数字")-0;
+  var g=num2%10;
+  var b=parseInt(num2/100);
+  var s=parseInt(num2/10)%10;
+  var str="个位数是:"+g+"\t十位数字是："+s+"\t百位数字是："+b;
+  console.log(str);*/
+
+/*  123%10=3
+    123/100=1.23---1
+    123/10=12.3 ---12%10=2*/
+/*    var n=10;
+    /!*n=n+1;*!/
+
+/!*    var num=++n + ++n + n++;
+    console.log(num);
+    console.log(n);*!/
+    var num2=++n + n++ + ++n+n++;
+      /!*       11  11      13+13*!/
+
+    console.log(num2);
+    console.log(n);
+/!*    > < ==
+    >=  <= !=*!/
+var res=10>"5";
+console.log(res);
+/!*"a“>"好"*!/
+var str="1";
+console.log("1".charCodeAt(0));
+console.log("\u4e00");
+console.log("\u9fa5");*/
+/*var n1=10;
+var n2="10";
+var res=n1!=n2;
+console.log(res);*/
+/*null
+    undefined*/
+/*    var n1=10;
+    var n2=20;
+    var temp=n1; //temp=10
+    n1=n2;//n1=20
+    n2=temp;//n2=10
+    console.log(n1);
+    console.log(n2);*/
+/*    var num=prompt("请您输入一个字符");
+    var isNumber=num>=0&&num<=9;
+    var isLetter=(num>="a"&&num<="z")||(num>="A"&&num<="Z");
+    console.log(isNumber);
+    console.log(isLetter);*/
+/*    var year=prompt("请输入一个年份");
+    var res=(year%4==0&&year%100!=0)||(year%400==0);
+    console.log(res);*/
+
+/*    var money=prompt("请输入金额");
+    money>=100&&(money=money*0.8);
+    console.log(money);*/
+/*    var input=prompt("");
+    (input==""&&console.log("你真懒，没留下爪印"))||(input!=""&&console.log(input));*/
+/*var a=3;
+/!*a=a+4;*!/
+a+=4;
+var b=10;
+b+=5;
+b*=5;*/
+
+/*var salary=prompt("请输入工资")-0;
+    salary+=1000;
+    console.log(salary);*/
+
+ /*   var age=prompt("");
+    /!*age>=18?console.log("成年"):console.log("未成年");*!/
+    var res=age>=18?"成年":"未成年";
+    console.log(res);*/
+
+/* var score=prompt("")-0;
+ var res=score>=70?score+=2:score-=2;
+ console.log(res);*/
+/* console.log(res);*/
+//大于90分  ---优秀   >80  良好   否则 继续努力哦
+/*var score=prompt("");
+var res=score>=90?"优秀":
+                    score>=80?"良好":"需要继续努力";
+console.log(res);*/
+//
+/*    var salay=prompt("");
+    var res=salay>=20000?"A":salay>=8000?"B":"C";
+    console.log(res);*/
+/*    var n1=10;
+    var n2=20;
+    var max=n1>n2?n1:n2;
+    console.log(max);
+    isNaN();*/
+    function fruit(){
+            console.log("开始启动...");
+            console.log("开始榨汁,,,,,");
+            console.log("果汁已经炸好，请您品尝");
+            console.log("可以品尝两种口味");
+    }
+    fruit();
+    fruit();
+    fruit();
+</script>

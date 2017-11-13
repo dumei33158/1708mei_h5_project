@@ -1,0 +1,36 @@
+                        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regexa</title>
+</head>
+<body>
+<a style="" href="">lorem1</a>
+<a href="" name="lorem2">lorem2</a>
+<a href="" id="l3">lorem3</a>
+<a href="">lorem4</a>
+<a href="#">lorem5</a>
+</body>
+</html>
+<script>
+    var reg=/<a(.*?)href=["'](.*?)["']>(.*?)<\/a>/gi;
+//    var res=reg.test(document.body.innerHTML);
+//    console.log(res);
+//    console.log(reg.lastIndex);
+//    console.log(document.body.innerHTML);
+//    console.log(RegExp.$2);
+//    reg.lastIndex=0;
+    var resArr=reg.exec(document.body.innerHTML);
+    console.log(resArr);
+    console.log(resArr[0],resArr["index"]);
+    resArr=reg.exec(document.body.innerHTML);
+    console.log(resArr);
+    resArr=reg.exec(document.body.innerHTML);
+    console.log(resArr);
+    resArr=reg.exec(document.body.innerHTML);
+    console.log(resArr);
+    resArr=reg.exec(document.body.innerHTML);
+    console.log(resArr);
+    resArr=reg.exec(document.body.innerHTML);
+    console.log(resArr);
+</script>

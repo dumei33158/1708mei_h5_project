@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvasdrawimage</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+<div style="width: 1200px;height: 600px;border: 1px solid #000;margin: 0 auto;">
+<canvas id="canvas" width="1000" height="400" style="background:#000000;border:1px solid blue"></canvas>
+</div>
+</body>
+</html>
+<script>
+    var elem=document.getElementById("canvas");
+    var canvas=elem.getContext("2d");
+    var img=new Image();
+    img.src="mousemove.gif";
+    window.onload=function(){
+        elem.onmousemove=function(e){
+            var e=e||window.event;
+            canvas.clearRect(0,0,1000,400);//清除画布
+            var x= e.offsetX-img.width/2;//x指图片边框距x轴方向的距离，控制x的可移动距离应该在x>=0,x<=1000-img.width之间
+            var y= e.offsetY-img.height/2;//y指图片边框距y轴方向的距离，控制y的可移动距离应该在y>=0,y<=400-img.height之间
+            if(x<=0){
+                x=0;
+            }else if(x>=1000-img.width){
+                x=1000-img.width
+            }
+            if(y<=0){
+                y=0;
+            }else if(y>=400-img.height){
+                y=400-img.height;
+            }
+            canvas.drawImage(img,x,y);
+        };
+
+        /*canvas.drawImage(img,0,0,100,80);
+        canvas.drawImage(img,900,0,100,80);
+        canvas.drawImage(img,0,320,100,80);
+        canvas.drawImage(img,900,320,100,80);*/
+    }
+</script>

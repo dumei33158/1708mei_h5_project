@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1102homework_Dumei.html</title>
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+    .center{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    #shP{
+        width: 380px;
+        height: 460px;
+        background: #ffffff;
+        box-shadow: -1px 1px 2px 2px rgba(0,0,0,.075);
+        position:relative;
+        padding: 2px;
+        box-sizing: border-box;
+    }
+    #mask{
+        width: 380px;
+        height: 460px;
+        background: rgba(255,255,255,.075);
+        position:relative;
+        top: 0;
+        left: 0;
+        padding: 2px;
+        box-sizing: border-box;
+    }
+    #shsPi{
+        height:373px;
+        margin: 10px 10px 0 10px;
+        box-sizing: border-box;
+        position: relative;
+        border: 1px solid #000;
+        /*  background: url(../img/shoppic0.jpg) no-repeat 5px 8px;*/
+    }
+    #slP{
+        height: 66px;
+        width:300px;
+        margin-left: 32px;
+        position: relative;
+        overflow: hidden;
+    }
+    #slP>ul{
+        position: absolute;
+        left: -55px;
+        top:2px;
+    }
+    #slP>ul>li{
+        float: left;
+        margin-right:5px;
+        border: 2px solid transparent;
+    }
+    #slP>ul>li:hover{
+        border: 2px solid red;
+    }
+    #shP>span{
+        position: absolute;
+        font-size: 40px;
+        font-weight: bold;
+        color:#ccc;
+        bottom:15px;
+    }
+    #shP #lp{
+        left: 0;
+        margin-left: 3px;
+    }
+    #shP #rp{
+        right: 0;
+        margin-right: 3px;
+    }
+
+    #cov{
+        position:absolute;
+        background:#ede19a;
+        opacity:0;
+        z-index: 2;
+    }
+    #cov:hover{
+        cursor: move;
+    }
+    #shw{
+        width: 500px;
+        height: 500px;
+        position:absolute;
+        right:-515px;
+        top:-14px;
+        opacity:0;
+        box-shadow: -1px 1px 2px 2px rgba(0,0,0,.075);
+        background: url(../img/shopb1.jpg) no-repeat;
+    }
+</style>
+<body>
+<div class="center">
+    <p>1.jquery实现购物图片浏览的放缩效果</p>
+    <div id="shP">
+        <div id="mask">
+            <div id="shsPi"><img src="../img/shoppic0.jpg" alt=""></div>
+        </div>
+        <span id="lp">&lt</span>
+        <span id="rp">&gt</span>
+        <div id="slP">
+            <ul >
+                <li><img src="../img/shoppic5.jpg" alt=""></li>
+                <li><img src="../img/shoppic1.jpg" alt=""></li>
+                <li><img src="../img/shoppic2.jpg" alt=""></li>
+                <li><img src="../img/shoppic3.jpg" alt=""></li>
+                <li><img src="../img/shoppic4.jpg" alt=""></li>
+                <li><img src="../img/shoppic5.jpg" alt=""></li>
+                <li><img src="../img/shoppic1.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../JS/jquery-1.11.3.js"></script>
+<script>
+    //1.jquery实现购物图片浏览的放缩效果（未完成未实现）
+    var x;
+    var y;
+    $("#mask").mouseenter(function(e){
+        $(this).append($('<div id="cov"></div>'));
+        $(this).append($('<div id="shw"></div>'));
+        $("#shw").css({
+            opacity:"1",
+            overflow:"hidden"
+        });
+        var x=e.offsetX-89;
+        x>e.offsetX-178&&(x=e.offsetX-178);
+        x<0&&(x=0);
+        var y=e.offsetY-89;
+        y>e.offsetY-178&&(y=e.offsetY-178);
+        y<0&&(y=0);
+        $("#cov").css({
+            opacity:".7",
+            width:"178px",
+            height:"178px",
+            left:x+"px",
+            top:y+"px"
+        });
+        /*  e.stopPropagation();
+         e.preventDefault();*/
+    }) ;
+    $("#cov").mouseenter(function(ev){
+        $(this).css({
+            left:ev.offsetX-89+"px",
+            top: ev.offsetY-89+"px"
+        });
+    }).mousemove(function(ev){
+
+        /* ev.stopPropagation();
+         ev.preventDefault();*/
+    }).mouseleave(function(){
+        $("#cov").css({ opacity:"0"});
+        $("#shw").css({ opacity:"0"})
+    });
+    /*  $("#lp").click(function(){
+     $("#slP>ul").css({
+     left:"-55px"
+     })
+     })*/
+</script>

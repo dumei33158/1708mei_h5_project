@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>leftgo</title>
+</head>
+<body>
+<input type="button" id="btn" value="点击">
+<div id="box" style="background: #ccc;width: 300px;height: 300px;position:absolute;left:0;top:50px;"></div>
+</body>
+</html>
+<script>
+    function $(id){
+        return document.getElementById(id);
+    }
+    $("btn").onclick=function(){
+        var offset=100;
+        var newLeft=parseFloat($("box").style.left)+offset;
+        var Time=2000;
+        var Interval=10;
+        var speed=offset/(Time/Interval);
+        function go(){
+            if(parseFloat($("box").style.left)<newLeft){
+                $("box").style.left=parseFloat($("box").style.left)+speed+"px";
+                setTimeout(go,Interval);
+            }
+        }
+        go();
+    };
+</script>

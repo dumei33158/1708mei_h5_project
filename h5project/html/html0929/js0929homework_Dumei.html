@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js0929homework_Dumei.html</title>
+</head>
+<style>
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+    }
+    h1{
+        background: #fb0010;
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.9.29作业_dumei</h1>
+    <p>1.打印出1-100里所有的偶数之和</p>
+    <input type="button" value="请点击按钮查看结果" onclick="e1()"/>
+    <p>2.打印出1-100里所有的奇数之和</p>
+    <input type="button" value="请点击按钮查看结果" onclick="e2()"/>
+    <p>3.求出1-1/2+1/3-1/4…..1/100的和</p>
+    <input type="button" value="请点击按钮查看结果" onclick="e3()"/>
+    <p>4.求出1+1/3+1/5+...+1/50之和</p>
+    <input type="button" value="请点击按钮输出结果" onclick="e4()"/>
+    <p>5.输出20-80之间能被3整除的整数，每5个一行</p>
+    <input type="button" value="请点击按钮输出结果" onclick="e5()"/>
+    <p>6.打印100–200之间所有能被3或者7整除的数</p>
+    <input type="button" value="请点击按钮输出结果" onclick="e6()"/>
+    <p>7.计算100的阶乘:100! = 1 * 2 * 3 * 4 * ... * 100<br/>
+        扩展：给任意一个参数，都可以求出对应的阶乘</p>
+    <input type="button" value="请点击按钮输出结果" onclick="e7()"/>
+    <p>8.求1+2!+3!+...+20!的值<br/>
+        扩展：求出1到任意数之间所有的阶乘之和</p>
+    <input type="button" value="请点击按钮输出结果" onclick="e8()"/>
+    <p>9.打印出1000-2000年中所有的闰年，并以每行四个数的形式输出</p>
+    <input type="button" value="请点击按钮输出结果" onclick="e9()"/>
+    <p>10.输出九九乘法表</p>
+    <input type="button" value="请点击按钮输出结果" onclick="e10()"/>
+    <p>11.打印图形:主要锻炼思维</p>
+    <input type="button" value="请点击按钮输出结果" onclick="e11()"/>
+        <h5>1)</h5>
+        **********<br/>
+        **********<br/>
+        **********<br/>
+        **********
+        <h5>2)</h5>
+        *<br/>
+        **<br/>
+        ***<br/>
+        ****<br/>
+        *****
+        <h5>3)</h5>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;**<br/>
+        &nbsp;&nbsp;&nbsp;***<br/>
+        &nbsp;&nbsp;****<br/>
+        *****<br/>
+</div>
+</body>
+</html>
+<script>
+    //1.打印出1-100里所有的偶数之和
+    function e1() {
+        var d=prompt("请您输入一个数：")-0;
+        var m=0;
+        var sumd=0;
+        if(isNaN(d)){
+            alert("请输入一个数");
+        }else if(d!=""){
+                for(var h=0;h<=d;h++){
+                    if(h%2==0){
+                        sumd+=h;
+                        m++;
+                    }
+            }alert("您输入的"+d+"\n距1之间\n有"+m+"个偶数，其偶数和为"+sumd+"\n注：0为偶数");
+        }else if (d==""){
+                alert("请输入一个数");
+            }
+    }
+</script>
+<script>
+    //2.打印出1-100里所有的奇数之和
+    function e2() {
+        var d = prompt("请您输入一个数：") - 0;
+        var m = 0;
+        var sumd = 0;
+        if (isNaN(d)) {
+            alert("请输入一个数");
+        }
+        else if (d != "") {
+            for (var h = 0; h <= d; h++) {
+                if (h % 2 == 1) {
+                    sumd += h;
+                    m++;
+                }
+            }
+            alert("您输入的" + d + "\n距1之间\n有" + m + "个奇数，其奇数和为" + sumd + "\n注：0为偶数");
+        }
+        else if (d == "") {
+            alert("请输入一个数");
+        }
+    }
+</script>
+<script>
+    //3.求出1-1/2+1/3-1/4…..1/100的和
+    function e3() {
+        var d=prompt("请您输入一个数：")-0;
+        var n=1;
+        var sumd=0;
+        if (isNaN(d)){
+            alert("请输入一个数");
+        }
+        else if(d<=0){
+            alert("请输入一个大于0的数");
+        }
+        else if (d != "") {
+        for(var h=1;h<=d;h++){
+            if(h%2==1){
+                sumd+=n/h;
+            }else if(h%2==0){
+                sumd-=n/h;
+            }
+        }
+        alert("您输入的"+n+"/"+d+"进行【1-1/2+1/3-1/4…】此种运算的结果是"+sumd);
+    }
+    }
+</script>
+<script>
+    //4.求出1+1/3+1/5+...+1/50之和
+    function e4() {
+        var d=prompt("请您输入一个数：")-0;
+        var n=1;
+        var sumd=0;
+        if (isNaN(d)){
+            alert("请输入数字");
+        }
+        else if(d<=0){
+            alert("请输入一个大于0的数");
+        }
+        else{
+            for(var h=1;h<=d;h++) {
+                sumd += n / h;
+            }
+            alert("您输入的"+n+"/"+d+"进行【1+1/2+1/3+1/4…】此种运算的结果是"+sumd);
+            }
+    }
+</script>
+<script>
+    //5.输出20-80之间能被3整除的整数，每5个一行
+    function e5() {
+        var a=prompt("请您输入一个数：")-0;
+        var d=prompt("请您输入另一个数：")-0;
+        if((a=="")||(d=="")){
+            alert("输入内容不能为空");
+        }
+        else if (isNaN(a)||isNaN(d)){
+           alert("请输入数字");
+        }
+        else if(a<=0||d<=0){
+           alert("请输入大于0的两个数");
+       }
+        else if(a==d){
+            alert("请输入不相等的两个数");
+        }
+       else{
+            document.write(a+"到"+d+"之间能被3整除的整数是:<br/>");
+            var i=0;
+            if(a<d){
+            for(var h=a;h<=d;h++){
+                if(h%3==0){
+                    document.write(h+"&nbsp;");
+                    i++;
+                }
+                if(i%5==0){
+                    document.write("<br/>");
+               }
+            }
+        }else{
+                for(var h=d;h<=a;h++){
+                    if(h%3==0){
+                        document.write(h+"&nbsp;");
+                        i++;
+                    }
+                    if(i%5==0){
+                        document.write("<br/>");
+                    }
+                }
+
+            }
+        }
+
+    }
+</script>
+<script>
+    //6.打印100–200之间所有能被3或者7整除的数
+    function e6() {
+        var a=prompt("请您输入一个数：")-0;
+        var d=prompt("请您输入另一个数：")-0;
+        if((a=="")||(d=="")){
+            alert("输入内容不能为空");
+        }
+        else if (isNaN(a)||isNaN(d)){
+            alert("请输入数字");
+        }
+        else if(a<=0||d<=0){
+            alert("请输入大于0的两个数");
+        }
+        else if(a==d){
+            alert("请输入不相等的两个数");
+        }
+        else{
+            document.write(a+"到"+d+"之间所有能被3或者7整除的数是:<br/>");
+            var i=0;
+            if(a<d){
+            for(var h=a;h<=d;h++){
+                if(h%3==0||h%7==0){
+                    document.write(h+"&nbsp;");
+                    i++;
+                }
+                if(i%10==0){
+                    document.write("<br/>");
+                }
+            }
+        }
+        else{
+                for(var h=d;h<=a;h++){
+                    if(h%3==0||h%7==0){
+                        document.write(h+"&nbsp;");
+                        i++;
+                    }
+                    if(i%10==0){
+                        document.write("<br/>");
+                    }
+                }
+            }
+
+        }
+
+    }
+</script>
+<script>
+    //7.计算100的阶乘:100! = 1 * 2 * 3 * 4 * ... * 100
+    function e7() {
+        var a=prompt("请您输入一个数：")-0;
+        if(a==""){
+            alert("输入内容不能为空");
+        }
+        else if (isNaN(a)){
+            alert("请输入数字");
+        }
+        else if(a<=0){
+            alert("请输入大于0的数");
+        }
+        else{
+            document.write(a+"的阶乘值是<br/>");
+            var c=1;
+                for(var n=0;n<=(a-1);n++){
+//                    10=(10-0)*(10-1)*(10-2)*(10-3)*(10-4)……*(10-9)；
+                        c*=(a-n);
+                    }
+                    document.write(a+"!="+c);
+        }
+    }
+</script>
+<script>
+    //8.求1+2!+3!+...+20!的值
+    function e8() {
+        var a=prompt("请您输入一个数：")-0;
+        if(a==""){
+            alert("输入内容不能为空");
+        }
+        else if (isNaN(a)){
+            alert("请输入数字");
+        }
+        else if(a<=0){
+            alert("请输入大于0的数");
+        }
+        else if(a==1){
+            document.write(a+"的阶乘和是<br/>");
+            var sumc=0;
+            for(var u=1;u<=a;u++){
+                for(var f=0;f<=(a-1);f++){
+                    u*=(f+1);
+                    sumc+=u;
+                }
+            }document.write(a+"!="+sumc);
+        }
+        else if(a==2){
+            document.write("从1到"+a+"的阶乘和是<br/>");
+            var sumc=0;
+            for(var u=1;u<=a;u++){
+                for(var f=0;f<=(a-1);f++){
+                    u*=(f+1);
+                    sumc+=u;
+                }
+            }document.write("1+"+a+"!="+sumc);
+        }
+        else if(a==3){
+            document.write("从1到"+a+"的阶乘和是<br/>");
+            var sumc=0;
+            for(var u=1;u<=a;u++){
+                for(var f=0;f<=(a-1);f++){
+                    u*=(f+1);
+                    sumc+=u;
+                }
+            }document.write("1+2!+"+a+"!="+sumc);
+        }
+        else{
+            document.write("从1到"+a+"的阶乘和是<br/>");
+//                    4！+3！+2！+1！=4*3*2*1+3*2*1+2*1+1*1；
+//                    (a-0)!+(a-1)!+(a-2)!+(a-3)!
+//                    (a-0)*(a-1)*(a-2)*(a-3) (a-1)*(a-2)*(a-3) (a-2)*(a-3) (a-3)
+
+//                    4！+3！+2！+1！=4*3*2*1+3*2*1+2*1+1*1；
+//                    (1+1+1+1)!+(1+1+1)!+(1+1)!+1!
+//                    (1+1+1+1)*(1+1+1)*(1+1)*(1)+(1+1+1)*(1+1)*(1)+(1+1)*(1)+(1)
+                    var sumc=0;
+                    for(var u=1;u<=a;u++){
+                        for(var f=0;f<=(a-1);f++){
+                        u*=(f+1);
+                        sumc+=u;
+                    }
+                }document.write("1+2!+3!+……"+a+"!="+sumc);
+            }
+
+    }
+</script>
+<script>
+    //9.打印出1000-2000年中所有的闰年，并以每行四个数的形式输出
+    function e9() {
+        var a=prompt("请您输入一个年份：")-0;
+        var d=prompt("请您输入另一个年份：")-0;
+        if((a=="")||(d=="")){
+            alert("输入内容不能为空");
+        }
+        else if (isNaN(a)||isNaN(d)){
+            alert("请输入年份");
+        }
+        else if(a<=0||d<=0){
+            alert("输入年份要大于0哦");
+        }
+        else if(a==d){
+            alert("请不要输入相同的年份哦");
+        }
+        else{
+            document.write(a+"到"+d+"年中所有的闰年有:<br/>");
+            var i=0;
+            if(a<d){
+                for(var h=a;h<=d;h++){
+                    if((h%4==0&&h%100!=0)||(h%400==0)){
+                        document.write(h+"&nbsp;");
+                        i++;
+                    }
+                    if(i%4==0){
+                        document.write("<br/>");
+                    }
+                }
+            }else{
+                for(var h=d;h<=a;h++){
+                    if((h%4==0&&h%100!=0)||(h%400==0)){
+                        document.write(h+"&nbsp;");
+                        i++;
+                    }
+                    if(i%4==0){
+                        document.write("<br/>");
+                    }
+                }
+
+            }
+        }
+
+    }
+</script>
+<script>
+    //10.输出九九乘法表
+    function e10() {
+            document.write("九九乘法表1显示如下图所示：<br/>");
+            document.write("<br/>");
+        for(var h=1;h<=9;h++){
+            for(var j=1;j<=h;j++){
+                document.write(j+"*"+h+"="+j*h+"&nbsp;");
+            } document.write("<br/>")
+        }
+        document.write("<br/>");
+        //使用table展示99乘法表
+        document.write("九九乘法表2显示如下图所示：<br/>");
+        document.write("<br/>");
+        document.write("<table cellspacing='0' cellpadding='10'>");
+        for(var h=1;h<=9;h++){
+            document.write("<tr style='background: #0000ff;'>");
+            for(var j=1;j<=h;j++){
+                document.write("<td style='border: 1px solid #ffffff;color: #ffffff;text-align: center;font-size: 18px;'>");
+                document.write(j+"*"+h+"="+j*h+"&nbsp;");
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>")
+    }
+</script>
+<script>
+    //11.打印图形:主要锻炼思维
+    function e11() {
+        document.write("1)");
+        document.write("<br/>");
+        for(var g=1;g<=4;g++){
+            for(var t=1;t<=10;t++){
+              document.write("*");
+            }document.write("<br/>");
+        }
+    document.write("2)");
+    document.write("<br/>");
+    for(var u=1;u<=5;u++){
+        for(var o=1;o<=u;o++){
+            document.write("*");
+        }document.write("<br/>");
+    }
+        document.write("3)");
+        document.write("<br/>");
+        for(var r=1;r<=6;r++){
+            for(var e=6-r;e>0;e--){
+                document.write("&nbsp;");
+            }
+            for(var f=r-1;f>=1;f--){
+                document.write("*");
+            }document.write("<br/>");
+        }
+    }
+</script>

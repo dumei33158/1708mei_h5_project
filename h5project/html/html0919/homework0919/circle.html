@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #000;
+        }
+        .circle{
+            /*width: 300px;*/
+            /*height: 300px;*/
+            /*border: 20px solid #cc00ff;*/
+            border-radius: 100%;
+            position: relative;
+            left: 800px;
+            top:300px;
+
+        }
+        .half1{
+            width: 300px;
+            height: 300px;
+            border: 30px solid #cc00ff;
+            /*border-right: 30px solid transparent;*/
+            /*border-bottom: 30px solid transparent;*/
+            border-radius: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*transform: rotate(-180deg);*/
+            box-sizing: border-box;
+            /*transition: transform .3s;*/
+            background: #ffffff;
+            animation: goin 1s ease infinite normal;
+        }
+        .half2{
+            width: 300px;
+            height: 300px;
+            border: 30px solid #0000ff;
+            border-left: 30px solid transparent;
+            border-top: 30px solid transparent;
+            border-radius: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*transform: rotate(0deg);*/
+            box-sizing: border-box;
+            /*transition: transform .3s;*/
+
+
+
+        }
+        /*.circle:hover .half1{*/
+            /*transform: rotate(0deg);*/
+        /*}*/
+        .circle:hover .half2{
+            animation-play-state: running;
+            animation: goon 1s linear infinite;
+        }
+
+        @-webkit-keyframes goon{
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes goin{
+            0%{
+                transform: rotate(360deg);
+            }
+
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="circle">
+    <div class="half1"></div>
+    <div class="half2"></div>
+</div>
+</body>
+</html>

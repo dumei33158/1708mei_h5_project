@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mysuprise</title>
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <style>
+
+        body{
+            background: rgba(99,38,138,0.8);
+        }
+        li{
+            list-style: none;
+        }
+        .myhand{
+               font-size: 90px;
+               color: #ffffff;
+               display: block;
+               float: left;
+               margin-top: 80px;
+           }
+        .today{
+            width: 1200px;
+            margin: 0 auto;
+            border: 1px solid #fff;
+            overflow: hidden;
+        }
+        .today>h2{
+            font-size: 90px;
+            color: #ffffff;
+            margin-left: 20px;
+            float: left;
+        }
+        .today>h5{
+            font-size: 68px;
+            color: #ffffff;
+            margin: -6px 500px;
+            float: left;
+        }
+        .today>h3{
+            font-size: 90px;
+            color: #ffffff;
+            float: right;
+            margin-right: 20px;
+        }
+        .today>ul{
+            float: right;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        .today>ul>li{
+            float: left;
+            padding: 0 20px;
+        }
+        .today>ul>li>a{
+            font-size: 30px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="today">
+    <i class="fa fa-hand-o-right myhand" onclick="t()"></i>
+    <h2>TODAY</h2>
+    <h5>is</h5>
+    <h3>Thursday!</h3>
+    <ul>
+        <li><a href=""><i class="fa fa-gratipay" onclick="o()"></i></a></li>
+        <li><a href="mysuprisemiss.html"><i class="fa fa-gg-circle" onclick="d()"></i></a></li>
+        <li><a href="mysuprisebirthday.html"><i class="fa fa-birthday-cake" onclick="a()"></i></a></li>
+    </ul>
+</div>
+<div>
+</div>
+</body>
+</html>
+<script>
+    function t(){
+        var input=prompt("今天是什么日子？");
+        if(input=="我的生日"){
+            alert("哇塞，这你都记得！");
+            var input=prompt("你最喜欢的人是？");
+            if(input=="尊美"){
+                alert("掌声鼓励！");
+                var input=prompt("我最喜欢吃什么？");
+                if(input=="巴倒烫"){
+                    alert("厉害了我的哥！");
+                }else{
+                    alert("赏你50大板！！！");
+                }
+            }else{
+                alert("跪下！！！");
+            }
+        }else{
+            alert("笨蛋，这都不记得！！！");
+        }
+    }
+
+    function o(){
+        document.write("<img src='../images/banner2.jpg'/>");
+    }
+    function t(){
+
+    }
+    function a(){
+        document.write("")
+    }
+</script>

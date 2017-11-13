@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../bootstrap/bootstrap-3.3.5-dist/css/bootstrap.css">
+    <style>
+        .shnav{
+            width: 1384px;
+            margin: 0 auto;
+        }
+        .nav{
+            width: 100%;
+            margin: 0 auto;
+            background: #ccc;
+        }
+        .shoping{
+            padding: 0 20px;
+            line-height: 43px;
+            background: #fb001f;
+            float: right;
+            position: relative;
+        }
+        .cart{
+            font-size: 14px;
+            color: #ffffff;
+        }
+        .list{
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: #ffffff;
+            width: 300px;
+            height: 0;
+            overflow: hidden;
+            box-shadow: 0 0 2px 2px rgba(0,0,0,.089);
+        }
+        .shoping:hover .list{
+            height: 200px;
+            transition: height 1s ease .2s;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="shnav">
+    <div class="shoping">
+        <div class="cart">
+            <span class="glyphicon glyphicon-shopping-cart"></span><span>购物车</span><span>(0)</span>
+        </div>
+        <div class="list">
+            <p>lorem5</p>
+            <p>lorem5</p>
+            <p>lorem5</p>
+            <p>lorem5</p>
+            <p>lorem5</p>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

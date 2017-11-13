@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+</head>
+<body>
+<canvas id="cav" width="600" height="600"></canvas>
+</body>
+</html>
+<script>
+    var elem=document.getElementById("cav");
+var canvas=elem.getContext("2d");
+    canvas.fillStyle="red";
+    canvas.strokeStyle="blue";
+    canvas.lineWidth=10;
+    canvas.fillRect(10,10,200,200);
+    canvas.strokeRect(10,10,200,200)
+</script>

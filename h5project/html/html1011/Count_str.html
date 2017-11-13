@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>str</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    document.write("静格格和美哥要用English对话，她们还要用ASCII码交谈，80808080+-、。，：后果难以想象啊！");
+    var str="静格格和美哥要用English对话，她们还要用ASCII码交谈，80808080+-、。，：后果难以想象啊！";
+    var isNum=0;
+    var isLetter=0;
+    var isChinese=0;
+    var isOther=0;
+    for(var i=0;i<str.length;i++){
+        if(str.charCodeAt(i)>=48&&str.charCodeAt(i)<=57){
+            isNum++;
+        }else if((str.charCodeAt(i)>=65&&str.charCodeAt(i)<=90)||(str.charCodeAt(i)>=97&&str.charCodeAt(i)<=122)){
+            isLetter++;
+        }else if(str.charCodeAt(i)>=19968&&str.charCodeAt(i)<=40869){
+            isChinese++;
+        }else{
+            isOther++;
+        }
+    }
+    document.write("<br/>");
+    document.write("<br/>");
+    document.write("以上字符串儿中有"+isNum+"个数字");
+    document.write("<br/>");
+    document.write("以上字符串儿中有"+isLetter+"个字母，含大小写");
+    document.write("<br/>");
+    document.write("以上字符串儿中有"+isChinese+"个汉字");
+    document.write("<br/>");
+    document.write("以上字符串儿中有"+isOther+"个其它类型的字符");
+</script>

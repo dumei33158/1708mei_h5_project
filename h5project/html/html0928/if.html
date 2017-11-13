@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function shopping(price,number,money){
+        var total=price*number;
+        if (total>=500){
+
+        }
+        if (money>=500){
+            total="您购买的商品总价满足优惠条件，您的实际付款值为："+total*0.75;
+        }
+    }
+</script>
+<script>
+    var score=prompt("请输入您的分数：");
+    function level(score){
+        if(score>=90){
+            document.write("厉害啊");
+        }else if(score>=80){
+            document.write("优秀啊");
+        }else if(score>=70){
+        document.write("中等啊");
+        }else if(score>=60){
+            document.write("及格啦");
+        }else{
+            document.write("请继续努力！");
+        }
+    }
+    level(score);
+</script>

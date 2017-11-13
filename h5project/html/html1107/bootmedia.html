@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>boot_media</title>
+    <link rel="stylesheet" href="../../css/responsive.css"/>
+    <style>
+       /* .container{
+            width: 100%;
+            background: #fa000c;
+            height:30px;
+        }*/
+        [class*=col-]{
+            height:30px;
+            background: #fff;
+        }
+        @media screen and (min-width: 1200px){
+            .container{
+                width:1170px;
+            }
+            body{
+                background: #121042;
+            }
+        }
+       @media screen and (min-width: 992px)and(max-width: 1200px){
+           .container{
+               width:970px;
+           }
+           body{
+               background: #43f048;
+           }
+       }
+       @media screen and (min-width: 768px )and( max-width: 992px){
+           .container{
+               width:750px;
+           }
+           body{
+               background: #c81623;
+           }
+       }
+       @media screen and (max-width: 768px){
+           .container{
+               width:100%;
+           }
+           body{
+               background: #e4b9b9;
+           }
+       }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="col-6"></div>
+</div>
+</body>
+</html>

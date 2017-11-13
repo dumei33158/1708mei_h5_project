@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1016homework_Dumei.html</title>
+
+</head>
+<style>
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+    span{
+        font-size: 28px;
+        font-weight: bold;
+    }
+    #time{
+        width: 600px;
+        height: 60px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.16作业&nbsp;_Dumei</h1>
+    <p>1.随机参数四位不重复的由英文字母和数字组成的验证码，要求：在文本框中输入进行验证，忽略大小写，验证前先判断格式是否正确，如果正确再判断内容是否相同，如果格式不对，则告诉用户需要重新输入，验证时需要将获取的内容去掉左右空格再验证。</p>
+    <p>2.输入员工姓名和入职日期，显示以下结果要求：合同到期时间是三年以后;续签合同时间是提前一个月；如果是周六需要提前一天；如果是周日需要提前2天；需要提前一周提醒该员工要续签合同</p>
+    请输入员工姓名：<input type="text" id="Name"><br/>
+    请输入入职日期：<input type="text" id="date"><br/>
+    <input type="button" value="显示该员工信息" id="btn2" onclick="f2()"/><br/>
+    <textarea name="" id="job" cols="30" rows="10"></textarea>
+    <p>3.写一个计时器，动态显示时分秒</p>
+    <span>生活如此多娇，请活在当下的分分秒秒：</span><br/>
+    <input type="text" id="time"><br/>
+    当前的时分秒：<input type="text" id="timeHms"><br/>您停留在该页面的时间是：<input type="text" id="timeSta">
+    <p>4.随机抽取</p>
+    <input type="text" id="txt4">
+    <input type="button" id="start" onclick="f4()" value="开始">
+    <input type="button" id="stop" onclick="f4e()" value="停止">
+</div>
+</body>
+</html>
+<script>
+    //1.随机参数四位不重复的由英文字母和数字组成的验证码，要求：在文本框中输入进行验证，忽略大小写，验证前先判断格式是否正确，如果正确再判断内容是否相同，如果格式不对，则告诉用户需要重新输入，验证时需要将获取的内容去掉左右空格再验证。
+         //48-57 0-9
+        //65-90 A-Z
+        //97-122 a-z
+         function createCode(m,n){
+             var arr=[];
+             for(var i=m;i<=n;i++){
+                    arr[arr.length]=String.fromCharCode(i);
+             }
+             return arr;
+         }
+         function isEx(v,arr){
+             for(var i=0;i<arr.length;i++){
+                 if(arr[i]==v){
+                     return true;
+                 }
+             }
+         }
+        var ver4=[];
+         function verificationCode(){
+             var newArr=createCode(48,57).concat(createCode(65,90),createCode(97,122));
+             var arr=[];
+             for(var i=0;i<4;i++){
+                 var value=newArr[parseInt(Math.random()*newArr.length)];
+                 while(isEx(value,arr)){
+                     vlaue=newArr[parseInt(Math.random()*newArr.length)];
+                 }
+                 arr[arr.length]=value;
+             }
+             ver4=arr.join("");
+             return ver4;
+         }
+    verificationCode();
+        function text1(){
+            var username=prompt("请输入验证码\t"+ver4);
+//            var ns=username.replace(/^\s*|\s*$/g,"");
+//            var gy=/^((\d[a-zA-Z]{3})|([a-zA-Z]{3}\d)|(\d{2}[a-zA-Z]{2})|([a-zA-Z]{2}\d{2})|(\d{3}[A-Za-z])|[0-9]{4}|[a-zA-Z]{4})$/gi;
+            var gy=/^\s*[0-9A-Za-z]{4}\s*$/gi;
+            while(true){
+                if(username!=""){
+                    if(gy.test(username)){
+                        if(username==ver4){
+                            alert("恭喜您成功get到20171016美哥的作业");
+                            break;
+                        }
+                        else{
+                                alert("验证码内容输入不正确，请重新输入");
+                                verificationCode();
+                                username = prompt("请输入验证码\t" + ver4);
+                        }
+                    }
+                    else{
+                        alert("验证码格式不正确，请重新输入");
+                        verificationCode();
+                        username=prompt("请输入验证码\t"+ver4);
+                    }
+                    }
+                else{
+                    alert("验证码内容不能为空，请输入验证码");
+                    verificationCode();
+                    username = prompt("请输入验证码\t" + ver4);
+            }
+            }
+        }
+//        text1();
+</script>
+<script>
+    //2.输入员工姓名和入职日期，显示以下结果要求：合同到期时间是三年以后;续签合同时间是提前一个月；如果是周六需要提前一天；如果是周日需要提前2天；需要提前一周提醒该员工要续签合同
+    function dateForm(d){
+        var year= d.getFullYear()+"年";
+        var month= d.getMonth()+1+"月";
+        var date= d.getDate()+"日";
+        var week=['日','一','二','三','四','五','六'];
+        var day= "星期"+week[d.getDay()];
+        var str=year+month+date+day;
+        return str;
+
+    }
+    function f2() {
+        var enterDate = document.getElementById("date").value;
+        var Name = document.getElementById("Name").value;
+        var date1 = new Date(enterDate);
+        var date2 = new Date(date1.getTime());
+        date2.setFullYear(date2.getFullYear() + 3);
+        var str2 = "您的入职时间是：" + dateForm(date1);
+        console.log(dateForm(date2));
+        date2.setMonth(date2.getMonth() - 1);
+        if (date2.getDay() == 0) {
+            date2.setDate(date2.getDate() - 2);
+        } else if (date2.getDay() == 6) {
+            date2.setDate(date2.getDate() - 1);
+        }
+        console.log(dateForm(date2));
+        date2.setDate(date2.getDate() - 7);
+        console.log(dateForm(date2));
+        job.value=name+"你好:\n"+"您的入职时间是"+new Date(date.getTime()).toLocaleDateString()+
+            "\n合同到期时间为："+new Date(year).toLocaleDateString()+"\t星期"+arr[new Date(year).getDay()]+
+            "\n续约合同时间为："+new Date(month).toLocaleDateString()+"\t星期"+arr[new Date(month).getDay()]+
+            "\n该提醒您的时间为："+new Date(day).toLocaleDateString()+"\t星期"+arr[new Date(day).getDay()];
+
+    }
+
+</script>
+<script>
+    //3.写一个计时器，动态显示时分秒
+    function f3() {
+        function numFormat(n){
+            var num=n>=10?n:"0"+n;
+            return num;
+        }
+        function timeFormat(){
+            var now=new Date();
+            var week=["日","一","二","三","四","五","六"];
+            var ampm=now.getHours()<12?"上午":"下午";
+            hours12=now.getHours()>12?now.getHours()-12:now.getHours();
+            var Time=now.getFullYear()+"年"+(now.getMonth()+1)+"月"+now.getDate()+"日"+("星期"+week[now.getDay()])+ampm+numFormat(hours12)+":"+numFormat(now.getMinutes())+":"+numFormat(now.getSeconds());
+            return Time;
+        }
+        function timeshow(){
+            time.value=timeFormat();
+        }
+        timeshow();
+        setInterval(timeshow,1000);
+    }
+    f3();
+    function f3h() {
+            function numFormat(n){
+                var num=n>=10?n:"0"+n;
+                return num;
+            }
+        function timeFormat(){
+        var now=new Date();
+        hours12=now.getHours()>12?now.getHours()-12:now.getHours();
+        var Time=numFormat(hours12)+"时"+numFormat(now.getMinutes())+"分"+numFormat(now.getSeconds())+"秒";
+        return Time;
+            }
+        function timeshow(){
+            timeHms.value=timeFormat();
+        }
+        timeshow();
+        setInterval(timeshow,1000);
+    }
+    f3h();
+//    function f3hS() {
+//        var Ti_me=[];
+//        for(var i=0;i<Ti_me.length;i++){
+//            var Seconds=i%60;
+//            var Minutes=parseInt(i/60)%60;
+//            var Hours=parseInt(i/3600);
+//            if(i<=59){
+//                Seconds+=i;
+//                if(i<=9){
+//                    Seconds="0"+i;
+//                }
+//            }else if(i>=60&&i<=599){
+//                Minutes+="0"+1;
+//            }
+//
+//            timeSta.value=Hours+"时"+Minutes+"分"+Seconds+"秒";
+//        }
+//    }
+//    f3hS()
+    function timeHMS(){
+        function numFormat2(num){
+            if(num<10){
+                num="0"+num;
+            }
+            return num
+        }
+        var i=0;
+        function timeShow(){
+            i++;
+            var h=Math.floor(i/3600);
+            var m=Math.floor(i/60)%60;
+            var s=i%60;
+            timeSta.value=numFormat2(h)+"时"+numFormat2(m)+"分"+numFormat2(s)+"秒";
+
+    }
+    setInterval(timeShow,1000);
+    }
+    timeHMS();
+</script>
+<script>
+    //4.随机抽取
+//
+//    var arr=['孙丽丽','郑亚旭','吴琼','吴玉琼','艾斌朋','吴琼','顾静','乔亚楠','高宁','叶一帆','李长衫','张茜','徐颖聪','邹建华','李兵','郭焕锴',
+//        '彭家月','杜美','霍勇君','隋金瑞','吕全威','王源源','莫男','吴琼','朱新宇','樊世鹏','陈卓','梁杰','赵白华','王巧玲',
+//        '何景昊','谭得辉','戚小茜','吴琼','陈龙','任雅歌','井玕','朱强','李晓松','陈国祥','高俊','曹昌妮','吴琼'];
+//    var choose;
+//    function random() {
+//        txt4.value = arr[parseInt(Math.random() * arr.length)];
+//    }
+//    function f4e(){
+//        clearInterval(choose);
+//    }
+//
+//    function f4(){
+//            choose=setInterval(random,1000);
+//        }
+    var t;
+    function f4(){
+        var arr=['孙丽丽','郑亚旭','吴琼','吴玉琼','艾斌朋','吴琼','顾静','乔亚楠','高宁','叶一帆','李长衫','张茜','徐颖聪','邹建华','李兵','郭焕锴',
+        '彭家月','杜美','霍勇君','隋金瑞','吕全威','王源源','莫男','吴琼','朱新宇','樊世鹏','陈卓','梁杰','赵白华','王巧玲',
+        '何景昊','谭得辉','戚小茜','吴琼','陈龙','任雅歌','井玕','朱强','李晓松','陈国祥','高俊','曹昌妮','吴琼']
+        var all=[];
+    for (var x=0;x<1;x++){
+        all[x]=arr[parseInt(Math.random()*arr.length)];
+    }
+    txt4.value=all;
+    t=setTimeout(f4,100);
+    }
+    function f4e(){
+        clearTimeout(t)
+    }
+
+</script>

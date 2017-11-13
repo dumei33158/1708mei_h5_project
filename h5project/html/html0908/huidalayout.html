@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        body{
+            width: 871px;
+            height: 681px;
+            margin: 0 auto;
+            /*border: solid #f10214 1px;*/
+        }
+        input{
+            outline: none;
+        }
+        .header{
+            height: 32px;
+            margin-top: 21px;
+            margin-bottom: 28px;
+            /*border: solid #353d52 1px;*/
+            /*position: relative;*/
+        }
+        .header>a{
+            float: left;
+            /*margin-top: -2px;*/
+
+        }
+        .header ul{
+             float: right;
+             /*margin-right: 5px;*/
+
+        }
+        .header ul li{
+            float: left;
+            height: 32px;
+            line-height: 32px;
+            /*text-align: right;*/
+            margin-left: 15px;
+            margin-top: 12px;
+        }
+        .header ul li a{
+            font-size: 12px;
+            color: #626262;
+            text-decoration: none;
+        }
+        .header ul li a:hover{
+            text-decoration: underline;
+            color: #006898;
+        }
+        .nav{
+            height: 31px;
+            margin-bottom: 8px;
+            /*border: 1px #df4c39 solid;*/
+        }
+        .nav ul{
+
+        }
+        .nav ul li{
+            float: left;
+            /*border: 1px solid #f00;*/
+            margin-right: 7px;
+            text-align: center;
+            width: 92px;
+            height: 31px;
+            line-height: 31px;
+            background-image: -webkit-linear-gradient(top,#015cb5,#0075ed);
+            border-radius: 8px 8px 0 0;
+        }
+        .nav ul li a{
+            color: #ffffff;
+            display: block;
+            border-radius: 8px 8px 0 0;
+        }
+        .nav ul li a:hover{
+            background: -webkit-linear-gradient(top,#b70002,#ec0404);
+        }
+        .banner{
+            height: 313px;
+            margin-bottom: 11px;
+            /*border: 1px #009b58 solid;*/
+        }
+        .main{
+            height: 154px;
+            /*border: 1px #ff903a solid;*/
+        }
+        .main .left{
+            width: 328px;
+            /*background: -webkit-linear-gradient(top,#f0f0f0,#f1f1f1,#e9e9e9,#eeeeee,#d8d8d8);*/
+            background: url("../../images/images/huidabj_03.jpg");
+            float: left;
+            height: 154px;
+            margin-right: 10px;
+        }
+        .main .left h4{
+            width:316px;
+            color: #676767;
+            box-sizing: border-box;
+            padding:5px 6px 2px 6px;
+            margin-left: 12px;
+            float: left;
+            border-bottom: 2px solid #acacac;
+            font-size: 12px;
+        }
+        .main .left h4 a{
+            float: right;
+            /*margin:5px 10px 3px 0px;*/
+            font-weight: normal;
+            text-transform: uppercase;
+            transform: scale(0.5);
+            color: #686868;
+            margin-top: 2px;
+            margin-right: -5px;
+        }
+        .main .left h4 a:hover{
+            color: #fa000c;
+        }
+        .main .left ul{
+            clear: both;
+            margin:2px 0px 2px 12px;
+        }
+        .main .left ul li{
+            vertical-align: middle;
+            font-family: 宋体;
+            height: 24px;
+            background: url("../../images/images/xiaojiantou_03.jpg") no-repeat 5px center;
+            padding-left: 5px;
+        }
+        .main .left ul li a{
+            font-size: 13px;
+            color: #686868;
+        }
+        .main .left ul li a span{
+            display: block;
+            float: right;
+            vertical-align: middle;
+            margin-right: 5px;
+            color: #686868;
+        }
+        .main .left .sp{
+            font-size: 2px;
+            color: #686868;
+            float: left;
+        }
+        .main .left ul li a:hover{
+            color: #fb001f;
+        }
+        .center{
+            width: 312px;
+            background: -webkit-linear-gradient(top,#f0f0f0,#f1f1f1,#e9e9e9,#eeeeee,#d8d8d8);
+            float: left;
+            height: 154px;
+            margin-right: 11px;
+        }
+        .main .center h4{
+            color: #676767;
+            margin: 2px 0px 2px 12px;
+            float: left;
+        }
+        .main .center>a{
+            float: right;
+            margin:5px 10px 3px 0px;
+            font-size: 5px;
+            color: #686868;
+        }
+        .main .center>a:hover{
+            color: #fa000c;
+        }
+        .main .center hr{
+            clear: both;
+            color: #acacac;
+        }
+        .main .center  .imag1{
+            text-align: center;
+            margin:4px 6px 8px 15px;
+            border: 1px solid #dedede;
+        }
+        .main .center  .imag2{
+            text-align: center;
+            margin:4px 6px 8px 0px;
+            border: 1px solid #dedede;
+        }
+        .main .center  .imag3{
+            text-align: center;
+            margin:4px 0px 8px 0px;
+            border: 1px solid #dedede;
+        }
+        .right{
+            width: 210px;
+            background: -webkit-linear-gradient(top,#f0f0f0,#f1f1f1,#e9e9e9,#eeeeee,#d8d8d8);
+            float: left;
+            height: 154px;
+        }
+        .right img{
+            margin:12px 0 0 23px;
+        }
+        .right h5{
+            float: left;
+            margin:-37px 60px 9px 71px;
+            color: #444444;
+        }
+        .right p{
+            font-weight: bold;
+            color: #e11e2e;
+            margin:-17px 30px 15px 71px;
+            font-size: 12px;
+            font-style: italic;
+        }
+        .right form{
+            margin-left: 23px;
+            line-height: 26px;
+            color: #656565;
+        }
+        .right form span{
+            font-size: 12px;
+        }
+        .right form input{
+            margin-right: 2px;
+            color: #656565;
+
+        }
+        .right form .btn{
+            background: -webkit-linear-gradient(top,#fcfcfe,#e4efe7);
+            border-radius: 4px;
+            border: 1px solid #c7c7c7;
+            width: 43px;
+            cursor: pointer;
+        }
+        .right form a{
+            font-size: 12px;
+            display: block;
+            float: right;
+            width: 60px;
+            margin-right: 22px;
+            color: #656565;
+        }
+        .right form a:hover,.right form .btn:hover{
+            color: #fa0100;
+        }
+        .footer{
+            height: 77px;
+            /*border: 1px solid #00f;*/
+            background: #ededed;
+            text-align: center;
+            /*margin-top: 0px;*/
+            /*vertical-align: middle;*/
+            padding: 1px;
+        }
+        .footer p{
+            font-size: 12px;
+            font-family: 宋体;
+            color: #868686;
+            margin:18px 160px 34px 137px;
+            line-height: 21px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <a href=""><img src="../../images/images/huidalogo_03.gif" alt=""/></a>
+    <ul>
+        <li><a href="">登录</a></li>
+        <li><a href="">注册</a></li>
+        <li><a href="">联系我们</a></li>
+        <li><a href="">服务热线</a></li>
+    </ul>
+</div>
+<div class="nav">
+    <ul>
+        <li><a href="">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+        <li><a href="">关于惠达</a></li>
+        <li><a href="">惠达新闻</a></li>
+        <li><a href="">卫浴产品</a></li>
+        <li><a href="">瓷砖产品</a></li>
+        <li><a href="">技术创新</a></li>
+        <li><a href="">服务支持</a></li>
+        <li><a href="">工程案例</a></li>
+    </ul>
+</div>
+<div class="banner">
+    <img src="../../images/images/huidabanner_03.jpg" alt=""/>
+</div>
+<div class="main">
+    <div class="left">
+        <h4>新闻动态<a href="">more</a></h4>
+        <ul>
+            <li><a href=""><span>2017-9-9</span>&nbsp;唐山悲壮一幕再现荧屏</a></li>
+            <li><a href=""><span>2017-9-8</span>&nbsp;惠达卫浴华南区营销工作会议顺利召开</a></li>
+            <li><a href=""><span>2017-9-7</span>&nbsp;提升自我&nbsp;树立民族品牌形象</a></li>
+            <li><a href=""><span>2017-9-7</span>&nbsp;规范企业发展&nbsp;提升企业竞争力</a></li>
+            <li><a href=""><span>2017-9-6</span>&nbsp;加强服务&nbsp;向国际一流企业看齐</a></li>
+        </ul>
+    </div>
+    <div class="center">
+        <h4>产品展示</h4>
+        <a href="">MORE</a>
+        <hr/>
+        <div>
+            <img class="imag1" src="../../images/images/produ_07.gif" alt=""/>
+            <img class="imag2" src="../../images/images/produ_09.gif" alt=""/>
+            <img class="imag3" src="../../images/images/produ_11.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="right">
+        <img src="../../images/images/xiaolvren_03.jpg" alt=""/>
+        <h5>总部电话</h5>
+        <p>020-872837294</p>
+        <form action="">
+            <span>用户名：</span><input type="text" size="9"/>
+            <br/>
+            <span>密　码：</span><input type="text" size="9"/>
+            <br/>
+            <input class="btn" type="button" value="登陆"/>
+            <input class="btn" type="button" value="注册"/>
+            <a href="">忘记密码？</a>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <p>市场部：0577-6272377&nbsp;客服电话：0577-62751363&nbsp;传真：0577-61788000&nbsp;商务合作：0577-62727209
+        <br/>
+    ICP证：浙&nbsp;B2&nbsp;20050336&nbsp;E-mail:info@chinaswitch.com</p>
+</div>
+
+</body>
+</html>

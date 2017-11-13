@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1019homework_Dumei.html</title>
+
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.19作业&nbsp;_Dumei</h1>
+    <p>1.JS节点树实现购物车</p>
+    <table border="1" height="200" width="500">
+        <thead>
+        <tr align="center">
+            <td>产品名称</td>
+            <td>产品单价</td>
+            <td>产品数量</td>
+            <td>总价</td>
+        </tr>
+        </thead>
+        <tbody align="center">
+        <tr>
+            <td>Phone5</td>
+            <td>500</td>
+            <td><input type="button" value="-" onclick="adm(this)"/><span>1</span><input type="button" value="+" onclick="adm(this)"/></td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Phone6</td>
+            <td>600</td>
+            <td><input type="button" value="-" onclick="adm(this)"/><span>1</span><input type="button" value="+"  onclick="adm(this)"/></td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>Phone7</td>
+            <td>700</td>
+            <td><input type="button" value="-"  onclick="adm(this)"/><span>1</span><input type="button" value="+"  onclick="adm(this)"/></td>
+            <td>700</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">total</td>
+            <td id="total"></td>
+        </tr>
+        </tfoot>
+    </table>
+    <p>购物车优化一：</p>
+    <table id="twoB"  border="0" width="600px" align="center" bgcolor="green">
+        <tr align="center" bgcolor="#f5deb3">
+            <td>产品名称</td>
+            <td>产品单价</td>
+            <td>产品数量</td>
+            <td>总价</td>
+        </tr>
+        <tr align="center" bgcolor="#f5deb3">
+            <td>Phone5</td>
+            <td>500</td>
+            <td><input type="button" value="-"/><span>1</span><input type="button" value="+"/></td>
+            <td>500</td>
+        </tr>
+        <tr align="center" bgcolor="#f5deb3">
+            <td>Phone6</td>
+            <td>600</td>
+            <td><input type="button" value="-" /><span>1</span><input type="button" value="+" /></td>
+            <td>600</td>
+        </tr>
+        <tr align="center" bgcolor="#f5deb3">
+            <td>Phone7</td>
+            <td>700</td>
+            <td><input type="button" value="-" /><span>1</span><input type="button" value="+" /></td>
+            <td>700</td>
+        </tr>
+        <tr align="center" bgcolor="#f5deb3">
+            <td colspan="3">total</td>
+            <td id="tPrice">1800</td>
+        </tr>
+    </table>
+    <!--<p>2.JS元素树实现购物车</p>-->
+    <p>2.JS封装函数用来获取元素的第一个子元素和最后一个子元素</p>
+    <span style="font-size: 12px">请鼠标右击查看网页源代码查看函数</span>
+</div>
+</body>
+</html>
+<script>
+    //1.JS节点树实现购物车
+    function $(id){
+        return document.getElementById(id);
+    }
+    //找下一个元素节点
+    function nextE(node){
+        node=node.nextSibling;
+        while(node!=null && node.nodeType!=1){
+            node=node.nextSibling;
+        }
+        return node;
+    }
+    //找上一个元素节点
+    function prevE(node){
+        node=node.previousSibling;
+        while(node!=null && node.nodeType!=1){
+            node=node.previousSibling;
+        }
+        return node;
+    }
+    function l_childE(node){
+        node=node.lastChild;
+        if(node!=null && node.nodeType != 1){
+            node=node.previousSibling;
+            while(node!=null && node.nodeType != 1) {
+                node = node.previousSibling;
+            }
+        }
+        return node;
+    }
+    function adm(n){
+        var num=0;
+        if(n.value=="+"){
+            prevE(n).innerText++;
+            num=prevE(n).innerText-0;
+        }
+        else{
+            if(nextE(n).innerText<=1){
+                nextE(n).innerText=1;
+            }else{
+            nextE(n).innerText--;
+            }
+            num=nextE(n).innerText-0;
+        }
+        var E_price=prevE(n.parentNode).innerText-0;
+        nextE(n.parentNode).innerText=E_price*num;
+        total();
+    }
+    function total(){
+        var tB=document.getElementsByTagName("tbody");
+        var tR=tB[0].getElementsByTagName("tr");
+        var tD=tR[0].getElementsByTagName("td");
+        var tF=document.getElementsByTagName("tfoot");
+        var sum=0;
+        for(var i=0;i< tR.length;i++){
+            var tDq=tR[i].getElementsByTagName("td");
+            sum+=Number(tDq[tD.length-1].innerText);
+        }
+        l_childE(tF[0].getElementsByTagName("tr")[0]).innerText=sum;
+//        console.log(tF[0].getElementsByTagName("tr")[0].lastElementChild.innerText);
+    }
+    total();
+    /*var tB=document.getElementsByTagName("tbody");
+    var tR=tB[0].getElementsByTagName("tr");
+    var tD=tR[1].getElementsByTagName("td");
+    console.log(tB[0]);//整个tbody
+    console.log(tR[0],tD[0]);//整个tbody里的第一行和第二行的第一个
+    console.log(tR[1]);//整个tbody里的第二行
+    console.log(tR[2]);//整个tbody里的第三行
+    console.log(tD[0]);//整个tbody里的第二行的第一个
+    console.log(tD[1]);//整个tbody里的第二行的第二个*/
+</script>
+<script>
+    //购物车优化一：
+    function $(id){
+        return document.getElementById(id);
+    }
+    //找下一个元素节点
+    function nextE(node){
+        node=node.nextSibling;
+        while(node!=null && node.nodeType!=1){
+            node=node.nextSibling;
+        }
+        return node;
+    }
+    //找上一个元素节点
+    function prevE(node){
+        node=node.previousSibling;
+        while(node!=null && node.nodeType!=1){
+            node=node.previousSibling;
+        }
+        return node;
+    }
+//    function l_childE(node){
+//        node=node.lastChild;
+//        if(node!=null && node.nodeType != 1){
+//            node=node.previousSibling;
+//            while(node!=null && node.nodeType != 1) {
+//                node = node.previousSibling;
+//            }
+//        }
+//        return node;
+//    }
+    var Inp=$("twoB").getElementsByTagName("input");
+    for(var i=0;i<Inp.length;i++){
+        Inp[i].onclick=function () {
+            var num=0;
+            if(this.value=="+"){
+                prevE(this).innerText++;
+                num=prevE(this).innerText-0;
+            }
+            else{
+                if(nextE(this).innerText<=1){
+                    nextE(this).innerText=1;
+                }else{
+                    nextE(this).innerText--;
+                }
+                num=nextE(this).innerText-0;
+            }
+            var E_price=prevE(this.parentNode).innerText-0;
+            nextE(this.parentNode).innerText=E_price*num;
+            Totall();
+        }
+    }
+    function Totall(){
+        var tR= $("twoB").getElementsByTagName("tr");
+        var sum=0;
+            for(var j=1;j<tR.length;j++){
+                    var tDq=tR[j].getElementsByTagName("td");
+                    sum+=Number(tDq[tR.length-1].innerText);
+                    }
+        tR[tR.length].lastElementChild.innerText=sum;
+// console.log(tF[0].getElementsByTagName("tr")[0].lastElementChild.innerText);
+    }
+    Totall();
+</script>
+<script>
+    //2.JS封装函数用来获取元素的第一个子元素和最后一个子元素
+    function f_childE(node){
+        node=node.firstChild;
+        if(node!=null && node.nodeType != 1){
+            node=node.nextSibling;
+            while(node!=null && node.nodeType != 1) {
+                node = node.nextSibling;
+            }
+        }
+        return node;
+    }
+    function l_childE(node){
+        node=node.lastChild;
+        if(node!=null && node.nodeType != 1){
+            node=node.previousSibling;
+            while(node!=null && node.nodeType != 1) {
+                node = node.previousSibling;
+            }
+        }
+        return node;
+    }
+</script>
+<!--<script src="http://blogparts.giffy.me/0013/parts.js"></script>-->
+

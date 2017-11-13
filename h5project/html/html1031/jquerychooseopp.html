@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>choose</title>
+</head>
+<body>
+<div class="SelWrap">
+    <input type="checkbox" id="all"/>全选<br/>
+    <input type="checkbox" id="reverse"/>反选<br/>
+    1.<input type="checkbox" class="lk" name="check"/>
+    2.<input type="checkbox" class="lk" name="check"/>
+    3.<input type="checkbox" class="lk" name="check"/>
+    4.<input type="checkbox" class="lk" name="check"/>
+    5.<input type="checkbox" class="lk" name="check"/>
+    6.<input type="checkbox" class="lk" name="check"/>
+    7.<input type="checkbox" class="lk" name="check"/>
+    8.<input type="checkbox" class="lk" name="check"/>
+    9.<input type="checkbox" class="lk" name="check"/>
+</div>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    //全选：
+    $("#all").click(function(){
+        $('[name="check"]').prop("checked",$(this).prop("checked"));
+    });
+    //反选方法1：
+   /* $("#reverse").click(function(){
+        for(var i=0;i<$('[name="check"]').length;i++){
+            $('[name="check"]:eq('+i+')').prop("checked",!$('[name="check"]:eq('+i+')').prop("checked"));
+        }
+    });*/
+    //反选方法2：
+   /* $("#reverse").click(function(){
+        var ckb=$('[name="check"]');
+        for(var i=0;i<ckb.length;i++){
+        var isCheck=ckb.eq(i).prop("checked");
+            ckb.eq(i).prop("checked",!isCheck);
+        }
+    });*/
+    //反选方法3：
+    $("#reverse").click(function(){
+        var ckb=$('[name="check"]');
+        ckb.each(function(){
+            $(this).prop("checked",!$(this).prop("checked"));
+        })
+            });
+</script>

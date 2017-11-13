@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    table{
+        width:473px;height:417px;background-color:#99cc33;border: white;
+    }
+    #anli{
+        background:url("../images/images/anli_03.gif");
+    }
+</style>
+<body>
+<table border="1">
+    <tr>
+        <td align="right" bgcolor="#999a00">公司名称:</td>
+        <td bgcolor="#999a00"><input type="text" width="156" height="23"/></td>
+    </tr>
+    <tr>
+        <td align="right">公司网站：</td>
+        <td><input type="text" width="156" height="23" value="http://"/></td>
+    </tr>
+    <tr>
+        <td align="right">登录密码：</td>
+        <td><input type="password" width="156" height="23"/></td>
+    </tr>
+    <tr>
+        <td align="right">性别：</td>
+        <td><input type="radio" name="sex" value="男" id="man"checked/><label for="man">男</label><input type="radio" name="sex" id="woman" value="女" /><label for="woman">女</label></td>
+    </tr>
+    <tr>
+        <td align="right">申请产品：</td>
+        <td><input type="checkbox" name="product"id="shimu"  value="shimu"/><label for="shimu">实木</label><input type="checkbox" name="product"id="shafa"  value="shafa" checked/><label for="shafa">沙发</label><input type="checkbox" name="product"id="bangong"  value="bangong"/><label for="bangong">办公</label></td>
+    </tr>
+    <tr>
+        <td align="right">联系人证件：</td>
+        <td><input type="text" width="156" height="23"/> <input type="button" value="浏览…" width="68px"/></td>
+    </tr>
+    <tr>
+        <td align="right">密码查询问题：</td>
+        <td><select name="mimachaxun">
+            <option value="question" selected>请选择查询问题</option>
+            <option value="question1">忘记密码</option>
+            <option value="question2">密码格式错误</option>
+        </select></td>
+    </tr>
+    <tr >
+        <td id="anli" style="width: 160px;height: 100px;" align="right">备注：</td>
+        <td width="263" height="90"><textarea name="beizhu" cols="40" rows="7"></textarea> </td>
+    </tr>
+    <tr>
+        <td align="right"></td>
+        <td><input type="button" value="提交"/><input type="button" value="取消"/></td>
+    </tr>
+</table>
+
+</body>
+</html>

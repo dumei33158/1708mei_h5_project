@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .Flexbox{
+            width: 80%;
+            border: 1px solid #00f;
+            margin: 0 auto;
+            display: flex;
+            /*justify-content: space-between;*/
+            flex-direction: row;
+            /*flex-wrap: nowrap;*/
+
+        }
+        .Flexbox>div{
+            border: 1px solid #0f0;
+            width: 300px;
+        }
+        .Flexbox>div:nth-child(2){
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="Flexbox">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+</body>
+</html>

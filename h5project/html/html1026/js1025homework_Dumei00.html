@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1025homework_Dumei.html</title>
+
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+    #mouse3{
+        position:absolute;
+        left:0;
+        top:0;
+    }
+    #register{
+        border: 1px solid #000;
+        width:200px;
+        position:absolute;
+        left:335px;
+        top:1470px;
+        display:none;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.25作业&nbsp;_Dumei</h1>
+    <p>1.canvas绘制带有折线图的坐标</p>
+    <canvas id="canvas1" width="1000" height="400" style="border:1px solid blue"></canvas>
+    <p>2.canvas绘制张嘴闭嘴实现动态开合</p>
+    <canvas id="canvas2" width="1000" height="600" style="border:1px solid blue"></canvas>
+    <p>3.JS实现图片随鼠标跟随效果</p>
+    <div id="remove3" style="width: 1000px;height:400px;border:1px solid blue;background: #000;position: relative">
+        <img src="mousemove.gif" alt="" id="mouse3"/>
+    </div>
+    <p>4.JS实现登录浮层效果</p>
+    <input type="button"id="btn4" value="点击登录">
+</div>
+<div id="register" style="">
+    <div id="rt" style="height: 30px;background: #ccc;width: 200px;text-align: center">登录注册
+    </div>
+    <div style="width:200px;height: 180px;background: #fff;">
+    </div>
+    </div>
+</body>
+</html>
+<script>
+    //1.canvas绘制带有折线图的坐标
+    var elem1=document.getElementById("canvas1");
+    var canvas1=elem1.getContext("2d");
+    canvas1.beginPath();
+    canvas1.moveTo(50,360);
+    canvas1.lineTo(600,360);
+    canvas1.lineTo(570,340);
+    canvas1.moveTo(600,360);
+    canvas1.lineTo(570,380);
+    canvas1.strokeStyle="green";
+    canvas1.lineWidth=10;
+    canvas1.lineJoin="round";
+    canvas1.stroke();
+    canvas1.closePath();
+    canvas1.beginPath();
+    canvas1.moveTo(50,360);
+    canvas1.lineTo(50,50);
+    canvas1.lineTo(30,70);
+    canvas1.moveTo(50,50);
+    canvas1.lineTo(70,70);
+    canvas1.strokeStyle="red";
+    canvas1.lineWidth=10;
+    canvas1.lineJoin="round";
+    canvas1.stroke();
+    canvas1.closePath();
+    canvas1.beginPath();
+    canvas1.moveTo(30,10);
+    canvas1.lineTo(70,20);
+    canvas1.lineTo(30,30);
+    canvas1.strokeStyle="red";
+    canvas1.lineWidth=10;
+    canvas1.lineJoin="miter";
+    canvas1.stroke();
+    canvas1.closePath();
+    canvas1.beginPath();
+    canvas1.moveTo(50,260);
+    canvas1.lineTo(100,120);
+    canvas1.lineTo(200,240);
+    canvas1.lineTo(300,60);
+    canvas1.lineTo(400,180);
+    canvas1.lineTo(580,100);
+    canvas1.strokeStyle="red";
+    canvas1.lineWidth=10;
+    canvas1.lineJoin="miter";
+    canvas1.stroke();
+    canvas1.closePath();
+</script>
+<script>
+    //2.canvas绘制张嘴闭嘴实现动态开合
+    var elem2=document.getElementById("canvas2");
+    var canvas2=elem2.getContext("2d");
+    function openM(){
+        canvas2.clearRect(0,0,1000,600);//清除画布
+        canvas2.beginPath();
+        canvas2.arc(500,300,200,0,Math.PI*0.18,true);
+        canvas2.lineTo(500,300);
+        canvas2.closePath();//closePath自动闭合生成线
+        canvas2.strokeStyle="#36342f";
+        canvas2.fillStyle="#ffeeaa";
+        canvas2.fill();
+        canvas2.stroke();//fill放在stroke前会压轮廓没有线，所以fill需要放在stroke前面
+        canvas2.beginPath();
+        canvas2.arc(500,200,50,0,Math.PI*2,true);
+        canvas2.strokeStyle="#2d5a96";
+        canvas2.stroke();
+        canvas2.fillStyle="#3388ff";
+        canvas2.fill();
+        canvas2.closePath();
+        canvas2.beginPath();
+        canvas2.arc(510,165,5,0,Math.PI*2,true);
+        canvas2.strokeStyle="#ffffff";
+        canvas2.stroke();
+        canvas2.fillStyle="#ffffff";
+        canvas2.fill();
+        canvas2.closePath();
+        canvas2.beginPath();
+        canvas2.arc(530,184,10,0,Math.PI*2,true);
+        canvas2.strokeStyle="#ffffff";
+        canvas2.stroke();
+        canvas2.fillStyle="#ffffff";
+        canvas2.fill();
+        canvas2.closePath();
+    }
+    function closeM(){
+        canvas2.clearRect(0,0,1000,600);
+        canvas2.beginPath();
+        canvas2.arc(500,300,200,0,Math.PI*2,true);
+        canvas2.lineTo(500,300);
+//    canvas2.globalCompositeOperation="source-atop";
+        canvas2.strokeStyle="black";
+        canvas2.fillStyle="#ffeeaa";
+        canvas2.fill();
+        canvas2.stroke();
+        canvas2.beginPath();
+        canvas2.arc(500,200,50,0,Math.PI*2,true);
+        canvas2.strokeStyle="#2d5a96";
+        canvas2.stroke();
+        canvas2.fillStyle="#3388ff";
+        canvas2.fill();
+        canvas2.closePath();
+        canvas2.beginPath();
+        canvas2.arc(510,165,5,0,Math.PI*2,true);
+        canvas2.strokeStyle="#ffffff";
+        canvas2.stroke();
+        canvas2.fillStyle="#ffffff";
+        canvas2.fill();
+        canvas2.closePath();
+        canvas2.beginPath();
+        canvas2.arc(530,184,10,0,Math.PI*2,true);
+        canvas2.strokeStyle="#ffffff";
+        canvas2.stroke();
+        canvas2.fillStyle="#ffffff";
+        canvas2.fill();
+        canvas2.closePath();
+    }
+    var flag=1;
+    function chanM(){
+        if(flag==1){
+            openM();
+            flag=0;
+        }else{
+            closeM();
+            flag=1;
+        }
+    }
+    setInterval(chanM,500);
+</script>
+<script>
+    //3.JS实现图片随鼠标跟随效果
+    var eventObj={
+        //事件绑定
+        addEvent:function(E,T,F){
+            if(E.addEventListener){
+                E.addEventListener(T,F);
+            }else if(E.attachEvent){
+                E.attachEvent("on"+T,F);
+            }else{
+                E["on"+T]=F;
+            }
+        },
+        //事件解除绑定
+        delEvent:function(E,T,F){
+            if(E.removeEventListener){
+                E.removeEventListener(T,F);
+            }else if(E.detachEvent){
+                E.detachEvent("on"+T,F);
+            }else{
+                E["on"+T]=null;
+            }
+        },
+        //阻止事件的默认行为
+        preventDefault:function(e){
+            var e=e||window.event;
+            if(e.preventDefault){
+                e.preventDefault();
+            }else {
+                e.returnValue=false;
+            }
+        },
+        //阻止事件冒泡
+        stopPropagation:function(e){
+            var e=e||window.event;
+            if(e.stopPropagation){
+                e.stopPropagation();
+            }else {
+                e.cancelBubble=true;
+            }
+        },
+        //获取事件源
+        getE:function(e){
+            var e=e||window.event;
+            return e.target|| e.srcElement;
+        }
+    };
+   var ST=document.getElementById("mouse3");
+   var SK=document.getElementById("remove3");
+    SK.onmousemove=function f(e){
+        ST.style.left= e.clientX-700+"px";
+        ST.style.top= e.clientY-700+"px";
+    };
+//    eventObj.addEvent(SK,mousemove,f);
+</script>
+<script>
+   //4.JS实现登录浮层效果
+
+   btn4.onclick=function(){
+       console.log(window.event);
+       document.getElementById("register").style="display:block";
+       document.body.style="background:rgba(0,245,0,.089);"
+   };
+   document.getElementById("rt").onmousemove=function(){
+       document.getElementById("register").style.left=document.getElementById("rt").clientX-700+"px";
+       document.getElementById("register").style.top=document.getElementById("rt").clientY-700+"px";
+   }
+</script>
+

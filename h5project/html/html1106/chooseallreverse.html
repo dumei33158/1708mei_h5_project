@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>chooseallreverse</title>
+</head>
+<body>
+<div class="SelWrap">
+    <input type="checkbox" id="all"/>全选<br/>
+    <input type="checkbox" id="reverse"/>反选<br/>
+    1.<input type="checkbox" class="lk" name="check"/>
+    2.<input type="checkbox" class="lk" name="check"/>
+    3.<input type="checkbox" class="lk" name="check"/>
+    4.<input type="checkbox" class="lk" name="check"/>
+    5.<input type="checkbox" class="lk" name="check"/>
+    6.<input type="checkbox" class="lk" name="check"/>
+    7.<input type="checkbox" class="lk" name="check"/>
+    8.<input type="checkbox" class="lk" name="check"/>
+    9.<input type="checkbox" class="lk" name="check"/>
+</div>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    var chooseAR={
+        checkAll:function(E,isChecked){
+            E.each(function(){
+                $(this).prop("checked",isChecked);
+            });
+        },
+        checkReverse:function(E){
+            E.each(function(){
+                $(this).prop("checked",!$(this).prop("checked"));
+            });
+        }
+    };
+    $("#all").click(function(){
+        chooseAR.checkAll($(".lk"),$(this).prop("checked"));
+    });
+    $("#reverse").click(function(){
+        chooseAR.checkReverse($(".lk"));
+    });
+</script>

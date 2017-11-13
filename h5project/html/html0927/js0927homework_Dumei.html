@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js0927homework_dumei</title>
+    <style>
+        .homework{
+            margin: 0 auto;
+            width: 1000px;
+        }
+        h1{
+            background: #fb0010;
+            color: #ffffff;
+            padding-left: 20px;
+        }
+        p{
+            line-height: 26px;
+        }
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="homework">
+    <h1>2017.9.27作业_dumei</h1>
+    <p>1.封装一个函数，计算用户输入的两个数字的和 最后输出两个数的和。</p>
+    <input type="button" value="答案请点击此处查看" onclick="w1()"/>
+    <p>2.体重健康指数计算公式如下：体重（kg）/身高平方（m） 20-25 正常 20以下 偏瘦 25以上偏胖<br/>
+        例如：某人是60kg 1.7m 25以上 偏胖<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60/1.7<sup>2</sup>=20.76 属于“正常”体重<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编写一个函数 接收 体重和身高做参数 返回判定结果</p>
+    <form action="">
+    您的体重：<input type="text" value="体重" id="weight" onclick="this.value=''"/>kg<br/>
+    您的身高：<input type="text" value="身高" id="height" onclick="this.value=''"/>m<br/>
+    <input type="button" value="点击查看您的体重健康指数及健康状态" onclick="w2()"/><br/>
+        注：体重健康指数计算公式如下：体重（kg）/身高平方（m）
+    </form>
+    <p>3.模拟留言功能</p>
+    <textarea name="message" id="message" cols="30" rows="10"></textarea><br/>
+    <input type="text" id="Isay"><button value="留言" id="Italk" onclick="w3m()">留言</button><br/>
+    <button value="留言" id="Ytalk" onclick="w3j()">留言</button><input type="text" id="Ysay"/><br/>
+    <p>4.封装一个函数，传三个number类型的数据，输出三个数据中最大的数据</p>
+    <input type="button" value="请输入数字" onclick="w4()"/>
+    <p>5.封装一个方法，能够判断用户输入的年份是闰年还是平年，并将结果输出在控制台中</p>
+    <input type="button" value="请输入年份" onclick="w5()"/>
+    <p>6.封装一个方法，判断用户输入的成绩，如果成绩>=90,输出优秀，输入的是>=70，输出还“良好”，70分以下，输出“需要努力”</p>
+    <input type="button" value="请输入您的成绩" onclick="w6()"/>
+</div>
+</body>
+</html>
+<script>
+        w1=function( ){
+            var m=prompt("请您输入一个数字：")-0;
+            var n=prompt("请您再输入一个数字：")-0;
+            m==""&&n==""?alert("抱歉您没有输入任何内容请您重新输入"): alert("您刚才输入的2个数字之和是"+(m+n));
+        };
+
+        w2=function( ){
+            var a1=document.getElementById("weight");
+            var b1=document.getElementById("height");
+            a=a1.value-0;
+            b=b1.value-0;
+            parseInt(a/(b*b))>=25?alert("您的BMI值是"+parseInt(a/(b*b))+"\n根据您的BMI值，您目前处于：偏胖状态，请合理安排您的饮食")
+                :parseInt(a/(b*b))>=20?alert("您的BMI值是"+parseInt(a/(b*b))+"\n根据您的BMI值，您目前处于：正常状态，请继续保持")
+                :alert("您的BMI值是"+parseInt(a/(b*b))+"\n根据您的BMI值，您目前处于：偏瘦状态，请合理安排您的饮食");
+        };
+        w3m=function( ){
+            var qo1=document.getElementById("Isay");
+            var qo5=document.getElementById("message");
+            qo5.value+="美哥说："+qo1.value+"\n";
+            qo5.value="";
+        };
+        w3j=function( ){
+            var qo3=document.getElementById("Ysay");
+            var qo5=document.getElementById("message");
+            qo5.value+="静格格说："+qo3.value+"\n";
+            qo5.value="";
+        };
+        w4=function( ){
+            var numb1=prompt("请输入第一个数字：")-0;
+            var numb2=prompt("请输入第二个数字：")-0;
+            var numb3=prompt("请输入第三个数字：")-0;
+            maxnumb=numb1>numb2&&numb1>numb3?numb1:numb2>numb3?numb2:numb3;
+            numb1==""&&numb2==""&&numb3==""?alert("抱歉您没有输入任何内容请您重新输入"):alert("您刚刚输入的最大数字是："+maxnumb);
+        };
+        w5=function(){
+             var year=prompt("请输入年份：")-0;
+                ybe=year%4==0&&year%100!=0?console.log("是闰年"):console.log("不是闰年");
+        };
+        w6=function(){
+            var score=prompt("请输入您的成绩：")-0;
+            score>=90?alert("优秀"):score>=70?alert("还良好"):alert("同志还需努力！");
+        }
+</script>

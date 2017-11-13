@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>error</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function f(arr){
+        return arr.length;
+    }
+    try{
+        console.log(f(null));
+        }
+        catch(error){
+        console.log(error.name);
+        console.log(error.message);
+        if((error.name=="ReferenceError")||(error.name=="TypeError")){
+            document.write("不好意思没找到东西");
+        }
+    }
+    document.write("<br/>");
+    document.write("ABCDEFGHIJKLMNOPQSTUVWXYZ");
+</script>

@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    font-size: 12px;
+}
+body{
+    font-family: "微软雅黑";
+    font-size: 12px;
+}
+.navbar.D_nav{
+    min-height:88px;
+    background: #e7e7e7;
+    text-align: center;
+}
+.D_bread{
+   background:#47aa42;
+    float: left;
+    left:25px;
+    top:10px;
+}
+.D_bread>.D_line{
+    color: #fff;
+    font-size: 30px;
+}
+.D_navLogo{
+   margin-top: -18px;
+    width: 210px;
+}
+.D_navUl>li{
+    background:url(../img/D_nav/D_nav.gif) no-repeat 0 -25px;
+    width: 51px;
+    height: 51px;
+    margin:  18px 0 0 27px;
+}
+.D_navUl>li:first-child{
+      background:url(../img/D_nav/D_nav.gif) no-repeat 0 -25px;
+  }
+.D_navUl>li:first-child:hover{
+    background:url(../img/D_nav/D_nav.gif) no-repeat 0 -25px;
+}
+.D_navUl>li:nth-child(2){
+    background:url(../img/D_nav/D_nav.gif) no-repeat -75px -25px;
+}
+.D_navUl>li:nth-child(3){
+    background:url(../img/D_nav/D_nav.gif) no-repeat -150px -25px;
+}
+.D_navUl>li:nth-child(4){
+    background:url(../img/D_nav/D_nav.gif) no-repeat -225px -25px;
+}
+.D_navUl>li:nth-child(5){
+    background:url(../img/D_nav/D_nav.gif) no-repeat -301px -25px;
+}
+.D_navUl>li:nth-child(6){
+    background:url(../img/D_nav/D_nav.gif) no-repeat -378px -25px;
+}
+.D_navUl>li:nth-child(7){
+    background:url(../img/D_nav/D_nav.gif) no-repeat -454px -25px;
+}
+.D_navUl>li:nth-child(8){
+    background:url(../img/D_nav/D_nav.gif) no-repeat -530px -25px;
+}
+.D_navUlr{
+    margin-right: 40px;
+}
+.D_navUlr>li{
+    background:url(../img/D_nav/D_nav.gif) no-repeat -75px -25px;
+    width: 51px;
+    height: 51px;
+    margin:  -50px 0 0 27px;
+}
+.D_navUlr>li:first-child{
+    background:url(../img/D_nav/D_nav.gif) no-repeat -607px -25px;
+}
+.D_navUlr>li:last-child{
+    background:url(../img/D_nav/D_nav.gif) no-repeat -684px -25px;
+}
+.D_boot{
+    position: relative;
+    background: linear-gradient(45deg,#e6c0e0 0,#606f60 100%);
+    margin-top: 88px;
+}
+.D_mask{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background: url(../img/D_jbg.png) repeat center center;
+    opacity: .2;
+    z-index: 1;
+}
+.D_tips{
+    position: relative;
+    z-index: 2;
+    color:#fff;
+}
+.D_tips>h1{
+    font-size: 100px;
+    font-weight: bold;
+}
+.D_tips>h2{
+    font-size: 30px;
+    color: #c1d769;
+    font-weight: bold;
+}
+.D_txt3:hover{
+    text-decoration: none;
+}
+.D_banner>img{
+    width: 100%;
+}
+.D_googleMap{
+    width: 100%;
+    min-height:600px;
+}
+@media (min-width: 768px) {
+    .D_googleMap{
+        width:100%;
+    }
+}
+@media (min-width: 992px) {
+    .D_googleMap{
+        width:100%;
+    }
+}
+@media (min-width: 1200px) {
+    .D_googleMap{
+        width:100%;
+    }
+}
+.D_content{
+
+}

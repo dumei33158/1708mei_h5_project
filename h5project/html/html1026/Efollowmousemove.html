@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Efollowmousemove</title>
+    <style>
+        #Pic{
+            position:absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <img src="mousemove.gif" alt="" id="Pic"/>
+</body>
+</html>
+<script>
+    var eventObj={
+        //事件绑定
+        addEvent:function(E,T,F){
+            if(E.addEventListener){
+                E.addEventListener(T,F);
+            }else if(E.attachEvent){
+                E.attachEvent("on"+T,F);
+            }else{
+                E["on"+T]=F;
+            }
+        },
+        //事件解除绑定
+        delEvent:function(E,T,F){
+            if(E.removeEventListener){
+                E.removeEventListener(T,F);
+            }else if(E.detachEvent){
+                E.detachEvent("on"+T,F);
+            }else{
+                E["on"+T]=null;
+            }
+        },
+        //阻止事件的默认行为
+        preventDefault:function(e){
+            var e=e||window.event;
+            if(e.preventDefault){
+                e.preventDefault();
+            }else {
+                e.returnValue=false;
+            }
+        },
+        //阻止事件冒泡
+        stopPropagation:function(e){
+            var e=e||window.event;
+            if(e.stopPropagation){
+                e.stopPropagation();
+            }else {
+                e.cancelBubble=true;
+            }
+        },
+        //获取事件源
+        getE:function(e){
+            var e=e||window.event;
+            return e.target|| e.srcElement;
+        }
+    };
+    function follow(e){
+        var x= e.clientX-Pic.width/2;
+        var y= e.clientY-Pic.height/2;
+//        var bodyH=document.documentElement.clientHeight||document.body.clientHeight;
+//        var bodyW=document.documentElement.clientWidth||document.body.clientWidth;
+        var bodyH=document.documentElement.clientHeight;//用document.documentElement.clientHeight有效
+        var bodyW=document.documentElement.clientWidth;
+        if(x<=0){
+            x=0;
+        }else if(x>= bodyW-Pic.width){
+            x=bodyW-Pic.width;
+        }
+        if(y<=0){
+            y=0;
+        }else if(y>=bodyH-Pic.height){
+            y=bodyH-Pic.height;
+        }
+        Pic.style.left=x+"px";
+        Pic.style.top=y+"px";//写在后面才能找到x,y值
+    }
+    var flag=1;
+    eventObj.addEvent(document,"mousemove",follow);
+    eventObj.addEvent(document,"click",function(){
+        if(flag==1){
+            eventObj.delEvent(document,"mousemove",follow);
+            flag=0;
+        }else{
+            eventObj.addEvent(document,"mousemove",follow);
+            flag=1;
+        }
+    });
+
+</script>

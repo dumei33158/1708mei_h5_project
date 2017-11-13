@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tabmenu</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    }
+    li{
+    list-style: none;
+    }
+    #title li{
+    float:left;
+    width: 60px;
+    height: 40px;
+    border: 1px solid #f00;
+    }
+    #title li.active{
+    background: #00CC66;
+    border: 2px solid #0f0;
+    color: #f00;
+    }
+    #cont{
+    clear: both;
+    width: 300px;
+    height: 200px;
+    border: 2px solid #f00;
+    }
+    #cont div{
+    display: none;
+    }
+    #cont div:first-child{
+    display: block;
+    }
+    </style>
+
+    </head>
+<body>
+<div id="title">
+    <ul>
+        <li class="active">111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+</div>
+<div id="cont">
+    <div>111</div>
+    <div>222</div>
+    <div>333</div>
+    <div>444</div>
+</div>
+</body>
+</html>
+<script>
+    function $(id){
+        return document.getElementById(id);
+    }
+    var Tit=$("title").getElementsByTagName("li");
+    var Div=$("cont").getElementsByTagName("div");
+    for(var i=0;i<Tit.length;i++){
+        Tit[i].index=i;
+        Tit[i].onclick=function(){
+            for(var j=0;j<Div.length;j++){
+                Tit[j].className="";
+                Div[j].style.display="none";
+            }
+        this.className="active";
+        Div[this.index].style.display="block";
+        }
+    }
+
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* This parent can be any width and height */
+        .block {
+            text-align: center;
+            background: #f882f4;
+        }
+
+        /* The ghost, nudged to maintain perfect centering */
+        .block:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -0.25em; /* Adjusts for spacing */
+        }
+
+        /* The element to be centered, can
+           also be of any width and height */
+        .centered {
+            display: inline-block;
+            vertical-align: middle;
+            width: 50%;
+            background: #fb0010;
+        }
+    </style>
+</head>
+<body>
+<div class="block" style="height: 300px;">
+
+    <div class="centered">
+        <h1>haorooms案例题目</h1>
+        <p>haorooms案例内容，haorooms案例内容haorooms案例内容haorooms案例内容haorooms案例内容haorooms案例内容haorooms案例内容haorooms案例内容haorooms案例内容</p>
+    </div>
+
+</div>
+</body>
+</html>

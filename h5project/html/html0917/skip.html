@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .father{
+            width: 300px;
+            height: 200px;
+            background-color: #ff00ff;
+            position: relative;
+        }
+        .son{
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            background-color: #0000ff;
+            z-index: 2;
+            bottom: -50px;
+        }
+        .son2{
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            background-color: #ffffff;
+            bottom: -50px;
+            z-index: 3;
+        }
+        .father:hover .son{
+            bottom: 0;
+            transition:all 2s;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+    <div class="son2"></div>
+</div>
+</body>
+</html>

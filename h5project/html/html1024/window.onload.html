@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.onload</title>
+</head>
+<script>
+   /* btn.onclick=function(){
+        alert("到饭点了，到底去哪儿吃？")
+    }*/
+   function fan(){
+    alert("到饭点了，到底去哪儿吃？")
+   };
+    window.onload=function(){
+        btn.onclick=fan;
+    }
+</script>
+<body>
+<ul  class="nav">
+    <li>lorem1
+        <input type="text" value="想输啥输啥"></li>
+    <li>lorem2
+        <input type="button" id="btn2" value="倦"></li>
+    <li class="b">lorem3</li>
+    <li>lorem4
+        <input type="button" id="btn" value="12点">
+    </li>
+    <li>lorem5
+        <textarea name="" cols="30" rows="10" id="试试呗"></textarea></li>
+    <li>lorem6</li>
+</ul>
+</body>
+</html>

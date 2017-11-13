@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>obj_choose_all_reverse</title>
+</head>
+<body>
+<div class="SelWrap">
+    <input type="checkbox" id="all"/>全选<br/>
+    <input type="checkbox" id="reverse"/>反选<br/>
+    1.<input type="checkbox" class="lk" name="check"/>
+    2.<input type="checkbox" class="lk" name="check"/>
+    3.<input type="checkbox" class="lk" name="check"/>
+    4.<input type="checkbox" class="lk" name="check"/>
+    5.<input type="checkbox" class="lk" name="check"/>
+    6.<input type="checkbox" class="lk" name="check"/>
+    7.<input type="checkbox" class="lk" name="check"/>
+    8.<input type="checkbox" class="lk" name="check"/>
+    9.<input type="checkbox" class="lk" name="check"/>
+</div>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    function ChooseAR(Tag,Tagi,checkTag) {
+        var checkAll=function(){
+            checkTag.each(function(){
+                $(this).prop("checked",Tag.prop("checked"))
+            })
+        };
+        Tag.click(checkAll);
+        var checkReverse=function(){
+            checkTag.each(function(){
+                $(this).prop("checked",!$(this).prop("checked"))
+            })
+        };
+        Tagi.click(checkReverse);
+    }
+    new ChooseAR($("#all"),$("#reverse"),$(".lk"));//首字母大写
+</script>

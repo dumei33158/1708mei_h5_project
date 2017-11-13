@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1011homework_Dumei.html</title>
+</head>
+<style>
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+    #vertify{
+        width: 90px;
+        height: 50px;
+        border: none;
+        font-size: 28px;
+        padding-left: 10px;
+        outline: none;
+        background: none;
+    }
+    #btn4{
+        width: 60px;
+        height: 30px;
+        border: none;
+        background: none;
+        font-size: 18px;
+        margin: 0 10px;
+        outline: none;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.11作业&nbsp;_Dumei</h1>
+    <p>1.按以下要求实现二级联动：用两种方法实现：索引数组和关联数组</p>
+    <select name="" id="pro">省/市
+        <option value="北京">北京</option>
+        <option value="河南">河南</option>
+        <option value="河北">河北</option>
+    </select>
+    <input type="button" value="下辖" id="btn1" onclick="f1()"/>
+    <textarea name="" id="txt1" cols="30" rows="10"></textarea>
+    <br/>
+    <select name="" id="proe">省/市
+        <option value="北京">北京</option>
+        <option value="河南">河南</option>
+        <option value="河北">河北</option>
+    </select>
+    <input type="button" value="下辖" id="btn1e" onclick="f1e()"/>
+    <textarea name="" id="txt1e" cols="30" rows="10"></textarea>
+    <p>2.用栈的思想实现上下车的demo,要求，点击上车，控制台按顺序显示上车乘客,点击下车按钮，控制台按顺序显示下车乘客</p>
+    <input type="button" value="上车" id="btn2" onclick="f2()"/>
+    <input type="button" value="下车" id="btn2e" onclick="f2e()"/>
+    <p>3.用队列的思想实现排队和取票的demo，只有5张票。要求：点击排队，用户输入大于5个乘客 并按顺序排列显示。点击取票时，按顺序显示已经拿到票的乘客，并显示没拿到票乘客</p>
+    <input type="button" value="排队" id="btn3" onclick="f3()"/>
+    <input type="button" value="取票" id="btn3e" onclick="f3e()"/>
+    <p>4.实现以下demo;要求：点击看不清，验证码重新生成，并生成的是四个不一样的验证码，验证码由字母和数字组成，点击验证，如果验证成功，弹出通过，否则未通过</p>
+    <input type="text" id="txt4"><input type="button" id="vertify" value="" style="display:inline-block;"><input type="button" value="看不清" id="btn4" onclick="f4()"/>
+    <input type="button" value="验证" id="btn4e" onclick="f4e()"/>
+    <p>5.请用户在文本框中输入一个字符串，统计其组成：数字，字母，汉字，其他</p>
+    <input type="text" id="txt5">
+    <input type="button" value="统计" id="btn5" onclick="f5()"/>
+</div>
+</body>
+</html>
+<script>
+    //1.按以下要求实现二级联动：用两种方法实现：索引数组和关联数组
+        function f1(){
+            var area=["北京","河南","河北"];
+            var city=[["朝阳","西城","东城","海淀"],["郑州","开封","鹤壁","周口","洛阳"],["石家庄","邯郸","保定","雄安新区","廊坊","承德","唐山"]];
+            txt1.value=city[area.indexOf(pro.value)].join("\n");
+        }
+        function f1e(){
+        var mrea={"北京":["朝阳","西城","东城","海淀"],"河南":["郑州","开封","鹤壁","周口","洛阳"],"河北":["石家庄","邯郸","保定","雄安新区","廊坊","承德","唐山"]};
+        for(var i in mrea) {
+            if (proe.value==i) {
+                txt1e.value = mrea[i].join("\n");
+            }
+        }
+    }
+</script>
+<script>
+    //2.用栈的思想实现上下车的demo,要求，点击上车，控制台按顺序显示上车乘客,点击下车按钮，控制台按顺序显示下车乘客
+    var arr0=[];
+    function f2() {
+        var arr=[];
+        for(var i=1;i<=5;i++){
+//            var j=prompt("开往无限循环的列车到了！\n\n正好到您了，请输入您的敬称或代号乘车。\n\n上车请注意安全，站稳扶好");
+            arr.push("乘客"+i+"上车了");
+            arr0.push("乘客"+i+"下车了");
+        }
+        console.log(arr.join("\n"));
+    }
+    function f2e() {
+        //i=1;i<=arr0.length;i++   会少
+        for(var i=arr0.length;i>0;i--){
+//            var i=prompt("开往无限循环的列车到达目的地了！\n\n请投入您的代号牌按顺序下车。\n\n下车请走好！");
+           var delArr=arr0.pop();
+           console.log(delArr);
+        }
+    }
+</script>
+<script>
+    //3.用队列的思想实现排队和取票的demo，只有5张票。要求：点击排队，用户输入大于5个乘客 并按顺序排列显示。点击取票时，按顺序显示已经拿到票的乘客，并显示没拿到票乘客
+    function f3() {
+        var arr=[];
+            var n=prompt("请输入观影人：")-0;
+            for(var i=1;i<=n;i++){
+                arr.push("观影人"+i);
+            }
+            console.log(arr.join("\n"));
+            arr1=arr;
+        }
+    function f3e() {
+        for(var j=1;j<=5;j++){
+            var delArr=arr1.shift();
+            if(arr1.length>=5){
+                console.log(delArr+"已领到票");
+            }else{
+                console.log(delArr+"已领到票");
+            }
+
+        }
+        console.log(arr1.join("、")+"未领到票");
+    }
+</script>
+<script>
+    //4.实现以下demo;要求：点击看不清，验证码重新生成，并生成的是四个不一样的验证码，验证码由字母和数字组成，点击验证，如果验证成功，弹出通过，否则未通过
+    function createcode(m,n){
+        var arr=[];
+        for(var i=m;i<=n;i++){
+            arr[arr.length]=String.fromCharCode(i);
+        }
+        return arr;
+    }
+    function isEx(v,arr) {
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]==v){
+                return true;
+            }
+        }
+    }
+    function f4(){
+        var newArr=createcode(48,57).concat(createcode(65,90),createcode(97,122));
+        var arr=[];
+        for(var i=0;i<4;i++){
+            var value=newArr[parseInt(Math.random() * newArr.length)];
+            while(isEx(value,arr)){
+                value=newArr[parseInt(Math.random()*newArr.length)];
+            }
+            arr[arr.length]=value;
+    }
+    vertify.value=arr.join("");
+    }
+    f4();
+    function f4e(){
+        if(txt4.value==""){
+            alert("验证码不能为空，请输入");
+        }else if((txt4.value.toUpperCase()==vertify.value.toUpperCase()||(txt4.value.toLowerCase()==vertify.value.toLowerCase()))){
+            alert("恭喜您通过验证");
+        }else{
+            alert("验证码输入不对哦，请您再输一次吧");
+        }
+    }
+</script>
+<script>
+    //5.请用户在文本框中输入一个字符串，统计其组成：数字，字母，汉字，其他
+    function f5(){
+        var isNum=0;
+        var isLetter=0;
+        var isChinese=0;
+        var isOther=0;
+        for(var i=0;i<txt5.value.length;i++){
+            if(txt5.value.charCodeAt(i)>=48&&txt5.value.charCodeAt(i)<=57){
+                isNum++;
+            }else if((txt5.value.charCodeAt(i)>=65&&txt5.value.charCodeAt(i)<=90)||(txt5.value.charCodeAt(i)>=97&&txt5.value.charCodeAt(i)<=122)){
+                isLetter++;
+            }else if(txt5.value.charCodeAt(i)>=19968&&txt5.value.charCodeAt(i)<=40869){
+                isChinese++;
+            }else{
+                isOther++;
+            }
+        }
+        alert("您刚才输入的:"+txt5.value+"\n字符串儿中有\n"+isNum+"个数字\n"+isLetter+"个字母，含大小写\n"+isChinese+"个汉字\n"+isOther+"个其它类型的字符");
+    }
+</script>

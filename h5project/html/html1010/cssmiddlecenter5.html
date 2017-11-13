@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father{
+            background: #cc00ff;
+            display: table;
+            width: 100%;
+        }
+        .child
+        {
+            background: #08054e;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            color: #ccc3cc;
+        }
+        .row {
+        @include flexbox((
+        display: box,
+        box-orient: vertical
+        ), $version: 1);
+        @include flexbox((
+        display: flexbox,
+        flex-direction: row
+        ), $version: 2);
+        @include flexbox((
+        display: flex,
+        flex-direction: row
+        ));
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="child">
+        Lorem ipsum dolor sit amet, consectetur adipisicing.
+    </div>
+</div>
+</body>
+</html>

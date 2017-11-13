@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regexvertify</title>
+</head>
+<body>
+<input type="text" id="txt" onblur="testName()" /><span id="sp">请输入4-6位由数字字母及下划线组成的用户名</span>
+<!--<input type="button" value="验证" id="btn" onclick="testName()"/>-->
+</body>
+</html>
+<script>
+    function testName(){
+        var userName=txt.value;
+        var reg=new RegExp("^[a-zA-Z_]\\w{3,5}$");
+        var res=reg.test(userName);
+        if(res){
+            sp.style.color="black";
+        }else{
+            sp.style.color="red";
+        }
+    }
+    var str="今天哈哈哈，好高兴啊，哈哈哈，背上小书包，啦啦啦，12345678910开始数，再倒数10，9,8,7,6,5,4,3,2,1，哈哈哈，还有a&b&c&d,唱着abcdefghijklmnoPQRSTUVWXYZ,你的电话是多少？18222390860，哈哈哈……谁说的脏话：我去去就回，你要去哪儿啊？我了个去，我去哪儿跟你有什么关系？我草草地写完作业了吗？我去周游世界的前提是我得写完作业不是吗？"
+    var reg=/我[去]|\d{3,4}\s*-?\s*\d{7,8}|\d{15}(\d{2}[0-9xX])?/gi;
+    var arr=reg.exec(str);
+    while(arr!=null){
+        console.log(arr[0],arr["index"]);
+        arr=reg.exec(str);
+    }
+    str.replace(reg,"***");
+    alert(str);
+
+</script>

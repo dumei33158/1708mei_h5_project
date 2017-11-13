@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1020homework_Dumei.html</title>
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+     *{
+         padding:0;
+         margin:0;
+     }
+     a{
+         text-decoration: none;
+     }
+    #div1{
+        height:50px;
+        line-height: 50px;
+        width:100%;
+        background: -webkit-linear-gradient(top,#FFFFFF,#ccc3cc);
+        overflow: hidden;
+    }
+    #div2{
+        height:30px;
+        width:100%;
+        background:red;
+        filter:alpha(opacity:0);
+        position:absolute;
+        top:210px;
+        z-index: 10;
+    }
+    #bz{
+        width: 245px;
+        height: 116px;
+    }
+    .homework{
+        margin:0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    .homework> p{
+        line-height: 26px;
+    }
+    #div2>p{
+        line-height: 26px;
+        padding-left: 10px;
+    }
+    #htP{
+        width: 100%;
+        height: 48px;
+        border-bottom: 2px red solid;
+        background: #fff;
+        position: absolute;
+        left:0;
+        top:-50px;
+        z-index: 10;
+    }
+    #chtop{
+        margin:0 auto;
+        width: 1000px;
+        line-height: 48px;
+    }
+    #chtop>img{
+        float: left;
+      margin-top: 10px;
+        margin-right: 210px;
+    }
+    #chtop>input{
+        margin-top: 5px;
+        width: 501px;
+        height: 36px;
+        float: left;
+        background: #e0e0e0;
+        border: none;
+        outline: none;
+        padding-left: 5px;
+    }
+    #chtop>a>i{
+        position: absolute;
+        left: 1231px;
+        top: 0;
+        font-size: 28px;
+        color: #c0c0c0;
+    }
+    #chtop>button{
+        margin-top: 5px;
+        height: 38px;
+        width: 51px;
+        float: left;
+        border: none;
+       background: #d70a1c;
+    }
+    #chtop>button>i{
+        font-size: 24px;
+        color: #fff;
+        font-weight: normal;
+    }
+    #chtop>a>i:hover{
+        color: #d70a1c;
+    }
+    .right{
+        width:10px;
+        height:100%;
+        background:#918989;
+        position: fixed;
+        right: 0;
+        top:0;
+        opacity: 0;
+        transition:   opacity  .5s;
+        z-index: 2;
+    }
+    .sidebarwrap{
+        width: 40px;
+        position:absolute;
+        right:0;
+        top: 50%;
+        height: 50%;
+    }
+    .icon{
+    }
+    .icon>ul{
+
+    }
+    .icon>ul>li{
+        position: relative;
+        padding: 18px 0;
+        text-align: center;
+        margin-bottom: 1px;/*拆散他两生出距离有缝看似一条线*/
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    .icon>ul>li>a{
+        position: absolute;
+        left:0;
+        top:0;
+        width:40px;
+        padding: 18px 0;
+    }
+    .icon>ul>li:first-child{
+        background: #918989 url("../images/toolbars.png") no-repeat -85px -173px;
+
+    }
+    .icon>ul>li:nth-child(2){
+        background: #918989 url("../images/toolbars.png") no-repeat -48px -1px;
+
+    }
+    .icon>ul>li:nth-child(3){
+        background: #918989 url("../images/toolbars.png") no-repeat -46px -49px;
+
+    }
+    .icon>ul>li:nth-child(4){
+        background: #918989 url("../images/toolbars.png") no-repeat -46px -100px;
+
+    }
+    .icon>ul>li:nth-child(5){
+        background: #918989 url("../images/toolbars.png") no-repeat -186px -150px;
+
+    }
+    .icon>ul>li:nth-child(6){
+        background: #918989 url("../images/toolbars.png") no-repeat -46px -150px;
+    }
+    .IconB{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 40px;
+        padding: 18px 0;
+        margin-bottom: 1px;
+    }
+    .IconB>ul>li:first-child{
+        background: #918989;
+        width: 40px;
+        padding: 18px 0;
+        position: absolute;
+        right:0;
+        bottom:40px;
+        text-align: center;
+    }
+    .IconB>ul>li:last-child{
+        background: #918989;
+        width: 40px;
+        padding: 18px 0;
+        position: absolute;
+        right:0;
+        bottom:0;
+        text-align: center;
+    }
+    .IconB>ul>li>a{
+        position: absolute;
+        left:0;
+        top:0;
+        width:40px;
+        padding: 18px 0;
+    }
+    .IconB>ul>li>span{
+        position: absolute;
+        left:0;
+        top:0;
+        width:40px;
+        color: #ffffff;
+        padding: 10px 0;
+    }
+    .IconB>ul>li:first-child a,.IconB>ul>li:last-child a{
+        color: #ffffff;
+        padding: 10px 0;
+    }
+    .icon>ul>li:first-child:hover{
+        background: #d70a1c url("../images/toolbars.png") no-repeat -85px -173px;
+    }
+    .icon>ul>li:nth-child(2):hover{
+        background: #d70a1c url("../images/toolbars.png") no-repeat -48px -1px;
+
+    }
+    .icon>ul>li:nth-child(3):hover{
+        background: #d70a1c url("../images/toolbars.png") no-repeat -46px -49px;
+
+    }
+    .icon>ul>li:nth-child(4):hover{
+        background: #d70a1c url("../images/toolbars.png") no-repeat -46px -100px;
+
+    }
+    .icon>ul>li:nth-child(5):hover{
+        background: #d70a1c url("../images/toolbars.png") no-repeat -186px -150px;
+
+    }
+    .icon>ul>li:nth-child(6):hover{
+        background: #d70a1c url("../images/toolbars.png") no-repeat -46px -150px;
+    }
+    .IconB>ul>li:first-child:hover,.IconB>ul>li:last-child:hover{
+        background: #d70a1c;
+    }
+    .icon>ul>li>.slide{
+        width: 70px;
+        position: absolute;
+        right:35px;
+        top:0;
+        background: #d70a1c;
+        border-radius: 3px;
+        height: 36px;
+        text-align: center;
+        padding-left: 3px;
+        z-index: -8;
+        opacity: 0;
+        transform: translate(70px);
+        transition: transform .3s ease 0.3s;
+    }
+    .IconB i{
+        font-size: 20px;
+    }
+    .IconB>ul>li>.slideB{
+        width: 50px;
+        position: absolute;
+        right:35px;
+        bottom:0;
+        background: #d70a1c;
+        border-radius: 3px;
+        text-align: center;
+        height:36px;
+        padding-left: 3px;
+        z-index: -8;
+        opacity: 0;
+        transform: translate(70px);
+        transition: transform .3s ease 0.3s;
+    }
+    .icon>ul>li>.slide a,.IconB>ul>li>.slideB a{
+        color: #ffffff;
+        display: block;
+        padding: 10px 0;
+    }
+    .icon>ul>li:first-child>.dot{
+        background: url("../images/toolbars.png") no-repeat -151px -151px;
+        width: 6px;
+        height: 6px;
+        position:absolute;
+        right:12px;
+        top:10px;
+    }
+    .icon>ul>li:hover .slide{
+        transform: translate(-1px);
+        opacity: 1;
+    }
+    .IconB>ul>li:hover .slideB{
+        transform: translate(-1px);
+        opacity: 1;
+    }
+    .icon>ul>li:hover .dot{
+        background: none;
+    }
+    #banner{
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        width:790px;
+        height: 340px;
+    }
+
+    #List_pic{
+        width:6320px;
+        position: absolute;
+        left: 0;
+        top:0;
+    }
+    #List_pic img{
+        float: left;
+        position:absolute;
+        left:0;
+        top:0;
+        opacity: 0;
+        transition: opacity 2s;
+    }
+    /*#List_pic img {*/
+        /*opacity: 1;*/
+    /*}*/
+    #List_pic img.active{
+        opacity: 1;
+        z-index: 1;
+    }
+    #spanList>span{
+        position: absolute;
+        top:50%;
+        margin-top: 0;
+        font-size: 28px;
+        color: greenyellow;
+        z-index:2;
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0,0,0,.6);
+        cursor: pointer;
+    }
+    #Sleft{
+        left: 0;
+    }
+    #Sright{
+        right: 0;
+    }
+    #rLad{
+        float:right;
+        position:absolute;
+        right:50%;
+        bottom:50%;
+        margin-right:-13%;
+        margin-bottom: -20%;
+        z-index: 2;
+    }
+    #rLad>li{
+        float:left;
+        border: 10px solid #fff;
+        width: 0;
+        border-radius: 50%;
+        margin-left: 8px;
+        cursor: pointer;
+        transition: all .4s;
+    }
+    #rLad>li:hover, #rLad>li.active{
+        border:10px solid blue;
+    }
+
+    #P_banner{
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        width:600px;
+        height: 400px;
+    }
+
+    #P_List_pic{
+        width:4200px;
+        float: left;
+        position: absolute;
+        left: 0;
+        top:0;
+        z-index: 1;
+    }
+
+    #P_List_pic img{
+        float: left;
+        position:absolute;
+        left:0;
+       top:0;
+        transition: all .4s;
+    }
+    #P_spanList>span{
+        position: absolute;
+        top:50%;
+        margin-top: 0;
+        font-size: 28px;
+        color: greenyellow;
+        z-index:2;
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0,0,0,.6);
+        cursor: pointer;
+    }
+    #P_Sleft{
+        left: 0;
+    }
+    #P_Sright{
+        right: 0;
+    }
+    #P_rLad{
+        float:right;
+        position:absolute;
+        right:50%;
+        bottom:50%;
+        margin-right:-13%;
+        margin-bottom: -20%;
+        z-index: 2;
+    }
+    #P_rLad>li{
+        float:left;
+        border: 10px solid #fff;
+        width: 0;
+        border-radius: 50%;
+        margin-left: 8px;
+        cursor: pointer;
+        transition: all .4s;
+    }
+    #P_rLad>li:hover, #P_rLad>li.P_active{
+        border:10px solid blue;
+    }
+    #adv{
+        position:fixed;
+        right:0;
+        bottom:0;
+    }
+    #Ah{
+        background: #cacfd5;
+        float: right;
+        text-align: center;
+    }
+    #dec{
+        width: 17px;
+        height: 17px;
+        background: url("../images/icon.jpg")  no-repeat -286px -18px;
+        float: left;
+        position: absolute;
+        left: 0;
+        top:1px;
+        display: none;
+    }
+    #bSn{
+        display: none;
+    }
+    #dec:hover{
+        background: url("../images/icon.jpg")  no-repeat -343px -18px;
+    }
+    #box{
+        border: 1px solid #000;
+        width: 1020px;
+        margin: 0 auto;
+    }
+    #outBox{
+        width: 1000px;
+        height: 200px;
+        border: 10px solid #000;
+        overflow:hidden;
+    }
+    #boxCount{
+        width:2400px;
+        height: 200px;
+    }
+    #boxCount>div{
+        float: left;
+        width: 200px;
+        height: 200px;
+    }
+    #boxCount>div:nth-child(7n){
+        background: #0dcccc;
+    }
+    #boxCount>div:nth-child(7n+1){
+        background: #f0ad4e;
+    }
+    #boxCount>div:nth-child(7n+2){
+        background: #00ffff;
+    }
+    #boxCount>div:nth-child(7n+3){
+        background: #43f048;
+    }
+    #boxCount>div:nth-child(7n+4){
+        background: #de26f0;
+    }
+    #boxCount>div:nth-child(7n+5){
+        background: #f0191e;
+    }
+    #boxCount>div:nth-child(7n+6){
+        background: #eff01e;
+    }
+    #Wleft,#Wright{
+        width: 40px;
+        height: 40px;
+    }
+.L_slide{
+    transform: translate(-200px);
+}
+</style>
+<body>
+<div id="htP">
+    <div id="chtop">
+    <img src="../images/jdslg.png" alt=""/>
+        <a title="未选择任何文件" href=""> <i class="iconfont icon-camera Cam"></i></a>
+    <input type="text" value="报纸" onfocus="this.value=''"/>
+    <button><i class="fa fa-search"></i></button>
+    </div>
+</div>
+<div id="div1">
+    <span>顶部信息栏：</span> <span id="dBdsp"></span>
+</div>
+<div id="div2">
+    &nbsp;&nbsp;留言信息：<br/>
+   <br/>
+    <div id="bz">
+        <p>好好学习，天天向上，喜迎19大</p>
+        <p>凡是预则立，不预则废</p>
+        <p>保护视力，人人有责</p>
+        <p>可视化1708，一起飞吧^ˇ∨ˇ^</p>
+    </div>
+
+</div>
+<div class="right">
+    <div class="sidebarwrap">
+        <div class="icon">
+            <ul>
+                <li><a href=""></a>
+                    <p class="dot"></p>
+                    <div class="slide">
+                        <a href="">京东会员</a>
+                    </div>
+                </li>
+                <li><a href="#"></a>
+                    <div class="slide">
+                        <a href="#">购物车</a>
+                    </div>
+                </li>
+                <li><a href="#"></a>
+                    <div class="slide">
+                        <a href="#">我的关注</a>
+                    </div>
+                </li>
+                <li><a href="#"></a>
+                    <div class="slide">
+                        <a href="#">我的足迹</a>
+                    </div>
+                </li>
+                <li><a href="#"></a>
+                    <div class="slide">
+                        <a href="#">我的消息</a>
+                    </div>
+                </li>
+                <li><a href="#"></a>
+                    <div class="slide">
+                        <a href="#">咨询JIMI</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="IconB">
+            <ul>
+                <li><span id="goTop" ><i class="fa fa-angle-up"></i></span>
+                    <div class="slideB">
+                        <a href="#">顶部</a>
+                    </div>
+                </li>
+                <li><a href="#"><i class="fa fa-pencil"></i></a>
+                    <div class="slideB">
+                        <a href="">反馈</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="adv">
+    <div id="Ah">猜猜我有啥？
+        <div id="dec">
+        </div>
+    </div>
+    <div id="bSn"><img src="../images/snow.gif" alt=""></div>
+</div>
+<div class="homework">
+    <h1>2017.10.20作业&nbsp;_Dumei</h1>
+    <p>1.JS元素树实现购物车。补加一列具备删除功能</p>
+    <table id="tb"  border="0" width="600px" align="center" bgcolor="green">
+        <tr align="center" bgcolor="#f5deb3">
+            <td>产品名称</td>
+            <td>产品单价</td>
+            <td>产品数量</td>
+            <td>总价</td>
+        </tr>
+        <tr align="center" bgcolor="#f5deb3">
+            <td>Phone5</td>
+            <td>500</td>
+            <td><input type="button" value="-"/><span>0</span><input type="button" value="+"/></td>
+            <td>0</td>
+        </tr>
+        <tr align="center" bgcolor="#f5deb3">
+            <td>Phone6</td>
+            <td>600</td>
+            <td><input type="button" value="-" /><span>0</span><input type="button" value="+" /></td>
+            <td>0</td>
+        </tr>
+        <tr align="center" bgcolor="#f5deb3">
+            <td>Phone7</td>
+            <td>700</td>
+            <td><input type="button" value="-" /><span>0</span><input type="button" value="+" /></td>
+            <td>0</td>
+        </tr>
+        <tr align="center" bgcolor="#f5deb3">
+            <td colspan="3">total</td>
+            <td id="tPrice">0</td>
+        </tr>
+    </table>
+    <p>2.滑动滚动条，当scrollTop>=走到红色的条的top，红条停止滚动，居于页面顶部；当scrollTop < 走到红色的条的top 红条再恢复原样</p>
+    <span style="font-size: 12px">请滑动滚动条实现效果</span>
+    <p>3.京东顶部划出题目效果</p>
+    <span style="font-size: 12px">请滑动滚动条实现效果</span>
+    <p>4.置顶效果：缓缓的滑动到顶部</p>
+    <span style="font-size: 12px">请滑动滚动条实现效果</span>
+    <p>5.渐隐渐现的轮播图</p>
+    <div id="banner">
+        <div id="List_pic">
+            <img src="../images/banner1.jpg" alt="" class="active"/>
+            <img src="../images/banner2.jpg" alt="" />
+            <img src="../images/banner3.jpg" alt="" />
+            <img src="../images/banner4.jpg" alt="" />
+            <img src="../images/banner5.jpg" alt="" />
+            <img src="../images/banner6.jpg" alt="" />
+            <img src="../images/banner7.jpg" alt="" />
+            <img src="../images/banner8.jpg" alt="" />
+        </div>
+        <div id="spanList">
+            <span id="Sleft">&lt;</span>
+            <span id="Sright">&gt;</span>
+        </div>
+        <ul id="rLad">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <span>补充拓展：实现无缝滚动</span>
+    <div id="P_banner">
+        <div id="P_List_pic" style="left: -600px;">
+            <img src="../images/img5.gif" alt="" />
+            <img src="../images/img1.gif" alt=""/>
+            <img src="../images/img2.gif" alt="" />
+            <img src="../images/img3.gif" alt="" />
+            <img src="../images/img4.gif" alt="" />
+            <img src="../images/img5.gif" alt="" />
+            <img src="../images/img1.gif" alt="" />
+        </div>
+        <div id="P_spanList">
+            <span id="P_Sleft">&lt;</span>
+            <span id="P_Sright">&gt;</span>
+        </div>
+        <ul id="P_rLad">
+            <li class="P_active" index="0"></li>
+            <li index="1"></li>
+            <li index="2"></li>
+            <li index="3"></li>
+            <li index="4"></li>
+        </ul>
+    </div>
+    <p>6.无缝滚动：左右</p>
+    <div id="box">
+        <button id="Wleft">&lt;</button>
+        <button id="Wright">&gt;</button>
+        <div id="outBox">
+            <div id="boxCount">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+            </div>
+        </div>
+    </div>
+
+    <p>7.底部弹出广告，鼠标经过出现，点击差号删除广告</p>
+    <span style="font-size: 12px">请滑动滚动条实现效果</span>
+    <p>以下文字仅用于测试：</p>
+</div>
+</body>
+</html>
+<script>
+    for(var i=1;i<=1000;i++){
+       var testD= document.createTextNode("test\nlorem"+i+"\t");
+//        document.write(testD+"<br/>")
+        document.getElementsByClassName("homework")[0].appendChild(testD);
+    }
+</script>
+<script>
+    //1.JS元素树实现购物车。补加一列具备删除功能
+   /* function $(id){
+        return document.getElementById(id);
+    }
+    var arr=["产品名称","产品单价","产品数量","总价"];
+    var table=document.createElement("table");
+    table.style.border="10px solid blue";
+    table.style.width="600px";
+    table.style.height="500px";
+    var thead=document.createElement("thead");
+    table.appendChild(thead);
+    var trh=document.createElement("tr");
+    thead.appendChild(trh);
+    trh.style.textAlign="center";
+    for(var i=0;i<4;i++){
+        var th=document.createElement("th");
+        th.style.border="1px solid red";
+        var thText=document.createTextNode(arr[i]);
+        th.appendChild(thText);
+        trh.appendChild(th);
+    }
+    $("h1cart").appendChild(table);
+    var arrTD1=["Phone5","500","","500"];
+    var arrTD2=["Phone6","600","","600"];
+    var arrTD3=["Phone6","600","","600"];
+    var tbody=document.createElement("tbody");
+    for(var j=0;j<4;j++){
+            var tr=document.createElement("tr");
+            tr.style.textAlign="center";
+        var td=document.createElement("td");
+        var tdTxt=document.createTextNode();
+            for(var m=0;m<4;m++){
+            if(j==1){
+                tdTxt=document.createTextNode(arrTD1[m]);
+            }
+            if(j==2){
+                    tdTxt=document.createTextNode(arrTD2[m]);
+                }
+                if(j==3){
+                    tdTxt=document.createTextNode(arrTD3[m]);
+                }
+            td.style.border="1px solid red";
+            td.appendChild(tdTxt);
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+        tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);*/
+
+    function $(id){
+        return document.getElementById(id)
+    }
+    //    console.log($("tb").getElementsByTagName("input"));
+    var Inp=$("tb").getElementsByTagName("input");
+    var num=0;
+    //    var Index=0;
+    for(var i=0;i<Inp.length;i++){
+        Inp[i].onclick=function(){
+            if(this.value=="+"){
+                this.previousElementSibling.innerText++;
+                num=this.previousElementSibling.innerText-0;
+            }else{
+                if(this.nextElementSibling.innerText<=0){
+                    this.nextElementSibling.innerText=0;
+                }else{
+                    this.nextElementSibling.innerText--;
+                }
+                num=this.nextElementSibling.innerText-0;
+            }
+            var price=this.parentElement.previousElementSibling.innerText-0;
+//    console.log(this.parentElement.nextElementSibling.innerText);
+//    console.log(this.parentElement.previousElementSibling.innerText);
+            this.parentElement.nextElementSibling.innerText=price*num;
+//            console.log( T_price);
+            To_tal();
+        }
+    }
+    var sum;
+    function To_tal(){
+        var sum=0;
+        var tRL=$("tb").getElementsByTagName("tr");
+        for(var i=1;i<=tRL.length-2; i++){
+                var tDq=tRL[i].getElementsByTagName("td");
+                sum+=Number(tDq[3].innerText);
+        }
+        $("tPrice").innerText=sum;
+//        console.log( $("total").innerText);
+    }
+    createLTd();
+  function createLTd(){
+        var tRL=$("tb").getElementsByTagName("tr");
+//        console.log(tRL);
+//        var tDL=tRL[0].getElementsByTagName("td");
+//        console.log(tDL);
+//        var sum=0;
+        for(var i=0;i<tRL.length;i++){
+//            var tDLq=tRL[i].getElementsByTagName("td");
+//            var tDL_ftr=tDLq[tRL.length-1].parentElement;
+            var tDLn=document.createElement("td");
+            var txtL=document.createTextNode("删除");
+            tRL[i].appendChild(tDLn);
+            tRL[i].lastElementChild.onclick=function () {
+                this.parentElement.parentElement.removeChild(this.parentElement);
+                To_tal();
+            };
+            if(i==0){
+                txtL=document.createTextNode("");
+                tDLn.appendChild(document.createTextNode("操作"));
+                tRL[i].lastElementChild.onclick=function (){}
+            }
+            if(i==tRL.length-1){
+                txtL=document.createTextNode("");
+                tDLn.appendChild(document.createTextNode("核算"));
+            tRL[i].lastElementChild.onclick=function (){
+                alert("您最终确定购买的产品总价格是:"+this.previousElementSibling.innerText);
+                sum+=Number(tDq[3].innerText);
+            }
+            }
+            tDLn.appendChild(txtL);
+//            console.log( tRL[i].lastElementChild);
+//            console.log(tRL[i].parentElement.parentElement);
+        }
+    }
+</script>
+<script>
+    //2.滑动滚动条，当scrollTop>=走到红色的条的top，红条停止滚动，居于页面顶部；当scrollTop < 走到红色的条的top 红条再恢复原样
+    function $(id){
+        return document.getElementById(id)
+    }
+    function numFormat(n){
+        return n>=10?n:"0"+n;
+    }
+    function dt2() {
+        var date=new Date("2017-10-27");
+        var dateBetween=date-(new Date());
+        var year=numFormat(Math.floor(dateBetween/(60*60*1000*24*365)));
+        var month=numFormat(Math.floor(dateBetween/(60*60*1000*24*30)));
+        var day=numFormat(Math.floor(dateBetween/(60*60*1000*24)%30));
+        var hours=numFormat(Math.floor(dateBetween/(60*60*1000)%24));
+        var min=numFormat(Math.floor(dateBetween/(60*1000)%60));
+        var sec=numFormat(Math.floor(dateBetween/1000%60));
+        dBdsp.style.fontSize="2em";
+        dBdsp.style.fontWeight="bold";
+        dBdsp.innerText="今天是"+new Date().toLocaleString()+"\t\t\t\t\t\t距离js课程结束还有："+year+"年"+month+"月"+day+"日"+hours+"时"+min+"分"+sec+"秒";
+        dBdsp.style.color="#f0f";
+    }
+    dt2();
+    setInterval(dt2,1000);
+  window.onscroll=function(){
+   var  scroL=document.documentElement.scrollTop || document.body.scrollTop;
+        if(scroL>=210){
+            $("div2").style.position="fixed";
+            $("div2").style.top="50px";
+        }else{
+                $("div2").style= "position:absolute; top:260px;";
+        }
+      //3.京东顶部划出题目效果
+      var  Scroll=document.documentElement.scrollTop || document.body.scrollTop;
+        if(Scroll>=200){
+            $("htP") .style.position="fixed";
+            $("htP") .style.transition="top 1s";
+            $("htP") .style.top=0;
+        }else{
+            $("htP") .style="position:absolute;top:-50px";
+        }
+      //4.置顶效果：置顶效果：缓缓的滑动到顶部（一定位置出现滑块）
+      var  ScrlL=document.documentElement.scrollTop || document.body.scrollTop;
+      if(ScrlL>=600){
+            document.getElementsByClassName("right")[0].style="opacity:1;"
+      }else{
+          document.getElementsByClassName("right")[0].style="opacity:0;"
+      }
+      //法1：定时器setTimeout(任务，间隔时间)，指间隔多长时间执行该任务，仅指一次，搭配递增递减函数可实现连续执行效果，清除用 clearTimeout(计时器名)
+      $("goTop").onclick=function(){
+          var  Scroll=document.documentElement.scrollTop || document.body.scrollTop;
+          document.documentElement.scrollTop-=10;
+          document.body.scrollTop-=10;
+          var mytime= setTimeout( $("goTop").onclick,10);
+          if(Scroll==0){
+              clearTimeout(mytime);
+          }
+      };
+      /*//底部弹出广告（一定位置出现广告）
+      var  scroLa=document.documentElement.scrollTop || document.body.scrollTop;
+      if(scroLa>=400){
+          $("Ah").style="display:block";
+      }else{
+          $("Ah").style="display:none";
+      }*/
+  };
+//    var mytoponTime=setInterval(topOn,1000);
+</script>
+<script>
+    //4.置顶效果：缓缓的滑动到顶部
+    //法2(本函数内有点不靠谱)：计时器setInterval(任务，间隔时间)，指每间隔多长时间执行该任务，本身即指多次，也可搭配递增递减函数实现连续执行效果，清除用 clearInterval(计时器名)
+    /*function g(){
+        var  Scroll=document.documentElement.scrollTop || document.body.scrollTop;
+        document.documentElement.scrollTop-=10;
+        document.body.scrollTop-=10;
+        var mytime= setInterval(g,100);
+        if(Scroll==0){
+            clearInterval(mytime);
+            console.log(1)
+        }
+    }*/
+</script>
+<script>
+    //5.渐隐渐现的轮播图
+    function $(id){
+        return document.getElementById(id)
+    }
+    var Index=0;
+    var Img=$( "List_pic").getElementsByTagName("img");
+    var Lis=$( "rLad").getElementsByTagName("li");
+    function fun(){
+        for(var i=0;i<Img.length;i++){
+            Img[i].className="";
+            Lis[i].className="";
+        }
+        Img[Index].className="active";
+        Lis[Index].className="active";
+    }
+    $("Sright").onclick = function(){
+        Index++;
+        if(Index>Img.length-1){
+            Index=0;
+        }
+        fun();
+    };
+    var MyTime=setInterval($("Sright").onclick,1000);
+    $("Sleft").onclick=function (){
+        Index--;
+        if(Index<0){
+            Index= Img.length-1;
+        }
+        fun();
+    };
+    $("Sleft").onmouseover=function(){
+        clearInterval(MyTime);
+    };
+    $("Sleft").onmouseout=function(){
+        MyTime=setInterval($("Sright").onclick,1000);
+    };
+    $("Sright").onmouseover=function(){
+        clearInterval(MyTime);
+    };
+    $("Sright").onmouseout=function(){
+        MyTime=setInterval($("Sright").onclick,1000);
+    };
+    $("List_pic").onmouseover=function(){
+        clearInterval(MyTime);
+    };
+    $("List_pic").onmouseout=function(){
+        MyTime=setInterval($("Sright").onclick,1000);
+    };
+    for(var i=0;i<Lis.length;i++){
+        Lis[i].index=i;
+        Lis[i].onmouseover=function(){
+           Index=this.index;
+            clearInterval(MyTime);
+            fun( );
+        };
+        Lis[i].onmouseout=function(){
+            MyTime=setInterval($("Sright").onclick,1000);
+        };
+    }
+    </script>
+<script>
+    //5.补充拓展：实现无缝滚动
+    function $(id){
+        return document.getElementById(id);
+    }
+    var Ls=$("P_rLad").getElementsByTagName("li");
+    var Index=0;
+    //按钮焦点切换
+    function showBtn(){
+        for(var i=0;i<Ls.length;i++){
+            Ls[i].className="";
+        }
+        Ls[Index].className="P_active";
+    }
+    //图片的切换
+    function Animation(offset){
+        $("P_List_pic").style.left=parseInt($("P_List_pic").style.left)+offset+"px";
+        if(parseInt($("P_List_pic").style.left)>-600){
+            $("P_List_pic").style.left=-3000+"px";
+        }
+        if(parseInt($("P_List_pic").style.left)<-3000){
+            $("P_List_pic").style.left=-600+"px";
+        }
+    }
+    //点击左按键切换小圆点位置及高亮同时更改图片位置
+    $("P_Sleft").onclick=function(){
+        Index--;
+        if(Index<0){
+            Index=4;
+        }
+        showBtn();
+        Animation(600);
+    };
+    //右按键切换
+    $("P_Sright").onclick=function(){
+        Index++;
+        if(Index>4){
+            Index=0;
+        }
+        showBtn();
+        Animation(-600);
+    };
+    //点击小圆点与图片切换同步
+    for(var i=0;i<Ls.length;i++){
+        Ls[i].onclick=function(){
+            var thisOffset=(this.getAttribute("index")-Index)*-600;
+            Animation(thisOffset);
+            Index=this.getAttribute("index");
+            showBtn();
+        }
+    }
+    /*var Ix=0;
+    var PImg=$( "P_List_pic").getElementsByTagName("img");
+    var PLis=$( "P_rLad").getElementsByTagName("li");
+    function Pfun(){
+        for(var i=0;i<PImg.length;i++){
+            PImg[i].style="";
+            PLis[i].className="";
+//            PImg[i].className="";
+        }
+        PImg[Ix].style="left:-600px";
+       PLis[Ix].className="P_active";
+//        PImg[Ix].className="P_active_po";
+    }
+    $("P_Sright").onclick = function(){
+        Ix++;
+        if(Ix>PImg.length-1){
+            Ix=0;
+        }
+        Pfun();
+    };
+    var MyPTime=setInterval($("P_Sright").onclick,1000);
+    $("P_Sleft").onclick=function (){
+        Ix--;
+        if(Ix<0){
+            Ix=PImg.length-1;
+        }
+        Pfun();
+    };
+    $("P_Sleft").onmouseover=function(){
+        clearInterval(MyPTime);
+    };
+    $("P_Sleft").onmouseout=function(){
+        MyPTime=setInterval($("P_Sright").onclick,1000);
+    };
+    $("P_Sright").onmouseover=function(){
+        clearInterval(MyPTime);
+    };
+    $("P_Sright").onmouseout=function(){
+        MyPTime=setInterval($("P_Sright").onclick,1000);
+    };
+    $("P_List_pic").onmouseover=function(){
+        clearInterval(MyPTime);
+    };
+    $("P_List_pic").onmouseout=function(){
+        MyPTime=setInterval($("P_Sright").onclick,1000);
+    };
+    for(var j=0;j<PLis.length;j++){
+        PLis[j].index=j;
+        PLis[j].onmouseover=function(){
+            Ix=this.index;
+            clearInterval(MyPTime);
+            Pfun( );
+        };
+       PLis[i].onmouseout=function(){
+            MyPTime=setInterval($("P_Sright").onclick,1000);
+        };
+    }*/
+</script>
+<script>
+    //6.无缝滚动：左右
+   /* function $(id){
+        return document.getElementById(id);
+    }
+    var bgColor=['#f00','#0f0','#ff0','#00f','#ccf','#cfc','#fcc'];
+    var Lwis=$("menu").getElementsByTagName("li");
+    for(var i=0;i<Lwis.length;i++){
+        Lwis[i].style.backgroundColor=bgColor[i];
+    }*/
+    function start(){
+        outBox.scrollLeft++;
+        if(outBox.scrollLeft==1400){
+            outBox.scrollLeft=0;
+        }
+    }
+    var myTime=setInterval(start,10);
+    box.onmouseover=function(){
+        clearInterval(myTime);
+    };
+    box.onmouseout=function(){
+        clearInterval(myTime);
+        myTime=setInterval(start,10);
+    };
+    Wright.onclick=function(){
+        if(outBox.scrollLeft%200==0){
+            if(outBox.scrollLeft==0){
+                outBox.scrollLeft=1400;
+            }
+            outBox.scrollLeft-=200;
+        }else{
+            outBox.scrollLeft=outBox.scrollLeft-outBox.scrollLeft%200;
+        }
+
+    };
+    Wleft.onclick=function(){
+        if(outBox.scrollLeft%200==0){
+            outBox.scrollLeft+=200;
+            if(outBox.scrollLeft==1400){
+                outBox.scrollLeft=0;
+            }
+        }else{
+            outBox.scrollLeft=outBox.scrollLeft+(200-outBox.scrollLeft%200);
+        }
+    };
+
+    /*function $(id){
+        return document.getElementById(id);
+    }
+    var bgColor=['#f00','#0f0','#ff0','#00f','#ccf','#cfc','#fcc'];
+    var lis=$("menu").getElementsByTagName("li");
+    for(var i=0;i<lis.length;i++){
+        lis[i].style.backgroundColor=bgColor[i];
+    }
+    var ul=document.createElement("ul");
+    ul.innerHTML=$("menu").innerHTML;
+    $("inner").appendChild(ul);
+
+    var Left=0;
+    function goLeft(){
+        if(Left<=-$('inner').offsetWidth/2){
+            Left=0;
+        }else{
+            Left--;
+        }
+        console.log(Left);
+        $("inner").style.left=Left+"px";
+    }
+    var mytime=setInterval(goLeft,20);
+    $("cont").onmouseover=function(){
+        clearInterval(mytime);
+    };
+    $("cont").onmouseout=function(){
+        mytime=setInterval(goLeft,20);
+    };
+    $("Xright").onclick=function(){
+        var offset=Math.abs(Left%200);
+        offset=200-offset;
+        Left-=offset;
+        if(Left<=-$('inner').offsetWidth/2){
+            Left=0;
+        }
+        else{
+            Left--;
+        }
+        $("inner").style.left=Left+"px";
+    };
+    $("Xleft").onclick=function(){
+        var offset=Math.abs(Left%200);
+        /!* offset+=Left;*!/
+        if(offset==0){
+            Left+=200;
+        }else{
+            Left+=offset;
+        }
+        if(Left>=0){
+            Left=-$('inner').offsetWidth/2;
+        }
+        $("inner").style.left=Left+"px";
+    }*/
+</script>
+<script>
+    //7.底部弹出广告，鼠标经过出现，点击差号删除广告
+    $("Ah").onmouseover=function(){
+        $("Ah").style=" display:block;width: 400px;height: 21px;text-align: center;";
+        $("bSn").style="display:block;";
+//        $("Ah").innerText="冬天快到了，春节不远了";
+        $("dec").style="display:block; ";
+    };
+    $("dec").onclick=function(){
+        $("Ah").style="display:none";
+        $("bSn").style="display:none";
+        $("dec").style="display:none";
+    };
+//    background: url("../images/icon.jpg")  no-repeat -343px -18px;
+</script>
+

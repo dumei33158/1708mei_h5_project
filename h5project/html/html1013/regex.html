@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regex</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var str=" meige0808cc nn meige  ddmeig";
+    //var reg=/^mei?ge$/;
+    var reg=/mei?ge/;
+    var res=reg.test(str);
+    console.log(res);
+    var reg1=/\bmei/;
+    console.log(reg1.test(str));
+    var str1="234555588667";
+    var reg2=new RegExp("\\w{4,6}");
+    var res1=reg2.test(str1);
+    console.log(reg2.test(str1));
+    var jz="静格格明明很喜欢美美，却说喜欢丽丽";
+    var reg3=new RegExp("静格格|美美"+"|丽丽","gi");
+    console.log(jz.replace(reg3,"***"))
+</script>

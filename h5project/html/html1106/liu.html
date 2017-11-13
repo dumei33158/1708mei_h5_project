@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../JS/jquery-3.2.1.min.js"></script>
+    <script>
+        var userstatus = false;
+        var pwsstatus = false;
+        var emailstatus = false;
+        var pwdstatus = false;
+        function regeuser(ele) {
+            var userRegxe = /^\w{6,20}$/;
+            var a = ele.value;
+            var opsan = ele.nextSibling;
+            var mar = "";
+            if(userRegxe.test(a)) {
+                mar = "输入正确";
+                opsan.style.color = "green";
+                userstatus = true;
+            } else {
+                mar = "输入有误";
+                opsan.style.color = "red";
+                userstatus = false;
+            }
+            opsan.innerText = mar;
+        }
+
+        function regepwd(ele) {
+            var pwdRegxe = /^\d{8,}$/;
+            var a = ele.value;
+            var opsan = ele.nextSibling;
+            var mar = "";
+            if(pwdRegxe.test(a)) {
+                mar = "输入正确";
+                opsan.style.color = "green";
+                pwsstatus = true;
+            } else {
+                mar = "输入有误";
+                opsan.style.color = "red";
+                pwsstatus = false;
+            }
+            opsan.innerText = mar;
+        }
+        function regeemail(ele) {
+            var emailRegxe = /^\w+@\w{2,7}\.\w{2,3}$/;
+            var a = ele.value;
+            var opsan = ele.nextSibling;
+            var mar = "";
+            /*var aite = a.indexOf("@");
+             var dian = a.indexOf(".");*/
+            if(emailRegxe.test(a)) {
+                mar = "输入正确";
+                opsan.style.color = "green"
+                emailstatus = true;
+            } else {
+                mar = "输入有误";
+                opsan.style.color = "red";
+                emailstatus = false;
+            }
+            opsan.innerText = mar;
+        }
+
+        function regep(ele) {
+            var a = ele.value;
+            var opsan = ele.nextSibling;
+            var mar = "";
+            var oInput = document.getElementsByTagName("input")[1];
+            console.log(oInput);
+            if(pwsstatus == true) {
+                if(oInput.value == a) {
+                    mar = "输入正确";
+                    opsan.style.color = "green"
+                    pwdstatus = true;
+                } else {
+                    mar = "输入有误";
+                    opsan.style.color = "red";
+                    pwdstatus = false;
+                }
+                opsan.innerText = mar;
+            }
+
+        }
+
+        function submits() {
+            if(userstatus==true && pwsstatus==true && emailstatus==true && pwdstatus==true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        window.onload = function() {
+            $(document).blur(function(event){
+                if(event.keyCode ==13){
+                    submits();
+                }else {
+                    alert("提交失败");
+                }});
+        }
+    </script>
+</head>
+
+<body>
+<form action="http://www.baidu.com" method="post" onsubmit="return submits()">
+    用户名：<input type="text" name="username" onblur="regeuser(this)" /><span>用户名必须在6~20位之间</span></br>
+    密码：<input type="password" name="password" onblur="regepwd(this)" /><span>密码必须大于8位</span></br>
+    密码确认：<input type="password" onblur="regep(this)" /><span>密码必须相同</span></br>
+    邮箱：<input type="text" name="email" onblur="regeemail(this)" /><span>符合邮箱规范</span></br>
+    <input type="submit" value="注册" />
+</form>
+</body>
+
+</html>

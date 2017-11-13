@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registerfollow</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #register{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            z-index: 1000;
+            position: fixed;
+            background: #fff;
+        }
+        #rt{
+            width: 100%;
+            height: 30px;
+            background: #ccc;
+            text-align: center;;
+        }
+        #mask{
+            background: rgba(0,0,0,.3);
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis?
+<div id="register" style="">
+    <div id="rt">登录注册
+    </div>
+    <div></div>
+    </div>
+<div id="mask"></div>
+</body>
+</html>
+<!--<script>
+    var eventObj={
+        //事件绑定
+        addEvent:function(E,T,F){
+            if(E.addEventListener){
+                E.addEventListener(T,F);
+            }else if(E.attachEvent){
+                E.attachEvent("on"+T,F);
+            }else{
+                E["on"+T]=F;
+            }
+        },
+        //事件解除绑定
+        delEvent:function(E,T,F){
+            if(E.removeEventListener){
+                E.removeEventListener(T,F);
+            }else if(E.detachEvent){
+                E.detachEvent("on"+T,F);
+            }else{
+                E["on"+T]=null;
+            }
+        },
+        //阻止事件的默认行为
+        preventDefault:function(e){
+            var e=e||window.event;
+            if(e.preventDefault){
+                e.preventDefault();
+            }else {
+                e.returnValue=false;
+            }
+        },
+        //阻止事件冒泡
+        stopPropagation:function(e){
+            var e=e||window.event;
+            if(e.stopPropagation){
+                e.stopPropagation();
+            }else {
+                e.cancelBubble=true;
+            }
+        },
+        //获取事件源
+        getE:function(e){
+            var e=e||window.event;
+            return e.target|| e.srcElement;
+        }
+    };
+    function fg(e){
+        var bodyH=document.documentElement.clientHeight;
+        var bodyW=document.documentElement.clientWidtht;
+        var x= e.clientX-;
+        var y= e.clientY;
+
+    }
+    eventObj.addEvent(document,"mousemove",fg)
+</script>-->
+<script>
+    function $(id){
+        return document.getElementById(id);
+    }
+    function autoCenter(E){
+        var bodyH=document.documentElement.clientHeight;
+        var bodyW=document.documentElement.clientWidth;
+        var EW= E.offsetWidth;
+        var EH= E.offsetHeight;
+        E.style.left=(bodyW-EW)/2+"px";
+        E.style.top=(bodyH-EH)/2+"px";
+    }
+    autoCenter($("register"));//登录框位于页面水平垂直居中
+    window.onresize=function(){
+        autoCenter($("register"));
+    };//窗口改变时，页面仍然水平垂直居中
+    var isDrage=false;
+    var offsetW=0;
+    var offsetH=0;
+    //鼠标摁下----title--可以拖拽
+    $("rt").onmousedown=function(e){
+        var e=e||window.event;
+        isDrage=true;
+        offsetW= e.offsetX;
+        offsetH= e.offsetY;
+
+    };
+    //文档鼠标移动事件----获取鼠标的位置--设置浮动层的位置
+    document.onmousemove=function(e){
+        var e=e||window.event;
+        e.preventDefault();
+        if(isDrage==true){
+            var moveX=e.clientX-offsetW;
+            var moveY= e.clientY-offsetH;
+            //限制水平方向
+            if(moveX<=0){
+                moveX=0;
+            }else if(moveX>=document.documentElement.clientWidth-$("register").offsetWidth){
+                moveX=document.documentElement.clientWidth-$("register").offsetWidth;
+            }
+            if(moveY<=0){
+                moveY=0;
+            }else if(moveY>=document.documentElement.clientHeight-$("register").offsetHeight){
+                moveY=document.documentElement.clientHeight-$("register").offsetHeight;
+            }
+            $("register").style.left= moveX+"px";
+            $("register").style.top= moveY+"px";
+        }
+    };
+    //文档的鼠标弹出事件----清除文档的鼠标移动事件
+    document.onmouseup=function(){
+        isDrage=false;
+    };
+
+    /*    var offsetW,offsetH;
+     $("title").onmousedown=function(e){
+     var e=e||window.event;
+     isDrage=true;
+     offsetW= e.offsetX;
+     offsetH= e.offsetY;
+     };
+     document.onmousemove=function(e){
+     var e=e|| window.event;
+     e.preventDefault();
+     if(isDrage==true){
+     var e=e||window.event;
+     var movex=e.clientX-offsetW;
+     var movey=e.clientY-offsetH;
+     if(movex<=0){
+     movex=0;
+     }else if(movex>=document.documentElement.clientWidth-$("box").offsetWidth){
+     movex=document.documentElement.clientWidth-$("box").offsetWidth;
+     }
+     $("box").style.left= movex+"px";
+     $("box").style.top= movey+"px";
+     }
+     };
+     document.onmouseup=function(){
+     isDrage=false;
+     };*/
+</script>

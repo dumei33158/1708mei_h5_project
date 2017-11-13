@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iquerychange</title>
+</head>
+<body>
+<span>sss</span>
+<input type="button" value="修改"/>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    var flag=0;
+   var txt;
+    $('[value="修改"]').click(function(){
+        if(flag==0){
+            $(this).prev().replaceWith('<input type="text" value="">');
+            txt=$("input").val();
+            flag=1;
+        }else{
+            $('[value="修改"]').val("确定");
+            $(this).before('<span>'+txt+'</span>');
+            flag=0;
+        }
+    })
+</script>

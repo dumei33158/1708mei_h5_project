@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquerytable</title>
+</head>
+<body>
+筛选：<input type="text" id="txt" value="">
+<table id="tab1" border="1px" style="border-collapse: collapse;width: 800px;text-align: center">
+    <thead>
+    <tr>
+        <th>工号</th>
+        <th>所在部门</th>
+        <th>职位</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>出生日期</th>
+        <th>联系电话</th>
+        <th>QQorWechat</th>
+        <th>备注</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td>lorem3</td>
+        <td>睿老师</td>
+        <td>男</td>
+        <td>lorem6</td>
+        <td>lorem7</td>
+        <td>lorem8</td>
+        <td>lorem9</td>
+        <td>lorem10</td>
+    </tr>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td>lorem3</td>
+        <td>霍老师</td>
+        <td>男</td>
+        <td>lorem6</td>
+        <td>lorem7</td>
+        <td>lorem8</td>
+        <td>lorem9</td>
+        <td>lorem10</td>
+    </tr>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td>lorem3</td>
+        <td>莫老师</td>
+        <td>男</td>
+        <td>lorem6</td>
+        <td>lorem7</td>
+        <td>lorem8</td>
+        <td>lorem9</td>
+        <td>lorem10</td>
+    </tr>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td>lorem3</td>
+        <td>静格格</td>
+        <td>女</td>
+        <td>lorem6</td>
+        <td>lorem7</td>
+        <td>lorem8</td>
+        <td>lorem9</td>
+        <td>lorem10</td>
+    </tr>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td>lorem3</td>
+        <td>美哥</td>
+        <td>女</td>
+        <td>lorem6</td>
+        <td>lorem7</td>
+        <td>lorem8</td>
+        <td>lorem9</td>
+        <td>lorem10</td>
+    </tr>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td>lorem3</td>
+        <td>威少</td>
+        <td>男</td>
+        <td>lorem6</td>
+        <td>lorem7</td>
+        <td>lorem8</td>
+        <td>lorem9</td>
+        <td>lorem10</td>
+    </tr>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td>lorem3</td>
+        <td>井少</td>
+        <td>男</td>
+        <td>lorem6</td>
+        <td>lorem7</td>
+        <td>lorem8</td>
+        <td>lorem9</td>
+        <td>lorem10</td>
+    </tr>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td>lorem3</td>
+        <td>龙少</td>
+        <td>男</td>
+        <td>lorem6</td>
+        <td>lorem7</td>
+        <td>lorem8</td>
+        <td>lorem9</td>
+        <td>lorem10</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td>lorem3</td>
+        <td>……</td>
+        <td>啊哈哈</td>
+        <td>lorem6</td>
+        <td>lorem7</td>
+        <td>lorem8</td>
+        <td>lorem9</td>
+        <td>lorem10</td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    $("#tab1 tr:first").css("background","#ccf");
+    $("#txt").keyup(function(){
+        /*$("#tab1 tbody tr").css("display","none");
+        $("#tab1 tbody tr:contains('"+$(this).val()+"')").css("display","table-row");*/
+   $("#tab1 tbody tr,#tab1 tfoot tr").hide();
+        $("#tab1 tbody tr:contains('"+$(this).val()+"')").show();
+      $("#tab1 tbody tr:visible:odd").css("background","#cfc");
+        $("#tab1 tbody tr:visible:even").css("background","#fcc");
+    })
+</script>

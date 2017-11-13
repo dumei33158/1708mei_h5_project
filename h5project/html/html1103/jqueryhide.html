@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jqueryhide</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            background-color: #ff0000;
+            /*  display: none !important;*/
+        }
+    </style>
+</head>
+<body>
+<div class="box">ssssssssss</div>
+<input type="button" value="隐藏"/>
+<input type="button" value="显示"/>
+<input type="button" value="toggle"/>
+
+<input type="button" value="动画"/>
+<input type="button" value="div消失后按钮也消失 btn3" id="btn3"/>
+<input type="button" value="div显示后消失按钮显示" id="btn4"/>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+$('[value="隐藏"]').click(function(){
+    $(".box").hide("slow");
+});
+$('[value="显示"]').click(function(){
+    $(".box").show(2000);
+});
+$('[value="toggle"]').click(function(){
+    $(".box").toggle("fast");
+});
+$('[value="动画"]').click(function(){
+    $(".box").hide(2000).show("slow").hide(3000).toggle("slow");
+});
+$("#btn3").click(function(){
+    $(".box").hide("slow",function(){
+        $("#btn3").hide("slow");
+    })
+});
+$("#btn4").click(function(){
+    $(".box").show("slow",function(){
+        $("#btn3").show("slow");
+    })
+});
+</script>

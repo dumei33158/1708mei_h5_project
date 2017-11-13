@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMremove</title>
+</head>
+<body>
+<div id="div1">
+    <p id="p1">Lorem ipsum dolor sit amet.</p>
+    <p id="p2">Lorem ipsum dolor sit amet.</p>
+</div>
+<input type="button" value="删除" id="btn"/>
+<table id="tab">
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td><a href="">lorem3</a></td>
+    </tr>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td><a href="">lorem3</a></td>
+    </tr>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td><a href="">lorem3</a></td>
+    </tr>
+    <tr>
+        <td>lorem1</td>
+        <td>lorem2</td>
+        <td><a href="">lorem3</a></td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+    /*btn.onclick=function(){
+        div1.removeChild(p1);
+    };*/
+    btn.onclick=function(){
+        p1.parentNode.removeChild(p1);
+    }
+
+</script>

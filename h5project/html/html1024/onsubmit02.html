@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onsubmit</title>
+    <style>
+        .cenTp{
+            border-top: 1px solid #fff;
+        }
+        .cenT{
+            text-align: center;
+            border-top: 1px solid #fff;
+            padding-top: 10px;
+        }
+        #sub_but{
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<p>表单验证</p>
+<form action="http://www.baidu.com" id="form01">
+    <table style="background-color: #d9d1d7">
+        <tr>
+            <td class="cenTp" colspan="3">
+            </td>
+        </tr>
+        <tr>
+            <td class="fLr">用户名：</td>
+            <td>
+                <input type="text" name="username" id="username"/>
+            </td>
+            <td>
+                <span id="sp_userName"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="fLr">密码：</td>
+            <td>
+                <input type="password" name="password" id="password"  />
+            </td>
+            <td>
+                <span id="sp_pwd"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="fLr">确认密码：</td>
+            <td>
+                <input type="password" name="password02" id="password02"/>
+            </td>
+            <td>
+                <span id="sp_p"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="fLr">E-mail：</td>
+            <td>
+                <input type="text" name="E-mail" id="Email"/>
+            </td>
+            <td>
+                <span id="em_l"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="fLr">个人简介：</td>
+            <td colspan="2">
+                <textarea name="produce" placeholder="请填入您的个人信息，字数及内容不限，至少有一句话的自我简介，不能为空" id="produce" cols="30" rows="5" ></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="cenT" colspan="3">
+                <input type="submit" value="提交" id="sub_but"/>
+                <input type="reset" value="重置" id="re_set"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+<script>
+    username.onblur=function(){
+        var reg=/^[A-Za-z_]{6}$/;
+       /* console.log(this.value);
+        console.log(reg.test(this.value));*/
+        if(reg.test(this.value)){
+            this.parentNode.nextElementSibling.innerText="";
+            return true;
+        }else{
+            this.parentNode.nextElementSibling.innerText="错了";
+            return false;
+        }
+    };
+    password.onblur=function(){
+        if(username.onblur()){
+            var reg=/^\d{6}$/;
+            if(reg.test(this.value)){
+                password.parentNode.nextElementSibling.innerText="";
+                return true;
+            }else{
+                password.parentNode.nextElementSibling.innerText="错了";
+                return false;
+            }
+        }else{
+            return false;
+        }
+    };
+    /*function check(){
+        if( username.onblur()&& password.onblur){
+            return true;
+        }else{
+            return false;
+        }
+    };*/
+    form01.onsubmit=function(){
+        return  password.onblur();
+    }
+</script>

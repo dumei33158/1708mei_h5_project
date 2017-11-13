@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>while</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function guess(){
+        var n=10;
+        while(true){
+            var input=prompt("请输入数字：")-0;
+            if(input>n){
+                alert("太大了还差的远呢");
+            }else if(input<n){
+                alert("太小了还差的远呢");
+            }else{
+                alert("恭喜你，猜对啦");
+                break;
+            }
+        }
+    }
+    guess();
+</script>
+
+<script>
+    function game2(){
+        var n=10;
+        var input=prompt("请输入数字：");
+        while(n!=input){
+            if(input=="exit"){
+                alert("客官，猜对了再走呗");
+               return;
+            }else if(input>n){
+                alert("太大了还差的远呢");
+            }else if(input<n){
+                alert("太小了还差的远呢");
+            }
+            input=prompt("请输入数字：");
+        }
+            alert("恭喜你，猜对啦");
+
+
+    }
+    game2();
+</script>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <style>
+        #sewrap{
+            position:relative;
+            right:300px;
+            top:20px;
+        }
+       .search{
+            width: 345px;
+            height: 52px;
+            border: 1px solid #e0e0e0;
+            line-height: 50px;
+            text-align: right;
+            position: absolute;
+            right: 0;
+            top: 20px;
+            z-index: 2;
+        }
+        .search input{
+            width: 290px;
+            height: 49px;
+            outline: none;
+            border: none;
+        }
+        .search>a{
+            color: #333333;
+            background: #eeeeee;
+            margin-right: 5px;
+            position:absolute;
+        }
+        #m1{
+            right:174px;
+            height:30px;
+            line-height: 30px;
+            top:10px;
+        }
+        #m2{
+            right:55px;
+            height:30px;
+            line-height: 30px;
+            top:10px;
+        }
+        .search .glass{
+            float: right;
+            color: #616161;
+            width: 53px;
+            height: 53px;
+            padding: 9px;
+            box-sizing: border-box;
+            border-left: 1px solid #e0e0e0;
+        }
+        .search .glass .mycha{
+            font-size: 22px;
+            color: #616161;
+        }
+        .search:hover{
+            border: 1px solid #ccc3cc;
+        }
+        .search:hover .glass{
+            border-left: 1px solid #ccc3cc;
+        }
+        .glass:hover>a{
+            background: #ff6700;
+            display: block;
+            width: 53px;
+            height: 50px;
+        }
+        .glass>a:hover{
+            color: #ffffff;
+            text-decoration: none;
+        }
+      .search input:focus .glass{
+            border-left: 1px solid #ccc3cc;
+        }
+        .search>a:hover{
+            background: #ff6700;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        #s1{
+            width: 290px;
+            height:335px;
+            border: 1px solid #000;
+            position:absolute;
+            left:0;
+            top:52px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="sewrap">
+<div class="search">
+    <input type="text" value="小米"/>
+    <a href="" id="m1">小米MAX&nbsp;2</a>
+    <a href="" id="m2">小米note&nbsp;3现货</a>
+    <div id="s1"></div>
+    <div class="glass">
+        <a href="" class="glyphicon glyphicon-search mycha"></a>
+    </div>
+</div>
+</div>
+</body>
+</html>
+<script src="../css/jquery-3.2.1.min.js"></script>
+<script>
+    $('[value="小米"]').focus(function(){
+        $(this).val("");
+        $(this).css(
+                {
+                    border: "1px solid #ff6700"
+                }
+        );
+        $(".glass").css({
+            border: "1px solid #ff6700",
+            borderLeft: "1px solid transparent"
+        });
+        $("#s1").css({
+            border: "1px solid #ff6700",
+            borderTop: "1px solid transparent"
+        });
+        $("#s1").show().addClass("animated fadeInTop");
+        $("#m1").hide();
+        $("#m2").hide();
+    });
+    $('[value="小米"]').blur(function(){
+    $("#s1").removeClass("animated fadeInTop");
+        $("#s1").hide();
+    })
+</script>

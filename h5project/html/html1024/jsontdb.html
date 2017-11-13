@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var arr={
+            "齐天大圣":[
+        {"序号" :"01","姓名":"大圣","性别":"男","年龄":"12000","出生日期":"五百年前","联系电话":"13456098790","QQorWechat":"56783940","爱好" : "筋斗云","备注":"无"},
+        {"序号" :"02","姓名":"大圣","性别":"男","年龄":"12000","出生日期":"五百年前","联系电话":"13456098790","QQorWechat":"56783940","爱好" : "筋斗云","备注":"无"},
+        {"序号" :"03","姓名":"大圣","性别":"男","年龄":"12000","出生日期":"五百年前","联系电话":"13456098790","QQorWechat":"56783940","爱好" : "筋斗云","备注":"无"}],
+        "斗战胜佛":[
+            {"序号" :"04","姓名":"大圣","性别":"男","年龄":"12000","出生日期":"五百年前","联系电话":"13456098790","QQorWechat":"56783940","爱好" : "筋斗云","备注":"无"},
+            {"序号" :"05","姓名":"大圣","性别":"男","年龄":"12000","出生日期":"五百年前","联系电话":"13456098790","QQorWechat":"56783940","爱好" : "筋斗云","备注":"无"},
+            {"序号" :"06","姓名":"大圣","性别":"男","年龄":"12000","出生日期":"五百年前","联系电话":"13456098790","QQorWechat":"56783940","爱好" : "筋斗云","备注":"无"}],
+        "孙悟空":[
+            {"序号" :"07","姓名":"大圣","性别":"男","年龄":"12000","出生日期":"五百年前","联系电话":"13456098790","QQorWechat":"56783940","爱好" : "筋斗云","备注":"无"},
+            {"序号" :"08","姓名":"大圣","性别":"男","年龄":"12000","出生日期":"五百年前","联系电话":"13456098790","QQorWechat":"56783940","爱好" : "筋斗云","备注":"无"},
+            {"序号" :"09","姓名":"大圣","性别":"男","年龄":"12000","出生日期":"五百年前","联系电话":"13456098790","QQorWechat":"56783940","爱好" : "筋斗云","备注":"无"}]
+    };
+    var table=document.createElement("table");
+    table.style="border:10px solid blue";
+    var thead=document.createElement("thead");
+    var trh=document.createElement("tr");
+    trh.style.textAlign="center";
+  for(var key in  arr[0] ){
+      for(var k in arr[key]){
+          for(var kk in arr[k]){
+
+          }
+      }
+    var th=document.createElement("th");
+    th.style.border="1px solid red";
+    var thText=document.createTextNode(key);
+    th.appendChild(thText);
+    trh.appendChild(th);
+    }
+    thead.appendChild(trh);
+    table.appendChild(thead);
+    var tbody=document.createElement("tbody");
+    table.appendChild(tbody);
+    var tfoot=document.createElement("tfoot");
+    table.appendChild(tfoot);
+    for(var i=0;i<arr.length;i++) {
+    var tr = document.createElement("tr");
+    tr.style.textAlign="center";
+    for (var key in arr[i]) {
+    var td = document.createElement("td");
+    td.innerText=arr[i][key];
+    tr.appendChild(td);
+    td.style="borderCollapse:collapse;width:80px;height:50px;";
+    td.style.borderLeft="1px solid #f0f";
+    td.style.borderTop="1px solid #f0f";
+    }
+    table.appendChild(tr);
+    }
+    document.body.appendChild(table);
+</script>

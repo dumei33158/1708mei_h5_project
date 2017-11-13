@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1012homework_Dumei.html</title>
+</head>
+<style>
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+    #vertify{
+        width: 90px;
+        height: 50px;
+        border: none;
+        font-size: 28px;
+        padding-left: 10px;
+        outline: none;
+        background: none;
+    }
+    #btn4{
+        width: 60px;
+        height: 30px;
+        border: none;
+        background: none;
+        font-size: 18px;
+        margin: 0 10px;
+        outline: none;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.12作业&nbsp;_Dumei</h1>
+    <p>1.实现以下效果的替换：广告：刻*/办*/增值税**&nbsp;&nbsp;&nbsp;&nbsp;电话：1390123****</p>
+    <input type="button" value="输出" id="btn1" onclick="f1()"/>
+    <p>2.点击按钮，发布的内容只能是20个字，并且将出现的所有带 “我操….”的关键词替换为*</p>
+    <textarea name="" id="area" cols="30" rows="10"></textarea><br/>
+    <input type="text" id="txt2">
+    <input type="button" value="留言" id="btn2" onclick="f2()"/>
+    <p>3.字符串为：“昨天，系花对我笑了一下，乐得我晚上一直数羊，一只羊，两只羊，三只羊…”用indexOf查找字符串中所有出现羊的位置和个数</p>
+    <input type="button" value="查看" id="btn3" onclick="f3()"/>
+    <p>4.实现加密和解密</p>
+    <textarea name="" id="txt" cols="30" rows="10"></textarea>
+    <input type="button" id="sec" onclick="f4()" value="密聊">
+    <input type="button" id="nosec" onclick="f4e()" value="开聊">
+    <p>5.同学成绩数据如下："小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76"。请计算出该班级的平均分（保留整数）</p>
+    <input type="button" value="计算平均分" id="btn5" onclick="f5()"/>
+</div>
+</body>
+</html>
+<script>
+    //1.实现以下效果的替换：广告：刻*/办*/增值税**  电话：1390123****
+        function f1(){
+            var str="广告：刻章/办证/增值税发票     电话：13901233918";
+            var reg=/[章证发票]/gi;
+            str=str.replace(reg,"*");
+            str=str.replace(str.slice(-4),"****");
+            alert(str);
+    }
+</script>
+<script>
+    //2.点击按钮，发布的内容只能是20个字，并且将出现的所有带 “我操….”的关键词替换为*
+    function isEx(v,arr){
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]==v){
+                return true;
+            }
+        }
+    }
+    function f2() {
+        var reg=/我[草擦操去靠]|[TM]/gi;
+        area.value+=txt2.value.replace(reg,"**")+"\n";
+        area.value=area.value.substr(0,20);
+//        area.value+=txt2.value.replace(txt2.value.match(/1[^1269]\d{9}/gi),
+//            (
+//                (txt2.value.match(/1[^1269]\d{9}/gi)+"").replace(
+//                    (txt2.value.match(/1[^1269]\d{9}/gi)+"").slice(-4),"****")))+"\n";
+//        area.value=area.value.substr(0,20);
+    }
+</script>
+<script>
+    //3.字符串为：“昨天，系花对我笑了一下，乐得我晚上一直数羊，一只羊，两只羊，三只羊…”用indexOf查找字符串中所有出现羊的位置和个数
+    function f3() {
+       var str="昨天，系花对我笑了一下，乐得我晚上一直数羊，一只羊，两只羊，三只羊…";
+       var arr=str.match("羊");
+       var newArr=[];
+       var inDex=str.indexOf("羊",0);
+       var n=0;
+       while(inDex!=-1){
+           n++;
+           console.log("第"+n+"个羊在"+inDex+"位置");
+           inDex=str.indexOf("羊",inDex+1);
+           newArr.push("羊");
+       }
+        if(newArr!=null){
+            console.log("一共有"+newArr.length+"只羊");
+        }else{
+            alert("一只都没有");
+        }
+    }
+</script>
+<script>
+    //4.实现加密和解密
+    function f4(){
+        var str=txt.value;
+        var str1=[];
+        for(var i=0;i<str.length;i++){
+            var code=str.charCodeAt(i);
+            if(code<10000){
+                code+=10000;
+                code+="";
+                code="0"+code.slice(1);
+            }
+            str1.push(code);
+            txt.value=str1.join("");
+        }
+    }
+    function f4e(){
+        var str=txt.value;
+        var Str2=[];
+        for(var i=0;i<str.length;i+=5){
+            var Sstr2=str.substr(i,5);
+            Str2.push(String.fromCharCode(Sstr2))
+        }
+        txt.value= Str2.join("");
+    }
+</script>
+<script>
+    //5.同学成绩数据如下："小明:87; 小花:81; 小红:97; 小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76"。请计算出该班级的平均分（保留整数）
+    function f5(){
+        var str="小明:87; 小花:81; 小红:97; 小天:76; 小张:74; 小小:94; 小西:90; 小伍:76; 小迪:64; 小曼:76";
+        var sum=0;
+        var str1=str.split("; ");
+        for(var i=0;i<str1.length;i++){
+            var str2=str1[i].split(":");
+            sum+=Number(str2[1]);
+        }
+        alert("该班级共有"+str1.length+"名学生，\n其总成绩是"+sum+"\n平均成绩是"+parseInt(sum/str1.length))
+    }
+</script>

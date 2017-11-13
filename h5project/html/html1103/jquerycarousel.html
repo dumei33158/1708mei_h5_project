@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>carousel</title>
+    <link rel="stylesheet" href="../../css/animate.min.css"/>
+    <link rel="stylesheet" href="jquerycarousel.css"/>
+</head>
+<body>
+<div class="slider">
+    <div class="main">
+        <div class="main-i main-i-active">
+            <img src="imgs/1.jpg" alt=""/>
+            <div class="caption">
+                <h2>h2 11caption</h2>
+                <h3>h3 caption</h3>
+            </div>
+        </div>
+        <div class="main-i">
+            <img src="imgs/2.jpg" alt=""/>
+            <div class="caption">
+                <h2>h2 22caption</h2>
+                <h3>h3 caption</h3>
+            </div>
+        </div>
+        <div class="main-i">
+            <img src="imgs/3.jpg" alt=""/>
+            <div class="caption">
+                <h2>h2 33caption</h2>
+                <h3>h3 caption</h3>
+            </div>
+        </div>
+    </div>
+    <ul class="menu">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>
+<script src="../../JS/jquery-3.2.1.js"></script>
+<script>
+    var inx=0;
+$(".menu li").click(function(){
+    $(".main").css({background:"url('"+$(".main-i").eq(inx).find("img").attr("src")+"') no-repeat",backgroundSize:"cover"});
+    inx=$(this).index();
+    if(inx==0){
+        $(".main-i").eq(inx).find("h2").addClass("animated bounceInLeft");
+        $(".main-i").eq(inx).find("h3").addClass("animated bounceIn");
+    }else if(inx==1){
+        $(".main-i").eq(inx).find("h2").addClass("animated fadeIn");
+        $(".main-i").eq(inx).find("h3").addClass("animated fadeInUp");
+    }else if(inx==2){
+        $(".main-i").eq(inx).find("h2").addClass("animated pulse");
+        $(".main-i").eq(inx).find("h3").addClass("animated slideInLeft");
+    }
+    setTimeout(function(){
+        $(".main-i").find("h2").removeClass();
+        $(".main-i").find("h3").removeClass();
+    },1000);
+    $(this).addClass("active").siblings().removeClass("active");
+    $(".main-i").eq(inx).addClass("main-i-active").siblings().removeClass("main-i-active");
+})
+</script>

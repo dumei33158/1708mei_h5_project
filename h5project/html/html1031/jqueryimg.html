@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jqueryimg</title>
+</head>
+<body>
+<img id="m1" alt="1" src="img/1.jpg">
+<input type="button" id="btn" value="点击切换">
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    var n=$("#m1").attr("alt");
+    $("[value='点击切换']").click(function(){
+            n++;
+            if(n==5){
+                n=1;
+            }
+        $("#m1").attr("src","img/"+n+".jpg");
+    });
+setInterval('$("[value=\'点击切换\']").click()',1000);
+  /*  $("#m2").attr({
+        src:"img/2.jpg",
+        width:300,
+        border:10,
+        position:"absolute",
+        left:0,
+        top:0
+    });
+    $("#m3").attr({
+        src:"img/3.jpg",
+        width:300,
+        border:10,
+        position:"absolute",
+        left:0,
+        top:0
+    });
+    $("#m4").attr({
+        src:"img/4.jpg",
+        width:300,
+        border:10,
+        position:"absolute",
+        left:0,
+        top:0
+    });*/
+
+</script>

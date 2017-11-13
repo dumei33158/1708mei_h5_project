@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carousel</title>
+    <style>
+        li{
+            list-style: none;
+        }
+        .homework{
+            margin: 0 auto;
+            width: 1000px;
+            background: #ffffff;
+        }
+        h1{
+            background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+            color: #ffffff;
+            padding-left: 20px;
+        }
+        p{
+            line-height: 26px;
+        }
+        input{
+            margin-bottom: 10px;
+        }
+        .banner{
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        .rLad{
+            float:right;
+            position:absolute;
+            right:50%;
+            bottom:50%;
+            margin-right:-6%;
+            margin-bottom: -8%;
+        }
+        img{
+            transition: all .4s;
+        }
+        .rLad>li{
+            float:left;
+            border: 10px solid #fff;
+            width: 0;
+            border-radius: 50%;
+            margin-left: 8px;
+            cursor: pointer;
+            z-index: 10;
+            transition: all .4s;
+        }
+        .rLad>li:hover, .rLad>li.active{
+            border:10px solid blue;
+        }
+
+    </style>
+</head>
+<body>
+<p>2.JS实现网页轮播图</p>
+<div class="banner">
+    <img src="banner1.jpg" alt="" class="Img">
+    <ul class="rLad">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    var ImgArr=["banner1.jpg","banner2.jpg","banner3.jpg","banner4.jpg","banner5.jpg","banner6.jpg","banner7.jpg","banner8.jpg"];
+    var pho= document.getElementsByClassName("Img");
+    var Lis=document.getElementsByTagName("li");
+    var Index=0;
+    function change() {
+        pho[0].src=ImgArr[Index];
+        for(var i=0;i<Lis.length;i++){
+            Lis[i].className="";
+            Lis[i].index=i;//li添加index属性，设置index=i;
+        }
+        Lis[Index].className="active";
+    }
+    change();
+    function carousel(){
+        Index++;
+        if(Index==8){
+            Index=0;
+        }
+        change();
+    }
+    var mytime=setInterval(carousel,1000);
+    pho[0].onmouseover=function(){
+        clearInterval(mytime);
+    };
+    pho[0].onmouseout=function(){
+        mytime=setInterval(carousel,1000);
+    };
+    for(var i=0;i<Lis.length;i++){
+        !function listGo(n){
+            Lis[n].index=i;
+            Lis[n].onmouseover=function() {
+                clearInterval(mytime);
+                Index =Lis[n].index;
+                change();
+            };
+            Lis[n].onmouseout=function() {
+                mytime=setInterval(carousel,1000);
+            }
+    }(i)
+    }
+
+</script>

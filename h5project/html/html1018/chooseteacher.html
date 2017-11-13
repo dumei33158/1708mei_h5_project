@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>choose</title>
+</head>
+<body>
+<div class="SelWrap">
+    <input type="checkbox" id="all" onclick="f1()"/>全选<br/>
+    <input type="checkbox" id="reverse" onclick="f2()"/>反选<br/>
+    1.<input type="checkbox" class="lk"/>
+    2.<input type="checkbox" class="lk"/>
+    3.<input type="checkbox" class="lk"/>
+    4.<input type="checkbox" class="lk"/>
+    5.<input type="checkbox" class="lk"/>
+    6.<input type="checkbox" class="lk"/>
+    7.<input type="checkbox" class="lk"/>
+    8.<input type="checkbox" class="lk"/>
+    9.<input type="checkbox" class="lk"/>
+</div>
+</body>
+</html>
+<script>
+    //老师的比较经典
+    function f1(){
+        var lk=document.getElementsByClassName("lk");
+        var all=document.getElementById("all");
+        for(var i=0;i<lk.length;i++){
+            lk[i].checked=all.checked;
+        }
+    }
+    function f2(){
+        var lk=document.getElementsByClassName("lk");
+        for(var i=0;i<lk.length;i++){
+            lk[i].checked=!lk[i].checked;
+        }
+    }
+
+</script>

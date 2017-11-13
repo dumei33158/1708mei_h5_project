@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1018homework_Dumei.html</title>
+
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+    .banner{
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+    }
+    .rLad{
+        float:right;
+        position:absolute;
+        right:50%;
+        bottom:50%;
+        margin-right:-10%;
+        margin-bottom: -15%;
+    }
+    img{
+        transition: all .4s;
+    }
+    .rLad>li{
+        float:left;
+        border: 10px solid #fff;
+        width: 0;
+        border-radius: 50%;
+        margin-left: 8px;
+        cursor: pointer;
+        z-index: 10;
+        transition: all .4s;
+    }
+    .rLad>li:hover, .rLad>li.active{
+        border:10px solid blue;
+    }
+
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.18作业&nbsp;_Dumei</h1>
+    <p>1.JS实现全选、不选、反选</p>
+    <div class="SelWrap">
+        <input type="checkbox" id="all" onclick="f1()"/>全选<br/>
+        <input type="checkbox" id="reverse" onclick="f2()"/>反选<br/>
+        1.&gt;<input type="checkbox" class="lk"/>
+        2.<input type="checkbox" class="lk"/>
+        3.<input type="checkbox" class="lk"/>
+        4.<input type="checkbox" class="lk"/>
+        5.<input type="checkbox" class="lk"/>
+        6.<input type="checkbox" class="lk"/>
+        7.<input type="checkbox" class="lk"/>
+        8.<input type="checkbox" class="lk"/>
+        9.<input type="checkbox" class="lk"/>
+    </div>
+    <p>2.JS实现网页轮播图</p>
+    <div class="banner JCarousel">
+        <img src="banner1.jpg" alt="" class="Img">
+        <ul class="rLad">
+            <li title="0" class="active"></li>
+            <li title="1"></li>
+            <li title="2"></li>
+            <li title="3"></li>
+            <li title="4"></li>
+            <li title="5"></li>
+            <li title="6"></li>
+            <li title="7"></li>
+        </ul>
+    </div>
+    </div>
+</body>
+</html>
+<script>
+    //1.JS实现全选、不选、反选
+    function f1(){
+        var lk=document.getElementsByClassName("lk");
+        var all=document.getElementById("all");
+        for(var i=0;i<lk.length;i++){
+            lk[i].checked=all.checked;
+        }
+    }
+    function f2(){
+        var lk=document.getElementsByClassName("lk");
+        for(var i=0;i<lk.length;i++){
+            lk[i].checked=!lk[i].checked;
+        }
+    }
+</script>
+<script>
+    //2.JS实现网页轮播图
+    //法1：老师代码效果实现了轮播非常好，但没读懂，哈哈哈
+    (function(){
+        function Carrousel(tag){
+            var self=this;
+            this.tag=tag;
+            this.Img=tag.getElementsByClassName("Img")[0];
+            this.ImgArr=["banner1.jpg","banner2.jpg","banner3.jpg","banner4.jpg","banner5.jpg","banner6.jpg","banner7.jpg","banner8.jpg"]
+            this.lis=tag.getElementsByTagName("li");
+            this.index=0;
+            this.autoPlay();
+            this.Img.onmouseover=function(){
+                self.stopPlay();
+            };
+            this.Img.onmouseleave=function(){
+                self.autoPlay();
+            };
+            for(var i=0;i<this.lis.length;i++){
+                !function(n){
+                    self.lis[n].onmouseover=function(){
+                        clearInterval(self.timer);
+                        self.index=n;
+                        self.change();
+                    };
+                    self.lis[n].onmouseleave=function(){
+                        self.timer=setInterval(function(){self.autoPlay();},2000);
+                    }
+                }(i)
+            }
+        }
+        Carrousel.prototype={
+            start:function(){
+                this.index++;
+                if(this.index==8){
+                    this.index=0;
+                }
+                this.change();
+            },
+            //启动定时器
+            autoPlay:function(){
+                clearInterval(this.timer);
+                var self=this;
+                this.timer=window.setInterval(function () {
+                    self.start();
+                },2000);
+            },
+            //停止定时器
+            stopPlay:function(){
+                clearInterval(this.timer);
+            },
+            //图片和焦点切换
+            change:function(){
+                for(var i=0;i<this.lis.length;i++){
+                    this.lis[i].className="";
+                }
+                this.lis[this.index].className="active";
+                this.Img.src=this.ImgArr[this.index];
+            }
+        };
+        //初始化
+        Carrousel.init=function(tags){
+            for(var i=0;i<tags.length;i++){
+                new this(tags[i]);
+            }
+        };
+        window["Carrousel"]=Carrousel;
+    })();
+    Carrousel.init(document.getElementsByClassName("JCarousel"));
+    //未实现悬停
+//    (function(){
+//        function Carrousel(tag){
+//            this.tag=tag;
+//            var Img= this.tag.getElementsByClassName("Img")[0];
+//            var ImgArr=["banner1.jpg","banner2.jpg","banner3.jpg","banner4.jpg","banner5.jpg","banner6.jpg","banner7.jpg","banner8.jpg"]
+//            var lis=this.tag.getElementsByTagName("li");
+//            var index=0;
+//            var timer;
+//            function start(){
+//                index++;
+//                if(index==ImgArr.length){
+//                    index=0;
+//                }
+//                change();
+//            }
+//            function change(){
+//                for(var i=0;i<ImgArr.length;i++){
+//                    lis[i].className="";
+//                }
+//                lis[index].className="active";
+//                Img.src=ImgArr[index];
+//            }
+//            function autoPlay(){
+//                clearInterval(timer);
+//                timer=setInterval(start,2000);
+//            }
+//            function stopPlay(){
+//                clearInterval(timer);
+//            }
+//            autoPlay();
+//            Img.onmouseover=stopPlay;
+//            Img.onmouseleave=autoPlay;
+//        }
+//        Carrousel.init=function(tags){
+//            for(var i=0;i<tags.length;i++){
+//                new this(tags[i]);
+//            }
+//        };
+//        window["Carrousel"]=Carrousel;
+//    })();
+//    Carrousel.init(document.getElementsByClassName("JCarousel"));
+   //法2：未实现轮播
+//    function fw() {
+//        var i = 0;
+//        var p = document.getElementsByClassName("Img");
+//        function f() {
+//            if(i!=0){
+//                document.getElementsByTagName("li")[i].setAttribute("style","borderColor:white;");
+//            }
+//            i++;
+//            if (i > 8) {
+//                i = 1;
+//            }
+//            p[0].src = "banner" + i + ".jpg";
+//            document.getElementsByTagName("li")[i].setAttribute("style","borderColor:blue;");
+//            setTimeout(f, 1000);
+//
+//        }
+//        return f();
+//    }
+//    fw();
+
+</script>
+

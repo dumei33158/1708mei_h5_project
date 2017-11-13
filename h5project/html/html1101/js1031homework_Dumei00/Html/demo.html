@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="tab_wrap">
+        <div class="tab_tit" id="tab_tit">
+            <ul>
+                <li class="select"><a href="#">新闻</a></li>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">咨询</a></li>
+                <li><a href="#">国际</a></li>
+                <li><a href="#">民生</a></li>
+            </ul>
+        </div>
+        <div class="tab_con" id="tab_con">
+            <div class="Show">111111</div>
+            <div>22222</div>
+            <div>333333</div>
+            <div>444444</div>
+            <div>55555</div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../JS/jquery-1.11.3.js"></script>
+<script>
+    $("#tab_tit ul li").click(function(){
+        console.log($(this).index("li"));
+    });
+</script>

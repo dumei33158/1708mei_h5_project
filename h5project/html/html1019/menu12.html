@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu12</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    #menu>ul>li{
+        float: left;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid #f00;
+        position: relative;
+    }
+    #menu>ul>li ul{
+        position: absolute;
+        top: 40px;
+        left: 0;
+        border: 1px solid #f00;
+        background: #5d9ddb;
+        width:100px;
+        display: none;
+    }
+    div{
+        border: 1px solid #000;
+        /*width: 100px;*/
+        height: 40px;
+        clear: both;
+    }
+
+</style>
+<body>
+<div id="menu">
+    <ul>
+        <li><a href="">lorem1</a></li>
+        <li class="hav"><a href="">lorem2
+            <ul>
+                <li><a href="">壹</a></li>
+                <li><a href="">壹</a></li>
+                <li><a href="">壹</a></li>
+                <li><a href="">壹</a></li>
+                <li><a href="">壹</a></li>
+                <li><a href="">壹</a></li>
+                <li><a href="">壹</a></li>
+                <li><a href="">壹</a></li>
+                <li><a href="">壹</a></li>
+                <li><a href="">壹</a></li>
+            </ul>
+        </a></li>
+        <li><a href="">lorem3</a></li>
+        <li><a href="">lorem4</a></li>
+        <li class="hav"><a href="">lorem5</a>
+            <ul>
+                <li><a href="">一</a></li>
+                <li><a href="">一</a></li>
+                <li><a href="">一</a></li>
+                <li><a href="">一</a></li>
+                <li><a href="">一</a></li>
+            </ul></li>
+        <li><a href="">lorem6</a></li>
+        <li><a href="">lorem7</a></li>
+        <li><a href="">lorem8</a></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    function $(id){
+        return document.getElementById(id);
+    };
+    var Lis=$("menu").getElementsByClassName("hav");
+    for(var i=0;i<Lis.length;i++){
+        !function(n){
+            Lis[n].onmouseover=function(){
+                Lis[n].getElementsByTagName("ul")[0].style.display="block";
+            };
+            Lis[n].onmouseout=function(){
+                Lis[n].getElementsByTagName("ul")[0].style.display="none";
+            }
+        }(i);
+    }
+
+</script>

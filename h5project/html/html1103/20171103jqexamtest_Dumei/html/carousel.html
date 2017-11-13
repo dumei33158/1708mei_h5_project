@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>carousel</title>
+    <style>
+li{
+    list-style: none;
+}
+#wrap{
+    height:640px;
+    position:relative;
+}
+#Cir{
+    position:absolute;
+bottom: 10px;
+    left:50%;
+}
+        .spanList span{
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            z-index: 2;
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0,0,0,.6);
+            color: #fff;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .spanList span:first-child{
+            left: 0;
+        }
+        .spanList span:last-child{
+            right: 0;
+        }
+        #circl{
+            border: 13px solid #ccc;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+<div id="zte"></div>
+<div class="spanList">
+    <span id="left">&lt;</span>
+    <span id="right">&gt;</span>
+</div>
+<div id="Cir">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</div>
+</body>
+</html>
+<script src="../css/jquery-3.2.1.min.js"></script>
+<script>
+    $("#zte").append('<img src="../images/01.jpg" id="banner1"/>');
+    $("#Cir ul li").append('<div id="circl"></div>');
+    $("#Cir ul li").css({
+        float:"left",
+        marginRight:"10px"
+    });
+    var n=1;
+    var inx=$("#Cir ul li").index();
+    n=inx+1;
+    $("#Cir ul li").click(function(){
+        n++;
+        if(n==5){
+            n=1;
+        }
+        $("#banner1").attr("src","../images/0"+n+".jpg");
+        if($("#Cir ul li").eq(inx).has("#circl")){
+            $("#circl").replaceWith('<img src="../images/circle.png" id="circle"/>');
+            $("#Cir ul li").eq(inx).css({
+                float:"left",
+                marginRight:"10px"
+            })}
+            else if($("#Cir ul li").eq(inx).has("#circle")){
+            $("#circle").replaceWith('<div id="circl"></div>');
+            $("#Cir ul li").eq(inx).css({
+                float:"left",
+                marginRight:"10px"
+            });
+            }
+    });
+  /*  setTimeout('$("#Cir ul li").click()',1000);*/
+   /* setInterval('$("#Cir ul li").click()',1000);*/
+    $("#right").click(function(){
+        n++;
+        if(n==6){
+            n=1;
+        }
+        $("#banner1").attr("src","../images/0"+n+".jpg");
+    });
+$("#left").click(function(){
+    n--;
+    if(n==0){
+        n=5;
+    }
+    $("#banner1").attr("src","../images/0"+n+".jpg");
+});
+
+
+</script>

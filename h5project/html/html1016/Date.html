@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //时间原点
+    var now0=new Date(0);
+    console.log(now0);
+    //显示当前时间点日期
+    var now=new Date();
+    console.log(now);
+    //出生了多少年
+    var borth=new Date("1993-12-19");
+    var sta=(now-borth)-0;
+    console.log(parseInt(sta/1000/60/60/24/365));
+    //过生日有多少天
+    var birth=new Date("2017-12-24 19:00");
+    var btm=birth-now;
+    console.log(btm/1000/60/60/24);
+    //未来5天的日期与时间
+    var day5=5*24*60*60*1000;
+    day5+=now.getTime();//date与date可直接相减，毫秒与date相加需要getTime获取毫秒数
+    var dated=new Date(day5);
+    console.log(dated);
+    //显示时间原点之后的1天的日期
+//    var day1=24*60*60*1000;
+//    day1+=now0.getTime();
+    console.log(new Date(24*60*60*1000));
+    //显示时间原点后的30天的日期
+    var day30=30*24*60*60*1000;
+    day30+=now0.getTime();
+    console.log(new Date(day30));
+    //显示未来1天的日期
+    var dayf1=24*60*60*1000;
+    dayf1+=now.getTime();
+    console.log(new Date(dayf1));
+    //显示未来7天的日期
+//    var dayf7=7*24*60*60*1000;
+//    dayf7+=now.getTime();
+    console.log(new Date(now.getTime()+7*24*60*60*1000));
+    //日期格式
+    console.log(now.toLocaleDateString());//输出：2017/10/16
+    console.log(now.toLocaleTimeString());//输出：下午2:42:41
+    console.log(now.toLocaleString());//输出：2017/10/16 下午2:42:41
+    console.log(now.toDateString());//输出：Mon Oct 16 2017
+    console.log(now.toTimeString());//输出：14:42:41 GMT+0800 (中国标准时间)
+    console.log(now.getFullYear());//输出：2017
+    console.log(now.getMonth()+1);//输出：10
+    console.log(now.getDate());//输出：16
+    console.log(now.getHours());//输出：14
+    console.log(now.getMinutes());//输出：42
+    console.log(now.getSeconds());//输出：41
+    console.log(now.getMilliseconds());//输出：388
+    var week=["日","一","二","三","四","五","六"];
+    console.log("星期"+week[now.getDay()]);
+    console.log(now.getFullYear()+"年"+(now.getMonth()+1)+"月"+now.getDate()+"日"+("星期"+week[now.getDay()])+now.toLocaleTimeString());
+    function numFormat(n){
+      var num=n>=10?n:"0"+n;
+      return num;
+    }
+    function timeFormat(){
+        var now=new Date();
+        var week=["日","一","二","三","四","五","六"];
+        var ampm=now.getHours()<12?"上午":"下午";
+        hours12=now.getHours()>12?now.getHours()-12:now.getHours();
+        console.log(now.getFullYear()+"年"+(now.getMonth()+1)+"月"+now.getDate()+"日"+("星期"+week[now.getDay()])+ampm+numFormat(hours12)+":"+numFormat(now.getMinutes())+":"+numFormat(now.getSeconds()));
+    }
+    timeFormat();
+    //日期的变化
+    var month=now.getMonth();
+    month+=1;
+    now.setMonth(month);
+    console.log(now);
+
+</script>
+<script>
+    //5天后的日期
+    var now=new Date();
+    var date=new Date(now.getTime());
+    date.setDate(date.getDate()+5);
+    console.log(date);//Sat Oct 21 2017 15:34:37 GMT+0800 (中国标准时间)
+    date.setMonth(date.getMonth()+5);//5个月的5天后
+    console.log(date);//Wed Mar 21 2018 15:34:37 GMT+0800 (中国标准时间)
+</script>
+<script>
+    var now=new Date();
+    var date=new Date(now.getTime());
+    date.setMonth(date.getMonth()+5);
+    console.log(date);//Fri Mar 16 2018 15:34:37 GMT+0800 (中国标准时间)
+</script>
+<script>
+    //员工2016-5-20入职，3年之后合约到期，续签合约时间到期时提前一个月签合同
+    var joinin=new Date("2016-5-20");
+    console.log("该员工的入职日期是"+joinin+"合约3年有效，到期日期是"+(new Date(joinin.getTime()+3*365*24*60*60*1000))+"如不存在离职等其他原因请提前一个月续签合同，续签合同日期是"+(new Date(joinin.getTime()+3*365*24*60*60*1000)));
+
+</script>

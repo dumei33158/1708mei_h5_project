@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nextSibling</title>
+</head>
+<body>
+<div id="box1" class="wrap" align="center">Lorem ipsum dolor.
+    <p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span id="sp1">lorem1</span><span id="sp2">lorem2</span><span id="sp3">lorem3</span></p>
+    <input type="text" id="txt" name="userName">
+    <input type="button" value="点点点" onclick="f()">
+    <p class="wrap">Lorem ipsum dolor sit amet.</p>
+</div>
+<p class="wrap">Lorem ipsum dolor Lorem ipsum dolor sit amet.sit amet.</p>
+<input type="text" id="txt1" name="userName">
+</body>
+</html>
+<script>
+    //找下一个元素节点
+function nextE(node){
+    node=node.nextSibling;
+    while(node!=null && node.nodeType!=1){
+        node=node.nextSibling;
+    }
+    return node;
+}
+    //找上一个元素节点
+    function prevE(node){
+        node=node.previousSibling;
+        while(node!=null && node.nodeType!=1){
+            node=node.previousSibling;
+        }
+        return node;
+    }
+    //找所有子元素
+    function childE(node){
+        var arr=[];
+        for(var i=0;i<node.childNodes.length;i++){
+          if(node.childNodes[i].nodeType==1){
+              arr.push(node.childNodes[i]);
+          }
+        }
+        return arr;
+
+    }
+</script>

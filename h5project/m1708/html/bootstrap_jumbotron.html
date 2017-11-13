@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js1109homework_bootstrap_Dumei</title>
+    <!--meta:vp适配手机-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--meta:compat强制IE以最高内核渲染代码(将IE=7设置为IE=edge)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+    <!--[if IE lte8]>
+<script src="../bootstrap/js/html5shiv.min.js"></script>
+<script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <style>
+        .mboot{
+           /* background: -webkit-gradient(linear,left bottom,right top,color-stop(0,#020031),color-stop(100%,#6d3353));
+            background: -webkit-linear-gradient(45deg,#020031 0,#6d3353 100%);
+        */
+           position: relative;
+            background: linear-gradient(45deg,#020031 0,#6d3353 100%);
+        }
+        .m_mask{
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            background: url(../images/bs-docs-masthead-pattern.png) repeat center center;
+            opacity: .4;
+            z-index: 1;
+        }
+        .m_tips{
+            position: relative;
+            z-index: 2;
+            color:#fff;
+        }
+        .m_txt3:hover{
+            text-decoration: none;
+        }
+        .m_txt2{
+            font-size: 11px;
+            color: rgba(255,255,255,.5);
+        }
+        .m_txt2:hover{
+             color:#fff;
+         }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Hello,world!</h1>
+        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <p><a class="btn-primary btn-lg" href="">Learn more</a></p>
+    </div>
+</div>
+<div class="container">
+    <div class="jumbotron mboot text-center">
+        <div class="m_mask"></div>
+        <div class="m_tips">
+            <h1 style="font-size: 100px;">Bootstrap</h1>
+            <h2 style="font-size:30px;">简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。</h2>
+            <p><a class="btn-primary btn-lg m_txt3" href="">Bootstrap3中文文档(v3.3.7)</a></p>
+            <p><a class="m_txt2" href="">Bootstrap2中文文档(v2.3.2)</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>

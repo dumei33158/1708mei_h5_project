@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>digui</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //100以内求和
+    function sum(n){
+        if(n==1){
+            return 1;
+        }
+        else{
+            return n+sum(n-1);
+        }
+    }
+    console.log(sum(100));
+    //100以内奇数求和
+    function sumJi(m){
+        if(m%2!=0){
+            if(m==1){
+                return 1;
+            }
+            else{
+                return m+sumJi(m-2);
+            }
+        }
+        else{
+            if(m==2){
+                return 1;
+            }
+            else{
+                return m-1+sumJi(m-2);
+            }
+        }
+
+    }
+    console.log(sumJi(6));
+    function jc(n){
+        if(n==1){
+           return 1;
+        }else{
+            return n*jc(n-1);
+        }
+    }
+    console.log(jc(100));
+    //斐波那契数列 1,1,2,3,5,8,13,21,34
+    function fpei(n){
+        if(n==1||n==2){
+            return 1;
+        }
+        else{
+            return fpei(n-1)+fpei(n-2);
+        }
+    }
+    console.log(fpei(10));
+    try{
+        function pf(n){
+            var arr=[];
+            if(n==1||n==2){
+                return 1;
+            }
+            for(var i=2;i<=n;i++){
+                arr[i]=arr[i-1]+arr[i-2];
+                console.log(pf(10));
+            }
+        }
+        pf(n);
+
+    }catch(e){
+        console.log(e.name);
+        console.log(e.message);
+        if(e.name=="ReferenceError"){
+            console.log("不好意思没找到东西");
+        }
+    }
+    console.log(222);
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shaonao</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function guess(){
+        var n=10;
+        var g;
+        g=prompt("猜一个数");
+        while(g!=n){
+            if(g=="exit"){
+                alert("轻言放弃");
+                return;
+            }
+            else if(isNaN(g)){
+                alert("请输入数字");
+            }
+            else if(g==""){
+                alert("不能为空");
+            }
+            else if(g>n){
+                alert("大了");
+            }else{
+                alert("小了");
+            }
+            g=prompt("猜一个数");
+
+        }
+        alert("对了");
+    }guess();
+</script>

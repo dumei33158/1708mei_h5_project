@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--meta:vp适配手机-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--meta:compat强制IE以最高内核渲染代码(将IE=7设置为IE=edge)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+    <!--[if IE lte8]>
+<script src="../bootstrap/js/html5shiv.min.js"></script>
+<script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <style>
+        .menu{
+            position: relative;
+        }
+        .sec{
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <ul class="list-unstyled list-inline menu">
+            <li>lorem1</li>
+            <li>lorem2</li>
+            <ul class="list-unstyled hidden sec">
+                <li>lorem1</li>
+                <li>lorem2</li>
+                <li>lorem3</li>
+                <li>lorem4</li>
+                <li>lorem5</li>
+            </ul>
+            <li>lorem3</li>
+            <li>lorem4</li>
+            <li>lorem5</li>
+            <ul class="list-unstyled hidden sec">
+                <li>lorem1</li>
+                <li>lorem2</li>
+                <li>lorem3</li>
+                <li>lorem4</li>
+                <li>lorem5</li>
+            </ul>
+            <li>lorem6</li>
+            <li>lorem7</li>
+            <li>lorem8</li>
+            <ul class="list-unstyled hidden sec">
+                <li>lorem1</li>
+                <li>lorem2</li>
+                <li>lorem3</li>
+                <li>lorem4</li>
+                <li>lorem5</li>
+            </ul>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script>
+    $('.menu>li').hover(
+                $(".sec").toggle()
+    )
+</script>

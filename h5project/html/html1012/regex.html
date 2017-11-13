@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regex</title>
+</head>
+<body>
+<textarea name="" id="information" cols="30" rows="10">静格格：15108293789 Lorem ipsum 123490876 dolor sit amet, consectetur.；美哥：18222082906 Lorem ipsum579607957380 dolor sit amet, 3898765636consectetur adipisicing elit. Itaque, maxime.；霍老师：17730478978 Lorem ipsum 294857593dolor sit amet.;</textarea>
+<input type="button" id="lookfor" onclick="f()" value="查找">
+<div style="background: #08054e;color: #FFFFFF;width: 300px;height: 200px;overflow: visible;word-break: break-all" id="show"></div>
+</body>
+</html>
+<script>
+    function f(){
+    var str=information.value;
+    var reg=/1[^1269]\d{9}/gi;
+    show.innerText=str.match(reg);
+    }
+</script>

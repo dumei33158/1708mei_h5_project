@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1013homework_Dumei.html</title>
+
+</head>
+<style>
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+
+    .fLr{
+         text-align: right;
+     }
+    .cenTp{
+        border-top: 1px solid #fff;
+    }
+    .cenT{
+        text-align: center;
+        border-top: 1px solid #fff;
+        padding-top: 10px;
+    }
+    #sub_but{
+        margin-right: 15px;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.13作业&nbsp;_Dumei</h1>
+    <p>1.替换留言中的不雅词汇，只能输入20个字符多了不接收</p>
+    <div id="sect" style="width: 300px;height: 200px;border: 1px solid #f00;"></div>
+    <textarea name="" placeholder="请留言只接收20个字符哦" id="txt1" cols="30" rows="5"></textarea><br/>
+    <input type="button" value="我要留言" id="btn1" onclick="f1()"/>
+    <p>2.找到文本域中所有的邮箱地址，输出到控制台中</p>
+    <textarea name="" id="mail" cols="30" rows="10">邮箱号码大全防沉迷专用：
+
+2007/01/09 为您提供yourname@laszlomail.com的250M免费邮箱，flash界面很漂亮，可惜不支持pop3,smtp。（感谢刘峥提供此信息）
+网易 2006/11/14 网易也推出了免费企业邮局！依托于126的免费邮箱系统，应该比前些日子sogou推出的那个免费企业邮局强。而且有100G空间！
+搜狗 2006/10/26 搜狗也推出了免费企业邮箱，应该还处于测试阶段，多大容量不清楚，有兴趣的试试看。
+新浪 2006/10/09 提供yourname@sina.com的2G免费邮箱，支持pop3,smtp收发邮件。
+中国经济网
+
+2006/10/06 为您提供yourname@ce.cn的10M免费邮箱，支持pop3,smtp，速度不错。
+Bluebottle
+
+2006/09/27 为您提供yourname@bluebottle.com的250M免费邮箱，最大10M附件，界面简洁，功能也比较全，支持pop3,smtp,imap。
+30gigs 2006/08/28 免费提供yournmae@30gigs.com的30G电子邮箱，30G啊！不过没什么功能，帮助也没找到，不知道支持多大附件，pop3,smtp应该也是没有的。
+Wap客掌上邮
+
+　　2006/08/25 为您提供yourname@wapke.cn的无限容量免费邮箱，支持pop3,smtp,wap方式收取邮件，号称“中国第一专业免费手机邮箱”，可以添加你现有的邮箱一起使用，如果你经常有重要信件，这个邮箱挺方便。
+Hushmail 2006/06/05 为您提供yourname@hush.com等多种后缀的免费邮箱，空间只有2M，最大特点是申请简单，填用户名、密码、验证码点几下鼠标即可申请成功。
+Gmail 2006/02/14 开通了类似Windows Live的邮局服务，总共2G空间，目前还在测试中，还没有中文版，申请后需要审核开通。（感谢飞狼提供此信息）
+Gmail 2006/01/18 Google为您提供yourname@gmail.com的2g容量免费邮箱，支持pop3,smtp，很不错的免费服务，一直忘记了介绍。不过申请邮箱需要别人邀请才行。
+星光网 2005/12/27 免费提供yourname.x.cn超短域名的1G免费邮箱，好像不支持pop3,smtp。
+蕃薯藤 2005/12/18 为您提供yourname@yam.com的6M免费邮箱，支持pop3，不支持smtp。30天不从网站登陆邮箱将会取消使用权。（感谢网络文盲提供此信息）
+Xuite 2005/11/30 台湾中华电信HiNet旗下网站，免费提供网络相册、网络硬盘、blog日志以及yourname@xuite.net的邮箱，总计300M空间，可自由调整分配空间大小。注册的时候，身份证号码选外籍人士且号码要在7-10位之间。
+Windows Live
+
+　　2005/11/23 提供以您的顶级域名为后缀的无限数量免费邮箱，每个最高2G容量，可供你的网站用户来申请，采用Windows Live Mail的邮箱系统，各方面都比较出色，美中不足不支持pop3,smtp。（感谢阿卡提供此信息）
+mail.com 2005/11/09 为您提供yourname.mail.com等几十种域名后缀的10M免费邮箱，最大支持4M附件，web方式收发邮件。（感谢Ranit提供此信息）
+华军 2005/11/02 为您提供yourname@newhua.com的50M免费邮箱，支持pop3,smtp，防病毒、反垃圾邮件，铁通线路，速度还不错。
+35.com 2005/10/27 为您提供yourname@35.com的1G免费邮箱，最大10M附件，另有30M公文包空间，和收费邮箱相比减少了一些功能。（感谢Ranit提供此信息）
+宽带我世界
+
+2005/10/18 和Yahoo!联合推出yourname@cncmax.tj.cn的1G免费邮箱，稳定性不错。
+21cn 2005/08/30 提供yourname@21cn.com的2.1G容量免费邮箱，支持pop3,smtp,imap4，通过参加相应活动还可将邮箱扩容到10G。
+智邦生活馆
+
+2005/07/09 为您提供yourname@msXX.url.com.tw的100M免费邮箱，支持pop3,smtp，速度飞快。申请需要台湾身份证号码，可以在Google上面搜索到。
+金融界 2005/06/27 为您提供yourname@vip.jrj.cn的1000M免费邮箱，10M附件，有防垃圾邮件以及反病毒功能，采用Yahoo!的邮件系统。
+UK2 2005/06/11 为您提供yourname@uk2.net的10M免费邮箱，支持pop3，有屏蔽垃圾邮件、杀毒等功能。申请后要等15分钟才能使用。
+Tom.com 2005/04/30 免费邮箱今日起全面升级，yourname@tom.com，1.5G空间，30M附件，50M网络相册，30M网络U盘，专业24小时在线杀毒，垃圾邮件过滤。
+ZapZone 2005/04/20 为您的网站提供yourname@yourname.zzn.com的邮局系统供您网站的访问者申请，每个邮箱3M空间，可自定义页面风格。此免费邮局的『演示』
+西陆网 2005/03/28 携手Yahoo中国提供yourname@xilu.com的250M免费邮箱，最高可以升级到1G空间，支持10M大小的附件。（感谢张东提供此信息）
+搜狗 2004/11/29 免费提供yourname@sogou.com的2G容量电子邮箱，10M附件，真搞不懂这么大容量有什么用，不过现在由于刚刚推出还有不少好记的用户名可以注册，好像不支持pop3,smtp，不太方便。
+yeah.net 2004/06/07 免费提供yourname@yeah.net的260M邮箱，支持pop3,smtp，增强反垃圾功能，最大附件12M，速度飞快。（感谢100FUN提供此信息）
+HotPOP 2004/02/21 提供yourname@hotpop.com等多种后缀的10M免费邮箱，支持pop,smtp，限制信件最大不能超过500K。
+FastMail 2004/02/17 为您提供yourname@fastmail.fm等多种后缀10M免费邮箱，不过限制每月40M的流量，且免费服务只支持iamp和web收发邮件，访问速度还不错。
+千龙网 2004/01/29 提供yourname@qianlong.com的10M免费邮箱以及10M免费网络硬盘空间，支持pop3,smtp,wap,web方式收发邮件。
+K.ro 2004/01/07 提供yourname@k.ro的3M免费邮箱，web方式收发信，不支持pop3,smtp。
+mail2web 2003/12/27 很特别的免费服务，可以用来登陆国内外多数免费邮箱，界面简单，无广告。对于163.com,tom.com这样的国内邮箱也可以登陆，并且不会有讨厌的广告。
+网易 2003/12/29 免费提供yourname@163.com的2280M邮箱，支持pop3,smtp，需要手机验证，不过您可以访问http://mscan.163.com/NG.jsp，填入您注册的网易通行证和密码就可以跳过手机验证了！（感谢徐然宽提供此信息）
+雅虎电邮 2003/12/13 提供yourname@yahoo.com.cn的1G免费邮箱，最新增加SpamGuard防垃圾邮件功能，可支持pop3,smtp，非常稳定好用的邮箱。免费开启pop3功能
+GO.com 2003/11/05 免费提供yourname@go.com的6M邮箱，不支持pop3,smtp，只能用web方式收发email。（感谢小阁提供此信息）</textarea><br/>
+    <input type="button" value="查找输出" id="btn2" onclick="f2()"/>
+    <p>3.找到文本域中所有的电话号码，输出在控制台中</p>
+    <textarea name="" id="tel" cols="50" rows="10">全国常用电话号码列表大全
+
+特种服务   电话号码
+
+匪警	110
+火警	119
+急救中心	120
+道路交通事故报警	122
+水上求救专用电话	12395
+天气预报	12121
+报时服务	12117
+森林火警	12119
+电力服务	95598
+红十字会急救台	999
+公安短信报警	12110
+通用紧急求救	112
+
+中央党政部门、公益团体	电话号码
+
+信产部IP/网站备案	010-66411166
+文化部	010-65551114
+教育部	010-66096114
+农业部	010-64193366
+建设部	010-58934114
+劳动部	010-84201114
+交通部	010-65292114
+民政部	010-58160600
+水利部	010-63202114
+海关总署	010-65194114
+外交部	010-65961114
+财政部	010-68551114
+壹基金	021-52504617
+红十字会	010-84025890
+中华慈善总会	010-66083260
+中国扶贫基金会	010-82872688
+中国青少年发展基金会	010-64035547
+
+保险公司	电话号码
+
+中国人寿保险	95519
+中国人保保险	95518
+中华联合保险	95585
+泰康人寿保险	95522
+太平洋保险	95500
+天安保险	95505
+华安财险	95556
+新华人寿保险	95567
+平安保险	95511
+大众保险	95507
+中国大地保险	95590
+太平人寿保险	95589
+华泰财险	95509
+安邦财险	95569
+
+汽车公司	电话号码
+
+吉利汽车	4008869888
+长春一汽	8008468680
+一汽马自达	8008468680
+宝马汽车	4008006666
+广汽丰田	8008308888
+BUICK别克	8008202020
+东南汽车	8008581666
+奇瑞汽车	4008838888
+一汽大众	4008171888
+东风日产	8008308899
+奔驰汽车	4008181188
+上海大众咨询	8008201111
+沃尔沃轿车	8009881200
+北京吉普	8008108880
+上海华普汽车	8008205598
+昌河汽车	4008879988
+东风本田	8008809899
+比亚迪汽车	4008303666
+凯迪拉克咨询	8008201902
+Ford福特	8008108168
+北京现代	8008101100
+江铃汽车	8008691099
+东风雪铁龙	4008866688
+广州本田	8008308999
+一汽丰田	8008101210
+雪佛兰	8008201912
+北汽福田	4008199199
+南京依维柯	8008281892
+
+通信服务机构	电话号码
+
+中国电信综合服务	10000
+中国电信手机服务	10001
+中国联通客服热线	10010
+中国移动客服热线	10086
+中国电信IP电话卡	17900、17901
+中国联通IP号码	17910、17911
+中国移动IP号码	17950、17951
+中国铁通服务电话	10050
+电话号码查询	114
+查号台（电信）	118114
+查号台（联通）	116114
+
+铁路航空	电话号码
+
+铁路	12306
+国航	95583
+海航	950718
+南航	4006695539
+东航	95530
+深航	95080
+厦航	95557
+山航	4006096777
+川航	4008300999
+
+银行机构	电话号码
+
+中国银行	95566
+交通银行	95559
+中国银联	95516
+招商银行	95555
+农业银行	95599
+民生银行	95568
+上海浦东发展银行	95528
+汇丰银行	8008302880
+东亚银行	8008303811
+兴业银行	95561
+工商银行	95588
+光大银行	95595
+广东发展银行	95508
+华夏银行	95577
+花旗银行	8008301880
+上海银行	021-962888
+中信银行	95558
+建设银行	95533
+邮政储蓄	95580
+深圳发展银行	95501
+北京银行	010-96169
+
+常用企业	电话号码
+
+联想	8008-108-888
+惠普	8008-202-255
+戴尔	8008-580-888
+索尼	4008-109-000
+飞利浦	8008-201-201
+松下	8008-100-781
+爱普生	8008-109-977
+东芝	8008-108-208
+NEC	8008-207-007
+TCL	4008-123-456
+方正	8008-101-992
+七喜	020-82253777
+长城	8008-100-285
+明基(BENQ)	020-38900009
+清华同方	010-62789888
+诺基亚	4008-800-123
+三星	4008-105-858
+摩托罗拉	8008-105-050
+索爱	4008-100-000
+LG	4008-199-999
+多普达	4008-201-668
+华硕	4006-006-655
+大中电器	8008-109-110
+国美电器	8009-906-600
+海尔	4006-999-999
+长虹	4008-111-666
+老板	8008-571-616
+苏泊尔	8008-576-717
+
+投诉、维权、举报	电话号码
+
+消费者申诉举报	12315
+价格监督	12358
+质量监督	12365
+环保监督	12369
+税务	12366
+市长热线	12345
+公共卫生	12320
+电信投诉	12300
+妇女维权	12338
+法律援助	12351
+劳动保障	12333
+机构编制违规举报	12310
+文化市场综合执法	12318
+
+外卖订餐	电话号码
+
+麦当劳	4008517517
+肯德基	4008823823
+必胜客	4008123123
+真功夫	4006927927
+丽华快餐	4008800400
+
+快递物流	电话号码
+
+申通快递	4008-895-543
+EMS特快专递	11185
+顺丰速运	4008-111-111
+圆通速递	021-69777888
+中通速递	021-39777777
+韵达快运	021-39207888
+天天快递	021-67662333
+汇通快运	021-62963636
+速尔快递	4008822168
+德邦物流	4008305555
+宅急送	4006789000
+中铁快运	95572
+鑫飞鸿快递	021-69781999
+UPS	4008-208-388
+FedEx(联邦快递)	4008-861-888
+DHL	4008-108-000
+新邦物流	4008-000-222
+TNT	4008-209-868
+民航快递	4008-174-008
+
+常用大学	电话号码
+
+北京大学	010-62752114
+南京大学	025-83593186
+华中科技大学	027-87541114
+北京师范大学	010-58800260
+中国农业大学	010-62896811
+天津大学	022-27403536
+兰州大学	0931-8911114
+哈尔滨工业大学	0451-86414060
+北京航空航天大学	010-82317114
+清华大学	010-62782165
+上海交通大学	021-34206500
+中山大学	020-84113480
+南开大学	022-23508219
+中国科技大学	0551-3601000
+华东师范大学	021-62233333
+东北大学	024-83679262
+浙江大学	0571-85172244
+武汉大学	027-68755114
+吉林大学	0431-85166420
+中南大学	0731-88876834
+西安交通大学	029-82668888
+同济大学	021-65982200
+香港大学	00852-28592111
+复旦大学	021-65642222
+中国人民大学	010-62511601
+四川大学	028-85406437
+山东大学	0531-88564774
+厦门大学	0592-2186110
+华南理工大学	020-87110000
+暨南大学	020-85220114
+
+著名人物电话     电话号码
+鲁智深 18122850569
+武松 13152906031
+周瑜 15134907849
+苏轼 15723357689
+杜甫 13378695432
+庄子 18765923490
+孟子 17739484756
+孙悟空 13587906090</textarea><br/>
+    <input type="button" value="查找输出" id="btn3" onclick="f3()"/>
+    <p>4.验证用户名输入是否正确（规则：4-6个数字字母组成）</p>
+    用户名：<input type="text" id="txt4">
+    <input type="button" id="vertify4" onclick="f4()" value="验证">
+    <p>5.验证用户输入的密码是否正确，规则：6-8个数字、字母和下划线组成</p>
+    密码：<input type="password" id="txt5">
+    <input type="button" id="vertify5" onclick="f5()" value="验证">
+    <p>6.按以下提示写正则</p>
+    <form action="http://www.baidu.com" id="form01" onsubmit="return f6sub()">
+        <table style="background-color: #d9d1d7">
+            <tr>
+                <td class="cenTp" colspan="3">
+                </td>
+            </tr>
+            <tr>
+                <td class="fLr">用户名：</td>
+                <td>
+                    <input type="text" name="username" id="username" onblur="f6u()"/>
+                </td>
+                <td>
+                    <span id="sp_userName">用户名必须由数字、下划线或字母字符组成的4-16位字符组成不以数字开头</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="fLr">密码：</td>
+                <td>
+                    <input type="password" name="password" id="password" onblur="f6pw()" />
+                </td>
+                <td>
+                    <span id="sp_pwd">密码必须由字母或数字组成的不少于6位字符</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="fLr">确认密码：</td>
+                <td>
+                    <input type="password" name="password02" id="password02" onblur="f6pwv()"/>
+                </td>
+                <td>
+                    <span id="sp_p">密码必须一致</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="fLr">E-mail：</td>
+                <td>
+                    <input type="text" name="E-mail" id="Email" onblur="f6e()"/>
+                </td>
+                <td>
+                    <span id="em_l">邮件格式如tom@sohu.com</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="fLr">个人简介：</td>
+                <td colspan="2">
+                    <textarea name="produce" placeholder="请填入您的个人信息，字数及内容不限，至少有一句话的自我简介，不能为空" id="produce" cols="30" rows="5" onblur="f6pro()"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="cenT" colspan="3">
+                    <input type="submit" value="提交" id="sub_but"/>
+                    <input type="reset" value="重置" id="re_set" onclick="f6res()"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p>7.统计一个字符中，英文字符、中文字符、数字字符和其他字符的数量</p>
+    <textarea name="" placeholder="请输入任意一串儿由英文字符、中文字符、数字字符和其他字符组成的字符串儿"  id="staStr" cols="30" rows="10"></textarea><br/>
+    <input type="button" value="方法一查找输出" id="btn7" onclick="f7()"/><br/>
+    <textarea name="" placeholder="请输入任意一串儿由英文字符、中文字符、数字字符和其他字符组成的字符串儿" id="staStre" cols="30" rows="10"></textarea><br/>
+    <input type="button" value="方法二查找输出" id="btn7e" onclick="f7e()"/>
+    <p>8.已知：pid="413026199012308420"，要求从pid中截取出生日期字符串并输出出生日期：xx年xx月xx日</p>
+    <textarea name="" placeholder="请输入您要查看的证件号码" id="searchI" cols="30" rows="10"></textarea><br/>
+    <input type="button" value="查看" id="btn8" onclick="f8()"/>
+    <p>9.校验邮政编码(由6位数字组成)</p>
+    <textarea name="" placeholder="请输入要校验的邮政编码" id="postCode" cols="30" rows="10"></textarea><br/>
+    <input type="button" value="校验" id="btn9" onclick="f9()"/>
+    <p>10.编译器变量名检测：通常在程序开发过程中常常要定义变量，变量的名命的规则如下：<br/>
+        请按要求写出相对应的正则表达式，程序编译器可以通过这些正则式来检测变量命名是否合法。<br/>
+        变量的命名规则：<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;1&gt;以字母或者英文下划线开始，字母的大小写都可以。<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;2&gt;从第二个字符开始，可以为字母（大小写）、下划线、数字。<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;3&gt;变量名的长度在１到３１之间，长度可以为３１。</p>
+    <textarea name="" placeholder="请输入要检测的变量名" id="detecTion" cols="30" rows="10"></textarea><br/>
+    <input type="button" value="检测" id="btn10" onclick="f10()"/>
+    <p>11.人民币金额检测：应用开发时，通常要对人民币金额进行检测。<br/>
+        按参考人民币的数字表示规则，编写相应的检测正则式。<br/>
+        人民币规则：<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;1&gt;人民币可以精确到２位小数，但也可以不出现小数，如１.2９元。<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;2&gt;人民币可以没有整数部分，如.２９元或０.２９元。<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;3&gt;人民币可以有正负金额，如-.29元或+0.29元。</p>
+    <textarea name="" placeholder="请输入要检测的人民币金额" id="testMoney" cols="30" rows="10"></textarea><br/>
+    <input type="button" value="检测" id="btn11" onclick="f11()"/>
+</div>
+</body>
+</html>
+<script>
+    //1.替换留言中的不雅词汇，只能输入20个字符多了不接收
+        function f1(){
+            var reg=/(我[草尼玛操擦靠去])|(你[特么丫])/gi;
+            sect.innerText+=txt1.value.replace(reg,"**")+"\n";
+            sect.innerText=sect.innerText.substr(0,20);
+        }
+</script>
+<script>
+    //2.找到文本域中所有的邮箱地址，输出到控制台中
+    function f2() {
+        var reg=/\w+@[a-zA-Z0-9]+-?\.[a-zA-Z]{2,6}\.?([a-zA-Z]{2,6})?/gi;
+        console.log("以上文本域中所有的邮箱地址是：\n"+mail.value.match(reg).join("\n"));
+    }
+</script>
+<script>
+    //3.找到文本域中所有的电话号码，输出在控制台中
+    function f3() {
+        var reg=/(0\d{2}(\d?)(\d?)(\s*?)-?(\s*?)\d{5,8})|(\d{3,4}(\d?)-?(\d{3}?)-?(\d{3}?))|(\d{5,6})|(1\d{2})|(9\d{2})/gi;
+        console.log("以上文本域中所有的电话号码有：\n"+tel.value.match(reg).join("\n"));
+    }
+</script>
+<script>
+    //4.验证用户名输入是否正确（规则：4-6个数字字母组成）
+    function f4(){
+        if(txt4.value!=""){
+            var reg=/^[0-9A-Za-z]{4,6}$/gi;
+            if(reg.test(txt4.value)){
+                alert("用户名输入正确");
+            }else{
+                alert("用户名输入格式不正确\n请重新输入");
+            }
+        }
+        else{
+            alert("请输入要验证的用户名");
+        }
+
+    }
+</script>
+<script>
+    //5.验证用户输入的密码是否正确，规则：6-8个数字、字母和下划线组成
+    function f5(){
+        if(txt5.value!=""){
+            var reg=/^\w{6,8}$/gi;
+            if(reg.test(txt5.value)){
+                alert("密码输入正确\n恭喜您通过验证");
+            }else{
+                alert("密码输入不正确\n请重新输入");
+            }
+        }
+        else{
+            alert("请输入要验证的密码");
+        }
+
+    }
+</script>
+<script>
+    //6.按以下提示写正则
+    var userNa="";
+    function f6u() {
+        var reg=/^[a-zA-Z_]\w{3,15}$/gi;
+        if(reg.test(username.value)){
+            sp_userName.style.color="black";
+            username.style.border="#cccccc 1px solid";
+            userNa=username.value;
+        }
+        else{
+            sp_userName.style.color="red";
+            username.style.border="#f00 1px solid";
+        }
+    }
+    var psd="";
+    function f6pw() {
+        var reg=/^[a-zA-Z0-9]{6,}$/gi;
+        if(reg.test(password.value)){
+            sp_pwd.style.color="black";
+            password.style.border="#cccccc 1px solid";
+            psd=password.value;
+            psdv=psd;
+        }
+        else{
+            sp_pwd.style.color="red";
+            password.style.border="#f00 1px solid";
+        }
+    }
+    var psdv="";
+    function f6pwv() {
+        var reg=/^[a-zA-Z0-9]{6,}$/gi;
+            if(password02.value!=""){
+                sp_p.style.color="black";
+                password02.style.border="#cccccc 1px solid";
+                if(reg.test(password02.value)){
+                    sp_p.style.color="black";
+                    password02.style.border="#cccccc 1px solid";
+                    psdv=password02.value;
+                    psd=psdv;
+                    sp_p.innerText="密码必须一致";
+                }
+                else{
+                    sp_p.style.color="red";
+                    password02.style.border="#f00 1px solid";
+                    sp_p.innerText="密码不一致";
+                }
+            }
+            else{
+                sp_p.style.color="red";
+                password02.style.border="#f00 1px solid";
+            }
+    }
+    var Em="";
+    function f6e() {
+        var reg=/^\w+@[a-zA-Z0-9]+-?\.[a-zA-Z]{2,6}\.?([a-zA-Z]{2,6})?$/gi;
+        if(reg.test(Email.value)){
+            em_l.style.color="black";
+            Email.style.border="#cccccc 1px solid";
+            Em=Email.value;
+        }
+        else{
+            em_l.style.color="red";
+            Email.style.border="#f00 1px solid";
+        }
+    }
+    var proSelf="";
+    function f6pro() {
+        if(produce.value!=""){
+            produce.style.border="#cccccc 1px solid";
+            proSelf=produce.value;
+        }
+        else{
+            produce.style.border="#00ff00 1px solid";
+        }
+    }
+    function f6sub() {
+        if(((username.value=="")||(username.value!=userNa))||((password.value=="")||(password.value!=psd))||((password02.value=="")||(password02.value!=psdv))||((Email.value=="")||((Email.value!=Em))||(proSelf==""))){
+            alert("提交内容必须符合格式要求且不能为空\n请输入正确的内容进行提交");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    function f6res() {
+        sp_userName.style.color="black";
+        username.style.border="#cccccc 1px solid";
+        sp_pwd.style.color="black";
+        password.style.border="#cccccc 1px solid";
+        sp_p.style.color="black";
+        sp_p.innerHTML="密码必须一致";
+        password02.style.border="#cccccc 1px solid";
+        em_l.style.color="black";
+        Email.style.border="#cccccc 1px solid";
+        produce.style.border="#cccccc 1px solid";
+    }
+</script>
+<script>
+    //7.统计一个字符中，英文字符、中文字符、数字字符和其他字符的数量
+    function f7(){
+        //0-9  ASCII码 48-57
+        //A-Z  ASCII码 65-90
+        //a-z  ASCII码 97-112
+        if(staStr.value!=""){
+            var isNum=0;
+            var isLetter=0;
+            var isChinese=0;
+            var isOther=0;
+            for(var i=0;i<staStr.value.length;i++){
+                if(staStr.value.charCodeAt(i)>=48&&staStr.value.charCodeAt(i)<=57){
+                    isNum++;
+                }else if((staStr.value.charCodeAt(i)>=65&&staStr.value.charCodeAt(i)<=90)||(staStr.value.charCodeAt(i)>=97&&staStr.value.charCodeAt(i)<=122)){
+                    isLetter++;
+                }else if(staStr.value.charCodeAt(i)>=19968&&staStr.value.charCodeAt(i)<=40869){
+                    isChinese++;
+                }else{
+                    isOther++;
+                }
+            }
+            alert("您刚才输入的:\n"+staStr.value+"\n字符串儿中有\n"+isNum+"个数字\n"+isLetter+"个字母，含大小写\n"+isChinese+"个汉字\n"+isOther+"个其它类型的字符");
+
+        }
+        else{
+            alert("请输入要查找的字符串儿");
+        }
+        }
+    function f7e() {
+        if(staStr.value!=""){
+            var sTr = staStre.value;
+            var reg=/\d|[a-zA-Z]|[\u4e00-\u9fa5]|[\s,，:：\\\/、。\?？》><《；;“”"'‘’\|\{\}\[\]【】~`·！!@#\$￥%…\.\^&\( \*（）\)—\+\-=]/gi;
+            var reg1 = /\d/gi;
+            var rega = /[a-zA-Z]/gi;
+            var regC = /[\u4e00-\u9fa5]/gi;
+            var regB=/[\s,，:：\\\/、。\?？》><《；;“”"'‘’\|\{\}\[\]【】~`·！!@#\$￥%…\.\^&\( \*（）\)— \+\-=]/gi;
+            alert("您刚才输入的:\n"+staStre.value+"\n字符串儿中共有\n"+sTr.match(reg).length+"个字符，分别有\n"+sTr.match(reg1).length+"个数字\n"+sTr.match(rega).length+"个字母，含大小写\n"+sTr.match(regC).length+"个汉字\n"+sTr.match(regB).length+"个其它类型的字符");
+        }
+        else{
+            alert("请输入要查找的字符串儿");
+        }
+        }
+</script>
+<script>
+    //8.已知：pid="413026199012308420"，要求从pid中截取出生日期字符串并输出出生日期：xx年xx月xx日
+    function f8(){
+//        var str=searchI.value;
+//        console.log(str.slice(6,14));
+//        console.log(str.slice(-12,-4));
+//        console.log(str.substring(6,14));
+//        console.log(str.substr(6,8));
+        if(searchI.value!=""){
+            var reg = /(^[1-9]\d{5}(18|19|([23456789]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx])|([1-9]\d{5}\d{2}((0[1-9])|(10|11|12)$)(^([0-2][1-9])|10|20|30|31)\d{2}[0-9Xx]$)/g;
+            if (reg.test(searchI.value)) {
+                alert("根据您刚才输入的证件号码:\n" + searchI.value + "\n该证件持有者的出生日期是：" + searchI.value.substr(6, 4) + "年" + searchI.value.substring(10, 12) + "月" + searchI.value.slice(-6, -4) + "日");
+            }
+            else{
+                alert("您输入的不是身份证号，无法查看");
+            }
+        }
+            else {
+                alert("请输入证件号码查看");
+            }
+    }
+</script>
+<script>
+    //9.校验邮政编码(由6位数字组成)
+    function f9(){
+    if(postCode.value!=""){
+        var reg=/^[0-8]\d{5}$/gi;
+        if(reg.test(postCode.value)){
+            alert("根据您刚才输入的:\n"+postCode.value+"\n是邮政编码");
+        }
+        else{
+            alert("根据您刚才输入的:\n"+postCode.value+"\n不是邮政编码");
+        }
+    }
+    else{
+        alert("请输入您要校验的邮政编码校验");
+    }
+
+    }
+</script>
+<script>
+    //10.编译器变量名检测：通常在程序开发过程中常常要定义变量，变量的名命的规则如下：
+//    请按要求写出相对应的正则表达式，程序编译器可以通过这些正则式来检测变量命名是否合法。
+//    变量的命名规则：
+//        以字母或者英文下划线开始，字母的大小写都可以。
+//        从第二个字符开始，可以为字母（大小写）、下划线、数字。
+//        变量名的长度在１到３１之间，长度可以为３１。
+    function f10() {
+        if (detecTion.value != "") {
+            var reg = /^[a-zA-Z_]\w{0,30}$/gi;
+            if (reg.test(detecTion.value)) {
+                alert("您输入的变量名:\n" + detecTion.value + "\n符合变量命名规范");
+            }
+            else {
+                alert("您输入的变量名:\n" + detecTion.value + "\n不符合变量命名规范");
+            }
+        }
+        else {
+            alert("请输入您要检测的变量名");
+        }
+    }
+</script>
+<script>
+    //11.人民币金额检测：应用开发时，通常要对人民币金额进行检测。
+//    按参考人民币的数字表示规则，编写相应的检测正则式。
+//    人民币规则：
+//        人民币可以精确到２位小数，但也可以不出现小数，如１.2９元。
+//        人民币可以没有整数部分，如.２９元或０.２９元。
+//        人民币可以有正负金额，如-.29元或+0.29元。
+    function f11(){
+        if(testMoney.value!=""){
+        var reg=/^(((\+?)\d{0,}\.\d{2})|((\-?)\d{0,}\.\d{2}|\b\d{0,}))$/gi;
+            if(reg.test(testMoney.value)){
+            alert("您输入的人民币金额:\n" + testMoney.value+"元" + "\n符合人民币书写规范");
+            }
+            else{
+            alert("您输入的人民币金额:\n" + testMoney.value +"元"+ "\n不符合人民币书写规范");
+            }
+        }
+        else{
+            alert("请输入您要检测的人民币金额");
+        }
+    }
+</script>

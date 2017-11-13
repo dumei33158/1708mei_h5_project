@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvasgo</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000" style="border:1px solid black"></canvas>
+</body>
+</html>
+<script>
+    var elem=document.getElementById("canvas");
+    var canvas=elem.getContext("2d");
+    canvas.strokeStyle="purple";
+    canvas.strokeRect(0,0,200,200);
+    canvas.strokeRect(200,200,100,100);
+    canvas.strokeRect(300,600,100,100);
+    var x=0;
+    var y=50;
+    var z=100;
+    var direc=1;
+    function gc(){
+        x+=direc;
+        y+=direc;
+        z+=direc;
+        canvas.clearRect(0,0,1000,1000);
+        canvas.strokeRect(x,0,200,200);
+        canvas.strokeRect(y,200,100,100);
+        canvas.strokeRect(z,200,100,100);
+        if(x>=800&&y>=900&& z>=900){
+            direc=-1;
+            clearInterval(mytime);
+            setTimeout(function(){mytime= setInterval(gc,10);},2000)
+        }else if(x<=0&&y<=0&&z<=0){
+            direc=1;
+            clearInterval(mytime);
+            setTimeout(function(){mytime= setInterval(gc,10);},2000)
+        }
+    }
+   var mytime= setInterval(gc,10);
+</script>

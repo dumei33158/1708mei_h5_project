@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>elseifBMI</title>
+</head>
+<body>
+<p>1.体重健康指数计算公式如下：体重（kg）/身高平方（m） 20-25 正常 20以下 偏瘦 25以上偏胖<br/>
+    例如：某人是60kg 1.7m 25以上 偏胖<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60/1.7<sup>2</sup>=20.76 属于“正常”体重<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编写一个函数 接收 体重和身高做参数 返回判定结果</p>
+<form action="">
+    您的体重：<input type="text" value="体重" id="weight" onclick="this.value=''"/>kg<br/>
+    您的身高：<input type="text" value="身高" id="height" onclick="this.value=''"/>m<br/>
+    <input type="button" value="点击查看您的体重健康指数及健康状态" onclick="w1()"/><br/>
+    注：体重健康指数计算公式如下：体重（kg）/身高平方（m）
+</form>
+</body>
+</html>
+<script>
+    w1=function( ){
+        var a1=document.getElementById("weight");
+        var b1=document.getElementById("height");
+        a=a1.value-0;
+        b=b1.value-0;
+        if(parseInt(a/(b*b))>=25){
+            document.write("您的BMI值是"+parseInt(a/(b*b))+"\n根据您的BMI值，您目前处于：偏胖状态，请合理安排您的饮食")
+        }else if(parseInt(a/(b*b))>=20){
+            document.write("您的BMI值是"+parseInt(a/(b*b))+"\n根据您的BMI值，您目前处于：正常状态，请继续保持")
+        }else{
+            if ((a=="")&&(b=="")){
+                alert("请您输入内容")}
+            document.write("您的BMI值是"+parseInt(a/(b*b))+"\n根据您的BMI值，您目前处于：偏瘦状态，请合理安排您的饮食")
+    }
+    };
+</script>

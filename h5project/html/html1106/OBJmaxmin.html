@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>OBJmaxmin</title>
+</head>
+<body>
+</body>
+</html>
+<script src="../../JS/jquery-3.2.1.min.js"></script>
+<script>
+    function Mm(arr){
+        var x=10;//私有化
+        this.x=100;//对象化
+        this.arr=arr;
+        this.getMax=function(){
+            return Math.max.apply(Math,arr);
+        };
+       /* this.getMin=function(){
+            return Math.min.apply(Math,arr);
+        };*/
+        this.getMin=function(){
+            var min=this.arr[0];
+            for(var i=0;i<this.arr.length;i++){
+                if(min>this.arr[i]){
+                    min=this.arr[i];//右边的小，把右边的值赋给左边,
+                }
+            }
+            return min;
+        }
+    }
+    //实例化
+    var arr=[102,30,74,57,68,90,35,6,0,-97,3900];
+    var arr2=new Mm(arr);
+    console.log(arr2.getMax());
+    console.log(arr2.getMin());
+   /* var arr0=["我","爱","你","中国"];
+    var arrA=new Mm(arr0);
+    console.log(arrA.getMax());
+    console.log(arrA.getMin());
+    var arr3=[]*/
+
+</script>

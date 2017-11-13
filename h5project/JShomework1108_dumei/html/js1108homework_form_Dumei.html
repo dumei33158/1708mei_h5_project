@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js1108homework_form_Dumei</title>
+    <!--meta:vp适配手机-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--meta:compat强制IE以最高内核渲染代码(将IE=7设置为IE=edge)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+    <!--[if IE lte8]>
+<script src="../bootstrap/js/html5shiv.min.js"></script>
+<script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+</head>
+<body>
+<div class="container-fluid" style="border: 1px solid #f00;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <form action="" class="form-horizontal">
+        <div class="form-group">
+          <label for="email" class="control-label text-right col-sm-2">Email&nbsp;address</label>
+            <div class="col-sm-10">
+                <input type="text" id="email" placeholder="Email" class="form-control"/>
+            </div>
+            <!--<label for="email" class="control-label text-right col-sm-2">Email&nbsp;address
+                <input type="text" id="email" value="Email" class="form-control col-sm-10"/>
+            </label>-->
+        </div>
+        <div class="form-group">
+            <label for="password" class="control-label text-right col-sm-2">Password</label>
+            <div class="col-sm-10">
+                <input type="text" id="password" placeholder="Password" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="file" class="control-label text-right col-sm-2">File&nbsp;Input</label>
+            <div class="col-sm-10">
+                <input type="file" id="file" value="选择文件"/>
+                <p class="help-block">Example block-level help text here.</p>
+            </div>
+        </div>
+        <div class="checkbox col-sm-10 col-sm-offset-2">
+            <label for="che">
+                <input type="checkbox" id="che" value="Check me out"> Check me out
+            </label>
+            <!--单选复选框写法：<label><input type="checkbox">Check me out</label>-->
+        </div>
+        <button type="submit" class="btn btn-default col-sm-offset-2">Submit</button>
+    </form>
+</div>
+<div class="container-fluid" style="border: 1px solid #00f;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <form action="" class="form-inline  col-sm-offset-2">
+        <div class="form-group">
+            <label for="user_name" class="control-label text-left">Name</label>
+            <input type="text" id="user_name" class="form-control" placeholder="Jane Doe"/>
+        </div>
+        <div class="form-group">
+            <label for="email_name" class="control-label text-left">Email</label>
+            <input type="text" id="email_name" class="form-control" placeholder="jane.doe@example.com"/>
+        </div>
+        <button type="submit" class="btn btn-default" value="Send invitation">Send invitation</button>
+    </form>
+</div>
+<div class="container-fluid" style="border: 1px solid #0f0;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <form action="" class="form-horizontal">
+        <div class="form-group">
+            <label for="_Email" class="control-label text-right col-sm-2">Email</label>
+            <div class="col-sm-10">
+                <input type="text" id="_Email" placeholder="Email" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="_passworD" class="control-label text-right col-sm-2">Password</label>
+            <div class="col-sm-10">
+                <input type="text" id="_passworD" placeholder="Password" class="form-control"/>
+            </div>
+        </div>
+        <label for="rem" class="col-sm-offset-2">
+            <input type="checkbox" id="rem" value="Remember me"/> Remember me
+        </label>
+        <!--<input type="submit" value="Sign in" class="btn btn-default"/>-->
+        <div class="col-sm-offset-2">
+            <input type="submit" value="Sign in" class="btn btn-default"/>
+        </div>
+    </form>
+</div>
+<div class="container-fluid" style="border: 1px solid cyan;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <form action="" class="form-horizontal">
+        <div class="form-group has-success has-feedback">
+            <label for="InS" class="control-label">Input with success</label>
+            <input type="text" id="InS" class="form-control"/>
+            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+        </div>
+        <div class="form-group has-warning has-feedback">
+            <label for="InW" class="control-label">Input with warning</label>
+            <input type="text" id="InW" class="form-control"/>
+        </div>
+        <div class="form-group has-error has-feedback">
+            <label for="Ine" class="control-label">Input with error</label>
+            <input type="text" id="Ine" class="form-control"/>
+        </div>
+        <div class="has-success">
+            <div class="checkbox">
+                <label for="success_">
+                    <input type="checkbox" id="success_" name="tst" value="Checkbox with success"/>Checkbox with success
+                </label>
+            </div>
+        </div>
+        <div class="has-warning">
+            <div class="checkbox">
+                <label for="warning_">
+                    <input type="checkbox" id="warning_" name="tst" value="Checkbox with warning"/>Checkbox with warning
+                </label>
+            </div>
+        </div>
+        <div class="has-error">
+            <div class="checkbox">
+                <label for="error_">
+                    <input type="checkbox" id="error_" name="tst" value="Checkbox with error"/>Checkbox with error
+                </label>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container-fluid" style="border: 1px solid darkviolet;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <form action="" class="form-horizontal">
+        <div class="form-group has-success has-feedback">
+            <label for="In_S" class="control-label">Input with success</label>
+            <input type="text" id="In_S" class="form-control"/>
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+        <div class="form-group has-warning has-feedback">
+            <label for="In_W" class="control-label">Input with warning</label>
+            <input type="text" id="In_W" class="form-control"/>
+            <span class="glyphicon glyphicon-alert form-control-feedback"></span>
+        </div>
+        <div class="form-group has-error has-feedback">
+            <label for="In_e" class="control-label">Input with error</label>
+            <input type="text" id="In_e" class="form-control"/>
+            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+        </div>
+       </form>
+</div>
+<div class="container-fluid" style="border: 1px solid dimgray;margin: 30px 0 30px 0;"></div>
+<div class="container">
+    <form class="container form-horizontal">
+        <div class="form-group  has-feedback">
+            <label class="control-label col-sm-2">用户名:</label>
+            <div class=" col-sm-6">
+                <input type="text" class="form-control"/>
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
+            </div>
+            <div class="col-sm-2">
+                <span class="help-block ">Lorem ipsum dolor.</span>
+            </div>
+        </div>
+        <div class="form-group  has-feedback">
+            <label class="control-label col-sm-2">密码:</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control"/>
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+            <div class="col-sm-2">
+                <span class="help-block ">Lorem ipsum dolor.</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="checkbox  col-sm-10 col-sm-offset-2">
+                <label>
+                    <input type="checkbox" value="" name=""/>Lorem ipsum dolor sit amet.
+                </label>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2 ">
+                <input type="button" class="btn btn-success" value="提交"/>
+            </div>
+        </div>
+    </form>
+</div>
+    <div class="container-fluid" style="border: 1px solid mediumvioletred;margin: 30px 0 30px 0;"></div>
+    <!--<form action="">
+        <div class="form-group has-feedback">
+            <label class="col-sm-2 text-right">用户名：</label>
+            <div class="col-sm-6 has-feedback">
+                <input type="text" class="form-control"/>
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+            <span class="col-sm-4 text-left">&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet.</span>
+        </div>
+    </form>-->
+</body>
+</html>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>

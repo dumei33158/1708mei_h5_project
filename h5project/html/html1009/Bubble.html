@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>maopao</title>
+</head>
+<body>
+<input type="text" id="txt1">
+<br />
+<input type="text" id="txt2">
+</body>
+</html>
+<script>
+    var arr=[58,33,,,10,8,,89,34,46,,90];
+    function bubbleSort(arr){
+        for(var n=1;n<=arr.length-1;n++){
+            for(var i=0;i<arr.length-n;i++){
+                if(arr[i]>arr[i+1]){
+                    var temp=arr[i+1];
+                    arr[i+1]=arr[i];
+                    arr[i]=temp;
+                }
+            }
+        }
+        document.write(arr);
+        document.write("<br/>");
+    }
+    console.log(arr);//此处有BUG，执行顺序变再刷回到初始
+    alert(arr);//弹出初始值
+    document.write("<br/>");
+    document.write(arr);
+    txt1.value=arr;
+    document.write("<br/>");
+    bubbleSort(arr);
+    document.write(arr);
+    txt2.value=arr;
+</script>
+<script>
+    document.write("<br/>");
+    var arr=[58,33,,,10,8,,89,34,46,,90];
+    function bubbleSort(arr){
+        for(var n=1;n<=arr.length-1;n++){
+            for(var i=0;i<arr.length-n;i++){
+                if(arr[i]>arr[i+1]){
+                    var temp=arr[i];
+                    arr[i]=arr[i+1];
+                    arr[i+1]=temp;
+                }
+            }
+        }
+        document.write(arr);
+        document.write("<br/>");
+    }
+    bubbleSort(arr);
+    document.write(arr);
+</script>

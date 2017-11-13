@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvasGradient</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000" style="border: 1px solid #000"></canvas>
+</body>
+</html>
+<script>
+    var elem=document.getElementById("canvas");
+    var canvas=elem.getContext("2d");
+    var caT=elem.getContext("2d");
+var grad=canvas.createLinearGradient(0,0,600,600);
+    grad.addColorStop(0,"#0f0");
+    grad.addColorStop(0.5,"#f0f");
+    grad.addColorStop(1,"#00f");
+    canvas.fillStyle=grad;
+    canvas.strokeStyle=grad;
+    canvas.textBaseline="hanging";
+    canvas.font="bold 26px Microsoft YaHei";
+    canvas.lineWidth=10;
+    var txt="模棱两可";
+    var w=canvas.measureText( txt).width;
+    canvas.fillText(txt,1000-w,0);
+    canvas.fillRect(0,0,600,600);
+    canvas.strokeRect(10,10,600,600);
+    canvas.strokeRect(30,30,600,600);
+    canvas.strokeRect(60,60,600,600);
+    canvas.strokeRect(130,130,600,600);
+    canvas.strokeRect(300,300,600,600);
+    caT.textAlign="right";
+    caT.textBaseline="top";
+    caT.font="bold 26px Microsoft YaHei";
+    caT.shadowColor="rgba(0,0,0,.6)";
+    caT.shadowOffsetX=4;
+    caT.shadowOffsetY=4;
+    caT.shadowBlur=5;
+    caT.strokeStyle="#f0f";
+    caT.fillStyle="#f0f";
+    caT.fillText("How are you? I'm fine.Thank you!And you?",880,800);
+    caT.strokeText("How are you?",850,850);
+    caT.textBaseline="hanging";
+</script>

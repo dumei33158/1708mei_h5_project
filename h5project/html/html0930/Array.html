@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var arr=[12,3,4,5,6];
+    var n=arr;
+    console.log(arr[0]);
+    arr[3]+=5;
+    console.log(arr);
+    n[1]+=8;
+    console.log(arr);
+    console.log(n);
+</script>
+<script>
+    var arr=[12,3,4,5,6];
+    arr.length=3;
+    console.log(arr);
+    arr[8]=80;
+    console.log(arr);
+
+
+</script>
+<script>
+    var arr=[12,3,4,5,6];
+    arr.length=0;
+    document.write(arr);
+    arr.length=5;
+    document.write(arr);
+    console.log(arr);
+    arr[arr.length]=111;
+    arr[arr.length]=122;
+    arr[arr.length]=133;
+    arr[arr.length]=144;
+    arr[arr.length]=155;
+    arr[arr.length]=166;
+    arr[arr.length]=177;
+    arr[arr.length]=188;
+    console.log(arr);
+    document.write(arr);
+</script>
+<script>
+//    function y(){
+//        var arr=[];
+//        var input=prompt("请输入姓名：");
+//        while(input!="exit"){
+//            arr[arr.length]=input;
+//            input=prompt("请输入姓名：");
+//        }
+//        console.log(arr);
+//    }
+//    y();
+
+    var price=[100,80,50,30];
+    for(var i=0;i<price.length;i++){
+        price[i]*=0.8;
+    }console.log(price);
+    var week=['日','一','二','三','四','五','六'];
+    for(var i=0;i<week.length;i++){
+
+        console.log("星期"+week[i]);
+        week[i]="星期"+week[i];
+    }console.log(week);
+</script>
+<script>
+    document.write("<br/>");
+    var arr=['孙丽丽','郑亚旭','吴琼','吴玉琼','艾斌朋','顾静','乔亚楠','高宁','叶一帆','李长彬','张茜','徐颖聪','邹建华','李兵','郭焕锴',
+        '彭家月','杜美','霍勇君','隋金睿','吕全威','王源源','莫男','朱新宇','樊世鹏','陈卓','梁杰','赵白华','王巧玲',
+        '何景昊','谭得辉','戚小茜','陈龙','任雅歌','井玕','朱强','李晓松','陈国祥','高俊','曹昌妮'];
+    var newa=[];
+    for(var i=0;i<5;i++){
+        newa=arr[parseInt(Math.random()*arr.length)];
+        document.write(newa+"&nbsp;");
+    }
+
+</script>
+<script>
+    document.write("<br/>");
+    document.write("<br/>");
+    document.write("<br/>");
+    //徐老师 2017/09/30 15:21:18
+    function isValue(Val,arr) {
+        //判断一个数在数组中是否存在
+        //arr=[1,2,3,4]
+        for(var i=0;i<arr.length;i++){
+            if(Val==arr[i]){
+                return true;
+            }
+        }
+    }
+    function fun(){
+        var arr=['孙丽丽','郑亚旭','吴琼','吴玉琼','艾斌朋','吴琼','顾静','乔亚楠','高宁','叶一帆','李长衫','张茜','徐颖聪','邹建华','李兵','郭焕锴',
+            '彭家月','杜美','霍勇君','隋金瑞','吕全威','王源源','莫男','吴琼','朱新宇','樊世鹏','陈卓','梁杰','赵白华','王巧玲',
+            '何景昊','谭得辉','戚小茜','吴琼','陈龙','任雅歌','井玕','朱强','李晓松','陈国祥','高俊','曹昌妮','吴琼'];
+        var arrNew=[];
+        for(var i=0;i<5;i++){
+            var Val=arr[parseInt(Math.random()*arr.length)];
+            while (isValue(Val,arrNew)){
+                Val=arr[parseInt(Math.random()*arr.length)];
+            }
+            arrNew[i]=Val;
+        }
+        document.write(arrNew);
+    }
+    fun();
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>each</title>
+</head>
+<body>
+<p>lorem1</p>
+<p>lorem2</p>
+<p>lorem3</p>
+<p>lorem4</p>
+<p>lorem5</p>
+<p>lorem6</p>
+<p>lorem7</p>
+<p>lorem8</p>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    $("p").each(function(i,E){
+        console.log(this);
+        console.log(i);
+        console.log(E);
+        console.log($(E));
+        $("E").css("color","blue");
+        console.log($(E).css);
+        console.log(this.css);
+    })
+</script>

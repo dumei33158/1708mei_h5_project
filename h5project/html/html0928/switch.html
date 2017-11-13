@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function f(){
+        var tel=prompt("请输入")-0;
+        switch(tel){
+            case 1:
+                alert("充值服务请按2");
+            case 2:
+                alert("密码服务请按2");
+            case 3:
+                alert("积分服务请按3");
+                break;
+        }
+    }
+    f();
+</script>
+<script>
+    function n(){
+        var isNumber=prompt("请输入一个数字：")-0;
+        switch(isNumber){
+            case 1:
+               console.log("壹");
+               break;
+            case 2:
+                console.log("贰");
+                break;
+            case 3:
+                console.log("叄");
+                break;
+            case 4:
+                console.log("肆");
+                break;
+            case 5:
+                console.log("伍");
+                break;
+            case 6:
+            console.log("陆");
+                break;
+            case 7:
+            console.log("柒");
+                break;
+            default:
+            console.log("请输入1-7");
+        }
+    }
+    n();
+</script>
+<script>
+    var score=prompt("请输入您的分数：");
+    function level(score){
+        switch(true){
+            case score>=90:
+                console.log("A");
+            break;
+            case score>=80:
+                console.log("B");
+                break;
+            case score>=70:
+                console.log("C");
+                break;
+            default:
+                console.log("不及格，继续努力！");
+        }
+    }
+    level(score);
+</script>
+<script>
+    function r(){
+        var round=0;
+        while(round<5){
+            round++;
+            console.log("转第"+round+"圈");
+        }
+    }
+    r();
+</script>
+<script>
+    function sum(){
+        var n=1;
+        var sum=0;
+        while(n<=100){
+            sum+=n;
+            n++;
+        }
+        console.log(sum);
+    }
+    sum();
+</script>
+<script>
+  //偶数求和
+</script>

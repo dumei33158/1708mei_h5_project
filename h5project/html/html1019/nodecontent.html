@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nodecontent</title>
+</head>
+<body>
+<div id="box1" class="wrap" align="center">Lorem ipsum dolor.
+    <p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span id="sp1">lorem1</span><span id="sp2">lorem2</span><span id="sp3">lorem3</span></p>
+    <input type="text" id="txt" name="userName">
+    <input type="button" value="点点点" onclick="f()">
+    <p class="wrap">Lorem ipsum dolor sit amet.</p>
+</div>
+<p class="wrap">Lorem ipsum dolor Lorem ipsum dolor sit amet.sit amet.</p>
+<input type="text" id="txt1" name="userName">
+</body>
+</html>
+<script>
+   function $(id){
+        return document.getElementById(id);
+    }
+    function l_childE(node){
+        node=node.lastChild;
+        if(node!=null && node.nodeType != 1){
+            node=node.previousSibling;
+            while(node!=null && node.nodeType != 1) {
+                node = node.previousSibling;
+            }
+        }
+        return node;
+    }
+    console.log(l_childE($("box1")));
+    function f_childE(node){
+        node=node.firstChild;
+        if(node!=null && node.nodeType != 1){
+            node=node.nextSibling;
+            while(node!=null && node.nodeType != 1) {
+                node = node.nextSibling;
+            }
+        }
+        return node;
+    }
+    console.log(f_childE($("box1")));
+</script>

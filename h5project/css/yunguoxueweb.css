@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 12px;
+    font-family: "Î¢ÈíÑÅºÚ";
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.header{
+    /*width: 100%;*/
+    height: 600px;
+    background: url("../images/yunguoxueimages/header_bg.jpg");
+    background-size: cover;
+}
+.header .hnav{
+    float: left;
+
+}
+.header .hnav img{
+    float: left;
+}
+.header .hnav ul{
+    float: left;
+}
+.header .hnav ul li{
+    float: left;
+    width: 89px;
+    height: 36px;
+}
+.header .hnav ul li a{
+
+}
+.header .hnav img{
+
+}
+.header .hnav .hlogin{
+    float: right;
+
+}
+.header .hnav .hlogin a img{
+    float: left;
+}
+.header .hnav .hlogin ul{
+    float: left;
+}
+.header .hnav .hlogin ul li{
+    float: left;
+    margin-left: 18px;
+}
+.header .hnav .hlogin ul li a{
+
+}
+.header .hnav .hlogin img{
+
+}
+
+.main{
+    margin: 0 auto;
+}

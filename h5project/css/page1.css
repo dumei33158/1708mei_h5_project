@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #d2d2d2;text-align: center;
+}
+h3{
+    color: crimson;
+}
+p{
+  color: cadetblue;
+    letter-spacing: 5px;
+    line-height: 40px;
+}
+.weight{
+    font-size:20px;color: #df4c39;font-family:"¡• È";font-style: italic;font-weight: bold;
+}

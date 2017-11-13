@@ -1,0 +1,114 @@
+<!DOCTYPE html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <style>
+        table{width:700px;border-collapse:collapse;}
+        td{border:1px solid black;}
+    </style>
+</head>
+
+<body>
+<input type="text"/> <input type="button" value="查找"/><br/><br/>
+<table class="table1">
+    <tr>
+        <td>书名</td>
+        <td>价格</td>
+        <td>库存</td>
+        <td>操作</td>
+    </tr>
+    <tr>
+        <td>机器猫</td>
+        <td>3.6</td>
+        <td>100</td>
+        <td>
+            <input type="button" value="修改" />
+            <input type="button" value="删除" />
+        </td>
+    </tr>
+    <tr>
+        <td>机器狗</td>
+        <td>3.6</td>
+        <td>200</td>
+        <td>
+            <input type="button" value="修改" />
+            <input type="button" value="删除" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>机器狗</td>
+        <td>3.6</td>
+        <td>200</td>
+        <td>
+            <input type="button" value="修改" />
+            <input type="button" value="删除" />
+        </td>
+    </tr>	<tr>
+    <td>机器狗</td>
+    <td>3.6</td>
+    <td>200</td>
+    <td>
+        <input type="button" value="修改" />
+        <input type="button" value="删除" />
+    </td>
+</tr>
+
+    <tr>
+        <td><input id="bookName" /></td>
+        <td><input id="bookPrice" /></td>
+        <td><input id="bookStorage" /></td>
+        <td><input type="button" value="增加" /></td>
+    </tr>
+</table>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+    //要勤快一点切勿懒惰敲一遍吧
+    function changeColor(){
+        $(".table1 tr:not(:first,:last):visible:odd").css({background:"#e4393c"});
+        $(".table1 tr:not(:first,:last):visible:even").css({background:"#c3934e"});
+    }
+    changeColor();
+    $('[value="删除"]').click(function(){
+       $(this).parent().parent().remove();
+    });
+    $('[value="修改"]').click(function(){
+      if($(this).val()=="修改"){
+          $(this).val("确定");
+          $(this).parent().prevAll().each(function(){
+              $(this).html($("<input type='' value='"+$(this).text()+"'/>"))
+          })
+      }else{
+          $(this).val("修改");
+          $(this).parent().prevAll().each(function(){
+              $(this).html($(this).find("input").val());
+          })
+      }
+    });
+    $('[value="增加"]').click(function(){
+        var tr= $("<tr></tr>");
+        var tds= $(this).parent().prevAll();
+        tds.each(function(){
+            var txt=$(this).find("input").val();
+            var td= $("<td>"+txt+"</td>");
+           tr.prepend(td);
+        });
+        var td=$(this).parent().parent().prev().find("td").last().clone(true);
+        tr.append(td);
+        $(this).parent().parent().before(tr);
+        changeColor();
+    });
+    //查找方法一：
+    /*$('[value="查找"]').click(function(){
+        $(".table1 tr:not(:first,:last)").hide();
+        $(".table1 tr:not(:first,:last):contains('"+ $(this).prev().val()+"')").show();
+    });*/
+    //查找方法二：
+    $('[value="查找"]').click(function(){
+        $(".table1 tr:not(:first,:last)").css("display","none");
+        $(".table1 tr:not(:first,:last):contains('"+ $(this).prev().val()+"')").css({display:"table-row"});
+    });
+
+</script>

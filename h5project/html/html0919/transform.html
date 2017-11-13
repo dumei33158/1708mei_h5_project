@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li{
+            list-style: none;
+        }
+        .transForm{
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            background: url("../../images/hua.jpg") no-repeat center top;
+            background-size: cover;
+            transition: transform 1s;
+        }
+        .transForm:hover{
+            transform: translateX(100px) rotate(168950deg);
+            transform-origin: center center;
+        }
+        .box{
+            width: 500px;
+            height: 700px;
+            border: 1px solid #00f;
+        }
+        .box ul li{
+            border: 1px solid #0f0;
+            float: left;
+            width: 90px;
+            height:700px;
+            box-sizing: border-box;
+        }
+        .xuanzhuan{
+            position: relative;
+            left: 600px;
+            top: 600px;
+            margin: 0 auto;
+        }
+        .left{
+            width:600px;
+            height: 500px;
+            background: url("../../images/fu.jpg") no-repeat center top;
+            background-size: cover;
+            position: absolute;
+            left:-180px;
+            top: 30px;
+            z-index: 3;
+            transform:rotate(-15deg);
+            transform-origin: center 1000px;
+            transition: transform 1s;
+        }
+        .center{
+            width:600px;
+            height: 500px;
+            background: url("../../images/hua.jpg") no-repeat center top;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+        }
+        .right{
+            width:600px;
+            height: 500px;
+            background: url("../../images/530262481.jpg") no-repeat center top;
+            background-size: cover;
+            position: absolute;
+            left: 180px;
+            top: 30px;
+            z-index: 1;
+            transform:rotate(15deg);
+            transform-origin: center 1000px;
+            transition: transform 1s;
+         }
+        .xuanzhuan:hover .left{
+            transform:rotate(-35deg);
+        }
+        .xuanzhuan:hover .right{
+            transform:rotate(35deg);
+
+        }
+        .box0{
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #000;
+        }
+        .rotate{
+            width:600px;
+            height: 500px;
+            background: url("../../images/530262481.jpg") no-repeat center top;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+        .rotate1{
+            width:600px;
+            height: 500px;
+            background: url("../../images/hua.jpg") no-repeat center top;
+            background-size: cover;
+            transform: scale(0);
+            transform-origin: right bottom;
+            position: absolute;
+            left: 0;
+            top:0;
+            transition: transform .3s;
+        }
+        .box0:hover .rotate1{
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+<div class="transForm">
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, natus!</p>
+<div class="box">
+    <ul>
+        <li>
+            <div class="bot">Lorem ipsum dolor sit amet, consectetur.</div>
+        </li>
+        <li><div class="bot">Lorem ipsum dolor sit amet, consectetur.</div>
+        </li>
+        <li><div class="bot">Lorem ipsum dolor sit amet, consectetur.</div>
+        </li>
+        <li><div class="bot">Lorem ipsum dolor sit amet, consectetur.</div>
+        </li>
+        <li><div class="bot">Lorem ipsum dolor sit amet, consectetur.</div>
+        </li>
+    </ul>
+</div>
+<div class="xuanzhuan">
+    <div class="left"></div>
+    <div class="center"></div>
+    <div class="right"></div>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, ipsum.</p>
+<div class="box0">
+<div class="rotate"></div>
+<div class="rotate1"></div>
+</div>
+</body>
+</html>

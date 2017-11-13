@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jqueryselector</title>
+</head>
+<body>
+<ul>
+    <li>好好学习</li>
+    <li>天天向上</li>
+    <li>不好好学习</li>
+    <li><span class="sp">sss</span>你想干啥/li>
+    <li></li>
+    <li>你说对吗</li>
+</ul>
+<div>web前端</div>
+<div>sswebstorm</div>
+<div>是大法官</div>
+<div>web页面</div>
+<input type="text" id="txt" value="请输入"/><input type="button" value="筛选" id="btn"/>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+$("#btn").click(function(){
+    var val=$("#txt").val();
+    $("div:contains('"+val+"')").css("background","#f0f");
+})
+</script>

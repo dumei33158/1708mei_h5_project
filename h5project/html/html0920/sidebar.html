@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <style>
+        .sidebar{
+            width: 88px;
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            /*left: 50%;*/
+            /*margin-left: -10px;*/
+            background: #ccc;
+        }
+
+        .sidebar ul li{
+            padding: 30px;
+            text-align: center;
+            position:relative;
+            transition: all .5s;
+            /*border-top: 1px solid #ffffff;*/
+        }
+        .sidebar ul li a{
+            color: #ffffff;
+
+        }
+       .sidebar ul li:not(:first-child):before{
+            content:"";
+            height:1px;
+            width:100%;
+            background: #ffffff;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+
+        .sidebar ul li:not(:first-child):after{
+            content:" ";
+            height:1px;
+            width: 100%;
+            background: transparent;
+            position: absolute;
+            left:0;
+            bottom:-1px;/*移动位置以线压线*/
+        }
+        .sidebar ul li:not(:last-child):hover,.sidebar ul li:not(:last-child):hover:after,.sidebar ul li:not(:last-child):hover:before{
+            background: #d70a1c;
+            /*border-top-color: #d70a1c;*/
+            z-index: 2;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <ul>
+        <li class="active"><a href="">lorem1</a></li>
+        <li><a href="">lorem2</a></li>
+        <li><a href="">lorem3</a></li>
+        <li><a href="">lorem4</a></li>
+        <li><a href="">lorem5</a></li>
+        <li><a href="">lorem6</a></li>
+        <li><a href="">lorem7</a></li>
+        <li><a href="">lorem8</a></li>
+        <li><a href="">lorem9</a></li>
+        <li><a href="">顶部</a></li>
+    </ul>
+</div>
+</body>
+</html>

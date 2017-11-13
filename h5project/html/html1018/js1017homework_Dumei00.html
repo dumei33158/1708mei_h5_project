@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js1017homework_Dumei.html</title>
+
+</head>
+<style>
+    .homework{
+        margin: 0 auto;
+        width: 1000px;
+        background: #ffffff;
+    }
+    h1{
+        background: -webkit-linear-gradient(top,#0088ff,#0000ff);
+        color: #ffffff;
+        padding-left: 20px;
+    }
+    p{
+        line-height: 26px;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+<div class="homework">
+    <h1>2017.10.17作业&nbsp;_Dumei</h1>
+    <p>1.运用递归函数实现：计时器变为定时器</p>
+    <input type="text" id="Time1" value="00时00分00秒">
+    <input type="button" id="btn1" value="开始计时">
+    <p>2.写一个距离js课程结束的倒计时，显示格式如下：</p>
+    <span id="dBdsp"></span>
+    <!--<input type="button" id="btn2" value="开始计时" >-->
+    <p>3.用闭包实现计时器，显示格式如下：</p>
+    <span id="Hour"></span>时
+    <span id="Minute"></span>分
+    <span id="Sec"></span>秒
+    <input type="button" id="btn3" value="哈哈">
+    </div>
+</body>
+</html>
+<script>
+    //1.运用递归函数实现：计时器变为定时器
+    //数字显示格式
+    function numFormat(n){
+        return n>=10?n:"0"+n;
+    }
+    var i=0;
+    function time(){
+        i++;
+        Time1.value=numFormat(parseInt(i/3600))+"时"+numFormat(parseInt(i/60)%60)+"分"+numFormat(i%60)+"秒";
+    }
+    var mytimep;
+    var mytimej;
+    function timej(){
+        i--;
+        Time1.value=numFormat(parseInt(i/3600))+"时"+numFormat(parseInt(i/60)%60)+"分"+numFormat(i%60)+"秒";
+        if((Time1.value=="00时00分00秒")){
+            clearInterval(mytimej);
+        }
+    }
+    btn1.onclick=function timeGo(){
+        if(btn1.value=="开始计时"){
+            clearInterval(mytimej);
+            mytimep=setInterval(time,100);
+            btn1.value="计时停止";
+        }
+        else if(btn1.value=="计时停止"){
+            clearInterval(mytimep);
+            btn1.value="继续计时";
+        }
+        else if(btn1.value=="继续计时"){
+            mytimep=setInterval(time,100);
+            btn1.value="开始倒计时";
+        }
+        else if(btn1.value=="开始倒计时"){
+            clearInterval(mytimep);
+            mytimej=setInterval(timej,100);
+            btn1.value="倒计时停止";
+        }
+        else if(btn1.value=="倒计时停止"){
+            clearInterval(mytimej);
+            btn1.value="重置";
+        }
+        else if(btn1.value=="重置"){
+            Time1.value="00时00分00秒";
+            clearInterval(mytimep);
+            btn1.value="开始计时";
+        }
+    }
+</script>
+<script>
+    //2.写一个距离js课程结束的倒计时，显示格式如下：
+    function numFormat(n){
+        return n>=10?n:"0"+n;
+    }
+    function dt2() {
+        var date=new Date("2017-10-26");
+        var dateBetween=date-(new Date());
+        var year=numFormat(Math.floor(dateBetween/(60*60*1000*24*365)));
+        var month=numFormat(Math.floor(dateBetween/(60*60*1000*24*30)));
+        var day=numFormat(Math.floor(dateBetween/(60*60*1000*24)%30));
+        var hours=numFormat(Math.floor(dateBetween/(60*60*1000)%24));
+        var min=numFormat(Math.floor(dateBetween/(60*1000)%60));
+        var sec=numFormat(Math.floor(dateBetween/1000%10));
+        dBdsp.style.fontSize="2em";
+        dBdsp.style.fontWeight="bold";
+        dBdsp.innerText="距离js课程结束还有："+year+"年"+month+"月"+day+"日"+hours+"时"+min+"分"+sec+"秒";
+        dBdsp.style.color="#f0f";
+    }
+    dt2();
+    setInterval(dt2,1000);
+//    var dateBetween=date-(new Date());
+//    console.log(dateBetween);//毫秒数
+//    console.log(Math.floor(dateBetween/1000/60/60/24));//天数
+//    console.log(Math.floor(dateBetween/1000/60/60));//小时数
+//    console.log(Math.floor(dateBetween/1000/60));//分钟数
+//    console.log(Math.floor(dateBetween/1000));//秒数
+//    console.log(Math.floor(dateBetween/1000/60/60/24)+Math.floor(dateBetween/1000/60/60)+Math.floor(dateBetween/1000/60)+Math.floor(dateBetween/1000));//秒数
+
+//    days.innerText=numFormat(Math.floor(dateBetween/1000/60/60/24));
+//    hours.innerText=numFormat(Math.floor(dateBetween-((dateBetween/1000/60/60/24)*24*60*60*1000)));
+//    minus.innerText=numFormat(Math.floor(dateBetween-((dateBetween/1000/60/60/24)*24*60*60*1000)));
+//    secs.innerText=
+</script>
+<script>
+    //3.用闭包实现计时器，显示格式如下：
+    //法1：
+    function numFormat(n){
+        return n>=10?n:"0"+n;
+    }
+    document.getElementById("Hour").innerText=numFormat(parseInt(i/3600));
+    document.getElementById("Minute").innerText=numFormat(parseInt(i/60)%60);
+    document.getElementById("Sec").innerText=numFormat(i%60);
+    function tm(){
+        var i=0;
+        function time(){
+            i++;
+            document.getElementById("Hour").innerText=numFormat(parseInt(i/3600));
+            document.getElementById("Minute").innerText=numFormat(parseInt(i/60)%60);
+            document.getElementById("Sec").innerText=numFormat(i%60);
+        }
+        return time;
+    }
+    var mytime;
+        btn3.onclick=function s2() {
+            if(btn3.value=="哈哈"){
+                mytime=setInterval(tm(),1000);
+                btn3.value="呵呵";
+            }else if(btn3.value=="呵呵"){
+                clearInterval(mytime);
+                btn3.value="哈哈";
+            }
+        }
+    //法2：闭包立即执行计时器
+//    function numFormat(n){
+//            return n>=10?n:"0"+n;
+//        }
+//    var i=0;
+//    document.getElementById("Hour").innerText=numFormat(parseInt(i/3600));
+//    document.getElementById("Minute").innerText=numFormat(parseInt(i/60)%60);
+//    document.getElementById("Sec").innerText=numFormat(i%60);
+//    (function tm(){
+//            function time() {
+//                i++;
+//                document.getElementById("Hour").innerText = numFormat(parseInt(i / 3600));
+//                document.getElementById("Minute").innerText = numFormat(parseInt(i / 60) % 60);
+//                document.getElementById("Sec").innerText = numFormat(i % 60);
+//                setTimeout(time, 1000);
+//            }
+//        time();
+//        })();
+
+    //法3：闭包实现计时器
+//    function numFormat(n){
+//        return n>=10?n:"0"+n;
+//    }
+//    var i=0;
+//    document.getElementById("Hour").innerText=numFormat(parseInt(i/3600));
+//    document.getElementById("Minute").innerText=numFormat(parseInt(i/60)%60);
+//    document.getElementById("Sec").innerText=numFormat(i%60);
+//    function tm(){
+//        function time() {
+//            i++;
+//            document.getElementById("Hour").innerText = numFormat(parseInt(i / 3600));
+//            document.getElementById("Minute").innerText = numFormat(parseInt(i / 60) % 60);
+//            document.getElementById("Sec").innerText = numFormat(i % 60);
+//            setTimeout(time, 1000);
+//        }
+//            return time;
+//    }
+//        tm();
+//    var y=tm();
+//    y();
+    //法4：闭包实现计时器
+//    function numFormat(n){
+//        return n>=10?n:"0"+n;
+//    }
+//    document.getElementById("Hour").innerText=numFormat(parseInt(i/3600));
+//    document.getElementById("Minute").innerText=numFormat(parseInt(i/60)%60);
+//    document.getElementById("Sec").innerText=numFormat(i%60);
+//    function tm(){
+//        var i=0;
+//        function time() {
+//            i++;
+//            document.getElementById("Hour").innerText = numFormat(parseInt(i / 3600));
+//            document.getElementById("Minute").innerText = numFormat(parseInt(i / 60) % 60);
+//            document.getElementById("Sec").innerText = numFormat(i % 60);
+//        }
+//        setInterval(time, 1000);
+//    }
+//    tm();
+</script>

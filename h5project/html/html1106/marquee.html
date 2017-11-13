@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li{
+            list-style: none;
+        }
+        #cont{
+            width: 1000px;
+            height: 200px;
+            margin: 0 auto;
+            border: 10px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+        #btn{
+            width: 1000px;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+        #btn input{
+            width: 40px;
+            height: 40px;
+        }
+        #inner{
+            width: 2800px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 200px;
+        }
+        #inner #menu{
+            float: left;
+        }
+        #inner li{
+            float: left;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<p id="btn">
+    <input type="button" value="<" id="left"/>
+    <input type="button" value=">" id="right"/>
+</p>
+<div id="cont">
+    <div id="inner">
+        <ul id="menu">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script src="../../JS/jquery-3.2.1.min.js"></script>
+<script>
+    var bgColor=['#f00','#0f0','#00f','#ff0','#ccc','#0ff','#e0e0e0'];
+  $("#menu>li").each(function(i){
+      $(this).css({
+          backgroundColor: bgColor[i]
+      })
+    });
+ $("#inner").append($("#menu").clone());
+    var Left=0;
+    function goLeft(){
+
+    }
+    /*var mytime = setInterval(goLeft,10);*/
+   /* cont.onmouseover=function(){
+        clearInterval(mytime);
+    };
+    cont.onmouseout=function(){
+        clearInterval(mytime);
+        mytime=setInterval(goLeft,10);
+    };
+    right.onmouseover=function(){
+        clearInterval(mytime);
+    };
+    left.onmouseover=function(){
+        clearInterval(mytime);
+    };
+    right.onclick=function(){
+        if(Left%200!=0){
+            Left=Left-(200-Math.abs(Left)%200);
+        }else{
+            Left=Left-200;
+        }
+        if(Left==-1400){
+            Left=0;
+        }
+        inner.style.left=Left+"px";
+    };
+    left.onclick= function () {
+        if(Left%200!=0){
+            Left=Left+Math.abs(Left)%200
+        }else{
+            Left=Left+200;
+        }
+        if(Left==0){
+            Left=-1400;
+        }
+        inner.style.left=Left+"px";
+    };*/
+
+</script>

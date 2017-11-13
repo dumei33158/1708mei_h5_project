@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>block</title>
+</head>
+<body>
+<input type="button" onclick="block()">
+<input type="button" onclick="block1()">
+</body>
+</html>
+
+<script>
+    function block() {
+        //使用table展示99乘法
+        document.write("<table cellspacing='0' cellpadding='10'>");
+        for(var h=1;h<=9;h++){
+            document.write("<tr style='background: #0000ff;'>");
+            for(var j=1;j<=h;j++){
+                document.write("<td style='border: 1px solid #ffff00;color: #ffffff;text-align: center;font-size: 18px;'>");
+                document.write(j+"*"+h+"="+j*h+"<br/>");
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>")
+    }
+</script>
+<script>
+    function block1() {
+        //使用table展示99乘法
+        document.write("<table cellspacing='0' cellpadding='10'>");
+        for(var h=1;h<=9;h++){
+            document.write("<tr style='background: #0000ff;'>");
+            for(var j=1;j<=h;j++){
+                document.write("<td style='border: 1px solid #ffff00;color: #ffffff;text-align: center;font-size: 18px;'>");
+                document.write("*");
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>")
+    }
+</script>

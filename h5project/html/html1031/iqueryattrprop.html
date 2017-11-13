@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>attrprop</title>
+</head>
+<body>
+<p id="p1">Lorem ipsum dolor sit amet.</p>
+</body>
+</html>
+<script src="../../JS/jquery-1.11.3.js"></script>
+<script>
+ /*  console.log($("#p1").attr("index"));//h5上手动添加index="1"时，用attr可以获取到*/
+   /*console.log($("#p1").prop("index"));//h5上手动添加index="1"时，用prop获取不到*/
+  /* $("#p1").prop("index","1");
+ console.log($("#p1").prop("index"));//用prop设置的已有或添加属性用prop可以获取到*/
+ /*$("#p1").attr("index",1);
+ console.log($("#p1").attr("index"));//用attr设置的已有或添加属性用attr可以获取到*/
+ /*$("#p1").attr("index",1);
+ console.log($("#p1").prop("index"));//用prop获取不到用attr设置的已有或添加属性*/
+ /*$("#p1").prop("index","1");
+ console.log($("#p1").attr("index"));//用attr获取不到用prop设置的已有或添加属性*/
+</script>

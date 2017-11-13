@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>createobject</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var obj1={
+        name:"8080m",
+        sex:"女",
+        age:18,
+        eat:function(){
+            console.log(this.name+"\teat\t");
+        },
+       think:function(){
+            console.log("think"+this.age+"岁长生不老，哈哈哈");
+        }
+    };
+    console.log(obj1.think());
+    console.log(obj1.name);
+    obj1.think();
+    obj1.sth="其他";
+    obj1.run=function(){
+        console.log("talk")
+    };
+    obj1.run();
+    delete obj1.sth;
+    console.log(obj1);
+</script>
+<script>
+//    var myArr1=new Object({});
+//    var myArr2=Object({});
+    var myArr={
+//        arr:[12,3,4,7,68,90,35,6,0,-97,300],
+        getMax:function(arr){
+//            var arr=this.arr;
+            return Math.max.apply(Math,arr);
+        },
+        getMin:function(){
+            var arr=this.arr;
+            return Math.min.apply(Math,arr);
+        },
+        asc:function(a,b){
+            return a-b;
+        },
+        desc:function(a,b){
+            return b-a;
+        },
+        getOrder:function(order){
+//            var arr=this.arr;
+            if(order=="ASC"){
+                return arr.sort(this.asc);
+            }else if(order=="DESC"){
+                return arr.sort(this.desc);
+            }else{
+                return "请输入合适的参数，我会告诉你你想要的排序"
+            }
+        }
+    };
+    var arr=[102,30,74,57,68,90,35,6,0,-97,3900];
+    console.log(myArr.getOrder("ASC"));
+    console.log(myArr.getMax(arr));
+
+</script>
