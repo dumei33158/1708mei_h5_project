@@ -1,0 +1,62 @@
+/**
+ * Created by Administrator on 2017/11/13.
+ */
+$(".carousel-indicators.D_circleM>li").each(function(i){
+    $(this).css({
+        background:"url("+$(".item.D_lf_mPic>img").eq(i).attr("src")+") center center",
+        backgroundSize:"cover"
+    });
+});
+/*
+$(window).scroll(function(){
+    if($(window).scrollTop()==$(".D_circleM").offset().top){
+        $(".D_circleM").css({
+            position:"fixed",
+            zIndex:"11"
+        })
+    }
+});*/
+$(function(){
+    /*setTimeout(function(){
+        setInterval(function(){
+            setTimeout(function(){
+                $(".D_lf_nav").css({
+                    background:"-webkit-linear-gradient(45deg,#d25619,#f0ed0c)"
+                })
+            },2000);
+            $(".D_lf_nav").css({
+                background:"-webkit-linear-gradient(45deg,#211b96,#e63081)"
+            });
+        });
+        clearInterval(setInterval)
+    },1000);
+    clearTimeout(setTimeout);
+*/
+});
+
+$(function(){
+    $(".D_lf_m_cont>h2>a").animate({left:"20%"},"slow");
+    $(".carousel-caption.D_lf_map>div").animate({opacity:".6",bottom:"70%"},500);
+});
+$(".D_lf_m_cont>h2>a").click(function(e){
+    var e=e||window.event;
+    e.stopPropagation();
+    e.preventDefault();
+    $(this).css({
+        textDecoration:"none"
+    });
+    $('[class="D_lf_mlp"]').animate({opacity:"1"},2000);
+    $('[class="D_lf_mrp"]').animate({opacity:"1"},2000);
+    $('.D_lf_skl').animate({opacity:"1"},1000);
+    $('.D_lf_skr').animate({opacity:"1"},1000);
+});
+
+/*
+$('[class="D_lf_mlp"]').click(function(){
+    $('[class="D_lf_mrp"]').animate({left:"10%"},2000);
+    $('.D_lf_skr').animate({opacity:"0"},1000);
+});
+$('[class="D_lf_mrp"]').click(function(){
+    /!*$('[class="D_lf_mlp"]').toggle(function(){animate({left:"10%"},2000)});*!/
+    $('.D_lf_skl').animate({opacity:"0"},1000);
+})*/

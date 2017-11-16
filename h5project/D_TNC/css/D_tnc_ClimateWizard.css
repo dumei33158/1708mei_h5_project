@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    font-size: 12px;
+}
+body{
+    font-family: "Î¢ÈíÑÅºÚ";
+    font-size: 12px;
+}
+
+.D_cl_navBar{
+    background: #e4e6d8;
+}
+.D_btn_tc{
+    font-size: 30px;
+    color:#47aa42;
+}
+.D_climateLogo{
+    width:161px;
+}
+#D_navbar-collapse_tC{
+    margin-top: 10px;
+}
+#D_cl_content{
+    margin-top:88px;
+    padding-bottom:25px;
+}
+.D_cliTA{
+    background: #e4e6d7;
+}
+.D_clTab{
+    width:100%;
+    border: thin solid #A0C04D;
+}
+.D_clTAB_tr>th{
+    text-align: center;
+    background: #A0C04D;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color:white;
+}
+.D_clTab>tbody>tr>td>label span{
+    font-weight: normal;
+}
+.D_clTab>tbody>tr>td{
+    border-left: 1px solid #A0C04D;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+#D_chooseRegion{
+    width: 142px;
+    text-align: center;
+}
+.D_clMapTitle{
+    background: #fff;
+    vertical-align: top;
+    text-align: center;
+    margin-right: 5px;
+}
+.D_clMapBody{
+    width: 668px;
+    height: 500px;
+    border: 1px solid #000;
+    position: relative;
+}
+.D_clMapBody span{
+    font-weight: normal;
+    padding-left: 3px;
+}
+.D_clMap_r1{
+    width: 90px;
+    height: 80px;
+    position:absolute;
+    right: 0;
+    top:3px;
+    background: #fff;
+    z-index: 10;
+    padding: 5px 0 0 5px;
+    border-radius: 8px;
+}
+.D_clMap_r2{
+    width: 160px;
+    height: 36px;
+    position:absolute;
+    right: 100px;
+    top:3px;
+    background: #fff;
+    z-index: 10;
+    padding: 0 5px;
+    border-radius: 8px;
+}
+.D_clMap_r2line{
+  width: 150px;
+    height:8px;
+    border: 1px solid #ccc;
+    background: #ccc;
+    margin-top: 5px;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+.D_clMap_r2line_deepop{
+    width: 100%;
+    height:8px;
+    /*border: 1px solid #ccc;*/
+    background: #fff;
+    margin-top: 5px;
+    border-radius: 7px;
+    position: absolute;
+    left: 0;
+    top:-6px;
+    z-index: 4;
+}
+.D_clMap_r2img{
+    position:absolute;
+    left:5px;
+    top:20px;
+    z-index: 5;
+}
+.D_clMap_r3{
+    height: 25px;
+    position:absolute;
+    right: 100px;
+    top:54px;
+    background: #fff;
+    z-index: 10;
+    padding: 2px;
+    text-align: center;
+}
+.D_clMap_r3>input:hover{
+    outline: thin solid #81c6e0;
+}
+.D_clMap_L1{
+    width: 30px;
+    height: 130px;
+    position:absolute;
+    left: 3px;
+    top:3px;
+    z-index: 10;
+    padding: 5px 0 0 8px;
+    border-radius: 8px;
+}
+.D_clMap_L1>li:first-child{
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    z-index: 5;
+    cursor: pointer;
+    margin-bottom: 2px;
+    background: url("../img/D_climate/D_spriteRoundedIconsSmall.png") no-repeat -46px 0;
+}
+.D_clMap_L1>li:last-child{
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    z-index: 5;
+    margin-top: 2px;
+    cursor: pointer;
+    background: url("../img/D_climate/D_spriteRoundedIconsSmall.png") no-repeat -16px -16px;
+}
+.D_clMap_L1line{
+    width: 8px;
+    height:73px;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin: 15px 0 0 3px;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+.D_clMap_L1line_deepop{
+    width: 8px;
+    height:73px;
+   /* border: 1px solid #ccc;*/
+    background: #ccc;
+    margin-left: 5px;
+    border-radius: 7px;
+    position: absolute;
+    left: -6px;
+    top:76px;
+    z-index: 4;
+}
+.D_clMap_L1img{
+    position:absolute;
+    left:7px;
+    top:73px;
+    z-index: 5;
+}
+.D_clMap_L2{
+    width: 8px;
+    height: 13px;
+    position:absolute;
+    left: 27px;
+    top:32px;
+    z-index: 10;
+}
+.D_clMap_L2 li{
+    line-height: 4px;
+    font-size: 20px;
+}
+.D_clMap_rb1{
+    width: 67px;
+    height: 288px;
+    position: absolute;
+    background: #fff url("../img/D_climate/D_mapLegend.png") no-repeat;
+    background-size: cover;
+    right: 0;
+    bottom:0;
+}
+.D_clMap_rb0{
+    position: absolute;
+    left: 0;
+    bottom:0;
+}
+.D_clMap_rb2{
+    width: 365px;
+    height: 120px;
+    position: absolute;
+    background: #fff;
+    right: 80px;
+    bottom:0;
+}
+.D_clMap_rb3{
+    width: 166px;
+    height: 23px;
+    position: absolute;
+    background: #fff;
+    right: 445px;
+    bottom:0;
+}
+.D_clMap_bg{
+    width: 668px;
+    height: 500px;
+    /*background: #0000ff;*/
+    position: absolute;
+}
+#D_tc_Map_bg_main{
+    background: #0063D1;
+}
+.D_clAAtab tr>td{
+    border-left: 1px solid ;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+#D_tc_Gcm{
+    /*width: 140px;*/
+}
+.D_clText{
+    width: 210px;
+    padding-left: 20px;
+}
+.D_crbText{
+    width: 668px;
+    margin-top: 5px;
+}
+@media (max-width: 768px){
+    #D_chooseRegion{
+        width: 90px;
+    }
+    .D_cl_navBar{
+        height: 88px;
+    }
+}

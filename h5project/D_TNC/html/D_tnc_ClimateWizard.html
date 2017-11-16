@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--meta:vp适配手机-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <!--meta:compat强制IE以最高内核渲染代码(将IE=7设置为IE=edge)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="renderer" content="webkit">
+    <!--[if IE lte8]>
+<script src="../bootstrap/js/html5shiv.min.js"></script>
+<script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../bootstrap/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/D_tnc_ClimateWizard.css"/>
+</head>
+<body>
+<nav class="navbar-fixed-top D_cl_navBar">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#D_navbar-collapse_tC">
+                <span class="fa fa-spinner D_btn_tc"></span>
+            </button>
+            <div class="navbar-brand">
+            <a href="" class="hidden-xs"><img class="D_climateLogo" src="../img/D_climate/D_TNCLogo2.gif" alt=""/></a>
+            <a href=""><img class="D_climateLogo" src="../img/D_climate/D_CWText.png" alt=""/></a>
+            </div>
+        </div>
+        <div class="navbar-collapse collapse navbar-right" id="D_navbar-collapse_tC">
+            <ul class="list-unstyled">
+                <li><a href=""><img src="../img/D_climate/D_Univ_Wash_logo.png" alt=""/></a></li>
+                <li><a href=""><img src="../img/D_climate/D_Univ_SMiss_logo.png" alt=""/></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="D_cl_content">
+    <div class="container">
+        <table class="D_cliTA">
+            <tr>
+                <td colspan="5">
+                    <table class="D_clTab">
+                    <thead>
+                    <tr class="D_clTAB_tr">
+                        <th colspan="2">Analysis Area</th>
+                        <th>Time Period</th>
+                        <th>Map Options</th>
+                        <th>Measurement</th>
+                        <th>Resources</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <label for="D_tc_usArea">
+                                <input type="radio" name="D_tc_area" id="D_tc_usArea" value="D_tc_usArea" checked/><span>United States</span>
+                            </label>
+                            <label for="D_tc_glArea">
+                                <input type="radio" name="D_tc_area" id="D_tc_glArea" value="D_tc_glArea"/><span>Global</span>
+                            </label>
+                        </td>
+                        <td>
+                            <label for="D_tc_Time_prev">
+                                <input type="radio" name="D_tc_Time" id="D_tc_Time_prev" value="D_tc_Time_prev"/><span>Past 50 Years</span>
+                            </label>
+                        </td>
+                        <td>
+                            <label for="D_tc_Map_avg">
+                                <input type="radio" name="D_tc_Map"  id="D_tc_Map_avg" value="MapofAverage"/><span>Map of Average</span>
+                            </label>
+                        </td>
+                        <td>
+                            <label for="D_tc_Meas_avg">
+                                <input type="radio" name="D_tc_Meas"  id="D_tc_Meas_avg" value="AverageTemperature"/><span>Average Temperature</span>
+                            </label>
+                        </td>
+                        <td rowspan="3">
+                            <p>
+                                <a href="">Case Studies</a><br/>
+                                <a href="">Documentation</a>&nbsp;|&nbsp;<a href="">Developer</a><br/>
+                                <a href="">Data</a>&nbsp;and&nbsp;<a href="">Map Image</a><br/>
+                                Download<br/>
+                                <a href="">ClimateWizard Custom</a><br/>
+                                <a href="">Analysis</a><br/>
+                                <a href="">Printer Friendly Version</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" rowspan="2">
+                            <select name="D_chooseArea" id="D_chooseRegion">
+                                <option name="D_chooseArea" value="United States" selected="selected">United States</option>
+                                <option name="D_chooseArea" value="Alaska">Alaska</option>
+                                <option name="D_chooseArea" value="Alabama">Alabama</option>
+                                <option name="D_chooseArea" value="Arizona">Arizona</option>
+                                <option name="D_chooseArea" value="Arkansas">Arkansas</option>
+                                <option name="D_chooseArea" value="California">California</option>
+                                <option name="D_chooseArea" value="Colorado">Colorado</option>
+                                <option name="D_chooseArea" value="Connecticut">Connecticut</option>
+                                <option name="D_chooseArea" value="Delaware">Delaware</option>
+                                <option name="D_chooseArea" value="District of Columbia">District of Columbia</option>
+                                <option name="D_chooseArea" value="Florida">Florida</option>
+                                <option name="D_chooseArea" value="Georgia">Georgia</option>
+                                <option name="D_chooseArea" value="Hawaii">Hawaii</option>
+                                <option name="D_chooseArea" value="Idaho">Idaho</option>
+                                <option name="D_chooseArea" value="Illinois">Illinois</option>
+                                <option name="D_chooseArea" value="Indiana">Indiana</option>
+                                <option name="D_chooseArea" value="Iowa">Iowa</option>
+                                <option name="D_chooseArea" value="Kansas">Kansas</option>
+                                <option name="D_chooseArea" value="Kentucky">Kentucky</option>
+                                <option name="D_chooseArea" value="Louisiana">Louisiana</option>
+                                <option name="D_chooseArea" value="Maine">Maine</option>
+                                <option name="D_chooseArea" value="Maryland">Maryland</option>
+                                <option name="D_chooseArea" value="Massachusetts">Massachusetts</option>
+                                <option name="D_chooseArea" value="Michigan">Michigan</option>
+                                <option name="D_chooseArea" value="Minnesota">Minnesota</option>
+                                <option name="D_chooseArea" value="Mississippi">Mississippi</option>
+                                <option name="D_chooseArea" value="Missouri">Missouri</option>
+                                <option name="D_chooseArea" value="Montana">Montana</option>
+                                <option name="D_chooseArea" value="Nebraska">Nebraska</option>
+                                <option name="D_chooseArea" value="Nevada">Nevada</option>
+                                <option name="D_chooseArea" value="New Hampshire">New Hampshire</option>
+                                <option name="D_chooseArea" value="New Jersey">New Jersey</option>
+                                <option name="D_chooseArea" value="New Mexico">New Mexico</option>
+                                <option name="D_chooseArea" value="New York">New York</option>
+                                <option name="D_chooseArea" value="North Carolina">North Carolina</option>
+                                <option name="D_chooseArea" value="North Dakota">North Dakota</option>
+                                <option name="D_chooseArea" value="Ohio">Ohio</option>
+                                <option name="D_chooseArea" value="Oklahoma">Oklahoma</option>
+                                <option name="D_chooseArea" value="Oregon">Oregon</option>
+                                <option name="D_chooseArea" value="Pennsylvania">Pennsylvania</option>
+                                <option name="D_chooseArea" value="Rhode Island">Rhode Island</option>
+                                <option name="D_chooseArea" value="South Carolina">South Carolina</option>
+                                <option name="D_chooseArea" value="South Dakota">South Dakota</option>
+                                <option name="D_chooseArea" value="Tennessee">Tennessee</option>
+                                <option name="D_chooseArea" value="Texas">Texas</option>
+                                <option name="D_chooseArea" value="Utah">Utah</option>
+                                <option name="D_chooseArea" value="Vermont">Vermont</option>
+                                <option name="D_chooseArea" value="Virginia">Virginia</option>
+                                <option name="D_chooseArea" value="Washington">Washington</option>
+                                <option name="D_chooseArea" value="West Virginia">West Virginia</option>
+                                <option name="D_chooseArea" value="Wisconsin">Wisconsin</option>
+                                <option name="D_chooseArea" value="Wyoming">Wyoming</option>
+                            </select>
+                        </td>
+                        <td>
+                            <label for="D_tc_Time_mid">
+                                <input type="radio" name="D_tc_Time" id="D_tc_Time_mid" value="D_tc_Time_mid"/><span>Mid Century (2050s)</span>
+                            </label>
+                        </td>
+                        <td>
+                            <label for="D_tc_Map_cha">
+                                <input type="radio" name="D_tc_Map"  id="D_tc_Map_cha" value="Mapofchange" checked/><span>Map of Change</span>
+                            </label>
+                        </td>
+                        <td>
+                            <label for="D_tc_Meas_prec">
+                                <input type="radio" name="D_tc_Meas"  id="D_tc_Meas_prec" value="Precipitation" checked/><span>Precipitation</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="D_tc_Time_end">
+                                <input type="radio" name="D_tc_Time" id="D_tc_Time_end" value="D_tc_Time_end" checked/><span>End Century(2080s)</span>
+                            </label>
+                        </td>
+                        <td>
+                            <a href="">Compare & Animate Models</a>
+                        </td>
+                        <td>
+                            <select name="D_annul_season" id="D_annul_season">
+                                <option name="D_annul_season" value="Annual" selected>Annual</option>
+                                <option name="D_annul_season" value="Dec-Feb">Dec-Feb</option>
+                                <option name="D_annul_season" value="Mar-May">Mar-May</option>
+                                <option name="D_annul_season" value="June-Aug">June-Aug</option>
+                                <option name="D_annul_season" value="Sept-Nov">Sept-Nov</option>
+                                <option name="D_annul_season" value="January">January</option>
+                                <option name="D_annul_season" value="February">February</option>
+                                <option name="D_annul_season" value="March">March</option>
+                                <option name="D_annul_season" value="April">April</option>
+                                <option name="D_annul_season" value="May">May</option>
+                                <option name="D_annul_season" value="June">June</option>
+                                <option name="D_annul_season" value="July">July</option>
+                                <option name="D_annul_season" value="August">August</option>
+                                <option name="D_annul_season" value="September">September</option>
+                                <option name="D_annul_season" value="October">October</option>
+                                <option name="D_annul_season" value="November">November</option>
+                                <option name="D_annul_season" value="December">December</option>
+                            </select>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top">
+                    <table class="D_clAAtab">
+                        <thead>
+                        <tr class="D_clTAB_tr">
+                            <th colspan="2">Analysis Area</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <p>IPCC Fourth Assessment</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Emission Scenario</p>
+                                <select name="D_tc_Ems" id="D_tc_Ems">
+                                    <option name="D_tc_Ems" value="HighA2" selected>High A2</option>
+                                    <option name="D_tc_Ems" value="MediumA1B">Medium A1B</option>
+                                    <option name="D_tc_Ems" value="LowB1">Low B1</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>General Circulation Model </p>
+                                <select name="D_tc_Gcm" id="D_tc_Gcm">
+                                    <option value="ensemble|50" selected>Ensemble Average</option>
+                                    <optgroup label="---------------">
+                                        <option name="D_tc_Gcm" value="ensemble|0">Ensemble Lowest</option>
+                                        <option name="D_tc_Gcm" value="ensemble|20">Ensemble 20%</option>
+                                        <option name="D_tc_Gcm" value="ensemble|40">Ensemble 40%</option>
+                                        <option name="D_tc_Gcm" value="ensemble|60">Ensemble 60%</option>
+                                        <option name="D_tc_Gcm" value="ensemble|80">Ensemble 80%</option>
+                                        <option name="D_tc_Gcm" value="ensemble|100">Ensemble Highest</option>
+                                    </optgroup>
+                                    <optgroup label="---------------">
+                                        <option name="D_tc_Gcm" value="bccr_bcm2_0.1">BCCR-BCM2.0</option>
+                                        <option name="D_tc_Gcm" value="cccma_cgcm3_1.1">CGCM3.1(T47)</option>
+                                        <option name="D_tc_Gcm" value="cnrm_cm3.1">CNRM-CM3</option>
+                                        <option name="D_tc_Gcm" value="csiro_mk3_0.1">CSIRO-Mk3.0</option>
+                                        <option name="D_tc_Gcm" value="gfdl_cm2_0.1">GFDL-CM2.0</option>
+                                        <option name="D_tc_Gcm" value="gfdl_cm2_1.1">GFDL-CM2.1</option>
+                                        <option name="D_tc_Gcm" value="giss_model_e_r.1">GISS-ER</option>
+                                        <option name="D_tc_Gcm" value="inmcm3_0.1">INM-CM3.0</option>
+                                        <option name="D_tc_Gcm" value="ipsl_cm4.1">IPSL-CM4</option>
+                                        <option name="D_tc_Gcm" value="miroc3_2_medres.1">MIROC3.2(medres)</option>
+                                        <option name="D_tc_Gcm" value="miub_echo_g.1">ECHO-G</option>
+                                        <option name="D_tc_Gcm" value="mpi_echam5.1">ECHAM5/ MPI-OM</option>
+                                        <option name="D_tc_Gcm" value="mri_cgcm2_3_2a.1">MRI-CGCM2.3.2</option>
+                                        <option name="D_tc_Gcm" value="ncar_ccsm3_0.1">CCSM3</option>
+                                        <option name="D_tc_Gcm" value="ncar_pcm1.1">PCM</option>
+                                        <option name="D_tc_Gcm" value="ukmo_hadcm3.1">UKMO-HadCM3</option>
+                                    </optgroup>
+                                </select>
+                            </td>
+                        </tr>
+                        </tbody>
+                        </table>
+                </td>
+                <td colspan="4" rowspan="2">
+                    <div class="D_clMapTitle">
+                        <h3>Average Annual Mean Temp.1951-2006[1985]</h3>
+                        <p>Model: Ensemble Average, SRES emission scenario: A2</p>
+                    </div>
+                    <div class="D_clMap_bg">
+                        <canvas width="668" height="495" id="D_tc_Map_bg_main"></canvas>
+                    </div>
+                    <div class="D_clMapBody">
+                        <div class="D_clMap_r1">
+                            <ul class="list-unstyled text-left">
+                                <li>
+                                    <label for="D_cl_conFact">
+                                        <input type="checkbox" name="D_cl_control" id="D_cl_conFact" value="Factoids"/><span>Factoids</span>
+                                </label>
+                                </li>
+                                <li>
+                                    <label for="D_cl_TA_topo">
+                                        <input type="radio" name="D_cl_TArea" value="Topo" id="D_cl_TA_topo" checked/><span>Topo</span>
+                                </label>
+                                </li>
+                                <li>
+                                    <label for="D_cl_TA_world">
+                                        <input type="radio" name="D_cl_TArea" value="World" id="D_cl_TA_world"/><span>World</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="D_clMap_r2">
+                            <ul class="list-unstyled text-center">
+                                <li><span>Change Transparency</span></li>
+                                <li>
+                                    <div class="D_clMap_r2line">
+                                        <div class="D_clMap_r2line_deepop">
+                                        </div>
+                                    </div>
+                                    <img class="D_clMap_r2img" src="../img/D_climate/D_preciseSliderThumb.png" alt=""/>
+                                </li>
+                            </ul>
+                            </div>
+                        <div class="D_clMap_r3">
+                            <input type="button" value="Get Values"/>
+                        </div>
+                        <div>
+                            <ul class="D_clMap_L1">
+                                <li></li>
+                                <li>
+                                    <div class="D_clMap_L1line">
+                                        <div class="D_clMap_L1line_deepop">
+                                        </div>
+                                    </div>
+                                    <img class="D_clMap_L1img" src="../img/D_climate/D_sliderThumbFocus.png" alt=""/>
+                                </li>
+                                <li></li>
+                            </ul>
+                            <ul class="D_clMap_L2">
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                            </ul>
+                        </div>
+                        <div class="D_clMap_rb0"><a href=""><img src="../img/D_climate/D_poweredbyesri.png" alt=""/></a></div>
+                        <div class="D_clMap_rb1"></div>
+                        <div class="D_clMap_rb2">Map data Sources: Esri, HERE, DeLorme, Intermap, increment P Corp., GEBCO, USGS, FAO, NPS, NRCAN, GeoBase, IGN, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), swisstopo, MapmyIndia, © OpenStreetMap contributors, and the GIS User Community</div>
+                        <div class="D_clMap_rb3">Lat: <span>20.91°</span> Lon: <span>-111.20°</span> </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <p class="D_clText">
+                        50%: This map shows the temperature change projected by the middle model. That is, half of the models project a greater amount of change, and half of the models project less change as compared to the 1961-1990 baseline average.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <p class="D_crbText">Data Source: Base climate projections downscaled by <a href="http://www.engr.scu.edu/~emaurer/index.shtml">Maurer, et al.</a>(2007) Santa Clara University. For more information see
+                        <a href="http://www.climatewizard.org/AboutUs.html">About Us.</a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../js/D_tnc_ClimateWizard.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>

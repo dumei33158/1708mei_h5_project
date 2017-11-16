@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    font-size: 12px;
+}
+body{
+    font-family: "Î¢ÈíÑÅºÚ";
+    font-size: 12px;
+}
+.D_cgw_navBar{
+    background: #e4e6d8;
+}
+.D_cgwLogo{
+    width: 180px;
+}
+.D_btn_cgw{
+    font-size: 30px;
+    color:#47aa42;
+}
+#D_navbar-collapse_cgw{
+    margin-top: 10px;
+}
+.D_cgWay{
+    width:80%;
+    position:relative;
+    z-index: 3;
+}
+.D_cTable{
+   /*background: #ccc;*/
+    width: 100%;
+    position: absolute;
+ /* border-collapse: collapse ;*/
+}
+.D_cTable tr td{
+    position:relative;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow:3px -3px 3px 2px rgba(187,236,15,.75);
+    background: #082e15;
+}
+.D_cTable>tr>td>a>img{
+    opacity: .3;
+   position:absolute;
+    left:0;
+    top:0;
+}
+/*.D_cMask{
+    width:200%;
+    height:200%;
+    background: #006600;
+    position: absolute;
+    z-index: 2;
+    left:0;
+    top:0;
+    transform: skew(60deg) rotate(60deg);
+}*/
+.D_f1{
+position:absolute;
+    left:16px;
+    top:0;
+    opacity: 0;
+}
+.D_f2{
+    position:absolute;
+    left:16px;
+    top:65px;
+    opacity: 0;
+}
+.D_f4{
+    position:absolute;
+    left:16px;
+    top:130px;
+    opacity: 0;
+}
+.D_f3{
+    position:absolute;
+    left:16px;
+    top:130px;
+    opacity: 0;
+}
+.D_f5{
+    position:absolute;
+    left:16px;
+    top:195px;
+    opacity: 0;
+}
+.D_f6{
+    position:absolute;
+    left:16px;
+    top:195px;
+    opacity: 0;
+}
+.D_f7{
+    position:absolute;
+    left:16px;
+    top:260px;
+    opacity: 0;
+}
+.D_f8{
+    position:absolute;
+    left:16px;
+    top:258px;
+    opacity: 0;
+}
+.D_f9{
+    position:absolute;
+    left:16px;
+    top:323px;
+    opacity: 0;
+}
+.D_f10{
+    position:absolute;
+    left:16px;
+    top:384px;
+    opacity: 0;
+}
+.D_f11{
+    position:absolute;
+    left:16px;
+    top:384px;
+    opacity: 0;
+}
+.D_f12{
+    position:absolute;
+    left:16px;
+    top:392px;
+    opacity: 0;
+}
+.D_f13{
+    position:absolute;
+    left:16px;
+    top:457px;
+    opacity: 0;
+}
+.D_f14{
+    position:absolute;
+    left:16px;
+    top:448px;
+    opacity: 0;
+}
+.D_f15{
+    position:absolute;
+    left:16px;
+    top:514px;
+    opacity: 0;
+}
+.D_f16{
+    position:absolute;
+    left:16px;
+    top:565px;
+    opacity: 0;
+}
+.D_f17{
+     position:absolute;
+     left:16px;
+     top:615px;
+     opacity: 0;
+ }
+.D_f18{
+    position:absolute;
+    left:16px;
+    top:678px;
+    opacity: 0;
+}
+#D_coC{
+    position:absolute;
+    background: #f00;
+}
+.D_earthM{
+    width: 100%;
+    height:400px;
+    background: rgba(105,245,45,.78);
+    opacity: .4;
+    left:0;
+    top:0;
+    z-index: 2;
+}
+.D_earthMO{
+    position:absolute;
+    z-index: -1;
+}
+/*
+.D_cLogo{
+    width: 226px;
+    border: 1px solid #000;
+    position:absolute;
+    left:50%;
+    top:50%;
+}
+.D_cIcon{
+
+}
+.D_cPlan{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width: 100%;
+    height: 100px;
+}
+.D_cPlan>div:first-child{
+    position:absolute;
+    top:50%;
+    left:50%;
+}
+.D_cPlan>div:nth-child(2){
+    position:absolute;
+    top:53%;
+    left:53%;
+}
+.D_cPlan>div:nth-child(3){
+    position:absolute;
+    top:56%;
+    left:56%;
+}
+.D_cPlan>div:nth-child(4){
+    position:absolute;
+    top:58%;
+    left:58%;
+}
+.D_cPlan>div:nth-child(5){
+    position:absolute;
+    top:60%;
+    left:60%;
+}
+.D_cPlan>div:nth-child(6){
+    position:absolute;
+    top:60%;
+    left:65%;
+}
+.D_cPractice{
+    position:absolute;
+    top:20%;
+    left:30%;
+}
+.D_cGeography{
+    position:absolute;
+    top:60%;
+    left:80%;
+}
+*/
