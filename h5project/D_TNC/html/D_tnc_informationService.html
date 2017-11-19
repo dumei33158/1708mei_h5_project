@@ -15,11 +15,13 @@
     <![endif]-->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="../bootstrap/css/font-awesome.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.css"/>
     <link rel="stylesheet" href="../css/M_style.css"/>
     <link rel="stylesheet" href="../css/D_tnc_informationService.css"/>
 </head>
 <body>
-<div id="M_main">
+<div id="fullpageMenu">
+    <div id="M_main">
     <div class="M_nav">
         <a href=""><img src="../img/D_nav/D_logo_1.png" alt=""/></a>
         <ul class="M_nav_left">
@@ -130,37 +132,84 @@
         </ul>
     </div>
 </div>
-
-<div class="container clearfix">
-    <div class="jumbotron D_boot text-center">
+    <div class="jumbotron clearfix D_boot text-center">
+        <div class="container">
         <div class="D_mask"></div>
-        <div class="D_tips">
-            <h1>The Nature Conservancy</h1>
-            <div class="jumbotron text-center">
+        <div class="D_tips text-center">
+            <h1><a href="">The Nature Conservancy</a></h1>
                 <!--<video autoplay="autoplay" src="blob:https://baike.baidu.com/f7cb07a0-c95e-4c69-aa62-63fda713229e"></video>
-                --><div class="D_tips">
-                    <h1>Now let we do it!</h1>
-                <a class="btn-success btn-lg D_txt3" href="D_tnc_TNCMAPS.html">TNCMAPS</a>
-                <a class="btn-success btn-lg D_txt3" href="D_tnc_iS_lifemap.html">全球生态保护地图集</a>
-                <br/>
-                <a class="btn-success btn-lg D_txt3" href="D_tnc_ConservationGateWay.html">ConservationGateWay</a>
-                <a class="btn-success btn-lg D_txt3" href="D_tnc_ClimateWizard.html">ClimateWizard</a>
-            </div>
+                -->
+                <div class="text-left D_imA1"><a class="btn-success btn-lg D_txt3" href="D_tnc_TNCMAPS.html"><img src="../img/D_tnclogo0.png" alt="">TNCMAPS</a></div>
+                <div class="text-left D_imA2"><a class="btn-success btn-lg D_txt3" href="D_tnc_iS_lifemap.html"><img src="../img/D_tnclogo0.png" alt="">全球生态保护地图集</a></div>
+                <div class="text-left D_imA3"><a class="btn-success btn-lg D_txt3" href="D_tnc_ConservationGateWay.html"><img src="../img/D_tnclogo0.png" alt="">ConservationGateWay</a></div>
+                <div class="text-left D_imA4"><a class="btn-success btn-lg D_txt3" href="D_tnc_ClimateWizard.html"><img src="../img/D_tnclogo0.png" alt="">ClimateWizard</a></div>
+        </div>
         </div>
     </div>
 </div>
-<div class="D_iPicture clearfix">
-    <div class="container">
-    <btn class=" btn btn-lg btn-default D_inforBtn">
-    </btn>
-        <div class="D_iPiCircle">
-        </div>
+<!--数据来源：http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0138334#pone-0138334-g004-->
+<div id="dowebok D_fp">
+    <div class="section" id="D_page1">
+        <h3>基于对自然栖息地的开发风险的生态环境变化</h3>
+        <img src="../img/D_icpic4.png" alt="">
     </div>
+    <div class="section" id="D_page2">
+        <h3>城市扩张的发展威胁</h3>
+        <img src="../img/D_icpic6.png" alt="">
+    </div>
+    <div class="section" id="D_page3">
+        <h3>农业扩张的发展威胁</h3>
+        <img src="../img/D_icpic7.png" alt="">
+    </div>
+    <div class="section" id="D_page4">
+        <div class="slide"><h3>常规石油和天然气的发展威胁</h3><img src="../img/D_icpic8.png" alt=""></div>
+        <div class="slide"><h3>非常规石油和天然气的发展威胁</h3><img src="../img/D_icpic9.png" alt=""></div>
+    </div>
+    <div class="section" id="D_page5">
+        <h3>煤炭的发展威胁</h3>
+        <img src="../img/D_icpic10.png" alt="">
+    </div>
+    <div class="section" id="D_page6">
+        <h3>应用级风电的发展威胁</h3>
+        <img src="../img/D_icpic11.png" alt="">
+    </div>
+    <div class="section" id="D_page7">
+        <h3>太阳能电力的发展威胁</h3>
+        <img src="../img/D_icpic12.png" alt="">
+    </div>
+    <div class="section" id="D_page8">
+        <h3>第一代生物燃料的发展威胁</h3>
+        <img src="../img/D_icpic13.png" alt="">
+    </div>
+    <div class="section" id="D_page9">
+        <h3>采矿业的未来发展威胁</h3>
+        <img src="../img/D_icpic14.png" alt="">
+    </div>
+    <div class="section" id="D_page10">
+        <div class="slide"><h3>Natural lands at risk within geopolitical regions.</h3><img src="../img/D_icpic15.png" alt=""></div>
+        <div class="slide"><h3>Natural lands at risk within biomes.</h3><img src="../img/D_icpic16.png" alt=""></div>
 </div>
-    </div>
+</div>
+<div id="D_go_each">
+    <ul class="list-unstyled">
+        <li><a href="" name="#D_page1">生态发展</a></li>
+        <li><a href="" name="#D_page2">城市扩张</a></li>
+        <li><a href="" name="#D_page3">农业扩张</a></li>
+        <li><a href="" name="#D_page4">石油天然气</a></li>
+        <li><a href="" name="#D_page5">煤炭发展</a></li>
+        <li><a href="" name="#D_page6">风能电力</a></li>
+        <li><a href="" name="#D_page7">太阳能电力</a></li>
+        <li><a href="" name="#D_page8">生物燃料</a></li>
+        <li><a href="" name="#D_page9">采矿业</a></li>
+        <li><a href="" name="#D_page10">天然林地</a></li>
+    </ul>
+</div>
+<div id="D_go_top"><span>Go TOP</span></div>
+
 </body>
 </html>
 
 <script src="../bootstrap/js/jquery-1.11.3.js"></script>
 <script src="../js/D_tnc_informationService.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
 <script src="../bootstrap/js/bootstrap.js"></script>

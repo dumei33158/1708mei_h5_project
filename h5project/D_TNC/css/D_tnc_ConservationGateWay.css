@@ -10,14 +10,15 @@ a{
     font-size: 12px;
 }
 body{
-    font-family: "Î¢ÈíÑÅºÚ";
-    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
 }
 .D_cgw_navBar{
     background: #e4e6d8;
+    height: 80px;
 }
 .D_cgwLogo{
-    width: 180px;
+    width: 120px;
 }
 .D_btn_cgw{
     font-size: 30px;
@@ -30,19 +31,23 @@ body{
     width:80%;
     position:relative;
     z-index: 3;
+    margin-top: 80px;
 }
 .D_cTable{
    /*background: #ccc;*/
     width: 100%;
     position: absolute;
+    left:0;
+    top:0;
+    transform: skew(0deg);
  /* border-collapse: collapse ;*/
 }
 .D_cTable tr td{
     position:relative;
     text-align: center;
     border: 1px solid #ccc;
-    box-shadow:3px -3px 3px 2px rgba(187,236,15,.75);
-    background: #082e15;
+    box-shadow:3px -3px 3px 2px rgba(0,236,15,.75);
+    /*background: #082e15;*/
 }
 .D_cTable>tr>td>a>img{
     opacity: .3;
@@ -50,16 +55,9 @@ body{
     left:0;
     top:0;
 }
-/*.D_cMask{
-    width:200%;
-    height:200%;
-    background: #006600;
-    position: absolute;
-    z-index: 2;
-    left:0;
-    top:0;
-    transform: skew(60deg) rotate(60deg);
-}*/
+.D_fCon{
+
+}
 .D_f1{
 position:absolute;
     left:16px;
@@ -174,17 +172,58 @@ position:absolute;
 }
 .D_earthM{
     width: 100%;
-    height:400px;
+    height:500px;
     background: rgba(105,245,45,.78);
     opacity: .4;
     left:0;
     top:0;
     z-index: 2;
 }
+.D_earthM>div:first-child>img{
+    position: absolute;
+    left:20%;
+    top:39%;
+    width:50%;
+}
+.D_earthM>div:last-child>img{
+    position: absolute;
+    right:2%;
+    top:15%;
+    width:30%;
+}
 .D_earthMO{
     position:absolute;
     z-index: -1;
 }
+#D_navbar-collapse_cgw>ul>li{
+    font-size: 45px;
+    color:yellowgreen;
+    font-weight: bold;
+}
+/*.D_CgCx{
+    position:absolute;
+    left: 0;
+    top:100px;
+}
+.D_CBg{
+    border: 5px dashed #f2c12a;
+    width: 350px;
+    height: 350px;
+    transform: skew(61deg) rotate(720deg);
+    position:absolute;
+    left:507px;
+    top:-20px;
+    border-radius: 50%;
+}
+.D_CPc{
+    border: 5px dashed #f2c12a;
+    width: 350px;
+    height: 400px;
+    position:absolute;
+    left:178px;
+    top:117px;
+    border-radius: 50%;
+}*/
 /*
 .D_cLogo{
     width: 226px;

@@ -118,6 +118,13 @@ text-decoration: none;
     /* transform: skew(45deg);*/
     box-shadow: -1px -10px 3px 3px rgba(227,246,13,.789);
 }
+.D_lf_fix{
+    position: fixed;
+    vertical-align: top;
+    right:3%;
+    top:30%;
+}
+.D_lf_fix{}
 @media (max-width: 768px){
     .D_circleM{
         left:40%;
@@ -175,7 +182,7 @@ text-decoration: none;
 @media (min-width:1200px){
     .D_circleM{
         left:36%;
-        bottom: 25%;
+        bottom: 20%;
         opacity: .7;
         width: 580px;
         background: #ccc;

@@ -10,7 +10,7 @@ a{
     font-size: 12px;
 }
 body{
-    font-family: "Î¢ÈíÑÅºÚ";
+    font-family: "Î¢ï¿½ï¿½ï¿½Åºï¿½";
     font-size: 12px;
 }
 
@@ -240,6 +240,10 @@ body{
     height: 500px;
     /*background: #0000ff;*/
     position: absolute;
+}
+.D_googleMap{
+    width: 668px;
+    height:495px;
 }
 #D_tc_Map_bg_main{
     background: #0063D1;

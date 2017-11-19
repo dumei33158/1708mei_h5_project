@@ -233,9 +233,21 @@ var D_cTimef18=setInterval('$(".D_f18").mouseover()');
 }
 D_picGo();
 
-$(window).scroll(function(){
-    if($(window).scrollTop>20){
-        $(".D_cTable").animate({transform})
-    }
-})
+$(function(){
+    setTimeout(function(){
+        $(".D_cTable").animate({left:"-2000px"},4000,function(){
+            $(this).css({opacity:0,transition:"all 5s"});
+            /*$(".D_cTable img").css({height:"10px"});
+            $('.D_cTable tr td').css({
+                boxShadow:"3px -3px 3px 2px rgba(234,45,15,.75)"})*/
+        });
+    },2000);
+});
+$("#D_accordin .panel-title>a").css({
+    fontSize:"20px",
+    textDecoration:"none"
+});
+$("#D_accordin .panel-title>a>img").css({
+    marginRight:"10px"
+});
 
